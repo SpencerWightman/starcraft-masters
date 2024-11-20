@@ -1,101 +1,120 @@
-import Image from "next/image";
+// HomePage.tsx
+"use client";
 
-export default function Home() {
+import React, { useState } from "react";
+import {
+  Container,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+  Modal,
+  Box,
+} from "@mui/material";
+import LowBaseWinLossChart from "./charts/lowBaseWinLossResults";
+import MatchLengthChart from "./charts/matchLengthResults";
+
+const Home: React.FC = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  // Sample data for the leaderboard
+  const leaderboardData = [
+    { rank: 1, name: "Player1", points: 1500 },
+    { rank: 2, name: "Player2", points: 1450 },
+    { rank: 3, name: "Player3", points: 1400 },
+    // Add more entries up to top 20...
+  ];
+
+  // Inline styles or constants for styling
+  const modalStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 300,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Container sx={{ padding: 5, textAlign: "center" }}>
+      {/* Site Title */}
+      <Typography variant="h1" sx={{ fontWeight: "bold", my: 5 }}>
+        Brood War League
+      </Typography>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* Hamburger Menu Button */}
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setIsNavOpen(true)}
+        sx={{ fontSize: "24px", padding: "10px" }}
+      >
+        ☰
+      </Button>
+
+      {/* Modal for Navigation */}
+      <Modal
+        open={isNavOpen}
+        onClose={() => setIsNavOpen(false)}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <Box sx={modalStyle}>
+          <Box id="modal-description" sx={{ mt: 2 }}>
+            <Button href="/leaderboard" fullWidth sx={{ mb: 1 }}>
+              Leaderboard
+            </Button>
+            <Button href="/players" fullWidth sx={{ mb: 1 }}>
+              Players
+            </Button>
+            <Button href="/sign-in" fullWidth sx={{ mb: 1 }}>
+              Sign In
+            </Button>
+            <Button href="/sign-up" fullWidth sx={{ mb: 1 }}>
+              Sign Up
+            </Button>
+            <Button href="/reset-password" fullWidth>
+              Reset Password
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
+
+      {/* Leaderboard Table */}
+      <TableContainer component={Paper} sx={{ marginTop: 10 }}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Rank</TableCell>
+              <TableCell>Player Name</TableCell>
+              <TableCell>Points</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {leaderboardData.map((player) => (
+              <TableRow key={player.rank}>
+                <TableCell>{player.rank}</TableCell>
+                <TableCell>{player.name}</TableCell>
+                <TableCell>{player.points}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      {/* Chart Section */}
+      <LowBaseWinLossChart />
+      <MatchLengthChart />
+    </Container>
   );
-}
+};
+
+export default Home;

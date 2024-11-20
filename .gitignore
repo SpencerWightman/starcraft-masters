@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/data
 /.pnp
 .pnp.*
 .yarn/*
@@ -38,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
