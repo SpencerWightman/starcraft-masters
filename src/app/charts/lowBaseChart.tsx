@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Button } from "@mui/material";
-import lowBaseWinLossResults from "../../../data/lowBaseResults.json";
+import lowBaseWinLossResults from "data/lowBaseResults.json";
 import {
   Chart as ChartJS,
   CategoryScale,
