@@ -28,8 +28,10 @@ ChartJS.register(
 
 interface MatchLengthData {
   name: string;
-  averageWinLength: number;
-  averageLossLength: number;
+  medianWinLength: number;
+  medianLossLength: number;
+  strMedianWinLength: string;
+  strMedianLossLength: string;
   totalWins: number;
   totalLosses: number;
 }
@@ -38,21 +40,22 @@ const MatchLengthChart: React.FC = () => {
   const [data, setData] = useState<MatchLengthData[]>([]);
   const [chartType, setChartType] = useState<"Players" | "Matchups">("Players");
 
+  // calculate differences in sec for line
   useEffect(() => {
     const formattedData =
       chartType === "Players"
         ? matchLengthResults.players.map((item) => ({
             ...item,
-            averageWinLength: parseFloat(item.averageWinLength),
-            averageLossLength: parseFloat(item.averageLossLength),
+            medianWinLength: parseFloat(item.medianWinLength),
+            medianLossLength: parseFloat(item.medianLossLength),
           }))
         : matchLengthResults.matchups.map((item) => ({
             ...item,
-            averageWinLength: parseFloat(item.averageWinLength),
-            averageLossLength: parseFloat(item.averageLossLength),
+            medianWinLength: parseFloat(item.medianWinLength),
+            medianLossLength: parseFloat(item.medianLossLength),
           }));
 
-    formattedData.sort((a, b) => b.averageWinLength - a.averageWinLength);
+    formattedData.sort((a, b) => b.medianWinLength - a.medianWinLength);
     setData(formattedData);
   }, [chartType]);
 
@@ -60,21 +63,22 @@ const MatchLengthChart: React.FC = () => {
     labels: data.map((item) => item.name),
     datasets: [
       {
-        label: "Average Win Length",
-        data: data.map((item) => item.averageWinLength),
+        label: "Median Win Length",
+        data: data.map((item) => item.medianWinLength),
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderWidth: 2,
         tension: 0.3,
       },
       {
-        label: "Average Loss Length",
-        data: data.map((item) => item.averageLossLength),
+        label: "Median Loss Length",
+        data: data.map((item) => item.medianLossLength),
         borderColor: "rgba(255, 99, 132, 1)",
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderWidth: 2,
         tension: 0.3,
       },
+      // add difference
     ],
   };
 
@@ -88,8 +92,8 @@ const MatchLengthChart: React.FC = () => {
         display: true,
         text:
           chartType === "Players"
-            ? "Average Win/Loss Match Length (Players)"
-            : "Average Win/Loss Match Length (Matchups)",
+            ? "Median Win/Loss Match Length (Players)"
+            : "Median Win/Loss Match Length (Matchups)",
         font: {
           size: 24,
         },
@@ -97,12 +101,14 @@ const MatchLengthChart: React.FC = () => {
       tooltip: {
         callbacks: {
           label: function (context: TooltipItem<"line">) {
+            // add differences line
+            // add total wins/losses
             const index = context.dataIndex;
             const item = data[index];
-            if (context.dataset.label === "Average Win Length") {
-              return `Avg Win Length: ${item.averageWinLength} mins`;
+            if (context.dataset.label === "Median Win Length") {
+              return `Median Win: ${item.strMedianWinLength}`;
             } else {
-              return `Avg Loss Length: ${item.averageLossLength} mins`;
+              return `Median Loss: ${item.strMedianLossLength}`;
             }
           },
         },
