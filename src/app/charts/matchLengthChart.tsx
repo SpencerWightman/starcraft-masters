@@ -88,8 +88,8 @@ const MatchLengthChart: React.FC = () => {
         display: true,
         text:
           chartType === "Players"
-            ? "Average Match Length (Players)"
-            : "Average Match Length (Matchups)",
+            ? "Average Win/Loss Match Length (Players)"
+            : "Average Win/Loss Match Length (Matchups)",
         font: {
           size: 24,
         },

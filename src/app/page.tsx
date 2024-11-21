@@ -1,36 +1,13 @@
-// HomePage.tsx
 "use client";
 
 import React, { useState } from "react";
-import {
-  Container,
-  Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Button,
-  Modal,
-  Box,
-} from "@mui/material";
-import LowBaseWinLossChart from "./charts/lowBaseWinLossResults";
-import MatchLengthChart from "./charts/matchLengthResults";
+import { Container, Typography, Button, Modal, Box } from "@mui/material";
+import LowBaseWinLossChart from "./charts/lowBaseChart";
+import MatchLengthChart from "./charts/matchLengthChart";
 
 const Home: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // Sample data for the leaderboard
-  const leaderboardData = [
-    { rank: 1, name: "Player1", points: 1500 },
-    { rank: 2, name: "Player2", points: 1450 },
-    { rank: 3, name: "Player3", points: 1400 },
-    // Add more entries up to top 20...
-  ];
-
-  // Inline styles or constants for styling
   const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -45,22 +22,12 @@ const Home: React.FC = () => {
 
   return (
     <Container sx={{ padding: 5, textAlign: "center" }}>
-      {/* Site Title */}
+      {/* Title */}
       <Typography variant="h1" sx={{ fontWeight: "bold", my: 5 }}>
         Brood War League
       </Typography>
 
-      {/* Hamburger Menu Button */}
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setIsNavOpen(true)}
-        sx={{ fontSize: "24px", padding: "10px" }}
-      >
-        ☰
-      </Button>
-
-      {/* Modal for Navigation */}
+      {/* Navigation */}
       <Modal
         open={isNavOpen}
         onClose={() => setIsNavOpen(false)}
@@ -88,29 +55,7 @@ const Home: React.FC = () => {
         </Box>
       </Modal>
 
-      {/* Leaderboard Table */}
-      <TableContainer component={Paper} sx={{ marginTop: 10 }}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Rank</TableCell>
-              <TableCell>Player Name</TableCell>
-              <TableCell>Points</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {leaderboardData.map((player) => (
-              <TableRow key={player.rank}>
-                <TableCell>{player.rank}</TableCell>
-                <TableCell>{player.name}</TableCell>
-                <TableCell>{player.points}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-
-      {/* Chart Section */}
+      {/* Charts */}
       <LowBaseWinLossChart />
       <MatchLengthChart />
     </Container>
