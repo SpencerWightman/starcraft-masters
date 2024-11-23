@@ -26,34 +26,6 @@ const Home: React.FC = () => {
         Brood War League
       </Typography>
 
-      {/* Navigation */}
-      <Modal
-        open={isNavOpen}
-        onClose={() => setIsNavOpen(false)}
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-      >
-        <Box sx={modalStyle}>
-          <Box id="modal-description" sx={{ mt: 2 }}>
-            <Button href="/leaderboard" fullWidth sx={{ mb: 1 }}>
-              Leaderboard
-            </Button>
-            <Button href="/players" fullWidth sx={{ mb: 1 }}>
-              Players
-            </Button>
-            <Button href="/sign-in" fullWidth sx={{ mb: 1 }}>
-              Sign In
-            </Button>
-            <Button href="/sign-up" fullWidth sx={{ mb: 1 }}>
-              Sign Up
-            </Button>
-            <Button href="/reset-password" fullWidth>
-              Reset Password
-            </Button>
-          </Box>
-        </Box>
-      </Modal>
-
       {/* Charts */}
       <LowBaseChartController />
     </Container>
