@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import { Container, Typography, Button, Modal, Box } from "@mui/material";
-import LowBaseWinLossChart from "./charts/lowBaseChart";
-import MatchLengthChart from "./charts/matchLengthChart";
+import LowBaseChartController from "./charts/lowBaseChartController";
 
 const Home: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -56,8 +55,7 @@ const Home: React.FC = () => {
       </Modal>
 
       {/* Charts */}
-      <LowBaseWinLossChart />
-      <MatchLengthChart />
+      <LowBaseChartController />
     </Container>
   );
 };
