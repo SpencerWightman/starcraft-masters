@@ -15,7 +15,6 @@ import {
   LinearScale,
   PointElement,
   LineElement,
-  Title,
   Tooltip,
   TooltipItem,
   Legend,
@@ -28,7 +27,6 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
-  Title,
   Tooltip,
   Legend
 );
@@ -57,13 +55,6 @@ const LowBaseChart: React.FC<ChartProps> = ({
       legend: {
         position: "top" as const,
       },
-      title: {
-        display: true,
-        text: title,
-        font: {
-          size: 24,
-        },
-      },
       tooltip: {
         callbacks: {
           label: function (context: TooltipItem<"line">) {
@@ -77,7 +68,17 @@ const LowBaseChart: React.FC<ChartProps> = ({
     },
   };
 
-  return <Line data={chartData} options={options} />;
+  return (
+    <div>
+      <Typography
+        variant="h6"
+        sx={{ color: "#10b981", marginBottom: "1rem", textAlign: "center" }}
+      >
+        {title}
+      </Typography>
+      <Line data={chartData} options={options} />
+    </div>
+  );
 };
 
 const LowBaseCharts: React.FC = () => {
@@ -135,7 +136,7 @@ const LowBaseCharts: React.FC = () => {
       return {
         labels,
         datasets,
-        title: "<= 2 Base Win/Loss Percentages (Players)",
+        title: "<= 2 Base Win/Loss Percentage",
         tooltipData,
       };
     } else {
@@ -189,7 +190,7 @@ const LowBaseCharts: React.FC = () => {
       return {
         labels,
         datasets,
-        title: "<= 2 Base Win/Loss Percentages (Matchups)",
+        title: "<= 2 Base Win/Loss Percentage",
         tooltipData,
       };
     }
@@ -198,25 +199,47 @@ const LowBaseCharts: React.FC = () => {
   const chartProps = getChartProps();
 
   return (
-    <div>
+    <div
+      style={{
+        width: "90%",
+        maxWidth: "1100px",
+        margin: "0 auto",
+        padding: "20px",
+        backgroundColor: "#1f2937",
+        borderRadius: "8px",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+      }}
+    >
       <div
         style={{
           marginBottom: "20px",
           display: "flex",
           justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "10px",
         }}
       >
         <Button
-          variant={chartType === "Players" ? "contained" : "outlined"}
+          variant="outlined"
           onClick={() => setChartType("Players")}
-          sx={{ mx: 1 }}
+          sx={{
+            color: "#10b981",
+            borderColor: chartType === "Players" ? "#10b981" : "transparent",
+            backgroundColor: "#374151",
+            "&:hover": { borderColor: "#10b981" },
+          }}
         >
           Players
         </Button>
         <Button
-          variant={chartType === "Matchups" ? "contained" : "outlined"}
+          variant="outlined"
           onClick={() => setChartType("Matchups")}
-          sx={{ mx: 1 }}
+          sx={{
+            color: "#10b981",
+            borderColor: chartType === "Matchups" ? "#10b981" : "transparent",
+            backgroundColor: "#374151",
+            "&:hover": { borderColor: "#10b981" },
+          }}
         >
           Matchups
         </Button>
@@ -224,24 +247,20 @@ const LowBaseCharts: React.FC = () => {
           title={
             <div>
               <Typography variant="body2" component="span">
-                Win Percent: the number of wins that occurred while the winning
-                player was on 1-2 bases.
-              </Typography>
-              <Typography variant="body2" component="span">
-                Loss Percent: the number of losses that occurred while the
-                winning player was 1-2 bases.
-              </Typography>
-              <Typography variant="body2" component="span">
-                A 3rd base must have been completed and on location for at least
-                1 minute prior to the end of the match to be counted; 45 seconds
-                in ZvZ.
+                SSL Autumn 2024. Loss Percent is when the winning opponent/race
+                used only 1-2 bases. A 3rd base must be complete and on location
+                for at least 1 minute to be counted; 45 seconds in ZvZ.
               </Typography>
             </div>
           }
-          sx={{ mx: 1 }}
         >
           <IconButton>
-            <InfoIcon color="primary" />
+            <InfoIcon
+              sx={{
+                color: "#374151",
+                "&:hover": { color: "#10b981" },
+              }}
+            />
           </IconButton>
         </MuiTooltip>
       </div>
