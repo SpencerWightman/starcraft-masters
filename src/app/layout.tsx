@@ -22,8 +22,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navItems = [
     { text: "Charts", href: "/charts" },
-    { text: "Players", href: "/players" },
-    { text: "Picks", href: "/picks" },
+    { text: "Team", href: "/team" },
     { text: "Leaderboard", href: "/leaderboard" },
     { text: "Standings", href: "/standings" },
     { text: "Profile", href: "/profile" },
