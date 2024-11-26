@@ -34,12 +34,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <Box
           sx={{
             minHeight: "100vh",
-            minWidth: "100vw" /* Ensure full width */,
+            minWidth: "100vw",
             backgroundColor: "#1f2937",
             color: "#f3f4f6",
             margin: 0,
             padding: 0,
-            overflow: "hidden", // Avoid unintended scrollbars
+            overflow: "hidden",
           }}
         >
           {/* App Bar */}
@@ -135,7 +135,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Box>
           )}
 
-          {/* Content Area */}
+          {/* Content */}
           <Box
             sx={{
               display: "flex",
@@ -145,7 +145,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               padding: "1rem",
             }}
           >
-            {/* Main Area for Dynamic Content */}
             <Box
               sx={{
                 flex: 3,

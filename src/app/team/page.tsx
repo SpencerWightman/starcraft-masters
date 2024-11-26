@@ -1,91 +1,113 @@
 "use client";
+
 import React, { useState } from "react";
-import { Box, Modal, Grid2, IconButton, Paper } from "@mui/material";
+import { Box, IconButton, Grid2 } from "@mui/material";
 import { CheckCircle, Cancel } from "@mui/icons-material";
-import DraftTeam from "../../components/teams/draftTeam";
-import CollapsedView from "../../components/teams/collapsedView";
-import ExpandedView from "../../components/teams/expandedView";
-import {
-  PlayerSummaries,
-  PlayerSummary,
-  PlayerRecent,
-  RecentMatch,
-} from "../types/teamTypes";
+import PlayerDetails from "../../components/teams/PlayerDetails";
+import PlayerDraft from "../../components/teams/PlayerDraft";
+import { PlayerSummaries, PlayerSummary } from "../types/teamTypes";
+import PlayerAll from "../../components/teams/PlayerAll";
 import playerSummariesJson from "data/playerSummaries.json";
-import playerRecentJson from "data/playerRecents.json";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
-const playerRecent: PlayerRecent = playerRecentJson;
 
 const PlayerList: React.FC = () => {
-  const [selectedPlayer, setSelectedPlayer] = useState<PlayerSummary | null>(
-    null
-  );
-  const [recentMatches, setRecentMatches] = useState<RecentMatch[]>([]);
-  const [draftTeam, setDraftTeam] = useState<PlayerSummary[]>([]);
+  const [expandedPlayerIds, setExpandedPlayerIds] = useState<string[]>([]);
+  const [draftTeam, setDraftTeam] = useState<Record<string, PlayerSummary[]>>({
+    "Tier 1": [],
+    "Tier 2": [],
+    "Tier 3": [],
+    "Tier 4": [],
+  });
 
   const handlePlayerClick = (player: PlayerSummary) => {
-    setSelectedPlayer(player);
-    setRecentMatches(playerRecent[player.id] || []);
-  };
-
-  const handleToggleSelect = (player: PlayerSummary) => {
-    setDraftTeam((prev) =>
-      prev.find((p) => p.id === player.id)
-        ? prev.filter((p) => p.id !== player.id)
-        : [...prev, player]
+    setExpandedPlayerIds((prev) =>
+      prev.includes(player.id)
+        ? prev.filter((id) => id !== player.id)
+        : [...prev, player.id]
     );
   };
 
-  const handleCloseModal = () => setSelectedPlayer(null);
+  const handleToggleSelect = (player: PlayerSummary) => {
+    setDraftTeam((prev) => {
+      const tier = player.tier;
+      const currentTierPlayers = prev[tier] || [];
+
+      if (currentTierPlayers.find((p) => p.id === player.id)) {
+        return {
+          ...prev,
+          [tier]: currentTierPlayers.filter((p) => p.id !== player.id),
+        };
+      }
+
+      if (currentTierPlayers.length < 2) {
+        return {
+          ...prev,
+          [tier]: [...currentTierPlayers, player],
+        };
+      }
+
+      return prev;
+    });
+  };
 
   return (
     <Box sx={{ padding: 4 }}>
-      <DraftTeam selectedPlayers={draftTeam} />
+      {/* Player Draft */}
+      <Box sx={{ marginBottom: 4 }}>
+        <PlayerDraft selectedPlayers={draftTeam} />
+      </Box>
+
+      {/* Player List */}
       <Grid2 container spacing={3}>
         {Object.entries(playerSummaries).map(([key, player]) => (
           <Grid2
             key={key}
             sx={{ gridColumn: { xs: "span 12", sm: "span 6", md: "span 4" } }}
           >
-            <Paper sx={{ position: "relative", padding: 2, gap: 2 }}>
+            <Box
+              sx={{
+                position: "relative",
+                userSelect: "none",
+              }}
+            >
               <IconButton
                 onClick={() => handleToggleSelect(player)}
                 sx={{
                   position: "absolute",
                   top: 8,
                   left: 8,
-                  color: draftTeam.some((p) => p.id === player.id)
+                  color: Object.values(draftTeam).some((players) =>
+                    players.some((p) => p.id === player.id)
+                  )
                     ? "#FFD700"
                     : "#f3f4f6",
                 }}
               >
-                {draftTeam.some((p) => p.id === player.id) ? (
+                {Object.values(draftTeam).some((players) =>
+                  players.some((p) => p.id === player.id)
+                ) ? (
                   <CheckCircle />
                 ) : (
                   <Cancel />
                 )}
               </IconButton>
-              <CollapsedView
-                player={player}
-                onClick={() => handlePlayerClick(player)}
-              />
-            </Paper>
+
+              {expandedPlayerIds.includes(player.id) ? (
+                <PlayerDetails
+                  player={player}
+                  onClick={() => handlePlayerClick(player)}
+                />
+              ) : (
+                <PlayerAll
+                  player={player}
+                  onClick={() => handlePlayerClick(player)}
+                />
+              )}
+            </Box>
           </Grid2>
         ))}
       </Grid2>
-      <Modal open={!!selectedPlayer} onClose={handleCloseModal}>
-        <Box
-          sx={{ backgroundColor: "#1E293B", padding: 4, borderRadius: "8px" }}
-        >
-          {selectedPlayer && (
-            <ExpandedView
-              player={selectedPlayer}
-              recentMatches={recentMatches}
-            />
-          )}
-        </Box>
-      </Modal>
     </Box>
   );
 };

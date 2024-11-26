@@ -33,6 +33,7 @@ ChartJS.register(
 
 interface ChartProps {
   labels: string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   datasets: any[];
   title: string;
   tooltipData: (index: number, datasetLabel: string, value: number) => string;

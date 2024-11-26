@@ -4,12 +4,7 @@ import { EmojiEvents, Star } from "@mui/icons-material";
 import Image from "next/image";
 import { PlayerSummary } from "@/app/types/teamTypes";
 
-const tierColors: Record<string, string> = {
-  "3": "#064e3b",
-  "1": "#9F7C48",
-};
-
-const CollapsedView: React.FC<{
+const PlayerAll: React.FC<{
   player: PlayerSummary;
   onClick: () => void;
 }> = ({ player, onClick }) => (
@@ -27,7 +22,6 @@ const CollapsedView: React.FC<{
     }}
     onClick={onClick}
   >
-    {/* Achievements */}
     <Box
       sx={{
         display: "flex",
@@ -38,6 +32,7 @@ const CollapsedView: React.FC<{
         alignSelf: "end",
       }}
     >
+      {/* Achievements */}
       <Tooltip title="Champion" arrow placement="right">
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <EmojiEvents sx={{ color: "#FFD700" }} />
@@ -46,9 +41,24 @@ const CollapsedView: React.FC<{
           </Typography>
         </Box>
       </Tooltip>
-      {/* Repeat for Runner-Up and RO4 */}
+      <Tooltip title="Runner-Up" arrow placement="right">
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+          <EmojiEvents sx={{ color: "#b0bec5" }} />
+          <Typography variant="body2" sx={{ color: "#f3f4f6" }}>
+            {player.achievements.runnerUp}
+          </Typography>
+        </Box>
+      </Tooltip>
+      <Tooltip title="RO4" arrow placement="right">
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+          <EmojiEvents sx={{ color: "#CD7F32" }} />
+          <Typography variant="body2" sx={{ color: "#CD7F32" }}>
+            {player.achievements.ro4}
+          </Typography>
+        </Box>
+      </Tooltip>
     </Box>
-    {/* Tier, Name, Appearances */}
+    {/* Name, Appearances */}
     <Box
       sx={{
         display: "flex",
@@ -58,24 +68,6 @@ const CollapsedView: React.FC<{
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-        <Tooltip title="Tier" arrow>
-          <Box
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 24,
-              height: 24,
-              borderRadius: "50%",
-              backgroundColor: tierColors[player.tier] || "#064e3b",
-              color: "#f3f4f6",
-              fontSize: "1rem",
-              fontWeight: "bold",
-            }}
-          >
-            {player.tier}
-          </Box>
-        </Tooltip>
         <Tooltip title={player.id} arrow>
           <Typography
             variant="h6"
@@ -86,7 +78,7 @@ const CollapsedView: React.FC<{
         </Tooltip>
         <Tooltip title="Appearances" arrow>
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-            <Star sx={{ color: "#89CFF0" }} />
+            <Star sx={{ color: "#10b981" }} />
             <Typography variant="body2" sx={{ color: "#C0C0C0" }}>
               {player.appearances}
             </Typography>
@@ -104,4 +96,4 @@ const CollapsedView: React.FC<{
   </Paper>
 );
 
-export default CollapsedView;
+export default PlayerAll;
