@@ -12,22 +12,21 @@ export type Achievements = {
 };
 
 export type PlayerSummary = {
-  name: string;
-  id: string;
-  race: string;
-  tier: string;
-  stats: {
-    vsAll: MatchupStats;
-    vsP: MatchupStats;
-    vsT: MatchupStats;
-    vsZ: MatchupStats;
+  player: {
+    id: number;
+    name: string;
+    race: string;
+    handle: string;
   };
-  appearances: string;
   achievements: Achievements;
-  image: string;
+  stats: {
+    vsAll?: MatchupStats;
+    vsP?: MatchupStats;
+    vsT?: MatchupStats;
+    vsZ?: MatchupStats;
+  };
+  tier: number;
+  appearances: number;
 };
 
-export type PlayerSummaries = Record<string, PlayerSummary>;
-
-export type RecentMatch = (string | number)[];
-export type PlayerRecent = Record<string, RecentMatch[]>;
+export type PlayerSummaries = PlayerSummary[];

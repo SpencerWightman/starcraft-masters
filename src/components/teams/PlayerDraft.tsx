@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Typography, Grid2 } from "@mui/material";
-import Image from "next/image";
 import { PlayerSummary } from "@/app/types/teamTypes";
 
 const PlayerDraft: React.FC<{
   selectedPlayers: Record<string, PlayerSummary[]>;
 }> = ({ selectedPlayers }) => {
-  const tiers = ["1", "2", "3", "4"];
+  const tiers = ["0", "1", "2", "3", "4"];
 
   return (
     <Box>
@@ -15,7 +14,7 @@ const PlayerDraft: React.FC<{
           <Grid2 key={tier}>
             <Box
               sx={{
-                backgroundColor: "#1E293B",
+                backgroundColor: "#2D3748",
                 padding: 2,
                 borderRadius: "8px",
               }}
@@ -24,7 +23,7 @@ const PlayerDraft: React.FC<{
                 variant="h6"
                 sx={{ color: "#f3f4f6", fontWeight: "bold", marginBottom: 2 }}
               >
-                {tier}
+                Tier {tier}
               </Typography>
               <Box
                 sx={{
@@ -33,7 +32,6 @@ const PlayerDraft: React.FC<{
                   gap: 2,
                 }}
               >
-                {/* Slots */}
                 {[...Array(2)].map((_, slotIndex) => {
                   const player = selectedPlayers[tier]?.[slotIndex];
                   return (
@@ -52,18 +50,11 @@ const PlayerDraft: React.FC<{
                     >
                       {player ? (
                         <>
-                          <Image
-                            src={player.image}
-                            alt={player.name}
-                            width={50}
-                            height={50}
-                            style={{ borderRadius: "8px", objectFit: "cover" }}
-                          />
                           <Typography
                             variant="h6"
                             sx={{ color: "#f3f4f6", fontWeight: "bold" }}
                           >
-                            {player.name}
+                            {player.player.name}
                           </Typography>
                         </>
                       ) : (

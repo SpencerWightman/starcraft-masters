@@ -1,19 +1,21 @@
 import React from "react";
+import { EmojiEvents, Star } from "@mui/icons-material";
 import {
   Paper,
   Table,
   TableBody,
+  Box,
   TableCell,
   TableRow,
   Typography,
   TableHead,
+  Tooltip,
 } from "@mui/material";
 import { PlayerSummary } from "@/app/types/teamTypes";
 
-const PlayerDraftDetails: React.FC<{
+const PlayerDetails: React.FC<{
   player: PlayerSummary;
-  onClick: () => void;
-}> = ({ player, onClick }) => (
+}> = ({ player }) => (
   <Paper
     elevation={3}
     sx={{
@@ -24,34 +26,70 @@ const PlayerDraftDetails: React.FC<{
       gap: 2,
       backgroundColor: "#1E293B",
       borderRadius: "8px",
-      cursor: "pointer",
     }}
-    onClick={onClick}
   >
-    {/* Name */}
-    <Typography
-      variant="h6"
+    {/* Name, Appearances, Achievements */}
+    <Box
       sx={{
-        color: "#f3f4f6",
-        fontWeight: "bold",
-        textAlign: "center",
-        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 1,
       }}
     >
-      {player.name}
-    </Typography>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Tooltip title={player.player.handle} arrow>
+          <Typography
+            variant="h6"
+            sx={{ color: "#f3f4f6", fontWeight: "bold" }}
+          >
+            {player.player.name}
+          </Typography>
+        </Tooltip>
+        <Tooltip title="Appearances" arrow>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <Star sx={{ color: "#10b981" }} />
+            <Typography variant="body2" sx={{ color: "#C0C0C0" }}>
+              {player.appearances}
+            </Typography>
+          </Box>
+        </Tooltip>
+
+        <Tooltip title="Champion" arrow placement="right">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <EmojiEvents sx={{ color: "#FFD700" }} />
+            <Typography variant="body2" sx={{ color: "#FFD700" }}>
+              {player.achievements.champion}
+            </Typography>
+          </Box>
+        </Tooltip>
+        <Tooltip title="Runner-Up" arrow placement="right">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <EmojiEvents sx={{ color: "#b0bec5" }} />
+            <Typography variant="body2" sx={{ color: "#f3f4f6" }}>
+              {player.achievements.runnerUp}
+            </Typography>
+          </Box>
+        </Tooltip>
+        <Tooltip title="RO4" arrow placement="right">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <EmojiEvents sx={{ color: "#CD7F32" }} />
+            <Typography variant="body2" sx={{ color: "#CD7F32" }}>
+              {player.achievements.ro4}
+            </Typography>
+          </Box>
+        </Tooltip>
+      </Box>
+    </Box>
 
     {/* Stats */}
     <Table
       size="small"
       sx={{
         backgroundColor: "transparent",
-        border: "1px solid #f3f4f6",
-        borderRadius: "4px",
         width: "100%",
       }}
     >
-      {/* Table */}
       <TableHead>
         <TableRow>
           <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
@@ -86,4 +124,4 @@ const PlayerDraftDetails: React.FC<{
   </Paper>
 );
 
-export default PlayerDraftDetails;
+export default PlayerDetails;
