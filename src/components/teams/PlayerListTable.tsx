@@ -1,25 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
-import { Typography, Box, IconButton, Grid2 } from "@mui/material";
+import React from "react";
+import { Typography, Box, IconButton, Grid2, Tooltip } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
-import PlayerChart from "./PlayerChart";
+// import PlayerChart from "./PlayerChart";
 
 const PlayerTable: React.FC<{
   players: PlayerSummary[];
   onPlayerClick: (player: PlayerSummary) => void;
   selectedPlayers: PlayerSummary[];
 }> = ({ players, onPlayerClick, selectedPlayers }) => {
-  const [hoveredPlayer, setHoveredPlayer] = useState<PlayerSummary | null>(
-    null
-  );
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const [isChartOpen, setIsChartOpen] = useState(false);
-
   const groupedPlayers = players.reduce(
     (acc, player) => {
       if (acc[`tier${player.tier}`]) {
@@ -32,26 +26,6 @@ const PlayerTable: React.FC<{
       PlayerSummary[]
     >
   );
-
-  const handleDetailsMouseEnter = (player: PlayerSummary) => {
-    setHoveredPlayer(player);
-    setIsDetailsOpen(true);
-  };
-
-  const handleDetailsMouseLeave = () => {
-    setHoveredPlayer(null);
-    setIsDetailsOpen(false);
-  };
-
-  const handleChartMouseEnter = (player: PlayerSummary) => {
-    setHoveredPlayer(player);
-    setIsChartOpen(true);
-  };
-
-  const handleChartMouseLeave = () => {
-    setHoveredPlayer(null);
-    setIsChartOpen(false);
-  };
 
   return (
     <Box
@@ -148,28 +122,38 @@ const PlayerTable: React.FC<{
                           <CheckCircleIcon sx={{ color: "#FFD700" }} />
                         </IconButton>
                       )}
+                      <Tooltip
+                        title={<PlayerDetails player={player} />}
+                        arrow
+                        placement="top"
+                        slotProps={{
+                          tooltip: {
+                            sx: {
+                              backgroundColor: "transparent",
+                              boxShadow: "none",
+                              maxWidth: "none",
+                              padding: 0,
+                            },
+                          },
+                        }}
+                      >
+                        <IconButton size="small">
+                          <AccountCircleIcon
+                            sx={{
+                              color:
+                                player.player.race === "Terran"
+                                  ? "#3b82f6"
+                                  : player.player.race === "Protoss"
+                                  ? "#10b981"
+                                  : player.player.race === "Zerg"
+                                  ? "#ef4444"
+                                  : "#f3f4f6",
+                            }}
+                          />
+                        </IconButton>
+                      </Tooltip>
                       <IconButton size="small">
-                        <AccountCircleIcon
-                          sx={{
-                            color:
-                              player.player.race === "Terran"
-                                ? "#3b82f6"
-                                : player.player.race === "Protoss"
-                                ? "#10b981"
-                                : player.player.race === "Zerg"
-                                ? "#ef4444"
-                                : "#f3f4f6",
-                          }}
-                          onMouseEnter={() => handleDetailsMouseEnter(player)}
-                          onMouseLeave={() => handleDetailsMouseLeave()}
-                        />
-                      </IconButton>
-                      <IconButton size="small">
-                        <ShowChartIcon
-                          sx={{ color: "#E3AF66" }}
-                          onMouseEnter={() => handleChartMouseEnter(player)}
-                          onMouseLeave={() => handleChartMouseLeave()}
-                        />
+                        <ShowChartIcon sx={{ color: "#E3AF66" }} />
                       </IconButton>
                     </Box>
                   </Box>
@@ -248,7 +232,7 @@ const PlayerTable: React.FC<{
                           cursor: "pointer",
                           userSelect: "none",
                           "&:hover": {
-                            color: "#FFD700", // Gold color on hover
+                            color: "#FFD700",
                           },
                         }}
                         onClick={() => onPlayerClick(player)}
@@ -267,28 +251,38 @@ const PlayerTable: React.FC<{
                           <CheckCircleIcon sx={{ color: "#FFD700" }} />
                         </IconButton>
                       )}
+                      <Tooltip
+                        title={<PlayerDetails player={player} />}
+                        arrow
+                        placement="top"
+                        slotProps={{
+                          tooltip: {
+                            sx: {
+                              backgroundColor: "transparent",
+                              maxWidth: "none",
+                              boxShadow: "none",
+                              padding: 0,
+                            },
+                          },
+                        }}
+                      >
+                        <IconButton size="small">
+                          <AccountCircleIcon
+                            sx={{
+                              color:
+                                player.player.race === "Terran"
+                                  ? "#3b82f6"
+                                  : player.player.race === "Protoss"
+                                  ? "#10b981"
+                                  : player.player.race === "Zerg"
+                                  ? "#ef4444"
+                                  : "#f3f4f6",
+                            }}
+                          />
+                        </IconButton>
+                      </Tooltip>
                       <IconButton size="small">
-                        <AccountCircleIcon
-                          sx={{
-                            color:
-                              player.player.race === "Terran"
-                                ? "#3b82f6"
-                                : player.player.race === "Protoss"
-                                ? "#10b981"
-                                : player.player.race === "Zerg"
-                                ? "#ef4444"
-                                : "#f3f4f6",
-                          }}
-                          onMouseEnter={() => handleDetailsMouseEnter(player)}
-                          onMouseLeave={() => handleDetailsMouseLeave()}
-                        />
-                      </IconButton>
-                      <IconButton size="small">
-                        <ShowChartIcon
-                          sx={{ color: "#E3AF66" }}
-                          onMouseEnter={() => handleChartMouseEnter(player)}
-                          onMouseLeave={() => handleChartMouseLeave()}
-                        />
+                        <ShowChartIcon sx={{ color: "#E3AF66" }} />
                       </IconButton>
                     </Box>
                   </Box>
@@ -298,42 +292,6 @@ const PlayerTable: React.FC<{
           </Box>
         </Grid2>
       </Grid2>
-
-      {/* Details */}
-      {isDetailsOpen && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "80%",
-            maxWidth: 600,
-            bgcolor: "background.paper",
-            borderRadius: "8px",
-          }}
-        >
-          {hoveredPlayer && <PlayerDetails player={hoveredPlayer} />}
-        </Box>
-      )}
-
-      {/* Chart */}
-      {isChartOpen && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "80%",
-            maxWidth: 600,
-            bgcolor: "background.paper",
-            borderRadius: "8px",
-          }}
-        >
-          {hoveredPlayer && <PlayerChart player={hoveredPlayer} />}
-        </Box>
-      )}
     </Box>
   );
 };
