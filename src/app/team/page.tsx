@@ -12,7 +12,15 @@ const PlayerList: React.FC = () => {
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
   return (
-    <Box sx={{ padding: 4 }}>
+    <Box
+      sx={{
+        padding: 4,
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+      }}
+    >
+      {" "}
       <PlayerDraft selectedPlayers={selectedPlayers} />
       <PlayerTable players={playerList} />
     </Box>
