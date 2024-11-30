@@ -2,15 +2,18 @@
 
 import React, { useState } from "react";
 import { Typography, Box, IconButton, Grid2 } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
 import PlayerChart from "./PlayerChart";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ShowChart from "@mui/icons-material/ShowChart";
 
 const PlayerTable: React.FC<{
   players: PlayerSummary[];
-}> = ({ players }) => {
+  onPlayerClick: (player: PlayerSummary) => void;
+  selectedPlayers: PlayerSummary[];
+}> = ({ players, onPlayerClick, selectedPlayers }) => {
   const [hoveredPlayer, setHoveredPlayer] = useState<PlayerSummary | null>(
     null
   );
@@ -59,7 +62,6 @@ const PlayerTable: React.FC<{
         minHeight: "100vh",
       }}
     >
-      {/* 0-3 */}
       <Grid2
         container
         spacing={2}
@@ -92,74 +94,92 @@ const PlayerTable: React.FC<{
                   color: "#f3f4f6",
                   fontWeight: "bold",
                   marginBottom: 2,
+                  userSelect: "none",
                 }}
               >
                 {`Tier ${index}`}
               </Typography>
-              {groupedPlayers[tier].map((player, idx) => (
-                <Box
-                  key={idx}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingY: 1,
-                    borderBottom: "1px solid #52525b",
-                  }}
-                >
+              {groupedPlayers[tier].map((player, idx) => {
+                const isSelected = selectedPlayers.some(
+                  (selectedPlayer) =>
+                    selectedPlayer.player.handle === player.player.handle
+                );
+
+                return (
                   <Box
+                    key={idx}
                     sx={{
                       display: "flex",
-                      gap: 1,
+                      justifyContent: "space-between",
                       alignItems: "center",
+                      paddingY: 1,
+                      borderBottom: "1px solid #52525b",
                     }}
                   >
-                    <Typography
+                    <Box
                       sx={{
-                        color: "#f3f4f6",
-                        cursor: "pointer",
+                        display: "flex",
+                        gap: 1,
+                        alignItems: "center",
                       }}
                     >
-                      {player.player.handle}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      gap: 1,
-                    }}
-                  >
-                    <IconButton size="small">
-                      <AccountCircleIcon
+                      <Typography
                         sx={{
-                          color:
-                            player.player.race === "Terran"
-                              ? "#3b82f6"
-                              : player.player.race === "Protoss"
-                              ? "#10b981"
-                              : player.player.race === "Zerg"
-                              ? "#ef4444"
-                              : "#f3f4f6",
+                          color: "#f3f4f6",
+                          cursor: "pointer",
+                          userSelect: "none",
+                          "&:hover": {
+                            color: "#FFD700",
+                          },
                         }}
-                        onMouseEnter={() => handleDetailsMouseEnter(player)}
-                        onMouseLeave={() => handleDetailsMouseLeave()}
-                      />
-                    </IconButton>
-                    <IconButton size="small">
-                      <ShowChart
-                        sx={{ color: "#E3AF66" }}
-                        onMouseEnter={() => handleChartMouseEnter(player)}
-                        onMouseLeave={() => handleChartMouseLeave()}
-                      />
-                    </IconButton>
+                        onClick={() => onPlayerClick(player)}
+                      >
+                        {player.player.handle}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 1,
+                      }}
+                    >
+                      {isSelected && (
+                        <IconButton size="small">
+                          <CheckCircleIcon sx={{ color: "#FFD700" }} />
+                        </IconButton>
+                      )}
+                      <IconButton size="small">
+                        <AccountCircleIcon
+                          sx={{
+                            color:
+                              player.player.race === "Terran"
+                                ? "#3b82f6"
+                                : player.player.race === "Protoss"
+                                ? "#10b981"
+                                : player.player.race === "Zerg"
+                                ? "#ef4444"
+                                : "#f3f4f6",
+                          }}
+                          onMouseEnter={() => handleDetailsMouseEnter(player)}
+                          onMouseLeave={() => handleDetailsMouseLeave()}
+                        />
+                      </IconButton>
+                      <IconButton size="small">
+                        <ShowChartIcon
+                          sx={{ color: "#E3AF66" }}
+                          onMouseEnter={() => handleChartMouseEnter(player)}
+                          onMouseLeave={() => handleChartMouseLeave()}
+                        />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                );
+              })}
             </Box>
           </Grid2>
         ))}
 
-        {/* 4 */}
+        {/* Tier 4 */}
         <Grid2
           container
           sx={{
@@ -184,6 +204,7 @@ const PlayerTable: React.FC<{
                 color: "#f3f4f6",
                 fontWeight: "bold",
                 marginBottom: 2,
+                userSelect: "none",
               }}
             >
               Tier 4
@@ -195,67 +216,84 @@ const PlayerTable: React.FC<{
                 gap: 2,
               }}
             >
-              {groupedPlayers["tier4"].map((player, idx) => (
-                <Box
-                  key={idx}
-                  sx={{
-                    flex: "0 1 calc(33% - 8px)",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingY: 1,
-                    borderBottom: "1px solid #52525b",
-                    borderRight: "1px solid #52525b",
-                  }}
-                >
+              {groupedPlayers["tier4"].map((player, idx) => {
+                const isSelected = selectedPlayers.some(
+                  (selectedPlayer) =>
+                    selectedPlayer.player.handle === player.player.handle
+                );
+
+                return (
                   <Box
+                    key={idx}
                     sx={{
+                      flex: "0 1 calc(33% - 8px)",
                       display: "flex",
-                      gap: 1,
+                      justifyContent: "space-between",
                       alignItems: "center",
+                      paddingY: 1,
+                      borderBottom: "1px solid #52525b",
+                      borderRight: "1px solid #52525b",
                     }}
                   >
-                    <Typography
+                    <Box
                       sx={{
-                        color: "#f3f4f6",
-                        cursor: "pointer",
+                        display: "flex",
+                        gap: 1,
+                        alignItems: "center",
                       }}
                     >
-                      {player.player.handle}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      gap: 1,
-                    }}
-                  >
-                    <IconButton size="small">
-                      <AccountCircleIcon
+                      <Typography
                         sx={{
-                          color:
-                            player.player.race === "Terran"
-                              ? "#3b82f6"
-                              : player.player.race === "Protoss"
-                              ? "#10b981"
-                              : player.player.race === "Zerg"
-                              ? "#ef4444"
-                              : "#f3f4f6",
+                          color: "#f3f4f6",
+                          cursor: "pointer",
+                          userSelect: "none",
+                          "&:hover": {
+                            color: "#FFD700", // Gold color on hover
+                          },
                         }}
-                        onMouseEnter={() => handleDetailsMouseEnter(player)}
-                        onMouseLeave={() => handleDetailsMouseLeave()}
-                      />
-                    </IconButton>
-                    <IconButton size="small">
-                      <ShowChart
-                        sx={{ color: "#E3AF66" }}
-                        onMouseEnter={() => handleChartMouseEnter(player)}
-                        onMouseLeave={() => handleChartMouseLeave()}
-                      />
-                    </IconButton>
+                        onClick={() => onPlayerClick(player)}
+                      >
+                        {player.player.handle}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 1,
+                      }}
+                    >
+                      {isSelected && (
+                        <IconButton size="small">
+                          <CheckCircleIcon sx={{ color: "#FFD700" }} />
+                        </IconButton>
+                      )}
+                      <IconButton size="small">
+                        <AccountCircleIcon
+                          sx={{
+                            color:
+                              player.player.race === "Terran"
+                                ? "#3b82f6"
+                                : player.player.race === "Protoss"
+                                ? "#10b981"
+                                : player.player.race === "Zerg"
+                                ? "#ef4444"
+                                : "#f3f4f6",
+                          }}
+                          onMouseEnter={() => handleDetailsMouseEnter(player)}
+                          onMouseLeave={() => handleDetailsMouseLeave()}
+                        />
+                      </IconButton>
+                      <IconButton size="small">
+                        <ShowChartIcon
+                          sx={{ color: "#E3AF66" }}
+                          onMouseEnter={() => handleChartMouseEnter(player)}
+                          onMouseLeave={() => handleChartMouseLeave()}
+                        />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                );
+              })}
             </Box>
           </Box>
         </Grid2>
