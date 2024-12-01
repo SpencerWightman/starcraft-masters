@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import PlayerTable from "../../components/teams/PlayerListTable";
 import PlayerDraft from "../../components/teams/PlayerDraft";
+import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
+import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
 import playerSummariesJson from "data/draftData15-18.json";
 import { PlayerSummaries, PlayerSummary } from "../types/teamTypes";
 
@@ -13,41 +15,81 @@ const PlayerList: React.FC = () => {
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
+  const [viewMode, setViewMode] = useState<"details" | "chart">("details");
+
   const addPlayerToDraft = (player: PlayerSummary) => {
-    const tierCounts = selectedPlayers.reduce((acc, p) => {
+    const selectedPlayersInTier = selectedPlayers.reduce((acc, p) => {
       acc[p.tier] = (acc[p.tier] || 0) + 1;
       return acc;
     }, {} as Record<number, number>);
 
-    // Check if player selected
+    const maxSlots: Record<number, number> = {
+      0: 2,
+      1: 5,
+      2: 8,
+      3: 11,
+      4: 14,
+    };
+
+    const maxSlotsTier0: Record<number, number> = {
+      0: 2,
+      1: 3,
+      2: 3,
+      3: 3,
+      4: 3,
+    };
+
+    const maxPlayers = 14;
+
     const isAlreadySelected = selectedPlayers.some(
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
 
     if (isAlreadySelected) {
-      // Remove player if selected
       setSelectedPlayers((prev) =>
         prev.filter(
           (selectedPlayer) =>
             selectedPlayer.player.handle !== player.player.handle
         )
       );
-    } else {
-      // Add player if constraints are met
-      if (
-        // Tier selection limits
-        selectedPlayers.length >= 14 ||
-        (player.tier === 0 && (tierCounts[0] || 0) >= 2) ||
-        (player.tier === 1 && (tierCounts[1] || 0) >= 3) ||
-        (player.tier === 2 && (tierCounts[2] || 0) >= 3) ||
-        (player.tier === 3 && (tierCounts[3] || 0) >= 7) ||
-        (player.tier === 4 && (tierCounts[4] || 0) >= 14)
-      ) {
-        return;
+      return;
+    }
+
+    const totalSelectedPlayers = selectedPlayers.length;
+
+    if (totalSelectedPlayers >= maxPlayers) {
+      return;
+    }
+
+    const playerTier = player.tier;
+
+    if (playerTier === 0) {
+      const selectedTiers = selectedPlayers.map((p) => p.tier);
+      const lowestTier = Math.min(...selectedTiers, 0);
+      const highestTier = Math.max(...selectedTiers, 0);
+
+      let totalAvailableSlots = 0;
+      for (let i = lowestTier; i <= highestTier; i++) {
+        totalAvailableSlots += maxSlotsTier0[i];
       }
 
-      setSelectedPlayers((prev) => [...prev, player]);
+      console.log(totalSelectedPlayers);
+
+      if (totalSelectedPlayers >= totalAvailableSlots) {
+        return;
+      }
+    } else {
+      let cumulativeSelectedPlayers = 0;
+      for (let i = 0; i <= playerTier; i++) {
+        cumulativeSelectedPlayers += selectedPlayersInTier[i] || 0;
+      }
+
+      if (cumulativeSelectedPlayers >= maxSlots[playerTier]) {
+        return;
+      }
     }
+
+    setSelectedPlayers((prev) => [...prev, player]);
   };
 
   return (
@@ -58,7 +100,86 @@ const PlayerList: React.FC = () => {
         gap: 2,
       }}
     >
-      <PlayerDraft selectedPlayers={selectedPlayers} />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            md: "row",
+          },
+          gap: 2,
+        }}
+      >
+        <Box
+          sx={{
+            flex: {
+              xs: "1 1 100%",
+              md: "3 1 60%",
+            },
+          }}
+        >
+          <PlayerDraft selectedPlayers={selectedPlayers} />
+        </Box>
+
+        <Box
+          sx={{
+            flex: {
+              xs: "1 1 100%",
+              md: "2 1 40%",
+            },
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
+          {/* Toggle */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 1,
+            }}
+          >
+            <Button
+              variant={viewMode === "details" ? "contained" : "outlined"}
+              onClick={() => setViewMode("details")}
+              sx={{
+                backgroundColor:
+                  viewMode === "details" ? "#10b981" : "transparent",
+                color: viewMode === "details" ? "#fff" : "#10b981",
+                "&:hover": {
+                  backgroundColor: "#10b981",
+                  color: "#fff",
+                },
+              }}
+            >
+              Details
+            </Button>
+            <Button
+              variant={viewMode === "chart" ? "contained" : "outlined"}
+              onClick={() => setViewMode("chart")}
+              sx={{
+                backgroundColor:
+                  viewMode === "chart" ? "#10b981" : "transparent",
+                color: viewMode === "chart" ? "#fff" : "#10b981",
+                "&:hover": {
+                  backgroundColor: "#10b981",
+                  color: "#fff",
+                },
+              }}
+            >
+              Chart
+            </Button>
+          </Box>
+
+          {/* Toggle Components */}
+          {viewMode === "details" ? (
+            <PlayerDraftDetails selectedPlayers={selectedPlayers} />
+          ) : (
+            <PlayerDraftChart />
+          )}
+        </Box>
+      </Box>
       <PlayerTable
         players={playerList}
         onPlayerClick={addPlayerToDraft}

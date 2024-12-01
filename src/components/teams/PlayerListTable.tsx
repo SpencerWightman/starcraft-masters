@@ -176,13 +176,14 @@ const PlayerTable: React.FC<{
                       flex: {
                         xs: "0 1 100%",
                         sm: "0 1 calc(50% - 16px)",
-                        md: "0 1 calc(25% - 16px)",
+                        md: "0 1 calc(20% - 16px)",
                       },
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
                       paddingY: 1,
                       borderBottom: "1px solid #52525b",
+                      borderRight: "1px solid #52525b",
                     }}
                   >
                     <Typography

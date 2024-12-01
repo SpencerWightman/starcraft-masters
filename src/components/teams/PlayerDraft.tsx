@@ -13,13 +13,7 @@ const PlayerDraft: React.FC<{
           padding: 2,
           backgroundColor: "#374151",
           borderRadius: "8px",
-          width: {
-            xs: "100%",
-            md: "55%",
-          },
-          marginLeft: 0,
-          display: "flex",
-          flexDirection: "column",
+          width: "100%",
         }}
       >
         <Typography
