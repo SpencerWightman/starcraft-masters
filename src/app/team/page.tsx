@@ -53,10 +53,9 @@ const PlayerList: React.FC = () => {
   return (
     <Box
       sx={{
-        padding: 4,
         display: "flex",
         flexDirection: "column",
-        gap: 4,
+        gap: 2,
       }}
     >
       <PlayerDraft selectedPlayers={selectedPlayers} />

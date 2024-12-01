@@ -8,23 +8,44 @@ const PlayerDraft: React.FC<{
   return (
     <Box>
       <Grid2
+        container
         sx={{
           padding: 2,
           backgroundColor: "#374151",
           borderRadius: "8px",
+          width: {
+            xs: "100%",
+            md: "55%",
+          },
+          marginLeft: 0,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <Typography
           variant="h6"
-          sx={{ color: "#f3f4f6", fontWeight: "bold", marginBottom: 2 }}
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            fontSize: 28,
+            marginBottom: 2,
+            userSelect: "none",
+            lineHeight: 1,
+            width: "100%",
+          }}
         >
           Team
         </Typography>
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "repeat(7, 1fr)",
             gap: 2,
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(7, 1fr)",
+            },
+            gridTemplateRows: "auto",
+            width: "100%",
           }}
         >
           {[...Array(14)].map((_, slotIndex) => {
@@ -36,9 +57,7 @@ const PlayerDraft: React.FC<{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  gap: 2,
                   backgroundColor: "#374151",
-                  padding: 2,
                   borderRadius: "8px",
                   minHeight: "80px",
                 }}
@@ -46,7 +65,13 @@ const PlayerDraft: React.FC<{
                 {player ? (
                   <Typography
                     variant="h6"
-                    sx={{ color: "#f3f4f6", fontWeight: "bold" }}
+                    sx={{
+                      color: "#f3f4f6",
+                      fontWeight: "bold",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                    }}
                   >
                     {player.player.handle}
                   </Typography>

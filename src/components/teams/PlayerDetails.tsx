@@ -35,6 +35,7 @@ const PlayerDetails: React.FC<{
         flexDirection: "column",
         alignItems: "center",
         gap: 1,
+        userSelect: "none",
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -49,13 +50,18 @@ const PlayerDetails: React.FC<{
         <Tooltip title="Appearances" arrow>
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
             <Star sx={{ color: "#10b981" }} />
-            <Typography variant="body2" sx={{ color: "#C0C0C0" }}>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "#C0C0C0",
+              }}
+            >
               {player.appearances}
             </Typography>
           </Box>
         </Tooltip>
 
-        <Tooltip title="Champion" arrow placement="right">
+        <Tooltip title="Champion" arrow placement="bottom">
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
             <EmojiEvents sx={{ color: "#FFD700" }} />
             <Typography variant="body2" sx={{ color: "#FFD700" }}>
@@ -63,7 +69,7 @@ const PlayerDetails: React.FC<{
             </Typography>
           </Box>
         </Tooltip>
-        <Tooltip title="Runner-Up" arrow placement="right">
+        <Tooltip title="Runner-Up" arrow placement="bottom">
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
             <EmojiEvents sx={{ color: "#b0bec5" }} />
             <Typography variant="body2" sx={{ color: "#f3f4f6" }}>
@@ -71,7 +77,7 @@ const PlayerDetails: React.FC<{
             </Typography>
           </Box>
         </Tooltip>
-        <Tooltip title="RO4" arrow placement="right">
+        <Tooltip title="RO4" arrow placement="bottom">
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
             <EmojiEvents sx={{ color: "#CD7F32" }} />
             <Typography variant="body2" sx={{ color: "#CD7F32" }}>
@@ -88,23 +94,49 @@ const PlayerDetails: React.FC<{
       sx={{
         backgroundColor: "transparent",
         width: "100%",
+        userSelect: "none",
       }}
     >
       <TableHead>
         <TableRow>
-          <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
+          <TableCell
+            sx={{
+              color: "#f3f4f6",
+              fontSize: 18,
+            }}
+          >
             Matchup
           </TableCell>
-          <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
+          <TableCell
+            sx={{
+              color: "#f3f4f6",
+              fontSize: 18,
+            }}
+          >
             Games
           </TableCell>
-          <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
+          <TableCell
+            sx={{
+              color: "#f3f4f6",
+              fontSize: 18,
+            }}
+          >
             Wins
           </TableCell>
-          <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
+          <TableCell
+            sx={{
+              color: "#f3f4f6",
+              fontSize: 18,
+            }}
+          >
             Losses
           </TableCell>
-          <TableCell sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
+          <TableCell
+            sx={{
+              color: "#f3f4f6",
+              fontSize: 18,
+            }}
+          >
             Win Rate
           </TableCell>
         </TableRow>

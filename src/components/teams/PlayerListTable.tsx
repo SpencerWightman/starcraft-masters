@@ -1,13 +1,10 @@
-"use client";
-
 import React from "react";
-import { Typography, Box, IconButton, Grid2, Tooltip } from "@mui/material";
+import { Typography, Box, IconButton, Tooltip, Grid2 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
-// import PlayerChart from "./PlayerChart";
 
 const PlayerTable: React.FC<{
   players: PlayerSummary[];
@@ -28,29 +25,21 @@ const PlayerTable: React.FC<{
   );
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <Grid2
-        container
-        spacing={2}
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+    <Box>
+      <Grid2 container spacing={2}>
+        {/* Tiers 0-3 */}
         {["tier0", "tier1", "tier2", "tier3"].map((tier, index) => (
           <Grid2
             key={index}
+            size={{
+              xs: 12,
+              sm: 6,
+              md: 3,
+            }}
             sx={{
-              flexGrow: 1,
-              flexBasis: "24%",
-              maxWidth: "24%",
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
             }}
           >
             <Box
@@ -59,16 +48,19 @@ const PlayerTable: React.FC<{
                 backgroundColor: "#374151",
                 borderRadius: "8px",
                 textAlign: "left",
-                height: "100%",
+                userSelect: "none",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <Typography
                 variant="h6"
                 sx={{
-                  color: "#f3f4f6",
-                  fontWeight: "bold",
+                  color: "rgba(243, 244, 246, 0.6)",
+                  fontSize: 28,
                   marginBottom: 2,
-                  userSelect: "none",
+                  lineHeight: 1,
                 }}
               >
                 {`Tier ${index}`}
@@ -90,33 +82,19 @@ const PlayerTable: React.FC<{
                       borderBottom: "1px solid #52525b",
                     }}
                   >
-                    <Box
+                    <Typography
                       sx={{
-                        display: "flex",
-                        gap: 1,
-                        alignItems: "center",
+                        color: "#f3f4f6",
+                        cursor: "pointer",
+                        "&:hover": {
+                          color: "#FFD700",
+                        },
                       }}
+                      onClick={() => onPlayerClick(player)}
                     >
-                      <Typography
-                        sx={{
-                          color: "#f3f4f6",
-                          cursor: "pointer",
-                          userSelect: "none",
-                          "&:hover": {
-                            color: "#FFD700",
-                          },
-                        }}
-                        onClick={() => onPlayerClick(player)}
-                      >
-                        {player.player.handle}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        gap: 1,
-                      }}
-                    >
+                      {player.player.handle}
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: 1 }}>
                       {isSelected && (
                         <IconButton size="small">
                           <CheckCircleIcon sx={{ color: "#FFD700" }} />
@@ -126,16 +104,6 @@ const PlayerTable: React.FC<{
                         title={<PlayerDetails player={player} />}
                         arrow
                         placement="top"
-                        slotProps={{
-                          tooltip: {
-                            sx: {
-                              backgroundColor: "transparent",
-                              boxShadow: "none",
-                              maxWidth: "none",
-                              padding: 0,
-                            },
-                          },
-                        }}
                       >
                         <IconButton size="small">
                           <AccountCircleIcon
@@ -165,13 +133,8 @@ const PlayerTable: React.FC<{
 
         {/* Tier 4 */}
         <Grid2
-          container
-          sx={{
-            display: "flex",
-            justifyContent: "left",
-            flexGrow: 1,
-            flexBasis: "80%",
-            maxWidth: "80%",
+          size={{
+            xs: 12,
           }}
         >
           <Box
@@ -185,10 +148,9 @@ const PlayerTable: React.FC<{
             <Typography
               variant="h6"
               sx={{
-                color: "#f3f4f6",
-                fontWeight: "bold",
+                color: "rgba(243, 244, 246, 0.6)",
+                fontSize: 28,
                 marginBottom: 2,
-                userSelect: "none",
               }}
             >
               Tier 4
@@ -198,6 +160,7 @@ const PlayerTable: React.FC<{
                 display: "flex",
                 flexWrap: "wrap",
                 gap: 2,
+                justifyContent: "flex-start",
               }}
             >
               {groupedPlayers["tier4"].map((player, idx) => {
@@ -210,42 +173,31 @@ const PlayerTable: React.FC<{
                   <Box
                     key={idx}
                     sx={{
-                      flex: "0 1 calc(33% - 8px)",
+                      flex: {
+                        xs: "0 1 100%",
+                        sm: "0 1 calc(50% - 16px)",
+                        md: "0 1 calc(25% - 16px)",
+                      },
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
                       paddingY: 1,
                       borderBottom: "1px solid #52525b",
-                      borderRight: "1px solid #52525b",
                     }}
                   >
-                    <Box
+                    <Typography
                       sx={{
-                        display: "flex",
-                        gap: 1,
-                        alignItems: "center",
+                        color: "#f3f4f6",
+                        cursor: "pointer",
+                        "&:hover": {
+                          color: "#FFD700",
+                        },
                       }}
+                      onClick={() => onPlayerClick(player)}
                     >
-                      <Typography
-                        sx={{
-                          color: "#f3f4f6",
-                          cursor: "pointer",
-                          userSelect: "none",
-                          "&:hover": {
-                            color: "#FFD700",
-                          },
-                        }}
-                        onClick={() => onPlayerClick(player)}
-                      >
-                        {player.player.handle}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        gap: 1,
-                      }}
-                    >
+                      {player.player.handle}
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: 1 }}>
                       {isSelected && (
                         <IconButton size="small">
                           <CheckCircleIcon sx={{ color: "#FFD700" }} />
@@ -255,16 +207,6 @@ const PlayerTable: React.FC<{
                         title={<PlayerDetails player={player} />}
                         arrow
                         placement="top"
-                        slotProps={{
-                          tooltip: {
-                            sx: {
-                              backgroundColor: "transparent",
-                              maxWidth: "none",
-                              boxShadow: "none",
-                              padding: 0,
-                            },
-                          },
-                        }}
                       >
                         <IconButton size="small">
                           <AccountCircleIcon
