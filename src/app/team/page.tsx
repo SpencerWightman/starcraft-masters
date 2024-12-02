@@ -31,14 +31,6 @@ const PlayerList: React.FC = () => {
       4: 14,
     };
 
-    const maxSlotsTier0: Record<number, number> = {
-      0: 2,
-      1: 3,
-      2: 3,
-      3: 3,
-      4: 3,
-    };
-
     const maxPlayers = 14;
 
     const isAlreadySelected = selectedPlayers.some(
@@ -62,25 +54,25 @@ const PlayerList: React.FC = () => {
     }
 
     const playerTier = player.tier;
+    const selectedTiers = selectedPlayers.map((p) => p.tier);
+    let lowestTier = Math.min(...selectedTiers);
+    lowestTier = lowestTier === 0 ? 1 : lowestTier;
 
     if (playerTier === 0) {
-      const selectedTiers = selectedPlayers.map((p) => p.tier);
-      const lowestTier = Math.min(...selectedTiers, 0);
-      const highestTier = Math.max(...selectedTiers, 0);
-
-      let totalAvailableSlots = 0;
-      for (let i = lowestTier; i <= highestTier; i++) {
-        totalAvailableSlots += maxSlotsTier0[i];
+      let cumulativeSelectedPlayers = 0;
+      for (let i = lowestTier; i >= 0; i--) {
+        cumulativeSelectedPlayers += selectedPlayersInTier[i] || 0;
       }
 
-      console.log(totalSelectedPlayers);
-
-      if (totalSelectedPlayers >= totalAvailableSlots) {
+      if (
+        cumulativeSelectedPlayers >= maxSlots[lowestTier] ||
+        selectedPlayersInTier[0] === 2
+      ) {
         return;
       }
     } else {
       let cumulativeSelectedPlayers = 0;
-      for (let i = 0; i <= playerTier; i++) {
+      for (let i = playerTier; i >= 0; i--) {
         cumulativeSelectedPlayers += selectedPlayersInTier[i] || 0;
       }
 
