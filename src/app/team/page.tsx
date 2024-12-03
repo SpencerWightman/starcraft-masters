@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import PlayerTable from "../../components/teams/PlayerListTable";
 import PlayerDraft from "../../components/teams/PlayerDraft";
@@ -16,23 +16,25 @@ const PlayerList: React.FC = () => {
 
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
   const [viewMode, setViewMode] = useState<"details" | "chart">("details");
+  const [tierMaxSlots, setTierMaxSlots] = useState<Record<number, number>>({
+    0: 2,
+    1: 5,
+    2: 8,
+    3: 11,
+    4: 14,
+  });
+
+  const groupedPlayers = playerList.reduce(
+    (acc, player) => {
+      if (acc[`${player.tier}`]) {
+        acc[`${player.tier}`].push(player);
+      }
+      return acc;
+    },
+    { 0: [], 1: [], 2: [], 3: [], 4: [] } as Record<string, PlayerSummary[]>
+  );
 
   const addPlayerToDraft = (player: PlayerSummary) => {
-    const selectedPlayersInTier = selectedPlayers.reduce((acc, p) => {
-      acc[p.tier] = (acc[p.tier] || 0) + 1;
-      return acc;
-    }, {} as Record<number, number>);
-
-    const maxSlots: Record<number, number> = {
-      0: 2,
-      1: 5,
-      2: 8,
-      3: 11,
-      4: 14,
-    };
-
-    const maxPlayers = 14;
-
     const isAlreadySelected = selectedPlayers.some(
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
@@ -44,43 +46,124 @@ const PlayerList: React.FC = () => {
             selectedPlayer.player.handle !== player.player.handle
         )
       );
+      setTierMaxSlots((prev) => {
+        const updatedSlots = { ...prev };
+        Object.keys(updatedSlots).forEach((key) => {
+          const tier = parseInt(key, 10);
+          if (tier >= player.tier) {
+            updatedSlots[tier] += 1;
+          }
+        });
+        return updatedSlots;
+      });
       return;
     }
 
-    const totalSelectedPlayers = selectedPlayers.length;
+    const maxSlots: Record<number, number> = {
+      0: 2,
+      1: 5,
+      2: 8,
+      3: 11,
+      4: 14,
+    };
 
-    if (totalSelectedPlayers >= maxPlayers) {
-      return;
-    }
+    if (tierMaxSlots[player.tier] === 0) return;
 
-    const playerTier = player.tier;
-    const selectedTiers = selectedPlayers.map((p) => p.tier);
-    let lowestTier = Math.min(...selectedTiers);
-    lowestTier = lowestTier === 0 ? 1 : lowestTier;
+    setTierMaxSlots((prev) => {
+      const updatedSlots = { ...prev };
 
-    if (playerTier === 0) {
-      let cumulativeSelectedPlayers = 0;
-      for (let i = lowestTier; i >= 0; i--) {
-        cumulativeSelectedPlayers += selectedPlayersInTier[i] || 0;
+      const lowerTiers = [];
+      for (let tier = player.tier - 1; tier >= 0; tier--) {
+        lowerTiers.push({ tier, value: updatedSlots[tier] });
       }
 
-      if (
-        cumulativeSelectedPlayers >= maxSlots[lowestTier] ||
-        selectedPlayersInTier[0] === 2
-      ) {
-        return;
-      }
-    } else {
-      let cumulativeSelectedPlayers = 0;
-      for (let i = playerTier; i >= 0; i--) {
-        cumulativeSelectedPlayers += selectedPlayersInTier[i] || 0;
+      type ValueGroups = { [key: number]: number[] };
+
+      const valueGroups = lowerTiers.reduce<ValueGroups>(
+        (groups, { tier, value }) => {
+          if (!groups[value]) {
+            groups[value] = [];
+          }
+          groups[value].push(tier);
+          return groups;
+        },
+        {}
+      );
+
+      let shouldReturn = false;
+
+      Object.values(valueGroups).forEach((tiers) => {
+        if (tiers.length > 1) {
+          shouldReturn = true;
+          tiers.forEach((tier) => {
+            updatedSlots[tier] = Math.max(updatedSlots[tier] - 1, 0);
+          });
+        }
+      });
+
+      if (shouldReturn) {
+        return updatedSlots;
       }
 
-      if (cumulativeSelectedPlayers >= maxSlots[playerTier]) {
-        return;
+      if (updatedSlots[player.tier] <= maxSlots[player.tier - 4]) {
+        updatedSlots[player.tier - 1] = Math.max(
+          updatedSlots[player.tier - 1] - 1,
+          0
+        );
+        updatedSlots[player.tier - 2] = Math.max(
+          updatedSlots[player.tier - 2] - 1,
+          0
+        );
+        updatedSlots[player.tier - 3] = Math.max(
+          updatedSlots[player.tier - 3] - 1,
+          0
+        );
+        updatedSlots[player.tier - 4] = Math.max(
+          updatedSlots[player.tier - 4] - 1,
+          0
+        );
+      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 3]) {
+        updatedSlots[player.tier - 1] = Math.max(
+          updatedSlots[player.tier - 1] - 1,
+          0
+        );
+        updatedSlots[player.tier - 2] = Math.max(
+          updatedSlots[player.tier - 2] - 1,
+          0
+        );
+        updatedSlots[player.tier - 3] = Math.max(
+          updatedSlots[player.tier - 3] - 1,
+          0
+        );
+      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 2]) {
+        updatedSlots[player.tier - 1] = Math.max(
+          updatedSlots[player.tier - 1] - 1,
+          0
+        );
+        updatedSlots[player.tier - 2] = Math.max(
+          updatedSlots[player.tier - 2] - 1,
+          0
+        );
+      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 1]) {
+        updatedSlots[player.tier - 1] = Math.max(
+          updatedSlots[player.tier - 1] - 1,
+          0
+        );
       }
-    }
 
+      return updatedSlots;
+    });
+
+    setTierMaxSlots((prev) => {
+      const updatedSlots = { ...prev };
+      Object.keys(updatedSlots).forEach((key) => {
+        const tier = parseInt(key, 10);
+        if (tier >= player.tier) {
+          updatedSlots[tier] = Math.max(0, updatedSlots[tier] - 1);
+        }
+      });
+      return updatedSlots;
+    });
     setSelectedPlayers((prev) => [...prev, player]);
   };
 
@@ -173,9 +256,10 @@ const PlayerList: React.FC = () => {
         </Box>
       </Box>
       <PlayerTable
-        players={playerList}
+        groupedPlayers={groupedPlayers}
         onPlayerClick={addPlayerToDraft}
         selectedPlayers={selectedPlayers}
+        maxSlots={tierMaxSlots}
       />
     </Box>
   );
