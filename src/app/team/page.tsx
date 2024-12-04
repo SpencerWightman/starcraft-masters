@@ -262,10 +262,12 @@ const PlayerList: React.FC = () => {
     <Box
       sx={{
         display: "flex",
+        alignContent: "center",
         flexDirection: {
           xs: "column",
           md: "row",
         },
+        marginRight: "0.8rem",
         gap: 2,
       }}
     >

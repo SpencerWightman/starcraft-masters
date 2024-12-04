@@ -149,7 +149,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 flex: 3,
                 backgroundColor: "transparent",
                 borderRadius: "8px",
-                padding: "1rem",
               }}
             >
               {children}

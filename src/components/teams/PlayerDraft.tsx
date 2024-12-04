@@ -35,6 +35,7 @@ const PlayerDraft: React.FC<{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              marginBottom: 2,
             }}
           >
             <Typography
@@ -90,7 +91,7 @@ const PlayerDraft: React.FC<{
                   backgroundColor: "#374151",
                   borderRadius: "8px",
                   marginBottom: 2,
-                  minHeight: "30px",
+                  height: "10px",
                   userSelect: "none",
                 }}
               >
@@ -121,7 +122,7 @@ const PlayerDraft: React.FC<{
               justifyContent: "center",
               backgroundColor: "#374151",
               borderRadius: "8px",
-              minHeight: "30px",
+              height: "10px",
               userSelect: "none",
               marginBottom: 2,
             }}
