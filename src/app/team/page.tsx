@@ -39,6 +39,14 @@ const PlayerList: React.FC = () => {
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
 
+    const defaultSlots: Record<number, number> = {
+      0: 2,
+      1: 5,
+      2: 8,
+      3: 11,
+      4: 14,
+    };
+
     if (isAlreadySelected) {
       setSelectedPlayers((prev) =>
         prev.filter(
@@ -46,6 +54,94 @@ const PlayerList: React.FC = () => {
             selectedPlayer.player.handle !== player.player.handle
         )
       );
+      setTierMaxSlots((prev) => {
+        const updatedSlots = { ...prev };
+
+        const lowerTiers = [];
+        for (let tier = player.tier - 1; tier >= 0; tier--) {
+          lowerTiers.push({ tier, value: updatedSlots[tier] });
+        }
+
+        type ValueGroups = { [key: number]: number[] };
+
+        const valueGroups = lowerTiers.reduce<ValueGroups>(
+          (groups, { tier, value }) => {
+            if (!groups[value]) {
+              groups[value] = [];
+            }
+            groups[value].push(tier);
+            return groups;
+          },
+          {}
+        );
+
+        let shouldReturn = false;
+
+        Object.values(valueGroups).forEach((tiers) => {
+          if (tiers.length > 1) {
+            shouldReturn = true;
+            tiers.forEach((tier) => {
+              updatedSlots[tier] = Math.min(
+                updatedSlots[tier] + 1,
+                defaultSlots[tier]
+              );
+            });
+          }
+        });
+
+        if (shouldReturn) {
+          return updatedSlots;
+        }
+
+        if (updatedSlots[player.tier] <= maxSlots[player.tier - 4]) {
+          updatedSlots[player.tier - 1] = Math.min(
+            updatedSlots[player.tier - 1] + 1,
+            defaultSlots[player.tier - 1]
+          );
+          updatedSlots[player.tier - 2] = Math.min(
+            updatedSlots[player.tier - 2] + 1,
+            defaultSlots[player.tier - 2]
+          );
+          updatedSlots[player.tier - 3] = Math.min(
+            updatedSlots[player.tier - 3] + 1,
+            defaultSlots[player.tier - 3]
+          );
+          updatedSlots[player.tier - 4] = Math.min(
+            updatedSlots[player.tier - 4] + 1,
+            defaultSlots[player.tier - 4]
+          );
+        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 3]) {
+          updatedSlots[player.tier - 1] = Math.min(
+            updatedSlots[player.tier - 1] + 1,
+            defaultSlots[player.tier - 1]
+          );
+          updatedSlots[player.tier - 2] = Math.min(
+            updatedSlots[player.tier - 2] + 1,
+            defaultSlots[player.tier - 2]
+          );
+          updatedSlots[player.tier - 3] = Math.min(
+            updatedSlots[player.tier - 3] + 1,
+            defaultSlots[player.tier - 3]
+          );
+        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 2]) {
+          updatedSlots[player.tier - 1] = Math.min(
+            updatedSlots[player.tier - 1] + 1,
+            defaultSlots[player.tier - 1]
+          );
+          updatedSlots[player.tier - 2] = Math.min(
+            updatedSlots[player.tier - 2] + 1,
+            defaultSlots[player.tier - 2]
+          );
+        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 1]) {
+          updatedSlots[player.tier - 1] = Math.min(
+            updatedSlots[player.tier - 1] + 1,
+            defaultSlots[player.tier - 1]
+          );
+        }
+
+        return updatedSlots;
+      });
+
       setTierMaxSlots((prev) => {
         const updatedSlots = { ...prev };
         Object.keys(updatedSlots).forEach((key) => {
@@ -56,6 +152,7 @@ const PlayerList: React.FC = () => {
         });
         return updatedSlots;
       });
+
       return;
     }
 

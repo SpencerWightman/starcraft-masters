@@ -81,7 +81,11 @@ const PlayerTable: React.FC<{
                       textAlign: "right",
                     }}
                   >
-                    {`${selectedCount} / ${maxSlots[index]}`}
+                    {`${selectedCount} ${
+                      maxSlots[index] <= groupedPlayers[tier].length
+                        ? `/ ${maxSlots[index]}`
+                        : `/ ${groupedPlayers[tier].length}`
+                    }`}{" "}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
