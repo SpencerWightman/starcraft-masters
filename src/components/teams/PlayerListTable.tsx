@@ -127,6 +127,16 @@ const PlayerTable: React.FC<{
                           title={<PlayerDetails player={player} />}
                           arrow
                           placement="top"
+                          slotProps={{
+                            tooltip: {
+                              sx: {
+                                backgroundColor: "transparent",
+                                maxWidth: "none",
+                                boxShadow: "none",
+                                padding: 0,
+                              },
+                            },
+                          }}
                         >
                           <IconButton size="small">
                             <AccountCircleIcon
@@ -255,6 +265,16 @@ const PlayerTable: React.FC<{
                         title={<PlayerDetails player={player} />}
                         arrow
                         placement="top"
+                        slotProps={{
+                          tooltip: {
+                            sx: {
+                              backgroundColor: "transparent",
+                              maxWidth: "none",
+                              boxShadow: "none",
+                              padding: 0,
+                            },
+                          },
+                        }}
                       >
                         <IconButton size="small">
                           <AccountCircleIcon

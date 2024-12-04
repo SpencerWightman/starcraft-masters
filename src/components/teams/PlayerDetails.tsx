@@ -16,7 +16,14 @@ import { PlayerSummary } from "@/app/types/teamTypes";
 const PlayerDetails: React.FC<{
   player: PlayerSummary;
 }> = ({ player }) => (
-  <Box>
+  <Paper
+    elevation={3}
+    sx={{
+      padding: 2,
+      backgroundColor: "#1e293b",
+      borderRadius: "8px",
+    }}
+  >
     {/* Name, Appearances, Achievements */}
     <Box
       sx={{
@@ -24,6 +31,7 @@ const PlayerDetails: React.FC<{
         alignItems: "center",
         gap: 1,
         backgroundColor: "transparent",
+        userSelect: "none",
       }}
     >
       <Tooltip title={player.player.handle} arrow>
@@ -136,7 +144,7 @@ const PlayerDetails: React.FC<{
         ))}
       </TableBody>
     </Table>
-  </Box>
+  </Paper>
 );
 
 export default PlayerDetails;
