@@ -5,7 +5,7 @@ import {
   TableBody,
   TableCell,
   TableRow,
-  Typography,
+  Box,
   TableHead,
 } from "@mui/material";
 import { PlayerSummary } from "@/app/types/teamTypes";
@@ -34,8 +34,7 @@ const PlayerDraftDetails: React.FC<{
   });
 
   return (
-    <Paper
-      elevation={3}
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -62,7 +61,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 18,
+                fontSize: 14,
               }}
             >
               Matchup
@@ -70,7 +69,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 18,
+                fontSize: 14,
               }}
             >
               Games
@@ -78,7 +77,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 18,
+                fontSize: 14,
               }}
             >
               Wins
@@ -86,7 +85,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 18,
+                fontSize: 14,
               }}
             >
               Losses
@@ -94,7 +93,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 18,
+                fontSize: 14,
               }}
             >
               Win Rate
@@ -119,7 +118,7 @@ const PlayerDraftDetails: React.FC<{
           })}
         </TableBody>
       </Table>
-    </Paper>
+    </Box>
   );
 };
 

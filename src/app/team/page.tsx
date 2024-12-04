@@ -15,13 +15,13 @@ const PlayerList: React.FC = () => {
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
-  const [viewMode, setViewMode] = useState<"details" | "chart">("details");
+  const [wildCardPlayer, setWildCardPlayer] = useState<PlayerSummary>();
   const [tierMaxSlots, setTierMaxSlots] = useState<Record<number, number>>({
     0: 2,
     1: 5,
     2: 8,
     3: 11,
-    4: 14,
+    4: 15,
   });
 
   const groupedPlayers = playerList.reduce(
@@ -39,12 +39,14 @@ const PlayerList: React.FC = () => {
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
 
+    // if (tierMaxSlots[player.tier] === 0) return;
+
     const defaultSlots: Record<number, number> = {
       0: 2,
       1: 5,
       2: 8,
       3: 11,
-      4: 14,
+      4: 15,
     };
 
     if (isAlreadySelected) {
@@ -93,7 +95,7 @@ const PlayerList: React.FC = () => {
           return updatedSlots;
         }
 
-        if (updatedSlots[player.tier] <= maxSlots[player.tier - 4]) {
+        if (updatedSlots[player.tier] <= defaultSlots[player.tier - 4]) {
           updatedSlots[player.tier - 1] = Math.min(
             updatedSlots[player.tier - 1] + 1,
             defaultSlots[player.tier - 1]
@@ -110,7 +112,7 @@ const PlayerList: React.FC = () => {
             updatedSlots[player.tier - 4] + 1,
             defaultSlots[player.tier - 4]
           );
-        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 3]) {
+        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 3]) {
           updatedSlots[player.tier - 1] = Math.min(
             updatedSlots[player.tier - 1] + 1,
             defaultSlots[player.tier - 1]
@@ -123,7 +125,7 @@ const PlayerList: React.FC = () => {
             updatedSlots[player.tier - 3] + 1,
             defaultSlots[player.tier - 3]
           );
-        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 2]) {
+        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 2]) {
           updatedSlots[player.tier - 1] = Math.min(
             updatedSlots[player.tier - 1] + 1,
             defaultSlots[player.tier - 1]
@@ -132,7 +134,7 @@ const PlayerList: React.FC = () => {
             updatedSlots[player.tier - 2] + 1,
             defaultSlots[player.tier - 2]
           );
-        } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 1]) {
+        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 1]) {
           updatedSlots[player.tier - 1] = Math.min(
             updatedSlots[player.tier - 1] + 1,
             defaultSlots[player.tier - 1]
@@ -155,14 +157,6 @@ const PlayerList: React.FC = () => {
 
       return;
     }
-
-    const maxSlots: Record<number, number> = {
-      0: 2,
-      1: 5,
-      2: 8,
-      3: 11,
-      4: 14,
-    };
 
     if (tierMaxSlots[player.tier] === 0) return;
 
@@ -202,7 +196,7 @@ const PlayerList: React.FC = () => {
         return updatedSlots;
       }
 
-      if (updatedSlots[player.tier] <= maxSlots[player.tier - 4]) {
+      if (updatedSlots[player.tier] <= defaultSlots[player.tier - 4]) {
         updatedSlots[player.tier - 1] = Math.max(
           updatedSlots[player.tier - 1] - 1,
           0
@@ -219,7 +213,7 @@ const PlayerList: React.FC = () => {
           updatedSlots[player.tier - 4] - 1,
           0
         );
-      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 3]) {
+      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 3]) {
         updatedSlots[player.tier - 1] = Math.max(
           updatedSlots[player.tier - 1] - 1,
           0
@@ -232,7 +226,7 @@ const PlayerList: React.FC = () => {
           updatedSlots[player.tier - 3] - 1,
           0
         );
-      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 2]) {
+      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 2]) {
         updatedSlots[player.tier - 1] = Math.max(
           updatedSlots[player.tier - 1] - 1,
           0
@@ -241,7 +235,7 @@ const PlayerList: React.FC = () => {
           updatedSlots[player.tier - 2] - 1,
           0
         );
-      } else if (updatedSlots[player.tier] <= maxSlots[player.tier - 1]) {
+      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 1]) {
         updatedSlots[player.tier - 1] = Math.max(
           updatedSlots[player.tier - 1] - 1,
           0
@@ -268,7 +262,10 @@ const PlayerList: React.FC = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: {
+          xs: "column",
+          md: "row",
+        },
         gap: 2,
       }}
     >
@@ -288,70 +285,19 @@ const PlayerList: React.FC = () => {
               xs: "1 1 100%",
               md: "3 1 60%",
             },
-          }}
-        >
-          <PlayerDraft selectedPlayers={selectedPlayers} />
-        </Box>
-
-        <Box
-          sx={{
-            flex: {
-              xs: "1 1 100%",
-              md: "2 1 40%",
-            },
-            display: "flex",
             flexDirection: "column",
-            gap: 2,
+            gap: 1,
           }}
         >
-          {/* Toggle */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              gap: 1,
-            }}
-          >
-            <Button
-              variant={viewMode === "details" ? "contained" : "outlined"}
-              onClick={() => setViewMode("details")}
-              sx={{
-                backgroundColor:
-                  viewMode === "details" ? "#10b981" : "transparent",
-                color: viewMode === "details" ? "#fff" : "#10b981",
-                "&:hover": {
-                  backgroundColor: "#10b981",
-                  color: "#fff",
-                },
-              }}
-            >
-              Details
-            </Button>
-            <Button
-              variant={viewMode === "chart" ? "contained" : "outlined"}
-              onClick={() => setViewMode("chart")}
-              sx={{
-                backgroundColor:
-                  viewMode === "chart" ? "#10b981" : "transparent",
-                color: viewMode === "chart" ? "#fff" : "#10b981",
-                "&:hover": {
-                  backgroundColor: "#10b981",
-                  color: "#fff",
-                },
-              }}
-            >
-              Chart
-            </Button>
-          </Box>
-
-          {/* Toggle Components */}
-          {viewMode === "details" ? (
-            <PlayerDraftDetails selectedPlayers={selectedPlayers} />
-          ) : (
-            <PlayerDraftChart />
-          )}
+          <PlayerDraft
+            selectedPlayers={selectedPlayers}
+            wildCardPlayer={wildCardPlayer}
+          />
+          <PlayerDraftDetails selectedPlayers={selectedPlayers} />
+          {/* <PlayerDraftChart /> */}
         </Box>
       </Box>
+
       <PlayerTable
         groupedPlayers={groupedPlayers}
         onPlayerClick={addPlayerToDraft}

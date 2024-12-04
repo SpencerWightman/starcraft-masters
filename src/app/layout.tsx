@@ -21,9 +21,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
 
   const navItems = [
-    { text: "Charts", href: "/charts" },
+    { text: "Results", href: "/results" },
     { text: "Team", href: "/team" },
-    { text: "Leaderboard", href: "/leaderboard" },
+    { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },
   ];
 

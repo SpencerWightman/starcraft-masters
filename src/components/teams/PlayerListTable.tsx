@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Box, IconButton, Tooltip, Grid2 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
 
@@ -49,6 +48,7 @@ const PlayerTable: React.FC<{
                   flex: 1,
                   display: "flex",
                   flexDirection: "column",
+                  overflow: "hidden",
                 }}
               >
                 <Box
@@ -67,6 +67,7 @@ const PlayerTable: React.FC<{
                       marginBottom: 2,
                       lineHeight: 1,
                       textAlign: "left",
+                      userSelect: "none",
                     }}
                   >
                     {`Tier ${index}`}
@@ -79,13 +80,14 @@ const PlayerTable: React.FC<{
                       marginBottom: 2,
                       lineHeight: 1,
                       textAlign: "right",
+                      userSelect: "none",
                     }}
                   >
                     {`${selectedCount} ${
                       maxSlots[index] <= groupedPlayers[tier].length
                         ? `/ ${maxSlots[index]}`
                         : `/ ${groupedPlayers[tier].length}`
-                    }`}{" "}
+                    }`}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
@@ -112,6 +114,7 @@ const PlayerTable: React.FC<{
                           "&:hover": {
                             color: "#FFD700",
                           },
+                          userSelect: "none",
                         }}
                         onClick={() => onPlayerClick(player)}
                       >
@@ -153,9 +156,6 @@ const PlayerTable: React.FC<{
                             />
                           </IconButton>
                         </Tooltip>
-                        <IconButton size="small">
-                          <ShowChartIcon sx={{ color: "#E3AF66" }} />
-                        </IconButton>
                       </Box>
                     </Box>
                   );
@@ -173,7 +173,9 @@ const PlayerTable: React.FC<{
         >
           <Box
             sx={{
-              padding: 2,
+              paddingLeft: 2,
+              paddingTop: 2,
+              paddingBottom: 2,
               backgroundColor: "#374151",
               borderRadius: "8px",
               textAlign: "left",
@@ -194,6 +196,7 @@ const PlayerTable: React.FC<{
                   fontSize: 28,
                   marginBottom: 2,
                   lineHeight: 1,
+                  userSelect: "none",
                   textAlign: "left",
                 }}
               >
@@ -207,6 +210,8 @@ const PlayerTable: React.FC<{
                   marginBottom: 2,
                   lineHeight: 1,
                   textAlign: "right",
+                  paddingRight: 2,
+                  userSelect: "none",
                 }}
               >
                 {`${selectedCountTier4} / ${maxSlots[4]}`}
@@ -250,6 +255,7 @@ const PlayerTable: React.FC<{
                         "&:hover": {
                           color: "#FFD700",
                         },
+                        userSelect: "none",
                       }}
                       onClick={() => onPlayerClick(player)}
                     >
@@ -291,9 +297,6 @@ const PlayerTable: React.FC<{
                           />
                         </IconButton>
                       </Tooltip>
-                      <IconButton size="small">
-                        <ShowChartIcon sx={{ color: "#E3AF66" }} />
-                      </IconButton>
                     </Box>
                   </Box>
                 );

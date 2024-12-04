@@ -29,17 +29,25 @@ const PlayerDetails: React.FC<{
       sx={{
         display: "flex",
         alignItems: "center",
-        gap: 1,
+        gap: 2,
         backgroundColor: "transparent",
         userSelect: "none",
       }}
     >
-      <Tooltip title={player.player.handle} arrow>
+      <Tooltip
+        title={
+          <span style={{ userSelect: "none" }}>{player.player.handle}</span>
+        }
+        arrow
+      >
         <Typography variant="h6" sx={{ color: "#f3f4f6", fontWeight: "bold" }}>
           {player.player.name}
         </Typography>
       </Tooltip>
-      <Tooltip title="Appearances" arrow>
+      <Tooltip
+        title={<span style={{ userSelect: "none" }}>Appearances</span>}
+        arrow
+      >
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <Star sx={{ color: "#10b981" }} />
           <Typography
@@ -53,7 +61,11 @@ const PlayerDetails: React.FC<{
         </Box>
       </Tooltip>
 
-      <Tooltip title="Champion" arrow placement="bottom">
+      <Tooltip
+        title={<span style={{ userSelect: "none" }}>Champion</span>}
+        arrow
+        placement="bottom"
+      >
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <EmojiEvents sx={{ color: "#FFD700" }} />
           <Typography variant="body2" sx={{ color: "#FFD700" }}>
@@ -61,7 +73,11 @@ const PlayerDetails: React.FC<{
           </Typography>
         </Box>
       </Tooltip>
-      <Tooltip title="Runner-Up" arrow placement="bottom">
+      <Tooltip
+        title={<span style={{ userSelect: "none" }}>Runner-Up</span>}
+        arrow
+        placement="bottom"
+      >
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <EmojiEvents sx={{ color: "#b0bec5" }} />
           <Typography variant="body2" sx={{ color: "#f3f4f6" }}>
@@ -69,7 +85,11 @@ const PlayerDetails: React.FC<{
           </Typography>
         </Box>
       </Tooltip>
-      <Tooltip title="RO4" arrow placement="bottom">
+      <Tooltip
+        title={<span style={{ userSelect: "none" }}>RO4</span>}
+        arrow
+        placement="bottom"
+      >
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <EmojiEvents sx={{ color: "#CD7F32" }} />
           <Typography variant="body2" sx={{ color: "#CD7F32" }}>
