@@ -105,18 +105,25 @@ const PlayerTable: React.FC<{
                         alignItems: "center",
                         paddingY: 1,
                         borderBottom: "1px solid #52525b",
+                        cursor: "pointer",
+                        "&:hover": {
+                          "& > .handle": {
+                            color: "#FFD700",
+                          },
+                        },
                       }}
+                      onClick={() => onPlayerClick(player)}
                     >
                       <Typography
+                        className="handle"
                         sx={{
-                          color: "#f3f4f6",
+                          color: isSelected ? "#FFD700" : "#f3f4f6",
                           cursor: "pointer",
                           "&:hover": {
                             color: "#FFD700",
                           },
                           userSelect: "none",
                         }}
-                        onClick={() => onPlayerClick(player)}
                       >
                         {player.player.handle}
                       </Typography>
@@ -157,7 +164,9 @@ const PlayerTable: React.FC<{
                             padding: 0,
                           }}
                         >
-                          <BarChartIcon sx={{ color: "#FFD700" }} />
+                          <BarChartIcon
+                            sx={{ color: "rgba(243, 244, 246, 0.6)" }}
+                          />
                         </IconButton>
                       </Box>
                     </Box>
@@ -206,6 +215,7 @@ const PlayerTable: React.FC<{
                 {`Tier 4`}
               </Typography>
               <Typography
+                className="handle"
                 variant="h6"
                 sx={{
                   color: "rgba(243, 244, 246, 0.6)",
@@ -249,18 +259,25 @@ const PlayerTable: React.FC<{
                       paddingY: 1,
                       borderBottom: "1px solid #52525b",
                       borderRight: "1px solid #52525b",
+                      cursor: "pointer",
+                      "&:hover": {
+                        "& > .handle": {
+                          color: "#FFD700",
+                        },
+                      },
                     }}
+                    onClick={() => onPlayerClick(player)}
                   >
                     <Typography
+                      className="handle"
                       sx={{
-                        color: "#f3f4f6",
+                        color: isSelected ? "#FFD700" : "#f3f4f6",
                         cursor: "pointer",
                         "&:hover": {
                           color: "#FFD700",
                         },
                         userSelect: "none",
                       }}
-                      onClick={() => onPlayerClick(player)}
                     >
                       {player.player.handle}
                     </Typography>
@@ -301,7 +318,9 @@ const PlayerTable: React.FC<{
                           padding: 0,
                         }}
                       >
-                        <BarChartIcon sx={{ color: "#FFD700" }} />
+                        <BarChartIcon
+                          sx={{ color: "rgba(243, 244, 246, 0.6)" }}
+                        />
                       </IconButton>
                     </Box>
                   </Box>
