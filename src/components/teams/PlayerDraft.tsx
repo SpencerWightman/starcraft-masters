@@ -141,6 +141,8 @@ const PlayerDraft: React.FC<{
           sx={{
             display: "grid",
             gap: 2,
+            paddingRight: 1,
+            paddingLeft: 1,
             gridTemplateColumns: {
               xs: "repeat(2, 1fr)",
               md: "repeat(5, 1fr)",
@@ -148,7 +150,7 @@ const PlayerDraft: React.FC<{
             gridTemplateRows: "auto",
             width: "100%",
             "& > div": {
-              minWidth: "75px",
+              minWidth: "76px",
             },
           }}
         >
