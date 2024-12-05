@@ -129,7 +129,7 @@ const PlayerTable: React.FC<{
                         <Tooltip
                           title={<PlayerDetails player={player} />}
                           arrow
-                          placement="top"
+                          placement="right"
                           slotProps={{
                             tooltip: {
                               sx: {
@@ -270,7 +270,7 @@ const PlayerTable: React.FC<{
                       <Tooltip
                         title={<PlayerDetails player={player} />}
                         arrow
-                        placement="top"
+                        placement="right"
                         slotProps={{
                           tooltip: {
                             sx: {

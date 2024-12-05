@@ -15,16 +15,39 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
-  wildCardPlayer: PlayerSummary;
-}> = ({ selectedPlayers, wildCardPlayer }) => {
+  setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>;
+  setWildCardPlayer: React.Dispatch<
+    React.SetStateAction<PlayerSummary | undefined>
+  >;
+  wildCardPlayer: PlayerSummary | undefined;
+}> = ({
+  selectedPlayers,
+  setSelectedPlayers,
+  setWildCardPlayer,
+  wildCardPlayer,
+}) => {
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
+    if (selectedPlayers.length === 14 && wildCardPlayer) {
+      setSnackbarMessage("Saved");
+    } else {
+      setSnackbarMessage("Select 15 players");
+    }
     setOpen(true);
     setTimeout(() => {
       setOpen(false);
-    }, 2000); // Auto-hide after 2 seconds
+    }, 2000);
   };
+
+  const handleResetClick = () => {
+    setSelectedPlayers([]);
+    setWildCardPlayer(undefined);
+  };
+
+  const isSaveEnabled =
+    selectedPlayers.length === 14 && wildCardPlayer !== undefined;
 
   return (
     <Box sx={{ paddingBottom: 2 }}>
@@ -76,7 +99,7 @@ const PlayerDraft: React.FC<{
                 size="small"
                 onClick={handleClick}
                 sx={{
-                  color: "rgba(243, 244, 246, 0.6)",
+                  color: isSaveEnabled ? "#FFD700" : "rgba(243, 244, 246, 0.6)",
                   fontSize: 14,
                   userSelect: "none",
                   padding: 0,
@@ -91,8 +114,8 @@ const PlayerDraft: React.FC<{
             </Tooltip>
             <Snackbar
               open={open}
-              message="Saved"
-              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+              message={snackbarMessage}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
             />
             <Tooltip
               title={<span style={{ userSelect: "none" }}>Reset all</span>}
@@ -100,6 +123,7 @@ const PlayerDraft: React.FC<{
             >
               <IconButton
                 size="small"
+                onClick={handleResetClick}
                 sx={{
                   color: "rgba(243, 244, 246, 0.6)",
                   fontSize: 14,
@@ -122,8 +146,7 @@ const PlayerDraft: React.FC<{
             display: "grid",
             gap: 2,
             gridTemplateColumns: {
-              xs: "1fr",
-              sm: "repeat(2, 1fr)",
+              xs: "repeat(2, 1fr)",
               md: "repeat(5, 1fr)",
             },
             gridTemplateRows: "auto",
@@ -181,11 +204,26 @@ const PlayerDraft: React.FC<{
               marginBottom: 2,
             }}
           >
-            <Typography
-              sx={{ color: "#000000", fontStyle: "italic", userSelect: "none" }}
-            >
-              ?
-            </Typography>
+            {wildCardPlayer ? (
+              <Typography
+                sx={{
+                  color: "rgba(243, 244, 246, 0.6)",
+                  userSelect: "none",
+                }}
+              >
+                {wildCardPlayer.player.handle}
+              </Typography>
+            ) : (
+              <Typography
+                sx={{
+                  color: "rgba(243, 244, 246, 0.6)",
+                  fontStyle: "italic",
+                  userSelect: "none",
+                }}
+              >
+                ?
+              </Typography>
+            )}
           </Box>
         </Box>
       </Grid2>

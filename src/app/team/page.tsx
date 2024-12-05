@@ -15,7 +15,9 @@ const PlayerList: React.FC = () => {
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
-  const [wildCardPlayer, setWildCardPlayer] = useState<PlayerSummary>();
+  const [wildCardPlayer, setWildCardPlayer] = useState<
+    PlayerSummary | undefined
+  >();
   const [tierMaxSlots, setTierMaxSlots] = useState<Record<number, number>>({
     0: 2,
     1: 5,
@@ -39,7 +41,10 @@ const PlayerList: React.FC = () => {
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
 
-    // if (tierMaxSlots[player.tier] === 0) return;
+    if (selectedPlayers.length === 14) {
+      setWildCardPlayer(player);
+      return;
+    }
 
     const defaultSlots: Record<number, number> = {
       0: 2,
@@ -293,6 +298,8 @@ const PlayerList: React.FC = () => {
         >
           <PlayerDraft
             selectedPlayers={selectedPlayers}
+            setSelectedPlayers={setSelectedPlayers}
+            setWildCardPlayer={setWildCardPlayer}
             wildCardPlayer={wildCardPlayer}
           />
           <PlayerDraftDetails selectedPlayers={selectedPlayers} />
