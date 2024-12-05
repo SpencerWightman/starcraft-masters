@@ -1,12 +1,31 @@
-import React from "react";
-import { Box, Typography, Grid2, IconButton } from "@mui/material";
+"use client";
+
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Grid2,
+  IconButton,
+  Snackbar,
+  Tooltip,
+} from "@mui/material";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import BeenhereIcon from "@mui/icons-material/Beenhere";
 
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
   wildCardPlayer: PlayerSummary;
 }> = ({ selectedPlayers, wildCardPlayer }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(false);
+    }, 2000); // Auto-hide after 2 seconds
+  };
+
   return (
     <Box sx={{ paddingBottom: 2 }}>
       <Grid2
@@ -49,18 +68,53 @@ const PlayerDraft: React.FC<{
             >
               Team
             </Typography>
-            <IconButton
-              size="small"
-              sx={{
-                color: "rgba(243, 244, 246, 0.6)",
-                fontSize: 14,
-                textAlign: "right",
-                userSelect: "none",
-                padding: 0,
-              }}
+            <Tooltip
+              title={<span style={{ userSelect: "none" }}>Save</span>}
+              arrow
             >
-              <RefreshIcon />
-            </IconButton>
+              <IconButton
+                size="small"
+                onClick={handleClick}
+                sx={{
+                  color: "rgba(243, 244, 246, 0.6)",
+                  fontSize: 14,
+                  userSelect: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#FFD700",
+                  },
+                }}
+              >
+                <BeenhereIcon />
+              </IconButton>
+            </Tooltip>
+            <Snackbar
+              open={open}
+              message="Saved"
+              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            />
+            <Tooltip
+              title={<span style={{ userSelect: "none" }}>Reset all</span>}
+              arrow
+            >
+              <IconButton
+                size="small"
+                sx={{
+                  color: "rgba(243, 244, 246, 0.6)",
+                  fontSize: 14,
+                  textAlign: "right",
+                  userSelect: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#10b981",
+                  },
+                }}
+              >
+                <RefreshIcon />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Box>
         <Box
