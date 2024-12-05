@@ -130,7 +130,6 @@ const PlayerTable: React.FC<{
                       <Box sx={{ display: "flex", gap: 1 }}>
                         <Tooltip
                           title={<PlayerDetails player={player} />}
-                          arrow
                           placement="right"
                           slotProps={{
                             tooltip: {
@@ -284,7 +283,6 @@ const PlayerTable: React.FC<{
                     <Box sx={{ display: "flex", gap: 1 }}>
                       <Tooltip
                         title={<PlayerDetails player={player} />}
-                        arrow
                         placement="right"
                         slotProps={{
                           tooltip: {

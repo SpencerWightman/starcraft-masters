@@ -87,6 +87,7 @@ const PlayerDraft: React.FC<{
             <Tooltip
               title={<span style={{ userSelect: "none" }}>Save</span>}
               arrow
+              placement="top"
             >
               <IconButton
                 size="small"
@@ -116,6 +117,7 @@ const PlayerDraft: React.FC<{
             <Tooltip
               title={<span style={{ userSelect: "none" }}>Reset all</span>}
               arrow
+              placement="top"
             >
               <IconButton
                 size="small"
