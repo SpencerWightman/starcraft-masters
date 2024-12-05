@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box, IconButton, Tooltip, Grid2 } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import BarChartIcon from "@mui/icons-material/BarChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
 
@@ -121,11 +121,6 @@ const PlayerTable: React.FC<{
                         {player.player.handle}
                       </Typography>
                       <Box sx={{ display: "flex", gap: 1 }}>
-                        {isSelected && (
-                          <IconButton size="small">
-                            <CheckCircleIcon sx={{ color: "#FFD700" }} />
-                          </IconButton>
-                        )}
                         <Tooltip
                           title={<PlayerDetails player={player} />}
                           arrow
@@ -156,6 +151,14 @@ const PlayerTable: React.FC<{
                             />
                           </IconButton>
                         </Tooltip>
+                        <IconButton
+                          size="small"
+                          sx={{
+                            padding: 0,
+                          }}
+                        >
+                          <BarChartIcon sx={{ color: "#FFD700" }} />
+                        </IconButton>
                       </Box>
                     </Box>
                   );
@@ -262,11 +265,6 @@ const PlayerTable: React.FC<{
                       {player.player.handle}
                     </Typography>
                     <Box sx={{ display: "flex", gap: 1 }}>
-                      {isSelected && (
-                        <IconButton size="small">
-                          <CheckCircleIcon sx={{ color: "#FFD700" }} />
-                        </IconButton>
-                      )}
                       <Tooltip
                         title={<PlayerDetails player={player} />}
                         arrow
@@ -297,6 +295,14 @@ const PlayerTable: React.FC<{
                           />
                         </IconButton>
                       </Tooltip>
+                      <IconButton
+                        size="small"
+                        sx={{
+                          padding: 0,
+                        }}
+                      >
+                        <BarChartIcon sx={{ color: "#FFD700" }} />
+                      </IconButton>
                     </Box>
                   </Box>
                 );

@@ -16,24 +16,18 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
   setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>;
-  setWildCardPlayer: React.Dispatch<
-    React.SetStateAction<PlayerSummary | undefined>
-  >;
-  wildCardPlayer: PlayerSummary | undefined;
-}> = ({
-  selectedPlayers,
-  setSelectedPlayers,
-  setWildCardPlayer,
-  wildCardPlayer,
-}) => {
+}> = ({ selectedPlayers, setSelectedPlayers }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
+  const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = () => {
-    if (selectedPlayers.length === 14 && wildCardPlayer) {
+    if (selectedPlayers.length === 15) {
       setSnackbarMessage("Saved");
+      setHasSaved(true);
     } else {
       setSnackbarMessage("Select 15 players");
+      setHasSaved(false);
     }
     setOpen(true);
     setTimeout(() => {
@@ -43,11 +37,10 @@ const PlayerDraft: React.FC<{
 
   const handleResetClick = () => {
     setSelectedPlayers([]);
-    setWildCardPlayer(undefined);
+    setHasSaved(false);
   };
 
-  const isSaveEnabled =
-    selectedPlayers.length === 14 && wildCardPlayer !== undefined;
+  const isSaveEnabled = selectedPlayers.length === 15;
 
   return (
     <Box sx={{ paddingBottom: 2 }}>
@@ -99,7 +92,10 @@ const PlayerDraft: React.FC<{
                 size="small"
                 onClick={handleClick}
                 sx={{
-                  color: isSaveEnabled ? "#FFD700" : "rgba(243, 244, 246, 0.6)",
+                  color:
+                    hasSaved && isSaveEnabled
+                      ? "#FFD700"
+                      : "rgba(243, 244, 246, 0.6)",
                   fontSize: 14,
                   userSelect: "none",
                   padding: 0,
@@ -156,7 +152,7 @@ const PlayerDraft: React.FC<{
             },
           }}
         >
-          {[...Array(14)].map((_, slotIndex) => {
+          {[...Array(15)].map((_, slotIndex) => {
             const player = selectedPlayers[slotIndex];
             return (
               <Box
@@ -175,7 +171,7 @@ const PlayerDraft: React.FC<{
                 {player ? (
                   <Typography
                     sx={{
-                      color: "#f3f4f6",
+                      color: slotIndex === 14 ? "#94A3B8" : "#f3f4f6",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       whiteSpace: "nowrap",
@@ -192,39 +188,6 @@ const PlayerDraft: React.FC<{
               </Box>
             );
           })}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#374151",
-              borderRadius: "8px",
-              height: "10px",
-              userSelect: "none",
-              marginBottom: 2,
-            }}
-          >
-            {wildCardPlayer ? (
-              <Typography
-                sx={{
-                  color: "rgba(243, 244, 246, 0.6)",
-                  userSelect: "none",
-                }}
-              >
-                {wildCardPlayer.player.handle}
-              </Typography>
-            ) : (
-              <Typography
-                sx={{
-                  color: "rgba(243, 244, 246, 0.6)",
-                  fontStyle: "italic",
-                  userSelect: "none",
-                }}
-              >
-                ?
-              </Typography>
-            )}
-          </Box>
         </Box>
       </Grid2>
     </Box>
