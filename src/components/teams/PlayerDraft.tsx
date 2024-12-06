@@ -16,7 +16,8 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
   setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>;
-}> = ({ selectedPlayers, setSelectedPlayers }) => {
+  setTierMaxSlots: React.Dispatch<React.SetStateAction<Record<number, number>>>;
+}> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
   const [hasSaved, setHasSaved] = useState(false);
@@ -37,6 +38,13 @@ const PlayerDraft: React.FC<{
 
   const handleResetClick = () => {
     setSelectedPlayers([]);
+    setTierMaxSlots({
+      0: 2,
+      1: 5,
+      2: 8,
+      3: 11,
+      4: 15,
+    });
     setHasSaved(false);
   };
 

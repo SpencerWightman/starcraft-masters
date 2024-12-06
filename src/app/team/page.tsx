@@ -291,6 +291,7 @@ const PlayerList: React.FC = () => {
           <PlayerDraft
             selectedPlayers={selectedPlayers}
             setSelectedPlayers={setSelectedPlayers}
+            setTierMaxSlots={setTierMaxSlots}
           />
           <PlayerDraftDetails selectedPlayers={selectedPlayers} />
           {/* <PlayerDraftChart /> */}
