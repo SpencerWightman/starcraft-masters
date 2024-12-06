@@ -1,82 +1,77 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Grid2, Modal, IconButton } from "@mui/material";
+import {
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  Box,
+  IconButton,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-const Maps: React.FC = () => {
-  const images = ["/maps/1.jpg", "/maps/2.jpg", "/maps/3.jpg"];
-  const [open, setOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const imageGallery = [
+  {
+    img: "/maps/1.jpg",
+    title: "Map 1",
+    description: "zzzz",
+  },
+  {
+    img: "/maps/2.jpg",
+    title: "Map 2",
+    description: "zzzz",
+  },
+  {
+    img: "/maps/3.jpg",
+    title: "Map 3",
+    description: "zzzz",
+  },
+  {
+    img: "/maps/4.jpg",
+    title: "Map 4",
+    description: "zzzz",
+  },
+  {
+    img: "/maps/5.jpg",
+    title: "Map 5",
+    description: "zzzz",
+  },
+];
 
-  const handleOpen = (src: string) => {
-    setSelectedImage(src);
-    setOpen(true);
-  };
+const Gallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<{
+    img: string;
+    description: string;
+  } | null>(null);
 
-  const handleClose = () => {
-    setSelectedImage(null);
-    setOpen(false);
-  };
+  const handleOpen = (item: { img: string; description: string }) =>
+    setSelectedImage(item);
+  const handleClose = () => setSelectedImage(null);
 
   return (
-    <Box>
-      <Grid2
-        container
-        spacing={2}
-        sx={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 2,
-        }}
-      >
-        {images.map((src, index) => (
-          <Grid2
-            size={{
-              xs: 12,
-              sm: 6,
-              md: 4,
-              lg: 3,
-            }}
+    <Box sx={{ marginRight: "0.8rem" }}>
+      {/* Image Grid */}
+      <ImageList cols={4} gap={8}>
+        {imageGallery.map((item, index) => (
+          <ImageListItem
             key={index}
+            onClick={() => handleOpen(item)}
+            sx={{ cursor: "pointer" }}
           >
-            <Box
-              sx={{
-                cursor: "pointer",
-                borderRadius: 1,
-                overflow: "hidden",
-                "&:hover": { opacity: 0.8 },
-              }}
-              onClick={() => handleOpen(src)}
-            >
-              <img
-                src={src}
-                alt={`Map ${index + 1}`}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </Box>
-          </Grid2>
+            <img src={item.img} alt={item.title} loading="lazy" />
+            <ImageListItemBar title={item.title} />
+          </ImageListItem>
         ))}
-      </Grid2>
+      </ImageList>
 
       {/* Lightbox */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <Dialog open={Boolean(selectedImage)} onClose={handleClose} maxWidth="lg">
         <Box
           sx={{
             position: "relative",
-            maxWidth: "100%",
-            maxHeight: "100%",
-            outline: "none",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -86,8 +81,8 @@ const Maps: React.FC = () => {
             onClick={handleClose}
             sx={{
               position: "absolute",
-              top: 8,
-              right: 8,
+              top: 10,
+              right: 10,
               color: "white",
               zIndex: 10,
             }}
@@ -95,23 +90,43 @@ const Maps: React.FC = () => {
             <CloseIcon />
           </IconButton>
           {selectedImage && (
-            <img
-              src={selectedImage}
-              alt="Selected map"
-              style={{
-                maxWidth: "90vw",
-                maxHeight: "90vh",
-                width: "auto",
-                height: "auto",
-                borderRadius: "8px",
-                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+            <DialogContent
+              sx={{
+                display: "flex",
+                padding: 0,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#1f2937",
               }}
-            />
+            >
+              <img
+                src={selectedImage.img}
+                alt="Selected"
+                style={{
+                  maxWidth: "90vw",
+                  maxHeight: "90vh",
+                  borderRadius: "8px",
+                  boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+                  marginRight: "16px",
+                }}
+              />
+              <DialogContentText
+                sx={{
+                  textAlign: "left",
+                  fontSize: "16px",
+                  color: "#ffffff",
+                  marginRight: "16px",
+                }}
+              >
+                {selectedImage.description}
+              </DialogContentText>
+            </DialogContent>
           )}
         </Box>
-      </Modal>
+      </Dialog>
     </Box>
   );
 };
 
-export default Maps;
+export default Gallery;
