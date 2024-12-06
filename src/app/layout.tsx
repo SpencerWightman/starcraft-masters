@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -17,6 +17,32 @@ import "./global.css";
 import { useRouter, usePathname } from "next/navigation";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 55);
+  targetDate.setHours(targetDate.getHours() + 12);
+  targetDate.setMinutes(targetDate.getMinutes() + 16);
+  targetDate.setSeconds(0);
+
+  const [timeLeft, setTimeLeft] = useState(
+    () => targetDate.getTime() - new Date().getTime()
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(targetDate.getTime() - new Date().getTime());
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup on component unmount
+  }, [targetDate]);
+
+  const formatTimeLeft = (time: number) => {
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+
+    return `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+  };
   const [isNavOpen, setIsNavOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -55,7 +81,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               >
                 Brood War League
               </Typography>
-
+              <Typography variant="body1">
+                ASL/SSL Countdown:{" "}
+                {timeLeft > 0
+                  ? formatTimeLeft(timeLeft)
+                  : "Drafting has closed!"}
+              </Typography>
               <IconButton
                 edge="start"
                 color="inherit"
