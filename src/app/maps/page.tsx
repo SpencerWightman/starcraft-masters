@@ -1,61 +1,116 @@
-import React from "react";
-import { Paper, Typography, Box } from "@mui/material";
+"use client";
+
+import React, { useState } from "react";
+import { Box, Grid2, Modal, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Maps: React.FC = () => {
+  const images = ["/maps/1.jpg", "/maps/2.jpg", "/maps/3.jpg"];
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const handleOpen = (src: string) => {
+    setSelectedImage(src);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setSelectedImage(null);
+    setOpen(false);
+  };
+
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        padding: 4,
-        maxWidth: 600,
-        margin: "auto",
-        marginTop: 4,
-        backgroundColor: "#374151",
-        borderRadius: 2,
-      }}
-    >
-      <Typography
-        variant="h4"
-        component="h1"
+    <Box>
+      <Grid2
+        container
+        spacing={2}
         sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          marginBottom: 2,
-          textAlign: "center",
-          fontWeight: "bold",
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 2,
         }}
       >
-        Welcome
-      </Typography>
-      <Typography
-        variant="body1"
+        {images.map((src, index) => (
+          <Grid2
+            size={{
+              xs: 12,
+              sm: 6,
+              md: 4,
+              lg: 3,
+            }}
+            key={index}
+          >
+            <Box
+              sx={{
+                cursor: "pointer",
+                borderRadius: 1,
+                overflow: "hidden",
+                "&:hover": { opacity: 0.8 },
+              }}
+              onClick={() => handleOpen(src)}
+            >
+              <img
+                src={src}
+                alt={`Map ${index + 1}`}
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Box>
+          </Grid2>
+        ))}
+      </Grid2>
+
+      {/* Lightbox */}
+      <Modal
+        open={open}
+        onClose={handleClose}
         sx={{
-          marginBottom: 2,
-          color: "#6b7280",
-          lineHeight: 1.6,
-          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-        odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-        quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-        mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-        Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos.
-      </Typography>
-      <Box sx={{ textAlign: "center" }}>
-        <Typography
-          variant="body2"
+        <Box
           sx={{
-            color: "#9ca3af",
-            fontStyle: "italic",
+            position: "relative",
+            maxWidth: "100%",
+            maxHeight: "100%",
+            outline: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet.
-        </Typography>
-      </Box>
-    </Paper>
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              color: "white",
+              zIndex: 10,
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Selected map"
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                width: "auto",
+                height: "auto",
+                borderRadius: "8px",
+                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+              }}
+            />
+          )}
+        </Box>
+      </Modal>
+    </Box>
   );
 };
 

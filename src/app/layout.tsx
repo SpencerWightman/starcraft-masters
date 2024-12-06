@@ -14,11 +14,12 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
@@ -44,7 +45,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             userSelect: "none",
           }}
         >
-          {/* App Bar */}
+          {/* Nav */}
           <AppBar position="static" sx={{ backgroundColor: "#111827" }}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography
@@ -81,11 +82,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     key={index}
                     onClick={() => router.push(item.href)}
                     sx={{
-                      color: "#10b981",
+                      color:
+                        pathname === item.href
+                          ? "rgba(16, 185, 129, 0.7)"
+                          : "#10b981",
                       textTransform: "none",
                       fontWeight: "bold",
                       "&:hover": {
-                        color: "#FFD700",
+                        color: "rgba(16, 185, 129, 0.7)",
                         backgroundColor: "transparent",
                       },
                     }}

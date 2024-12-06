@@ -20,7 +20,7 @@ const Welcome: React.FC = () => {
         variant="h6"
         sx={{
           marginBottom: 2,
-          color: "#6b7280",
+          color: "#f3f4f6",
           lineHeight: 1.6,
           textAlign: "left",
         }}
@@ -31,10 +31,10 @@ const Welcome: React.FC = () => {
         become the Brood War League Champion!
       </Typography>
       <Typography
-        variant="h6"
+        variant="body1"
         sx={{
           marginBottom: 2,
-          color: "#6b7280",
+          color: "#f3f4f6",
           lineHeight: 1.6,
           textAlign: "left",
         }}
@@ -56,16 +56,13 @@ const Welcome: React.FC = () => {
         players are listed in Tier 0. The 15th selection in your team draft is a
         wildcard player, always drawn from Tier 4, who will swap with any player
         in the 14 who (if any) does not qualify for the Ro24. The wildcard
-        player may not qualify either, but it exists as a potential backup. Also
-        look out for the crown icon in your team draft: you can use it to select
-        a Team Captain, who earns twice as many points per win but also costs
-        the team 1 point per loss!
+        player may not qualify either, but it exists as a potential backup.
       </Typography>
       <Typography
-        variant="h6"
+        variant="body1"
         sx={{
           marginBottom: 2,
-          color: "#6b7280",
+          color: "#f3f4f6",
           lineHeight: 1.6,
           textAlign: "left",
         }}
