@@ -41,6 +41,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             margin: 0,
             padding: 0,
             overflow: "hidden",
+            userSelect: "none",
           }}
         >
           {/* App Bar */}
@@ -84,7 +85,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                       textTransform: "none",
                       fontWeight: "bold",
                       "&:hover": {
-                        color: "#34d399",
+                        color: "#FFD700",
                         backgroundColor: "transparent",
                       },
                     }}

@@ -13,6 +13,7 @@ const Welcome: React.FC = () => {
         },
         marginRight: "0.8rem",
         gap: 2,
+        userSelect: "none",
       }}
     >
       <Typography
