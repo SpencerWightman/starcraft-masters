@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Typography, Box } from "@mui/material";
 
-const Maps: React.FC = () => {
+const Results: React.FC = () => {
   return (
     <Paper
       elevation={3}
@@ -59,4 +59,4 @@ const Maps: React.FC = () => {
   );
 };
 
-export default Maps;
+export default Results;
