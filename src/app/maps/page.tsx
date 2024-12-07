@@ -18,6 +18,8 @@ import {
   CssBaseline,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const imageGallery = [
   {
@@ -117,6 +119,27 @@ const Gallery: React.FC = () => {
   const handleOpen = (item: (typeof imageGallery)[0]) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);
 
+  const handleNext = () => {
+    if (selectedImage) {
+      const currentIndex = imageGallery.findIndex(
+        (img) => img.img === selectedImage.img
+      );
+      const nextIndex = (currentIndex + 1) % imageGallery.length;
+      setSelectedImage(imageGallery[nextIndex]);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (selectedImage) {
+      const currentIndex = imageGallery.findIndex(
+        (img) => img.img === selectedImage.img
+      );
+      const prevIndex =
+        (currentIndex - 1 + imageGallery.length) % imageGallery.length;
+      setSelectedImage(imageGallery[prevIndex]);
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -203,8 +226,24 @@ const Gallery: React.FC = () => {
               width: "100%",
               backgroundColor: "#1f2937",
               gap: isMobile ? 2 : 4,
+              position: "relative",
             }}
           >
+            <IconButton
+              onClick={handlePrevious}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "16px",
+                transform: "translateY(-50%)",
+                color: "white",
+                zIndex: 10,
+                backgroundColor: "rgba(0,0,0,0.5)",
+                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+              }}
+            >
+              <KeyboardArrowLeftIcon />
+            </IconButton>
             <img
               src={selectedImage.img}
               alt="Selected"
@@ -227,6 +266,7 @@ const Gallery: React.FC = () => {
               }}
             >
               {[
+                { label: "Name", value: selectedImage.title },
                 { label: "Mains", value: selectedImage.mains },
                 { label: "Bases", value: selectedImage.numberBases },
                 {
@@ -256,6 +296,21 @@ const Gallery: React.FC = () => {
                 </DialogContentText>
               ))}
             </Box>
+            <IconButton
+              onClick={handleNext}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                right: "16px",
+                transform: "translateY(-50%)",
+                color: "white",
+                zIndex: 10,
+                backgroundColor: "rgba(0,0,0,0.5)",
+                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+              }}
+            >
+              <KeyboardArrowRightIcon />
+            </IconButton>
           </DialogContent>
         )}
       </Dialog>
