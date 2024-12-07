@@ -9,124 +9,258 @@ import {
   DialogContent,
   DialogContentText,
   Box,
+  Typography,
   IconButton,
+  useMediaQuery,
+  Theme,
+  createTheme,
+  ThemeProvider,
+  CssBaseline,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const imageGallery = [
   {
     img: "/maps/1.jpg",
-    title: "Map 1",
-    description: "zzzz",
+    title: "Deja Vu 1.1",
+    horizontal: 31,
+    vertical: 31,
+    cross: 37,
+    mains: 4,
+    numberBases: 13,
   },
   {
     img: "/maps/2.jpg",
-    title: "Map 2",
-    description: "zzzz",
+    title: "Dominator 1.2",
+    horizontal: 35,
+    vertical: 35,
+    cross: 35,
+    mains: 3,
+    numberBases: 15,
   },
   {
     img: "/maps/3.jpg",
-    title: "Map 3",
-    description: "zzzz",
+    title: "Kick Back 1.3",
+    horizontal: 25,
+    vertical: 25,
+    cross: 37,
+    mains: 4,
+    numberBases: 17,
   },
   {
     img: "/maps/4.jpg",
-    title: "Map 4",
-    description: "zzzz",
+    title: "Minstrel 1.0",
+    horizontal: 37,
+    vertical: 37,
+    cross: 37,
+    mains: 2,
+    numberBases: 16,
   },
   {
     img: "/maps/5.jpg",
-    title: "Map 5",
-    description: "zzzz",
+    title: "Monty Hall SE 2.3",
+    horizontal: 0,
+    vertical: 0,
+    cross: 0,
+    mains: 2,
+    numberBases: 14,
+  },
+  {
+    img: "/maps/6.jpeg",
+    title: "Pantheon 1.0",
+    horizontal: 30,
+    vertical: 30,
+    cross: 40,
+    mains: 4,
+    numberBases: 16,
+  },
+  {
+    img: "/maps/7.jpeg",
+    title: "Radeon 1.0",
+    horizontal: 31,
+    vertical: 32,
+    cross: 39,
+    mains: 4,
+    numberBases: 14,
   },
 ];
+
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Gallery />
+    </ThemeProvider>
+  );
+};
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<{
     img: string;
-    description: string;
+    title: string;
+    horizontal: number;
+    vertical: number;
+    cross: number;
+    mains: number;
+    numberBases: number;
   } | null>(null);
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
-  const handleOpen = (item: { img: string; description: string }) =>
-    setSelectedImage(item);
+  const handleOpen = (item: (typeof imageGallery)[0]) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);
 
   return (
-    <Box sx={{ marginRight: "0.8rem" }}>
-      {/* Image Grid */}
-      <ImageList cols={4} gap={8}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Typography
+        variant="h6"
+        sx={{
+          fontWeight: "bold",
+          alignContent: "center",
+          alignItems: "center",
+          color: "rgba(243, 244, 246, 0.6)",
+          marginBottom: "0.5rem",
+        }}
+      >
+        SSL Autumn '24
+      </Typography>
+
+      {/* Gallery */}
+      <ImageList cols={isMobile ? 1 : 4} gap={8}>
         {imageGallery.map((item, index) => (
           <ImageListItem
             key={index}
             onClick={() => handleOpen(item)}
-            sx={{ cursor: "pointer" }}
+            sx={{
+              cursor: "pointer",
+              width: isMobile ? "100%" : "310px",
+              height: isMobile ? "auto" : "310px",
+              overflow: "hidden",
+            }}
           >
-            <img src={item.img} alt={item.title} loading="lazy" />
+            <img
+              src={item.img}
+              alt={item.title}
+              loading="lazy"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
             <ImageListItemBar title={item.title} />
           </ImageListItem>
         ))}
       </ImageList>
 
       {/* Lightbox */}
-      <Dialog open={Boolean(selectedImage)} onClose={handleClose} maxWidth="lg">
-        <Box
+      <Dialog
+        open={Boolean(selectedImage)}
+        onClose={handleClose}
+        maxWidth="lg"
+        fullWidth={isMobile}
+        sx={{
+          "& .MuiDialog-paper": {
+            margin: 0,
+            width: "100%",
+            maxHeight: "100vh",
+            flexDirection: isMobile ? "column" : "row",
+            overflow: "hidden",
+          },
+        }}
+      >
+        <IconButton
+          onClick={handleClose}
           sx={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            position: "absolute",
+            top: 8,
+            right: 8,
+            color: "white",
+            zIndex: 10,
           }}
         >
-          <IconButton
-            onClick={handleClose}
+          <CloseIcon />
+        </IconButton>
+        {selectedImage && (
+          <DialogContent
             sx={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              color: "white",
-              zIndex: 10,
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 0,
+              height: "100%",
+              width: "100%",
+              backgroundColor: "#1f2937",
+              gap: isMobile ? 2 : 4,
             }}
           >
-            <CloseIcon />
-          </IconButton>
-          {selectedImage && (
-            <DialogContent
+            <img
+              src={selectedImage.img}
+              alt="Selected"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100vh",
+                borderRadius: "8px",
+                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+              }}
+            />
+            <Box
               sx={{
                 display: "flex",
-                padding: 0,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
+                flexDirection: "column",
                 backgroundColor: "#1f2937",
+                borderRadius: "8px",
+                padding: "1rem",
+                maxWidth: isMobile ? "100%" : "40%",
+                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
               }}
             >
-              <img
-                src={selectedImage.img}
-                alt="Selected"
-                style={{
-                  maxWidth: "90vw",
-                  maxHeight: "90vh",
-                  borderRadius: "8px",
-                  boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
-                  marginRight: "16px",
-                }}
-              />
-              <DialogContentText
-                sx={{
-                  textAlign: "left",
-                  fontSize: "16px",
-                  color: "#ffffff",
-                  marginRight: "16px",
-                }}
-              >
-                {selectedImage.description}
-              </DialogContentText>
-            </DialogContent>
-          )}
-        </Box>
+              {[
+                { label: "Mains", value: selectedImage.mains },
+                { label: "Bases", value: selectedImage.numberBases },
+                {
+                  label: "Vertical rush distance",
+                  value: selectedImage.vertical,
+                },
+                {
+                  label: "Horizontal rush distance",
+                  value: selectedImage.horizontal,
+                },
+                { label: "Cross rush distance", value: selectedImage.cross },
+              ].map((stat, idx) => (
+                <DialogContentText
+                  key={idx}
+                  sx={{
+                    textAlign: "left",
+                    fontSize: "14px",
+                    color: "rgba(243, 244, 246, 0.8)",
+                    marginBottom: "0.5rem",
+                    wordBreak: "break-word",
+                  }}
+                >
+                  {`${stat.label}: `}
+                  <span style={{ color: "#10b981", fontWeight: "bold" }}>
+                    {stat.value}
+                  </span>
+                </DialogContentText>
+              ))}
+            </Box>
+          </DialogContent>
+        )}
       </Dialog>
     </Box>
   );
 };
 
-export default Gallery;
+export default App;

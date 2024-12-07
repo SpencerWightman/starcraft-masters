@@ -66,7 +66,7 @@ const Welcome: React.FC = () => {
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • An image gallery of the latest ASL/SSL maps along with rush
-            distances, number of bases, and number of spawns. The previous
+            distances, number of bases, and number of mains. The previous
             season's maps are listed until the next season's maps are announced.
           </Typography>
         </Box>
