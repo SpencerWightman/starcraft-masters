@@ -32,7 +32,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       setTimeLeft(targetDate.getTime() - new Date().getTime());
     }, 1000);
 
-    return () => clearInterval(timer); // Cleanup on component unmount
+    return () => clearInterval(timer);
   }, [targetDate]);
 
   const formatTimeLeft = (time: number) => {
@@ -81,7 +81,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               >
                 Brood War League
               </Typography>
-              <Typography variant="body1">
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "rgba(243, 244, 246, 0.6)",
+                  textAlign: "left",
+                  userSelect: "none",
+                }}
+              >
+                {" "}
                 ASL/SSL Countdown:{" "}
                 {timeLeft > 0
                   ? formatTimeLeft(timeLeft)
