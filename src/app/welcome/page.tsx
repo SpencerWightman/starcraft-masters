@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { Typography, Box, Button, Grid2 } from "@mui/material";
+import { Typography, Box, Grid2 } from "@mui/material";
+import Link from "next/link";
 
 const Welcome: React.FC = () => {
   return (
-    <Grid2 container spacing={4}>
+    <Grid2 container spacing={4} sx={{ marginTop: "2rem" }}>
       {/* Left Column */}
       <Grid2
         size={{
@@ -21,7 +22,8 @@ const Welcome: React.FC = () => {
       >
         <Box
           sx={{
-            border: "2px solid #E49B0F",
+            borderTop: "2px solid #E49B0F",
+            borderRight: "2px solid #E49B0F",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -38,17 +40,42 @@ const Welcome: React.FC = () => {
             How to Compete
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Use the Team page to select the 15 players who you think will take
-            the most combined wins in the next ASL/SSL season.
+            • Use the{" "}
+            <Link
+              href="/team"
+              passHref
+              style={{
+                textDecoration: "none",
+                color: "#10b981",
+                fontWeight: "bold",
+              }}
+            >
+              Team
+            </Link>{" "}
+            page to select the 15 players who you think will take the most
+            combined wins in the next ASL/SSL season.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-            • Follow your team on the Results page through each day of the
-            tournament and become the Brood War League Champion!
+            • Follow your team on the{" "}
+            <Link
+              href="/team"
+              passHref
+              style={{
+                textDecoration: "none",
+                color: "#10b981",
+                fontWeight: "bold",
+              }}
+            >
+              Results
+            </Link>{" "}
+            page through each day of the tournament and become the Brood War
+            League Champion!
           </Typography>
         </Box>
         <Box
           sx={{
-            border: "2px solid #9F2B68",
+            borderTop: "2px solid #9F2B68",
+            borderRight: "2px solid #9F2B68",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -72,7 +99,8 @@ const Welcome: React.FC = () => {
         </Box>
         <Box
           sx={{
-            border: "2px solid #5F8575",
+            borderTop: "2px solid #5F8575",
+            borderRight: "2px solid #5F8575",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -89,8 +117,8 @@ const Welcome: React.FC = () => {
             Charts
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • There is currently 1 chart in the section that analyzes SSL Autumn
-            '24. The plan is to create more using JackyVSO's ASL/KSL Database.
+            • ASL/SSL analytics. The plan is to create more using JackyVSO's
+            ASL/KSL Database.
           </Typography>
         </Box>
       </Grid2>
@@ -110,7 +138,8 @@ const Welcome: React.FC = () => {
       >
         <Box
           sx={{
-            border: "2px solid #90D5FF",
+            borderTop: "2px solid #90D5FF",
+            borderRight: "2px solid #90D5FF",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -159,11 +188,15 @@ const Welcome: React.FC = () => {
               player may not qualify either, but it exists as a potential
               backup.
             </Typography>
+            <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
+              • Player statistics on the Team page start at ASL 15 (2023-2025).
+            </Typography>
           </Box>
         </Box>
         <Box
           sx={{
-            border: "2px solid #CC5500",
+            borderTop: "2px solid #CC5500",
+            borderRight: "2px solid #CC5500",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -180,7 +213,16 @@ const Welcome: React.FC = () => {
             Thank you
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • To JackyVSO for the ASL/KSL Database used by Brood War League.
+            • JackyVSO for the{" "}
+            <a
+              href="https://jackyvso.github.io/Starcraft/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#10b981", textDecoration: "none" }}
+            >
+              ASL/KSL Database
+            </a>{" "}
+            used by Brood War League.
           </Typography>
         </Box>
       </Grid2>
