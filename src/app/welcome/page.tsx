@@ -190,6 +190,7 @@ const Welcome: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics on the Team page start at ASL 15 (2023-2025).
+              Appearances and trophies cover all ASL/SSL and KSL.
             </Typography>
           </Box>
         </Box>

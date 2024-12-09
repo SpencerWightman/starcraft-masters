@@ -1,146 +1,140 @@
-"use client";
-
-import React from "react";
-import { Typography } from "@mui/material";
-import { Line } from "react-chartjs-2";
+import React, { useState } from "react";
+import {
+  Button,
+  Tooltip as MuiTooltip,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Tooltip,
   Legend,
-  TooltipItem,
 } from "chart.js";
+import { PlayerSummary } from "@/app/types/teamTypes";
 
-import data from "data/lowBaseResults.json";
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Legend
-);
+const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
+  const [selectedMatchup, setSelectedMatchup] = useState(
+    player.duration.length > 0 ? player.duration[0].Matchup : ""
+  );
 
-interface ChartProps {
-  labels: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  datasets: any[];
-  title: string;
-  tooltipData: (index: number, datasetLabel: string, value: number) => string;
-}
+  const getChartProps = () => {
+    const matchup = player.duration.find((d) => d.Matchup === selectedMatchup);
 
-const LowBaseChart: React.FC<ChartProps> = ({
-  labels,
-  datasets,
-  title,
-  tooltipData,
-}) => {
-  const chartData = {
-    labels,
-    datasets,
+    if (!matchup) return { labels: [], datasets: [] };
+
+    const labels = matchup.WinRates.map((rate) => rate.Interval);
+    const datasets = [
+      {
+        label: `Win Rate (%) - ${matchup.TotalGames} Games`,
+        data: matchup.WinRates.map((rate) => parseFloat(rate.WinRate)),
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
+      },
+    ];
+
+    return { labels, datasets };
   };
+
+  const chartProps = getChartProps();
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top" as const,
       },
       tooltip: {
         callbacks: {
-          label: function (context: TooltipItem<"line">) {
-            const label = context.dataset.label;
-            const value = context.raw as number;
-            const index = context.dataIndex;
-            return tooltipData(index, label || "", value);
-          },
+          label: (context: any) => `${context.dataset.label}: ${context.raw}%`,
         },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
       },
     },
   };
 
   return (
-    <div>
+    <div
+      style={{
+        width: "500px",
+        height: "400px",
+        padding: "20px",
+        backgroundColor: "#1f2937",
+        borderRadius: "8px",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          marginBottom: "20px",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        {player.duration.map((d) => (
+          <Button
+            key={d.Matchup}
+            variant="outlined"
+            onMouseEnter={() => setSelectedMatchup(d.Matchup)}
+            sx={{
+              color: "#10b981",
+              borderColor:
+                selectedMatchup === d.Matchup ? "#10b981" : "transparent",
+              backgroundColor: "#374151",
+              "&:hover": { borderColor: "#10b981" },
+            }}
+          >
+            {d.Matchup}
+          </Button>
+        ))}
+      </div>
       <Typography
         variant="h6"
         sx={{ color: "#10b981", marginBottom: "1rem", textAlign: "center" }}
       >
-        {title}
+        {player.player.name} - Win Rate by Interval - {selectedMatchup}
       </Typography>
-      <Line data={chartData} options={options} />
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+        }}
+      >
+        <Bar
+          data={chartProps}
+          options={options}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
     </div>
   );
 };
 
-const LowBaseCharts: React.FC = () => {
-  const labels = data.players.map((item) => item.name);
-  const datasets = [
-    {
-      label: "Win Percent",
-      data: data.players.map((item) => item.twoBaseWinPercent),
-      borderColor: "rgba(75, 192, 192, 1)",
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderWidth: 2,
-      tension: 0.3,
-    },
-    {
-      label: "Loss Percent",
-      data: data.players.map((item) => item.twoBaseLossPercent),
-      borderColor: "rgba(255, 99, 132, 1)",
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderWidth: 2,
-      tension: 0.3,
-    },
-    {
-      label: "Difference Percent",
-      data: data.players.map((item) => item.diffPercent),
-      borderColor: "rgba(200, 200, 200, 1)",
-      backgroundColor: "rgba(200, 200, 200, 1)",
-      borderWidth: 2,
-      borderDash: [5, 5],
-      tension: 0.3,
-    },
-  ];
-
-  const tooltipData = (index: number, datasetLabel: string, value: number) => {
-    const item = data.players[index];
-    if (!item) {
-      return `${datasetLabel}: ${value}% (No data available)`;
-    }
-
-    if (datasetLabel === "Win Percent") {
-      return `${datasetLabel}: ${value}% (${item.twoBaseWins}/${item.totalWinGames} wins)`;
-    } else if (datasetLabel === "Loss Percent") {
-      return `${datasetLabel}: ${value}% (${item.twoBaseLosses}/${item.totalLossGames} losses)`;
-    } else {
-      return `${datasetLabel}: ${value}%`;
-    }
-  };
-
-  return (
-    <div
-      style={{
-        width: "90%",
-        maxWidth: "1100px",
-        margin: "0 auto",
-        padding: "0px",
-        backgroundColor: "#1f2937",
-        borderRadius: "8px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-      }}
-    >
-      <LowBaseChart
-        labels={labels}
-        datasets={datasets}
-        title=""
-        tooltipData={tooltipData}
-      />
-    </div>
-  );
-};
-
-export default LowBaseCharts;
+export default PlayerChart;

@@ -4,6 +4,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
+import PlayerChart from "./PlayerChart";
 
 const PlayerTable: React.FC<{
   groupedPlayers: Record<string, PlayerSummary[]>;
@@ -130,7 +131,7 @@ const PlayerTable: React.FC<{
                       <Box sx={{ display: "flex", gap: 1 }}>
                         <Tooltip
                           title={<PlayerDetails player={player} />}
-                          placement="right"
+                          placement="bottom"
                           slotProps={{
                             tooltip: {
                               sx: {
@@ -157,16 +158,29 @@ const PlayerTable: React.FC<{
                             />
                           </IconButton>
                         </Tooltip>
-                        <IconButton
-                          size="small"
-                          sx={{
-                            padding: 0,
+                        <Tooltip
+                          title={<PlayerChart player={player} />}
+                          placement="bottom"
+                          slotProps={{
+                            tooltip: {
+                              sx: {
+                                backgroundColor: "transparent",
+                                maxWidth: "none",
+                                boxShadow: "none",
+                                padding: 0,
+                              },
+                            },
                           }}
                         >
-                          <BarChartIcon
-                            sx={{ color: "rgba(243, 244, 246, 0.6)" }}
-                          />
-                        </IconButton>
+                          <IconButton
+                            size="small"
+                            sx={{
+                              padding: 0,
+                            }}
+                          >
+                            <BarChartIcon sx={{ color: "#ce8946" }} />
+                          </IconButton>
+                        </Tooltip>
                       </Box>
                     </Box>
                   );
@@ -283,7 +297,7 @@ const PlayerTable: React.FC<{
                     <Box sx={{ display: "flex", gap: 1 }}>
                       <Tooltip
                         title={<PlayerDetails player={player} />}
-                        placement="right"
+                        placement="bottom"
                         slotProps={{
                           tooltip: {
                             sx: {
@@ -310,16 +324,33 @@ const PlayerTable: React.FC<{
                           />
                         </IconButton>
                       </Tooltip>
-                      <IconButton
-                        size="small"
-                        sx={{
-                          padding: 0,
+                      <Tooltip
+                        title={
+                          <div style={{ width: "520px", height: "420px" }}>
+                            <PlayerChart player={player} />
+                          </div>
+                        }
+                        placement="bottom"
+                        slotProps={{
+                          tooltip: {
+                            sx: {
+                              backgroundColor: "transparent",
+                              maxWidth: "none",
+                              boxShadow: "none",
+                              padding: 0,
+                            },
+                          },
                         }}
                       >
-                        <BarChartIcon
-                          sx={{ color: "rgba(243, 244, 246, 0.6)" }}
-                        />
-                      </IconButton>
+                        <IconButton
+                          size="small"
+                          sx={{
+                            padding: 0,
+                          }}
+                        >
+                          <BarChartIcon sx={{ color: "#ce8946" }} />
+                        </IconButton>
+                      </Tooltip>
                     </Box>
                   </Box>
                 );

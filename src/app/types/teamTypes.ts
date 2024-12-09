@@ -11,6 +11,17 @@ export type Achievements = {
   ro4: number;
 };
 
+export type DurationWinRate = {
+  Interval: string;
+  WinRate: string;
+};
+
+export type MatchupDurationStats = {
+  Matchup: string;
+  TotalGames: number;
+  WinRates: DurationWinRate[];
+};
+
 export type PlayerSummary = {
   player: {
     id: number;
@@ -25,6 +36,7 @@ export type PlayerSummary = {
     vsT?: MatchupStats;
     vsZ?: MatchupStats;
   };
+  duration: MatchupDurationStats[];
   tier: number;
   appearances: number;
 };
