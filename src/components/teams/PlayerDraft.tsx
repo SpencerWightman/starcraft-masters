@@ -183,7 +183,7 @@ const PlayerDraft: React.FC<{
                 {player ? (
                   <Typography
                     sx={{
-                      color: slotIndex === 14 ? "#94A3B8" : "#f3f4f6",
+                      color: slotIndex === 14 ? "#94A3B8" : "#10b981",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       whiteSpace: "nowrap",

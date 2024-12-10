@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Tooltip as MuiTooltip,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
+import { Button, Typography } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -32,7 +26,7 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
     const labels = matchup.WinRates.map((rate) => rate.Interval);
     const datasets = [
       {
-        label: `Win Rate (%) - ${matchup.TotalGames} Games`,
+        label: `${player.player.name} - Win Rate (%) - ${matchup.TotalGames} Games`,
         data: matchup.WinRates.map((rate) => parseFloat(rate.WinRate)),
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -51,10 +45,15 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
     plugins: {
       legend: {
         position: "top" as const,
+        labels: {
+          font: {
+            size: 16,
+          },
+        },
       },
       tooltip: {
         callbacks: {
-          label: (context: any) => `${context.dataset.label}: ${context.raw}%`,
+          label: (context: any) => `${context.raw}%`,
         },
       },
     },
@@ -108,12 +107,6 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
           </Button>
         ))}
       </div>
-      <Typography
-        variant="h6"
-        sx={{ color: "#10b981", marginBottom: "1rem", textAlign: "center" }}
-      >
-        {player.player.name} - Win Rate by Interval - {selectedMatchup}
-      </Typography>
       <div
         style={{
           width: "100%",

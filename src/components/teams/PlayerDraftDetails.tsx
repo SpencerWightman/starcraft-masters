@@ -45,6 +45,7 @@ const PlayerDraftDetails: React.FC<{
         borderRadius: "8px",
         flex: 1,
         overflow: "auto",
+        marginBottom: 2,
       }}
     >
       {/* Stats */}

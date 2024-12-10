@@ -1,146 +1,172 @@
 "use client";
 
-import React from "react";
-import { Typography } from "@mui/material";
-import { Line } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
+import { Button, Typography } from "@mui/material";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Tooltip,
   Legend,
-  TooltipItem,
 } from "chart.js";
+import { PlayerSummary } from "@/app/types/teamTypes";
 
-import data from "data/lowBaseResults.json";
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Legend
-);
-
-interface ChartProps {
-  labels: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  datasets: any[];
-  title: string;
-  tooltipData: (index: number, datasetLabel: string, value: number) => string;
-}
-
-const LowBaseChart: React.FC<ChartProps> = ({
-  labels,
-  datasets,
-  title,
-  tooltipData,
+const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
+  selectedPlayers,
 }) => {
-  const chartData = {
-    labels,
-    datasets,
+  const [selectedMatchup, setSelectedMatchup] = useState(
+    selectedPlayers.length > 0 && selectedPlayers[0].duration.length > 0
+      ? selectedPlayers[0].duration[0].Matchup
+      : ""
+  );
+
+  useEffect(() => {
+    if (selectedPlayers.length > 0 && selectedPlayers[0].duration.length > 0) {
+      setSelectedMatchup(selectedPlayers[0].duration[0].Matchup);
+    }
+  }, [selectedPlayers]);
+
+  const aggregateData = (matchup: string) => {
+    const aggregatedWinRates: {
+      [interval: string]: { totalWinRate: number; count: number };
+    } = {};
+    let totalGames = 0;
+
+    selectedPlayers.forEach((player) => {
+      const playerMatchup = player.duration.find((d) => d.Matchup === matchup);
+      if (playerMatchup) {
+        totalGames += playerMatchup.TotalGames;
+        playerMatchup.WinRates.forEach((rate) => {
+          if (!aggregatedWinRates[rate.Interval]) {
+            aggregatedWinRates[rate.Interval] = { totalWinRate: 0, count: 0 };
+          }
+          aggregatedWinRates[rate.Interval].totalWinRate += parseFloat(
+            rate.WinRate
+          );
+          aggregatedWinRates[rate.Interval].count += 1;
+        });
+      }
+    });
+
+    const labels = Object.keys(aggregatedWinRates);
+    const datasets = [
+      {
+        label: `Team Win Rate (%) - ${totalGames} Games`,
+        data: labels.map(
+          (interval) =>
+            aggregatedWinRates[interval].totalWinRate /
+            aggregatedWinRates[interval].count
+        ),
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
+      },
+    ];
+
+    return { labels, datasets };
   };
+
+  const chartProps = aggregateData(selectedMatchup);
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top" as const,
-      },
-      tooltip: {
-        callbacks: {
-          label: function (context: TooltipItem<"line">) {
-            const label = context.dataset.label;
-            const value = context.raw as number;
-            const index = context.dataIndex;
-            return tooltipData(index, label || "", value);
+        labels: {
+          font: {
+            size: 16,
           },
         },
       },
+      tooltip: {
+        callbacks: {
+          label: (context: any) => `${context.raw}%`,
+        },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
+      },
     },
   };
 
-  return (
-    <div>
-      <Typography
-        variant="h6"
-        sx={{ color: "#10b981", marginBottom: "1rem", textAlign: "center" }}
-      >
-        {title}
-      </Typography>
-      <Line data={chartData} options={options} />
-    </div>
+  const allMatchups = Array.from(
+    new Set(
+      selectedPlayers.flatMap((player) => player.duration.map((d) => d.Matchup))
+    )
   );
-};
-
-const LowBaseCharts: React.FC = () => {
-  const labels = data.players.map((item) => item.name);
-  const datasets = [
-    {
-      label: "Win Percent",
-      data: data.players.map((item) => item.twoBaseWinPercent),
-      borderColor: "rgba(75, 192, 192, 1)",
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderWidth: 2,
-      tension: 0.3,
-    },
-    {
-      label: "Loss Percent",
-      data: data.players.map((item) => item.twoBaseLossPercent),
-      borderColor: "rgba(255, 99, 132, 1)",
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderWidth: 2,
-      tension: 0.3,
-    },
-    {
-      label: "Difference Percent",
-      data: data.players.map((item) => item.diffPercent),
-      borderColor: "rgba(200, 200, 200, 1)",
-      backgroundColor: "rgba(200, 200, 200, 1)",
-      borderWidth: 2,
-      borderDash: [5, 5],
-      tension: 0.3,
-    },
-  ];
-
-  const tooltipData = (index: number, datasetLabel: string, value: number) => {
-    const item = data.players[index];
-    if (!item) {
-      return `${datasetLabel}: ${value}% (No data available)`;
-    }
-
-    if (datasetLabel === "Win Percent") {
-      return `${datasetLabel}: ${value}% (${item.twoBaseWins}/${item.totalWinGames} wins)`;
-    } else if (datasetLabel === "Loss Percent") {
-      return `${datasetLabel}: ${value}% (${item.twoBaseLosses}/${item.totalLossGames} losses)`;
-    } else {
-      return `${datasetLabel}: ${value}%`;
-    }
-  };
 
   return (
     <div
       style={{
-        width: "90%",
-        maxWidth: "1100px",
-        margin: "0 ",
-        padding: "0px",
+        width: "500px",
+        height: "400px",
+        padding: "20px",
         backgroundColor: "#1f2937",
         borderRadius: "8px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <LowBaseChart
-        labels={labels}
-        datasets={datasets}
-        title=""
-        tooltipData={tooltipData}
-      />
+      <div
+        style={{
+          marginBottom: "20px",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        {allMatchups.map((matchup) => (
+          <Button
+            key={matchup}
+            variant="outlined"
+            onMouseEnter={() => setSelectedMatchup(matchup)}
+            sx={{
+              color: "#10b981",
+              borderColor:
+                selectedMatchup === matchup ? "#10b981" : "transparent",
+              backgroundColor: "#374151",
+              "&:hover": { borderColor: "#10b981" },
+            }}
+          >
+            {matchup}
+          </Button>
+        ))}
+      </div>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+        }}
+      >
+        <Bar
+          data={chartProps}
+          options={options}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
     </div>
   );
 };
 
-export default LowBaseCharts;
+export default PlayerDraftChart;
