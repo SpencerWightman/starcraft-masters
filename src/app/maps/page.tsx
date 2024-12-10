@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ImageList,
   ImageListItem,
@@ -115,6 +115,29 @@ const Gallery: React.FC = () => {
   const isMobile = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("sm")
   );
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!selectedImage) return;
+
+      switch (event.key) {
+        case "ArrowRight":
+          handleNext();
+          break;
+        case "ArrowLeft":
+          handlePrevious();
+          break;
+        case "Escape":
+          handleClose();
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
 
   const handleOpen = (item: (typeof imageGallery)[0]) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);

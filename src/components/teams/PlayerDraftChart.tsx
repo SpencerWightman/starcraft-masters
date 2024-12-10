@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -109,7 +109,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
       style={{
         width: "500px",
         height: "400px",
-        padding: "20px",
+        padding: "5px",
         backgroundColor: "#1f2937",
         borderRadius: "8px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
