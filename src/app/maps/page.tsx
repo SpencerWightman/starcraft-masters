@@ -182,7 +182,7 @@ const Gallery: React.FC = () => {
           marginBottom: "0.5rem",
         }}
       >
-        SSL Autumn '24
+        SSL Autumn &apos;24
       </Typography>
 
       {/* Gallery */}
