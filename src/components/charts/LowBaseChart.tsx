@@ -222,7 +222,7 @@ const LowBaseCharts: React.FC = () => {
       >
         <Button
           variant="outlined"
-          onClick={() => setChartType("Players")}
+          onMouseEnter={() => setChartType("Players")}
           sx={{
             color: "#10b981",
             borderColor: chartType === "Players" ? "#10b981" : "transparent",
@@ -234,7 +234,7 @@ const LowBaseCharts: React.FC = () => {
         </Button>
         <Button
           variant="outlined"
-          onClick={() => setChartType("Matchups")}
+          onMouseEnter={() => setChartType("Matchups")}
           sx={{
             color: "#10b981",
             borderColor: chartType === "Matchups" ? "#10b981" : "transparent",

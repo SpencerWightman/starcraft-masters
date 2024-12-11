@@ -86,6 +86,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
       },
       tooltip: {
         callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           label: (context: any) => `${context.raw}%`,
         },
       },
@@ -136,6 +137,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
             onMouseEnter={() => setSelectedMatchup(matchup)}
             sx={{
               color: "#10b981",
+              textTransform: "none",
               borderColor:
                 selectedMatchup === matchup ? "#10b981" : "transparent",
               backgroundColor: "#374151",

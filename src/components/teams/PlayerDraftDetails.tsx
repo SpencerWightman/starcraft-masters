@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -62,7 +61,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 14,
+                fontSize: 16,
               }}
             >
               Matchup
@@ -70,7 +69,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 14,
+                fontSize: 16,
               }}
             >
               Games
@@ -78,7 +77,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 14,
+                fontSize: 16,
               }}
             >
               Wins
@@ -86,7 +85,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 14,
+                fontSize: 16,
               }}
             >
               Losses
@@ -94,7 +93,7 @@ const PlayerDraftDetails: React.FC<{
             <TableCell
               sx={{
                 color: "#f3f4f6",
-                fontSize: 14,
+                fontSize: 16,
               }}
             >
               Win Rate
@@ -109,11 +108,21 @@ const PlayerDraftDetails: React.FC<{
                 : "0.00";
             return (
               <TableRow key={matchup}>
-                <TableCell sx={{ color: "#f3f4f6" }}>{matchup}</TableCell>
-                <TableCell sx={{ color: "#f3f4f6" }}>{stats.games}</TableCell>
-                <TableCell sx={{ color: "#f3f4f6" }}>{stats.wins}</TableCell>
-                <TableCell sx={{ color: "#f3f4f6" }}>{stats.losses}</TableCell>
-                <TableCell sx={{ color: "#f3f4f6" }}>{winRate}%</TableCell>
+                <TableCell sx={{ color: "#f3f4f6", fontSize: 16 }}>
+                  {matchup}
+                </TableCell>
+                <TableCell sx={{ color: "#f3f4f6", fontSize: 16 }}>
+                  {stats.games}
+                </TableCell>
+                <TableCell sx={{ color: "#f3f4f6", fontSize: 16 }}>
+                  {stats.wins}
+                </TableCell>
+                <TableCell sx={{ color: "#f3f4f6", fontSize: 16 }}>
+                  {stats.losses}
+                </TableCell>
+                <TableCell sx={{ color: "#f3f4f6", fontSize: 16 }}>
+                  {winRate}%
+                </TableCell>
               </TableRow>
             );
           })}

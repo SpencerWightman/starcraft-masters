@@ -109,7 +109,7 @@ const PlayerTable: React.FC<{
                         cursor: "pointer",
                         "&:hover": {
                           "& > .handle": {
-                            color: "#FFD700",
+                            color: "#10b981",
                           },
                         },
                       }}
@@ -118,11 +118,8 @@ const PlayerTable: React.FC<{
                       <Typography
                         className="handle"
                         sx={{
-                          color: isSelected ? "#FFD700" : "#f3f4f6",
+                          color: isSelected ? "#10b981" : "#f3f4f6",
                           cursor: "pointer",
-                          "&:hover": {
-                            color: "#FFD700",
-                          },
                           userSelect: "none",
                         }}
                       >
@@ -275,7 +272,7 @@ const PlayerTable: React.FC<{
                       cursor: "pointer",
                       "&:hover": {
                         "& > .handle": {
-                          color: "#FFD700",
+                          color: "#10b981",
                         },
                       },
                     }}
@@ -284,11 +281,8 @@ const PlayerTable: React.FC<{
                     <Typography
                       className="handle"
                       sx={{
-                        color: isSelected ? "#FFD700" : "#f3f4f6",
+                        color: isSelected ? "#10b981" : "#f3f4f6",
                         cursor: "pointer",
-                        "&:hover": {
-                          color: "#FFD700",
-                        },
                         userSelect: "none",
                       }}
                     >

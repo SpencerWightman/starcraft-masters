@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -53,6 +53,7 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
       },
       tooltip: {
         callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           label: (context: any) => `${context.raw}%`,
         },
       },
@@ -97,6 +98,7 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
             onMouseEnter={() => setSelectedMatchup(d.Matchup)}
             sx={{
               color: "#10b981",
+              textTransform: "none",
               borderColor:
                 selectedMatchup === d.Matchup ? "#10b981" : "transparent",
               backgroundColor: "#374151",

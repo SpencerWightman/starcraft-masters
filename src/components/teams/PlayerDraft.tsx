@@ -105,7 +105,6 @@ const PlayerDraft: React.FC<{
                     hasSaved && isSaveEnabled
                       ? "#FFD700"
                       : "rgba(243, 244, 246, 0.6)",
-                  fontSize: 14,
                   userSelect: "none",
                   padding: 0,
                   cursor: "pointer",
@@ -132,7 +131,6 @@ const PlayerDraft: React.FC<{
                 onClick={handleResetClick}
                 sx={{
                   color: "rgba(243, 244, 246, 0.6)",
-                  fontSize: 14,
                   textAlign: "right",
                   userSelect: "none",
                   padding: 0,
@@ -187,13 +185,16 @@ const PlayerDraft: React.FC<{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       whiteSpace: "nowrap",
+                      fontSize: 20,
                       userSelect: "none",
                     }}
                   >
                     {player.player.handle}
                   </Typography>
                 ) : (
-                  <Typography sx={{ color: "#94A3B8", fontStyle: "italic" }}>
+                  <Typography
+                    sx={{ color: "#94A3B8", fontSize: 16, fontStyle: "italic" }}
+                  >
                     ?
                   </Typography>
                 )}
