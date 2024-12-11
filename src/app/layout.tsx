@@ -58,15 +58,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <html lang="en">
-      <head>
-        <link rel="preload" href="/maps/1.jpg" as="image" />
-        <link rel="preload" href="/maps/2.jpg" as="image" />
-        <link rel="preload" href="/maps/3.jpg" as="image" />
-        <link rel="preload" href="/maps/4.jpg" as="image" />
-        <link rel="preload" href="/maps/5.jpg" as="image" />
-        <link rel="preload" href="/maps/6.jpeg" as="image" />
-        <link rel="preload" href="/maps/7.jpeg" as="image" />
-      </head>
       <body>
         <Box
           sx={{

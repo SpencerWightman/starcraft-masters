@@ -199,7 +199,13 @@ const Gallery: React.FC = () => {
               overflow: "hidden",
             }}
           >
-            <Image src={item.img} alt={item.title} width={310} height={310} />
+            <Image
+              src={item.img}
+              alt={item.title}
+              width={310}
+              height={310}
+              priority
+            />
             <ImageListItemBar title={item.title} />
           </ImageListItem>
         ))}
