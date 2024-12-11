@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Welcome: React.FC = () => {
   return (
-    <Grid2 container spacing={4} sx={{ marginTop: "2rem" }}>
+    <Grid2 container spacing={4} sx={{ marginTop: "1rem" }}>
       {/* Left Column */}
       <Grid2
         size={{
@@ -94,7 +94,8 @@ const Welcome: React.FC = () => {
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • An image gallery of the latest ASL/SSL maps along with rush
             distances, number of bases, and number of mains. The previous
-            season's maps are listed until the next season's maps are announced.
+            season&apos;s maps are listed until the next season&apos;s maps are
+            announced.
           </Typography>
         </Box>
         <Box
@@ -117,8 +118,40 @@ const Welcome: React.FC = () => {
             Charts
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • ASL/SSL analytics. The plan is to create more using JackyVSO's
-            ASL/KSL Database.
+            • ASL/SSL analytics. The plan is to create more using
+            JackyVSO&apos;s ASL/KSL Database.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            borderTop: "2px solid rgba(243, 244, 246, 0.6)",
+            borderRight: "2px solid rgba(243, 244, 246, 0.6)",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "rgba(243, 244, 246, 0.6)",
+            }}
+          >
+            Contact
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Lurkerbomb in the{" "}
+            <a
+              href="https://discord.com/invite/6bh6hhc"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#10b981", textDecoration: "none" }}
+            >
+              Artosis Discord channel
+            </a>
+            .
           </Typography>
         </Box>
       </Grid2>
@@ -167,9 +200,10 @@ const Welcome: React.FC = () => {
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • The player tiers have progressively increasing selection limits,
               and a minimum selection requirement. However, the minimum
-              requirement can be broken by 'spending' lower (better player) tier
-              slots on higher tier players. That means you can select all 15
-              players from Tier 4 if that's the team you want to draft!
+              requirement can be broken by &apos;spending&apos; lower (better
+              player) tier slots on higher tier players. That means you can
+              select all 15 players from Tier 4 if that&apos;s the team you want
+              to draft!
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • ASL/SSL places qualified players in 1 of 4 tiers based on how

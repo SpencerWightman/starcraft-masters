@@ -1,13 +1,16 @@
 "use client";
 
-import Typography from "@mui/material/Typography";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const HomePage: React.FC = () => {
-  return (
-    <Typography variant="h6" sx={{ color: "#fbbf24" }}>
-      Welcome to Brood War League!
-    </Typography>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/welcome");
+  }, [router]);
+
+  return null;
 };
 
 export default HomePage;

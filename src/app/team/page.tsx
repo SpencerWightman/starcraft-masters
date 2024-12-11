@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Box, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Box } from "@mui/material";
 import PlayerTable from "../../components/teams/PlayerListTable";
 import PlayerDraft from "../../components/teams/PlayerDraft";
 import PlayerDraftChart from "../../components/teams/PlayerDraftChart";

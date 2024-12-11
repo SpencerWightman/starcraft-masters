@@ -1,0 +1,394 @@
+{
+  "players": [
+    {
+      "name": "RoyaL",
+      "twoBaseWins": 3,
+      "totalWinGames": 4,
+      "twoBaseLosses": 1,
+      "totalLossGames": 5,
+      "twoBaseWinPercent": 75,
+      "twoBaseLossPercent": 20,
+      "diffPercent": 55
+    },
+    {
+      "name": "Light",
+      "twoBaseWins": 6,
+      "totalWinGames": 8,
+      "twoBaseLosses": 2,
+      "totalLossGames": 6,
+      "twoBaseWinPercent": 75,
+      "twoBaseLossPercent": 33.33,
+      "diffPercent": 41.67
+    },
+    {
+      "name": "Jaedong",
+      "twoBaseWins": 2,
+      "totalWinGames": 3,
+      "twoBaseLosses": 3,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 66.67,
+      "twoBaseLossPercent": 75,
+      "diffPercent": 8.33
+    },
+    {
+      "name": "BarrackS",
+      "twoBaseWins": 4,
+      "totalWinGames": 6,
+      "twoBaseLosses": 2,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 66.67,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 16.67
+    },
+    {
+      "name": "Bisu",
+      "twoBaseWins": 2,
+      "totalWinGames": 4,
+      "twoBaseLosses": 1,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 50,
+      "twoBaseLossPercent": 25,
+      "diffPercent": 25
+    },
+    {
+      "name": "SnOw",
+      "twoBaseWins": 4,
+      "totalWinGames": 8,
+      "twoBaseLosses": 1,
+      "totalLossGames": 7,
+      "twoBaseWinPercent": 50,
+      "twoBaseLossPercent": 14.29,
+      "diffPercent": 35.71
+    },
+    {
+      "name": "Sharp",
+      "twoBaseWins": 6,
+      "totalWinGames": 12,
+      "twoBaseLosses": 1,
+      "totalLossGames": 7,
+      "twoBaseWinPercent": 50,
+      "twoBaseLossPercent": 14.29,
+      "diffPercent": 35.71
+    },
+    {
+      "name": "Sea",
+      "twoBaseWins": 1,
+      "totalWinGames": 2,
+      "twoBaseLosses": 2,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 50,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 0
+    },
+    {
+      "name": "Rush",
+      "twoBaseWins": 2,
+      "totalWinGames": 5,
+      "twoBaseLosses": 2,
+      "totalLossGames": 7,
+      "twoBaseWinPercent": 40,
+      "twoBaseLossPercent": 28.57,
+      "diffPercent": 11.43
+    },
+    {
+      "name": "JyJ",
+      "twoBaseWins": 2,
+      "totalWinGames": 5,
+      "twoBaseLosses": 0,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 40,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 40
+    },
+    {
+      "name": "Hero",
+      "twoBaseWins": 2,
+      "totalWinGames": 6,
+      "twoBaseLosses": 4,
+      "totalLossGames": 7,
+      "twoBaseWinPercent": 33.33,
+      "twoBaseLossPercent": 57.14,
+      "diffPercent": 23.81
+    },
+    {
+      "name": "Rain",
+      "twoBaseWins": 2,
+      "totalWinGames": 10,
+      "twoBaseLosses": 3,
+      "totalLossGames": 5,
+      "twoBaseWinPercent": 20,
+      "twoBaseLossPercent": 60,
+      "diffPercent": 40
+    },
+    {
+      "name": "Soulkey",
+      "twoBaseWins": 1,
+      "totalWinGames": 15,
+      "twoBaseLosses": 3,
+      "totalLossGames": 3,
+      "twoBaseWinPercent": 6.67,
+      "twoBaseLossPercent": 100,
+      "diffPercent": 93.33
+    },
+    {
+      "name": "Speed",
+      "twoBaseWins": 0,
+      "totalWinGames": 4,
+      "twoBaseLosses": 0,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Mini",
+      "twoBaseWins": 0,
+      "totalWinGames": 2,
+      "twoBaseLosses": 3,
+      "totalLossGames": 4,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 75,
+      "diffPercent": 75
+    },
+    {
+      "name": "Stork",
+      "twoBaseWins": 0,
+      "totalWinGames": 2,
+      "twoBaseLosses": 1,
+      "totalLossGames": 3,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 33.33,
+      "diffPercent": 33.33
+    },
+    {
+      "name": "Motive",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    },
+    {
+      "name": "Sacsri",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 2,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 100,
+      "diffPercent": 100
+    },
+    {
+      "name": "Best",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 0,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Action",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    },
+    {
+      "name": "Queen",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    },
+    {
+      "name": "YSC",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    },
+    {
+      "name": "Shine",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    },
+    {
+      "name": "free",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 0,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Mind",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 0,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Wico",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 0,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Scan",
+      "twoBaseWins": 0,
+      "totalWinGames": 0,
+      "twoBaseLosses": 0,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "sSak",
+      "twoBaseWins": 0,
+      "totalWinGames": 1,
+      "twoBaseLosses": 1,
+      "totalLossGames": 2,
+      "twoBaseWinPercent": 0,
+      "twoBaseLossPercent": 50,
+      "diffPercent": 50
+    }
+  ],
+  "matchups": [
+    {
+      "matchup": "Zerg vs. Zerg",
+      "mainRace": "Zerg",
+      "opponentRace": "Zerg",
+      "twoBaseWins": 4,
+      "twoBaseLosses": 4,
+      "totalWinGames": 5,
+      "totalLossGames": 5,
+      "diffPercent": 0,
+      "twoBaseLossPercent": 80,
+      "twoBaseWinPercent": 80
+    },
+    {
+      "matchup": "Terran vs. Zerg",
+      "mainRace": "Terran",
+      "opponentRace": "Zerg",
+      "twoBaseWins": 11,
+      "twoBaseLosses": 1,
+      "totalWinGames": 14,
+      "totalLossGames": 15,
+      "diffPercent": 71.9,
+      "twoBaseLossPercent": 6.67,
+      "twoBaseWinPercent": 78.57
+    },
+    {
+      "matchup": "Protoss vs. Protoss",
+      "mainRace": "Protoss",
+      "opponentRace": "Protoss",
+      "twoBaseWins": 3,
+      "twoBaseLosses": 3,
+      "totalWinGames": 4,
+      "totalLossGames": 4,
+      "diffPercent": 0,
+      "twoBaseLossPercent": 75,
+      "twoBaseWinPercent": 75
+    },
+    {
+      "matchup": "Terran vs. Protoss",
+      "mainRace": "Terran",
+      "opponentRace": "Protoss",
+      "twoBaseWins": 8,
+      "twoBaseLosses": 5,
+      "totalWinGames": 19,
+      "totalLossGames": 19,
+      "diffPercent": 15.79,
+      "twoBaseLossPercent": 26.32,
+      "twoBaseWinPercent": 42.11
+    },
+    {
+      "matchup": "Terran vs. Terran",
+      "mainRace": "Terran",
+      "opponentRace": "Terran",
+      "twoBaseWins": 5,
+      "twoBaseLosses": 5,
+      "totalWinGames": 15,
+      "totalLossGames": 15,
+      "diffPercent": 0,
+      "twoBaseLossPercent": 33.33,
+      "twoBaseWinPercent": 33.33
+    },
+    {
+      "matchup": "Protoss vs. Terran",
+      "mainRace": "Protoss",
+      "opponentRace": "Terran",
+      "twoBaseWins": 5,
+      "twoBaseLosses": 8,
+      "totalWinGames": 19,
+      "totalLossGames": 19,
+      "diffPercent": 15.79,
+      "twoBaseLossPercent": 42.11,
+      "twoBaseWinPercent": 26.32
+    },
+    {
+      "matchup": "Zerg vs. Terran",
+      "mainRace": "Zerg",
+      "opponentRace": "Terran",
+      "twoBaseWins": 1,
+      "twoBaseLosses": 11,
+      "totalWinGames": 15,
+      "totalLossGames": 14,
+      "diffPercent": 71.9,
+      "twoBaseLossPercent": 78.57,
+      "twoBaseWinPercent": 6.67
+    },
+    {
+      "matchup": "Protoss vs. Zerg",
+      "mainRace": "Protoss",
+      "opponentRace": "Zerg",
+      "twoBaseWins": 0,
+      "twoBaseLosses": 0,
+      "totalWinGames": 3,
+      "totalLossGames": 8,
+      "diffPercent": 0,
+      "twoBaseLossPercent": 0,
+      "twoBaseWinPercent": 0
+    },
+    {
+      "matchup": "Zerg vs. Protoss",
+      "mainRace": "Zerg",
+      "opponentRace": "Protoss",
+      "twoBaseWins": 0,
+      "twoBaseLosses": 0,
+      "totalWinGames": 8,
+      "totalLossGames": 3,
+      "diffPercent": 0,
+      "twoBaseLossPercent": 0,
+      "twoBaseWinPercent": 0
+    }
+  ]
+}
