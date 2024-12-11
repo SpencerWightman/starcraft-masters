@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   ImageList,
   ImageListItem,
@@ -198,12 +199,7 @@ const Gallery: React.FC = () => {
               overflow: "hidden",
             }}
           >
-            <img
-              src={item.img}
-              alt={item.title}
-              loading="lazy"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
+            <Image src={item.img} alt={item.title} width={310} height={310} />
             <ImageListItemBar title={item.title} />
           </ImageListItem>
         ))}

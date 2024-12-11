@@ -26,7 +26,7 @@ const Welcome: React.FC = () => {
             borderRight: "2px solid #E49B0F",
             padding: "1rem",
             borderRadius: "8px",
-            marginBottom: "1rem",
+            marginBottom: "2rem",
           }}
         >
           <Typography
