@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Countdown from "react-countdown";
 import {
   AppBar,
@@ -208,6 +209,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               }}
             >
               {children}
+              <SpeedInsights />
             </Box>
           </Box>
         </Box>
