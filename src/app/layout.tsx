@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useMemo, useState } from "react";
+import Countdown from "react-countdown";
 import {
   AppBar,
   Toolbar,
@@ -15,34 +16,13 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
 import { useRouter, usePathname } from "next/navigation";
+import Maps from "./maps/page";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const universalTargetDate = useMemo(
     () => new Date("2025-02-04T23:59:59Z"),
     []
   );
-
-  const [timeLeft, setTimeLeft] = useState(
-    () => universalTargetDate.getTime() - new Date().getTime()
-  );
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(universalTargetDate.getTime() - new Date().getTime());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [universalTargetDate]);
-
-  const formatTimeLeft = (time: number) => {
-    const days = Math.floor(time / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((time % (1000 * 60)) / 1000);
-
-    return `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
-  };
-
   const [isNavOpen, setIsNavOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -55,6 +35,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },
   ];
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const countdown = ({ days, hours, minutes, seconds, completed }: any) => {
+    if (completed) {
+      return <span>Drafting has closed!</span>;
+    } else {
+      return (
+        <span>
+          {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+        </span>
+      );
+    }
+  };
 
   return (
     <html lang="en">
@@ -89,11 +82,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   userSelect: "none",
                 }}
               >
-                {" "}
                 ASL/SSL Countdown:{" "}
-                {timeLeft > 0
-                  ? formatTimeLeft(timeLeft)
-                  : "Drafting has closed!"}
+                <Countdown date={universalTargetDate} renderer={countdown} />
               </Typography>
               <IconButton
                 edge="start"
@@ -180,10 +170,30 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Box>
           )}
 
+          <Box
+            sx={{
+              display: pathname === "/maps" ? "flex" : "none",
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: "center",
+              gap: "1rem",
+              padding: "1rem",
+            }}
+          >
+            <Box
+              sx={{
+                flex: 3,
+                backgroundColor: "transparent",
+                borderRadius: "8px",
+              }}
+            >
+              <Maps />
+            </Box>
+          </Box>
+
           {/* Content */}
           <Box
             sx={{
-              display: "flex",
+              display: pathname !== "/maps" ? "flex" : "none",
               flexDirection: { xs: "column", md: "row" },
               justifyContent: "center",
               gap: "1rem",

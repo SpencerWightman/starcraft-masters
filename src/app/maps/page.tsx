@@ -93,7 +93,7 @@ const theme = createTheme({
   },
 });
 
-const App = () => {
+const Maps = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -202,7 +202,11 @@ const Gallery: React.FC = () => {
               src={item.img}
               alt={item.title}
               loading="eager"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
             />
             <ImageListItemBar title={item.title} />
           </ImageListItem>
@@ -341,4 +345,4 @@ const Gallery: React.FC = () => {
   );
 };
 
-export default App;
+export default Maps;
