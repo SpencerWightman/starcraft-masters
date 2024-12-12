@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   AppBar,
   Toolbar,
@@ -17,23 +17,22 @@ import "./global.css";
 import { useRouter, usePathname } from "next/navigation";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 55);
-  targetDate.setHours(targetDate.getHours() + 12);
-  targetDate.setMinutes(targetDate.getMinutes() + 16);
-  targetDate.setSeconds(0);
+  const universalTargetDate = useMemo(
+    () => new Date("2025-02-04T23:59:59Z"),
+    []
+  );
 
   const [timeLeft, setTimeLeft] = useState(
-    () => targetDate.getTime() - new Date().getTime()
+    () => universalTargetDate.getTime() - new Date().getTime()
   );
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(targetDate.getTime() - new Date().getTime());
+      setTimeLeft(universalTargetDate.getTime() - new Date().getTime());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [universalTargetDate]);
 
   const formatTimeLeft = (time: number) => {
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
@@ -43,6 +42,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     return `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
   };
+
   const [isNavOpen, setIsNavOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
