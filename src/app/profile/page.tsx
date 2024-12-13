@@ -68,16 +68,15 @@ const Profile: React.FC = () => {
       {!user ? (
         <>
           <Typography
-            variant="h4"
-            component="h1"
+            variant="body1"
             sx={{
-              color: "rgba(243, 244, 246, 0.6)",
               marginBottom: 2,
+              color: "#6b7280",
+              lineHeight: 1.6,
               textAlign: "center",
-              fontWeight: "bold",
             }}
           >
-            Sign up to save your team draft and compete in Brood War League
+            Log in to save your team draft and compete in Brood War League.
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
             <Link href="/api/auth/login" passHref>
