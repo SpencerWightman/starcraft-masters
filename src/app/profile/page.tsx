@@ -47,7 +47,7 @@ const Profile: React.FC = () => {
         }}
       >
         <Typography variant="h6" sx={{ color: "red", fontWeight: "bold" }}>
-          Error: {error.message}
+          Something went wrong. Try again in a moment.
         </Typography>
       </Paper>
     );
@@ -77,18 +77,7 @@ const Profile: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Welcome
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              marginBottom: 2,
-              color: "#6b7280",
-              lineHeight: 1.6,
-              textAlign: "center",
-            }}
-          >
-            Please log in to access your profile and other features.
+            Sign up to save your team draft and compete in Brood War League
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
             <Link href="/api/auth/login" passHref>
@@ -105,7 +94,7 @@ const Profile: React.FC = () => {
                   cursor: "pointer",
                 }}
               >
-                Login
+                Sign up / Login
               </Typography>
             </Link>
           </Box>
