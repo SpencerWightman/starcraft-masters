@@ -1,13 +1,11 @@
 "use client";
 
 import React from "react";
-import { Paper, Typography, Box, Button } from "@mui/material";
+import { Paper, Typography, Box } from "@mui/material";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { useRouter } from "next/navigation";
 
 const Profile: React.FC = () => {
   const { user, error, isLoading } = useUser();
-  const router = useRouter();
 
   if (isLoading) {
     return (
@@ -92,18 +90,20 @@ const Profile: React.FC = () => {
             Please log in to access your profile and other features.
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => router.push("/auth/login")}
-              sx={{
-                textTransform: "none",
+            <a
+              href="/api/auth/login"
+              style={{
+                display: "inline-block",
+                padding: "0.5rem 1rem",
                 backgroundColor: "#10b981",
-                "&:hover": { backgroundColor: "#059669" },
+                color: "#fff",
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontWeight: "bold",
               }}
             >
               Login
-            </Button>
+            </a>
           </Box>
         </>
       ) : (
@@ -132,22 +132,20 @@ const Profile: React.FC = () => {
             Email: {user.email || "No email available"}
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Button
-              variant="outlined"
-              color="secondary"
-              onClick={() => router.push("/auth/logout")}
-              sx={{
-                textTransform: "none",
-                borderColor: "#f87171",
+            <a
+              href="/api/auth/logout"
+              style={{
+                display: "inline-block",
+                padding: "0.5rem 1rem",
+                border: "1px solid #f87171",
                 color: "#f87171",
-                "&:hover": {
-                  backgroundColor: "#7f1d1d",
-                  color: "#fff",
-                },
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontWeight: "bold",
               }}
             >
               Logout
-            </Button>
+            </a>
           </Box>
         </>
       )}
