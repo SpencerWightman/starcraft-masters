@@ -67,7 +67,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               userSelect: "none",
             }}
           >
-            {/* Nav */}
+            {/* Info Bar */}
             <AppBar position="static" sx={{ backgroundColor: "#111827" }}>
               <Toolbar
                 sx={{ display: "flex", justifyContent: "space-between" }}
