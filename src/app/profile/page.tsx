@@ -91,20 +91,23 @@ const Profile: React.FC = () => {
             Please log in to access your profile and other features.
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <a
-              href="/api/auth/login"
-              style={{
-                display: "inline-block",
-                padding: "0.5rem 1rem",
-                backgroundColor: "#10b981",
-                color: "#fff",
-                borderRadius: "4px",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Login
-            </a>
+            <Link href="/api/auth/login" passHref>
+              <Typography
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "#10b981",
+                  color: "#fff",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Login
+              </Typography>
+            </Link>
           </Box>
         </>
       ) : (
@@ -133,7 +136,7 @@ const Profile: React.FC = () => {
             Email: {user.email || "No email available"}
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Link href="/api/auth/login" passHref>
+            <Link href="/api/auth/logout" passHref>
               <Typography
                 component="span"
                 sx={{
@@ -147,7 +150,7 @@ const Profile: React.FC = () => {
                   cursor: "pointer",
                 }}
               >
-                Login
+                Logout
               </Typography>
             </Link>
           </Box>
