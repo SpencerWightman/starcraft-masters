@@ -3,6 +3,7 @@
 import React from "react";
 import { Paper, Typography, Box } from "@mui/material";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import Link from "next/link";
 
 const Profile: React.FC = () => {
   const { user, error, isLoading } = useUser();
@@ -132,20 +133,23 @@ const Profile: React.FC = () => {
             Email: {user.email || "No email available"}
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <a
-              href="/api/auth/logout"
-              style={{
-                display: "inline-block",
-                padding: "0.5rem 1rem",
-                border: "1px solid #f87171",
-                color: "#f87171",
-                borderRadius: "4px",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Logout
-            </a>
+            <Link href="/api/auth/login" passHref>
+              <Typography
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "#10b981",
+                  color: "#fff",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Login
+              </Typography>
+            </Link>
           </Box>
         </>
       )}
