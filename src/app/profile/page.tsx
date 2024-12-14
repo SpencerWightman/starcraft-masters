@@ -76,7 +76,7 @@ const Profile: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Log in to save your team draft and compete in Brood War League.
+            Log in to save your team draft and compete in Brood War League
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
             <Link href="/api/auth/login" passHref>
