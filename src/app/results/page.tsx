@@ -1,62 +1,62 @@
-import React from "react";
-import { Paper, Typography, Box } from "@mui/material";
+"use client";
 
-const Results: React.FC = () => {
-  return (
-    <Paper
-      elevation={3}
-      sx={{
-        padding: 4,
-        maxWidth: 600,
-        margin: "auto",
-        marginTop: 4,
-        backgroundColor: "#374151",
-        borderRadius: 2,
-      }}
-    >
-      <Typography
-        variant="h4"
-        component="h1"
-        sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          marginBottom: 2,
-          textAlign: "center",
-          fontWeight: "bold",
-        }}
-      >
-        Welcome
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          marginBottom: 2,
-          color: "#6b7280",
-          lineHeight: 1.6,
-          textAlign: "center",
-        }}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-        odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-        quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-        mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-        Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos.
-      </Typography>
-      <Box sx={{ textAlign: "center" }}>
-        <Typography
-          variant="body2"
-          sx={{
-            color: "#9ca3af",
-            fontStyle: "italic",
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet.
-        </Typography>
-      </Box>
-    </Paper>
-  );
+import { useQuery } from "@tanstack/react-query";
+
+type LeaderboardEntry = {
+  username: string;
+  points: number;
 };
 
-export default Results;
+async function fetchLeaderboard(): Promise<LeaderboardEntry[]> {
+  const response = await fetch("/api/leaderboard");
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch leaderboard: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  if (Array.isArray(data.leaderboard)) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return data.leaderboard.map((entry: any) => ({
+      username: entry.username || "Unknown",
+      points: entry.points || 0,
+    }));
+  }
+
+  return [];
+}
+
+export default function Leaderboard() {
+  const {
+    data: leaderboard,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["leaderboard"],
+    queryFn: fetchLeaderboard,
+    staleTime: 86400000,
+    gcTime: 86400000, // 24 hr
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error instanceof Error) {
+    return <div>Failed to load leaderboard: {error.message}</div>;
+  }
+
+  return (
+    <div>
+      <h1>Leaderboard</h1>
+      <ul>
+        {leaderboard?.map((entry, index) => (
+          <li key={index}>
+            {entry.username}: {entry.points} points
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

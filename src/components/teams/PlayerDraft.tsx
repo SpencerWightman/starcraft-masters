@@ -12,6 +12,25 @@ import {
 import { PlayerSummary } from "@/app/types/teamTypes";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { useMutation } from "@tanstack/react-query";
+
+const saveTeamToDB = async (params: { email: string; team: string[] }) => {
+  const { email, team } = params;
+
+  const response = await fetch("/api/save-team", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      team,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to save team");
+  }
+};
 
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
@@ -20,16 +39,42 @@ const PlayerDraft: React.FC<{
 }> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
+  const { user, isLoading } = useUser();
+  const mutation = useMutation<void, Error, { email: string; team: string[] }>({
+    mutationFn: saveTeamToDB,
+  });
+
   const [hasSaved, setHasSaved] = useState(false);
 
-  const handleClick = () => {
-    if (selectedPlayers.length === 15) {
-      setSnackbarMessage("Saved");
-      setHasSaved(true);
-    } else {
-      setSnackbarMessage("Select 15 players");
-      setHasSaved(false);
+  const handleClick = async () => {
+    if (isLoading) {
+      setSnackbarMessage("Checking login status...");
+      setOpen(true);
+      return;
     }
+
+    if (!user) {
+      setSnackbarMessage("Login to save your team");
+      setOpen(true);
+      return;
+    }
+
+    if (selectedPlayers.length === 15) {
+      try {
+        const team = selectedPlayers.map((player) => player.player.handle);
+        await mutation.mutateAsync({
+          email: user.email as string,
+          team,
+        });
+        setSnackbarMessage("Team saved successfully!");
+      } catch (error) {
+        console.error(error);
+        setSnackbarMessage("Failed to save team");
+      }
+    } else {
+      setSnackbarMessage("Please select 15 players");
+    }
+
     setOpen(true);
     setTimeout(() => {
       setOpen(false);
