@@ -1,57 +1,70 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 
 type LeaderboardEntry = {
   username: string;
   points: number;
 };
 
-async function fetchLeaderboard(): Promise<LeaderboardEntry[]> {
+const CACHE_KEY = "leaderboard_cache";
+const CACHE_EXPIRATION_KEY = "leaderboard_cache_expiration";
+const CACHE_EXPIRATION_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+async function fetchLeaderboardFromApi(): Promise<LeaderboardEntry[]> {
   const response = await fetch("/api/leaderboard");
-
   if (!response.ok) {
-    throw new Error(`Failed to fetch leaderboard: ${response.status}`);
+    throw new Error("Failed to fetch leaderboard data");
   }
-
   const data = await response.json();
-
-  if (Array.isArray(data.leaderboard)) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return data.leaderboard.map((entry: any) => ({
-      username: entry.username || "Unknown",
-      points: entry.points || 0,
-    }));
-  }
-
-  return [];
+  return data.leaderboard;
 }
 
-export default function Leaderboard() {
-  const {
-    data: leaderboard,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["leaderboard"],
-    queryFn: fetchLeaderboard,
-    staleTime: 86400000,
-    gcTime: 86400000, // 24 hr
-  });
+export default function LeaderboardPage() {
+  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    const loadLeaderboard = async () => {
+      const now = Date.now();
 
-  if (error instanceof Error) {
-    return <div>Failed to load leaderboard: {error.message}</div>;
-  }
+      // Check for cached data in localStorage
+      const cachedData = localStorage.getItem(CACHE_KEY);
+      const cacheExpiration = localStorage.getItem(CACHE_EXPIRATION_KEY);
+
+      if (
+        cachedData &&
+        cacheExpiration &&
+        now < parseInt(cacheExpiration, 10)
+      ) {
+        // Use cached data if valid
+        setLeaderboard(JSON.parse(cachedData));
+      } else {
+        try {
+          // Fetch new data from the API
+          const freshData = await fetchLeaderboardFromApi();
+
+          // Update localStorage with fresh data
+          localStorage.setItem(CACHE_KEY, JSON.stringify(freshData));
+          localStorage.setItem(
+            CACHE_EXPIRATION_KEY,
+            (now + CACHE_EXPIRATION_MS).toString()
+          );
+
+          setLeaderboard(freshData);
+        } catch (error) {
+          console.error("Error loading leaderboard:", error);
+        }
+      }
+    };
+
+    loadLeaderboard();
+  }, []);
 
   return (
     <div>
       <h1>Leaderboard</h1>
       <ul>
-        {leaderboard?.map((entry, index) => (
+        {leaderboard.map((entry, index) => (
           <li key={index}>
             {entry.username}: {entry.points} points
           </li>
