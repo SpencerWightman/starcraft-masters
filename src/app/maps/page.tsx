@@ -217,7 +217,7 @@ const Gallery: React.FC = () => {
       <Dialog
         open={Boolean(selectedImage)}
         onClose={handleClose}
-        maxWidth="lg"
+        maxWidth="xl"
         fullWidth={isMobile}
         sx={{
           "& .MuiDialog-paper": {

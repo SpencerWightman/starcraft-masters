@@ -82,6 +82,7 @@ const PlayerDraft: React.FC<{
           email: user.email as string,
           fantasyTeam,
         });
+        localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Success. View your saved team on the Team page.");
         setHasSaved(true);
       } catch {

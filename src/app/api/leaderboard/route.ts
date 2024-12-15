@@ -22,8 +22,8 @@ export async function GET() {
     console.log("Raw DynamoDB Response:", JSON.stringify(data, null, 2));
 
     const leaderboard = (data.Items || []).map((item) => ({
-      username: item.teamName.S,
-      points: parseInt(item.points.N ?? "0", 10),
+      username: item.teamName?.S ?? "zzzzzz",
+      points: parseInt(item.points?.N ?? "0", 10),
     }));
 
     return NextResponse.json({ leaderboard });
