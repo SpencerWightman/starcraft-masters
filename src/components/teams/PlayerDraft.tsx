@@ -15,20 +15,29 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useMutation } from "@tanstack/react-query";
 
-const saveTeamToDB = async (params: { email: string; team: string[] }) => {
-  const { email, team } = params;
+const saveTeamToDB = async (params: {
+  email: string;
+  fantasyTeam: string[];
+}) => {
+  const { email, fantasyTeam } = params;
 
   const response = await fetch("/api/save-team", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email,
-      team,
+      fantasyTeam,
     }),
   });
 
   if (!response.ok) {
-    throw new Error("Failed to save team");
+    const errorDetails = await response.text();
+    console.error("Failed to save team:", {
+      status: response.status,
+      statusText: response.statusText,
+      body: errorDetails,
+    });
+    throw new Error();
   }
 };
 
@@ -40,7 +49,11 @@ const PlayerDraft: React.FC<{
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
   const { user, isLoading } = useUser();
-  const mutation = useMutation<void, Error, { email: string; team: string[] }>({
+  const mutation = useMutation<
+    void,
+    Error,
+    { email: string; fantasyTeam: string[] }
+  >({
     mutationFn: saveTeamToDB,
   });
 
@@ -61,18 +74,21 @@ const PlayerDraft: React.FC<{
 
     if (selectedPlayers.length === 15) {
       try {
-        const team = selectedPlayers.map((player) => player.player.handle);
+        const fantasyTeam = selectedPlayers.map(
+          (player) => player.player.handle
+        );
+        console.log(fantasyTeam);
         await mutation.mutateAsync({
           email: user.email as string,
-          team,
+          fantasyTeam,
         });
-        setSnackbarMessage("Team saved successfully!");
-      } catch (error) {
-        console.error(error);
-        setSnackbarMessage("Failed to save team");
+        setSnackbarMessage("Success. View your saved team on the Team page.");
+        setHasSaved(true);
+      } catch {
+        setSnackbarMessage("Failed to save team. Try again in a moment.");
       }
     } else {
-      setSnackbarMessage("Please select 15 players");
+      setSnackbarMessage("Please select 15 players.");
     }
 
     setOpen(true);

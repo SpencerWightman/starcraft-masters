@@ -12,14 +12,21 @@ const client = new DynamoDBClient({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { email, team } = body;
+    const { email, fantasyTeam } = body;
+
+    if (!email || !Array.isArray(fantasyTeam)) {
+      console.error("Invalid input:", body);
+      return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+    }
+
+    const teamItems = fantasyTeam.map((player) => ({ S: player }));
 
     const params = {
       TableName: process.env.AWS_TABLE!,
       Item: {
         email: { S: email },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        team: { L: team.map((player: any) => ({ S: player.handle })) },
+        team: { L: teamItems },
+        season: { S: "18" },
       },
     };
 
