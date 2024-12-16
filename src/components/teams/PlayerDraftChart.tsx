@@ -103,7 +103,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
     new Set(
       selectedPlayers.flatMap((player) => player.duration.map((d) => d.Matchup))
     )
-  ).filter((matchup) => matchup !== "N/A"); // Filter out "N/A" matchups
+  ).filter((matchup) => matchup !== "N/A");
 
   return (
     <div

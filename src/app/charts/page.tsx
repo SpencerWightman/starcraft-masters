@@ -1,5 +1,3 @@
-"use client";
-
 import LowBaseCharts from "../../components/charts/LowBaseChart";
 
 const ChartsPage: React.FC = () => {
