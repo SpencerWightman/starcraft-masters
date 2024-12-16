@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Countdown from "react-countdown";
 import {
   AppBar,
@@ -17,20 +16,15 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
-import { useRouter, usePathname } from "next/navigation";
-import Maps from "./maps/page";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Link from "next/link";
 
 const queryClient = new QueryClient();
 
+const universalTargetDate = new Date("2025-02-04T23:59:59Z");
+
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const universalTargetDate = useMemo(
-    () => new Date("2025-02-04T23:59:59Z"),
-    []
-  );
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
@@ -121,24 +115,21 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     }}
                   >
                     {navItems.map((item, index) => (
-                      <Button
-                        key={index}
-                        onClick={() => router.push(item.href)}
-                        sx={{
-                          color:
-                            pathname === item.href
-                              ? "rgba(16, 185, 129, 0.7)"
-                              : "#10b981",
-                          textTransform: "none",
-                          fontWeight: "bold",
-                          "&:hover": {
-                            color: "rgba(16, 185, 129, 0.7)",
-                            backgroundColor: "transparent",
-                          },
-                        }}
-                      >
-                        {item.text}
-                      </Button>
+                      <Link key={index} href={item.href} passHref>
+                        <Button
+                          sx={{
+                            color: "#10b981",
+                            textTransform: "none",
+                            fontWeight: "bold",
+                            "&:hover": {
+                              color: "rgba(16, 185, 129, 0.7)",
+                              backgroundColor: "transparent",
+                            },
+                          }}
+                        >
+                          {item.text}
+                        </Button>
+                      </Link>
                     ))}
                   </Box>
                 </Toolbar>
@@ -162,52 +153,31 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     {navItems.map((item, index) => (
                       <ListItemButton
                         key={index}
-                        onClick={() => {
-                          setIsNavOpen(false);
-                          router.push(item.href);
-                        }}
+                        onClick={() => setIsNavOpen(false)}
                         sx={{
                           color: "#10b981",
                           textDecoration: "none",
                           "&:hover": { backgroundColor: "#374151" },
                         }}
                       >
-                        <ListItemText
-                          primary={item.text}
-                          primaryTypographyProps={{
-                            sx: { fontWeight: "bold", textAlign: "center" },
-                          }}
-                        />
+                        <Link href={item.href}>
+                          <ListItemText
+                            primary={item.text}
+                            primaryTypographyProps={{
+                              sx: { fontWeight: "bold", textAlign: "center" },
+                            }}
+                          />
+                        </Link>
                       </ListItemButton>
                     ))}
                   </List>
                 </Box>
               )}
 
-              <Box
-                sx={{
-                  display: pathname === "/maps" ? "flex" : "none",
-                  flexDirection: { xs: "column", md: "row" },
-                  justifyContent: "center",
-                  gap: "1rem",
-                  padding: "1rem",
-                }}
-              >
-                <Box
-                  sx={{
-                    flex: 3,
-                    backgroundColor: "transparent",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <Maps />
-                </Box>
-              </Box>
-
               {/* Content */}
               <Box
                 sx={{
-                  display: pathname !== "/maps" ? "flex" : "none",
+                  display: "flex",
                   flexDirection: { xs: "column", md: "row" },
                   justifyContent: "center",
                   gap: "1rem",
@@ -222,7 +192,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   }}
                 >
                   {children}
-                  <SpeedInsights />
                 </Box>
               </Box>
             </Box>
