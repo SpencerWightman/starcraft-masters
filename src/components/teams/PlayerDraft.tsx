@@ -83,10 +83,10 @@ const PlayerDraft: React.FC<{
           fantasyTeam,
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
-        setSnackbarMessage("Success. View your saved team on the Team page.");
+        setSnackbarMessage("Draft saved. View it on the Team page.");
         setHasSaved(true);
       } catch {
-        setSnackbarMessage("Failed to save team. Try again in a moment.");
+        setSnackbarMessage("Failed to save draft. Try again in a moment.");
       }
     } else {
       setSnackbarMessage("Please select 15 players.");
@@ -152,7 +152,7 @@ const PlayerDraft: React.FC<{
                 lineHeight: 1,
               }}
             >
-              Team
+              Draft
             </Typography>
             <Tooltip
               title={<span style={{ userSelect: "none" }}>Save</span>}
