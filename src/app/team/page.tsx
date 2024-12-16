@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography, Paper } from "@mui/material";
 import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
 import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
@@ -12,12 +12,19 @@ import { PlayerSummaries } from "../types/teamTypes";
 const playerSummaries: PlayerSummaries = playerSummariesJson;
 
 const PlayerList: React.FC = () => {
-  const savedTeam = localStorage.getItem("FantasyTeam");
-  const fantasyTeam = savedTeam ? JSON.parse(savedTeam) : [];
-  console.log(savedTeam);
-  const filteredPlayers: PlayerSummary[] = Object.values(
-    playerSummaries
-  ).filter((player) => fantasyTeam.includes(player.player.handle));
+  const [fantasyTeam, setFantasyTeam] = useState<string[]>([]);
+  const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
+
+  useEffect(() => {
+    const savedTeam = localStorage.getItem("FantasyTeam");
+    const team = savedTeam ? JSON.parse(savedTeam) : [];
+    setFantasyTeam(team);
+
+    const filtered = Object.values(playerSummaries).filter((player) =>
+      team.includes(player.player.handle)
+    );
+    setFilteredPlayers(filtered);
+  }, []);
 
   if (!filteredPlayers.length) {
     return (
