@@ -205,6 +205,7 @@ const LowBaseCharts: React.FC = () => {
         width: "90%",
         maxWidth: "1100px",
         margin: "0 auto",
+        marginTop: "1rem",
         padding: "20px",
         backgroundColor: "#1f2937",
         borderRadius: "8px",
