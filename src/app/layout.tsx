@@ -14,8 +14,12 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { usePathname } from "next/navigation";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
+import Maps from "./maps/page";
+import Draft from "./draft/page";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
@@ -25,6 +29,7 @@ const universalTargetDate = new Date("2025-02-04T23:59:59Z");
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
@@ -174,14 +179,56 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </Box>
               )}
 
-              {/* Content */}
               <Box
                 sx={{
-                  display: "flex",
+                  display: pathname === "/maps" ? "flex" : "none",
                   flexDirection: { xs: "column", md: "row" },
                   justifyContent: "center",
                   gap: "1rem",
                   padding: "1rem",
+                }}
+              >
+                <Box
+                  sx={{
+                    flex: 3,
+                    backgroundColor: "transparent",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <Maps />
+                </Box>
+              </Box>
+
+              <Box
+                sx={{
+                  display: pathname === "/draft" ? "flex" : "none",
+                  flexDirection: { xs: "column", md: "row" },
+                  justifyContent: "center",
+                  gap: "1rem",
+                  padding: "1rem",
+                }}
+              >
+                <Box
+                  sx={{
+                    flex: 3,
+                    backgroundColor: "transparent",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <Draft />
+                </Box>
+              </Box>
+
+              {/* Content */}
+              <Box
+                sx={{
+                  display:
+                    pathname !== "/maps" && pathname !== "/draft"
+                      ? "flex"
+                      : "none",
+                  flexDirection: { xs: "column", md: "row" },
+                  justifyContent: "center",
+                  gap: "1rem",
                 }}
               >
                 <Box
