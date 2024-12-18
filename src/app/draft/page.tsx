@@ -266,7 +266,10 @@ const PlayerList: React.FC = () => {
           xs: "column",
           md: "row",
         },
-        marginRight: "0.8rem",
+        marginRight: {
+          xs: 0,
+          md: "0.8rem",
+        },
         gap: 2,
       }}
     >
