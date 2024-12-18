@@ -170,6 +170,7 @@ const Gallery: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        marginRight: "0.8rem",
       }}
     >
       <Typography
