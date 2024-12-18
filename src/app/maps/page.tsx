@@ -186,16 +186,24 @@ const Gallery: React.FC = () => {
       </Typography>
 
       {/* Gallery */}
-      <ImageList cols={isMobile ? 1 : 4} gap={8}>
+      <ImageList
+        cols={isMobile ? 1 : 4}
+        gap={8}
+        sx={{
+          gridTemplateColumns: isMobile
+            ? "1fr"
+            : "repeat(auto-fill, minmax(250px, 1fr))",
+        }}
+      >
         {imageGallery.map((item, index) => (
           <ImageListItem
             key={index}
             onClick={() => handleOpen(item)}
             sx={{
               cursor: "pointer",
-              width: isMobile ? "100%" : "310px",
-              height: isMobile ? "auto" : "310px",
+              aspectRatio: "1 / 1",
               overflow: "hidden",
+              borderRadius: 2,
             }}
           >
             <img

@@ -40,7 +40,7 @@ const Welcome: React.FC = () => {
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • Use the{" "}
             <Link
-              href="/team"
+              href="/draft"
               passHref
               style={{
                 textDecoration: "none",
@@ -48,7 +48,7 @@ const Welcome: React.FC = () => {
                 fontWeight: "bold",
               }}
             >
-              Team
+              Draft
             </Link>{" "}
             page to select the 15 players who you think will take the most
             combined wins in the next ASL/SSL season.

@@ -91,11 +91,6 @@ const PlayerDraft: React.FC<{
     } else {
       setSnackbarMessage("Please select 15 players.");
     }
-
-    setOpen(true);
-    setTimeout(() => {
-      setOpen(false);
-    }, 2000);
   };
 
   const handleResetClick = () => {
@@ -182,6 +177,8 @@ const PlayerDraft: React.FC<{
               open={open}
               message={snackbarMessage}
               anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              autoHideDuration={4000}
+              onClose={() => setOpen(false)}
             />
             <Tooltip
               title={<span style={{ userSelect: "none" }}>Reset all</span>}
