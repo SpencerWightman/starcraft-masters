@@ -55,7 +55,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
     const labels = Object.keys(aggregatedWinRates);
     const datasets = [
       {
-        label: `Team Win Rate (%) - ${totalGames} Games`,
+        label: `Team Win Rate by Duration  - ${totalGames} Games`,
         data: labels.map(
           (interval) =>
             aggregatedWinRates[interval].totalWinRate /
@@ -92,9 +92,23 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
       },
     },
     scales: {
+      x: {
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#e5e7eb",
+        },
+      },
       y: {
         beginAtZero: true,
         max: 100,
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#e5e7eb",
+        },
       },
     },
   };

@@ -26,7 +26,7 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
     const labels = matchup.WinRates.map((rate) => rate.Interval);
     const datasets = [
       {
-        label: `${player.player.name} - Win Rate (%) - ${matchup.TotalGames} Games`,
+        label: `${player.player.name} - Win Rate by Duration - ${matchup.TotalGames} Games`,
         data: matchup.WinRates.map((rate) => parseFloat(rate.WinRate)),
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -59,9 +59,23 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
       },
     },
     scales: {
+      x: {
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#e5e7eb",
+        },
+      },
       y: {
         beginAtZero: true,
         max: 100,
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#e5e7eb",
+        },
       },
     },
   };
