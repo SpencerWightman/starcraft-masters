@@ -92,7 +92,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                       userSelect: "none",
                     }}
                   >
-                    ASL/SSL Countdown:{" "}
+                    SSL Countdown:{" "}
                     <Countdown
                       date={universalTargetDate}
                       renderer={countdown}

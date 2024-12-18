@@ -4,7 +4,17 @@ import Link from "next/link";
 
 const Welcome: React.FC = () => {
   return (
-    <Grid2 container spacing={4} sx={{ margin: "1rem" }}>
+    <Grid2
+      container
+      spacing={4}
+      sx={{
+        margin: "1rem",
+        marginRight: {
+          xs: "1rem",
+          md: "2rem",
+        },
+      }}
+    >
       {/* Left Column */}
       <Grid2
         size={{
