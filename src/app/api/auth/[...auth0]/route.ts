@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 
 export const GET = async (
   req: NextRequest,
-  context: { params: { auth0: string[] } }
+  context: { params: Record<string, string | string[]> }
 ) => {
   const params = await context.params;
   return handleAuth()(req, { params });
@@ -11,7 +11,7 @@ export const GET = async (
 
 export const POST = async (
   req: NextRequest,
-  context: { params: { auth0: string[] } }
+  context: { params: Record<string, string | string[]> }
 ) => {
   const params = await context.params;
   return handleAuth()(req, { params });
