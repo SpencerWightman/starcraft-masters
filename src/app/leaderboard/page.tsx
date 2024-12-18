@@ -29,7 +29,7 @@ async function fetchLeaderboardFromApi(): Promise<LeaderboardEntry[]> {
   return data.leaderboard;
 }
 
-const LeaderboardPage: React.FC = () => {
+const Leaderboard: React.FC = () => {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -206,4 +206,4 @@ const LeaderboardPage: React.FC = () => {
   );
 };
 
-export default LeaderboardPage;
+export default Leaderboard;
