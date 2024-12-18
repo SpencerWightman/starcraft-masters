@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 import PlayerTable from "../../components/teams/PlayerListTable";
 import PlayerDraft from "../../components/teams/PlayerDraft";
 import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
@@ -12,6 +12,8 @@ import { PlayerSummaries, PlayerSummary } from "../types/teamTypes";
 const playerSummaries: PlayerSummaries = playerSummariesJson;
 
 const PlayerList: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
@@ -293,8 +295,12 @@ const PlayerList: React.FC = () => {
             setSelectedPlayers={setSelectedPlayers}
             setTierMaxSlots={setTierMaxSlots}
           />
-          <PlayerDraftDetails selectedPlayers={selectedPlayers} />
-          <PlayerDraftChart selectedPlayers={selectedPlayers} />
+          {!isMobile && (
+            <>
+              <PlayerDraftDetails selectedPlayers={selectedPlayers} />
+              <PlayerDraftChart selectedPlayers={selectedPlayers} />
+            </>
+          )}
         </Box>
       </Box>
 
