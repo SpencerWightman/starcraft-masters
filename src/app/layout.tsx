@@ -91,6 +91,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                         color: "rgba(243, 244, 246, 0.6)",
                         textAlign: "left",
                         userSelect: "none",
+                        display: { xs: "none", md: "block" },
                       }}
                     >
                       SSL Countdown:{" "}

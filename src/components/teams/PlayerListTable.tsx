@@ -107,6 +107,13 @@ const PlayerTable: React.FC<{
                         paddingY: 1,
                         borderBottom: "1px solid #52525b",
                         cursor: "pointer",
+                        "&:hover": {
+                          "@media (min-width:600px)": {
+                            "& > .handle": {
+                              color: "#10b981",
+                            },
+                          },
+                        },
                       }}
                       onClick={() => onPlayerClick(player)}
                     >
@@ -265,6 +272,13 @@ const PlayerTable: React.FC<{
                       borderBottom: "1px solid #52525b",
                       borderRight: "1px solid #52525b",
                       cursor: "pointer",
+                      "&:hover": {
+                        "@media (min-width:600px)": {
+                          "& > .handle": {
+                            color: "#10b981",
+                          },
+                        },
+                      },
                     }}
                     onClick={() => onPlayerClick(player)}
                   >

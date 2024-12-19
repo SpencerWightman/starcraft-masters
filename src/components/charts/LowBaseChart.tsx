@@ -6,6 +6,7 @@ import {
   Tooltip as MuiTooltip,
   IconButton,
   Typography,
+  Box,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import { Line } from "react-chartjs-2";
@@ -200,16 +201,22 @@ const LowBaseCharts: React.FC = () => {
   const chartProps = getChartProps();
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         width: "90%",
-        maxWidth: "1100px",
         margin: "0 auto",
         marginTop: "1rem",
         padding: "20px",
         backgroundColor: "#1f2937",
         borderRadius: "8px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        maxWidth: {
+          xs: "100%",
+          sm: "600px",
+          md: "900px",
+          lg: "1100px",
+          xl: "1400px",
+        },
       }}
     >
       <div
@@ -272,7 +279,7 @@ const LowBaseCharts: React.FC = () => {
         title={chartProps.title}
         tooltipData={chartProps.tooltipData}
       />
-    </div>
+    </Box>
   );
 };
 
