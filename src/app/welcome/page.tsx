@@ -45,7 +45,19 @@ const Welcome: React.FC = () => {
             How to Compete
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Use the{" "}
+            •{" "}
+            <Link
+              href="/api/auth/login"
+              passHref
+              style={{
+                textDecoration: "none",
+                color: "#10b981",
+                fontWeight: "bold",
+              }}
+            >
+              Sign up
+            </Link>{" "}
+            then use the{" "}
             <Link
               href="/draft"
               passHref
