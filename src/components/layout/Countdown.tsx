@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Countdown from "react-countdown";
+import Countdown, { CountdownRenderProps } from "react-countdown";
 import { Typography } from "@mui/material";
 const countdownRenderer = ({
   days,
@@ -7,7 +7,7 @@ const countdownRenderer = ({
   minutes,
   seconds,
   completed,
-}: any) => {
+}: CountdownRenderProps) => {
   if (completed) {
     return <span>Drafting has closed!</span>;
   } else {
