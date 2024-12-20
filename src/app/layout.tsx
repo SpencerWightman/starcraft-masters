@@ -84,23 +84,22 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     Brood War League
                   </Typography>
-                  {isNavOpen && (
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: "rgba(243, 244, 246, 0.6)",
-                        textAlign: "left",
-                        userSelect: "none",
-                        display: { xs: "none", md: "block" },
-                      }}
-                    >
-                      SSL Countdown:{" "}
-                      <Countdown
-                        date={universalTargetDate}
-                        renderer={countdown}
-                      />
-                    </Typography>
-                  )}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "rgba(243, 244, 246, 0.6)",
+                      textAlign: "left",
+                      userSelect: "none",
+                      display: { xs: "none", md: "block" },
+                    }}
+                  >
+                    SSL Countdown:{" "}
+                    <Countdown
+                      date={universalTargetDate}
+                      renderer={countdown}
+                    />
+                  </Typography>
+
                   <IconButton
                     edge="start"
                     color="inherit"
@@ -113,7 +112,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     <MenuIcon />
                   </IconButton>
-
                   {/* Desktop Nav */}
                   <Box
                     component="nav"
