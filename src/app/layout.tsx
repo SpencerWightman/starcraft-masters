@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Countdown from "react-countdown";
 import {
   AppBar,
   Toolbar,
@@ -18,6 +17,7 @@ import { usePathname } from "next/navigation";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
+import CountdownWrapper from "@/components/layout/Countdown";
 import Maps from "@/app/maps/page";
 import Draft from "@/app/draft/page";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
@@ -41,19 +41,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },
   ];
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const countdown = ({ days, hours, minutes, seconds, completed }: any) => {
-    if (completed) {
-      return <span>Drafting has closed!</span>;
-    } else {
-      return (
-        <span>
-          {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
-        </span>
-      );
-    }
-  };
 
   return (
     <html lang="en">
@@ -84,21 +71,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     Brood War League
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "rgba(243, 244, 246, 0.6)",
-                      textAlign: "left",
-                      userSelect: "none",
-                      display: { xs: "none", md: "block" },
-                    }}
-                  >
-                    SSL Countdown:{" "}
-                    <Countdown
-                      date={universalTargetDate}
-                      renderer={countdown}
-                    />
-                  </Typography>
+
+                  <CountdownWrapper targetDate={universalTargetDate} />
 
                   <IconButton
                     edge="start"
