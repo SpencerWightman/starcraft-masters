@@ -129,7 +129,15 @@ const PlayerTable: React.FC<{
                       </Typography>
                       <Box sx={{ display: "flex", gap: 1 }}>
                         <Tooltip
-                          title={<PlayerDetails player={player} />}
+                          title={
+                            <Box
+                              sx={{
+                                display: { xs: "none", md: "block" },
+                              }}
+                            >
+                              <PlayerDetails player={player} />
+                            </Box>
+                          }
                           placement="bottom"
                           slotProps={{
                             tooltip: {
@@ -158,7 +166,17 @@ const PlayerTable: React.FC<{
                           </IconButton>
                         </Tooltip>
                         <Tooltip
-                          title={<PlayerChart player={player} />}
+                          title={
+                            <Box
+                              sx={{
+                                width: "520px",
+                                height: "420px",
+                                display: { xs: "none", md: "block" },
+                              }}
+                            >
+                              <PlayerChart player={player} />
+                            </Box>
+                          }
                           placement="bottom"
                           slotProps={{
                             tooltip: {
@@ -294,7 +312,15 @@ const PlayerTable: React.FC<{
                     </Typography>
                     <Box sx={{ display: "flex", gap: 1 }}>
                       <Tooltip
-                        title={<PlayerDetails player={player} />}
+                        title={
+                          <Box
+                            sx={{
+                              display: { xs: "none", md: "block" },
+                            }}
+                          >
+                            <PlayerDetails player={player} />{" "}
+                          </Box>
+                        }
                         placement="bottom"
                         slotProps={{
                           tooltip: {
@@ -324,9 +350,15 @@ const PlayerTable: React.FC<{
                       </Tooltip>
                       <Tooltip
                         title={
-                          <div style={{ width: "520px", height: "420px" }}>
+                          <Box
+                            sx={{
+                              width: "520px",
+                              height: "420px",
+                              display: { xs: "none", md: "block" },
+                            }}
+                          >
                             <PlayerChart player={player} />
-                          </div>
+                          </Box>
                         }
                         placement="bottom"
                         slotProps={{
