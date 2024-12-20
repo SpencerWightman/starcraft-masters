@@ -132,7 +132,7 @@ const Leaderboard: React.FC = () => {
           padding: "1rem",
         }}
       >
-        SSL Winter 2025 Leaderboard
+        SSL Spring 2025 Leaderboard
       </Typography>
 
       <Box sx={{ textAlign: "center", marginTop: 2 }}>

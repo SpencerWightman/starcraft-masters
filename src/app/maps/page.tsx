@@ -177,16 +177,16 @@ const Gallery: React.FC = () => {
       }}
     >
       <Typography
-        variant="h6"
+        variant="h4"
+        component="h1"
         sx={{
-          fontWeight: "bold",
-          alignContent: "center",
-          alignItems: "center",
           color: "rgba(243, 244, 246, 0.6)",
-          marginBottom: "0.5rem",
+          textAlign: "center",
+          fontWeight: "bold",
+          padding: "1rem",
         }}
       >
-        SSL Autumn &apos;24
+        SSL Autumn 2024 Maps
       </Typography>
 
       {/* Gallery */}

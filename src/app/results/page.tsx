@@ -18,7 +18,7 @@ const Results = () => {
           padding: "1rem",
         }}
       >
-        SSL Winter 2025 Results
+        SSL Spring 2025 Results
       </Typography>
 
       <Box
