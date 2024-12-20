@@ -183,7 +183,7 @@ const Gallery: React.FC = () => {
           color: "rgba(243, 244, 246, 0.6)",
           textAlign: "center",
           fontWeight: "bold",
-          padding: "1rem",
+          paddingBottom: "1.5rem",
         }}
       >
         SSL Autumn 2024 Maps

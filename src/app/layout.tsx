@@ -18,14 +18,14 @@ import { usePathname } from "next/navigation";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
-import Maps from "./maps/page";
-import Draft from "./draft/page";
+import Maps from "@/app/maps/page";
+import Draft from "@/app/draft/page";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
 const queryClient = new QueryClient();
 
-const universalTargetDate = new Date("2025-02-04T23:59:59Z");
+const universalTargetDate = new Date("2025-02-03T23:59:59Z");
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
