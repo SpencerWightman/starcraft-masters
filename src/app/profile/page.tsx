@@ -46,7 +46,10 @@ const Profile: React.FC = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="h6" sx={{ color: "red", fontWeight: "bold" }}>
+        <Typography
+          variant="h6"
+          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
+        >
           Something went wrong. Try again in a moment.
         </Typography>
       </Paper>
@@ -71,7 +74,7 @@ const Profile: React.FC = () => {
             variant="body1"
             sx={{
               marginBottom: 2,
-              color: "#6b7280",
+              color: "#ffffff",
               lineHeight: 1.6,
               textAlign: "center",
             }}

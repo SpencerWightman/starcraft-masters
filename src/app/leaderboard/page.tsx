@@ -123,7 +123,7 @@ const Leaderboard: React.FC = () => {
   return (
     <Box>
       <Typography
-        variant="h4"
+        variant="h5"
         component="h1"
         sx={{
           color: "rgba(243, 244, 246, 0.6)",
