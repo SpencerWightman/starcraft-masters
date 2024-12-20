@@ -3,7 +3,25 @@
 import React from "react";
 import { Typography, Box, List, ListItem, ListItemText } from "@mui/material";
 
-const ro24 = ["Group A", "Group B", "Group C", "Group D", "Group E", "Group F"];
+const rounds = {
+  "Round of 24": {
+    "Group A": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group B": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group C": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group D": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group E": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group F": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+  },
+  "Round of 16": {
+    "Group A": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group B": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group C": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group D": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+  },
+  "Round of 8": { "Round of 8": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"] },
+  Semifinal: { Semifinal: ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"] },
+  Final: { Final: ["? vs. ?", "? vs. ?"] },
+};
 
 const Results = () => {
   return (
@@ -24,50 +42,75 @@ const Results = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
           padding: "1rem",
         }}
       >
-        <List
-          sx={{
-            width: "100%",
-            maxWidth: "1000px",
-            margin: "0 auto",
-          }}
-        >
-          {ro24.map((entry, index) => (
-            <ListItem
-              key={index}
+        {Object.entries(rounds).map(([roundName, groups]) => (
+          <Box key={roundName} sx={{ marginBottom: "2rem", width: "100%" }}>
+            <Typography
+              variant="h6"
               sx={{
-                borderBottom: "1px solid #2d3748",
-                "&:last-child": { borderBottom: "none" },
-                backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
+                color: "#f9fafb",
+                textAlign: "left",
+                fontWeight: "bold",
+                marginBottom: "1rem",
               }}
             >
-              <ListItemText
-                primary={
-                  <Box
+              {roundName}
+            </Typography>
+
+            <List
+              sx={{
+                width: "100%",
+                maxWidth: "1000px",
+                margin: "0 auto",
+                backgroundColor: "#1e293b",
+                borderRadius: "8px",
+              }}
+            >
+              {Object.entries(groups).map(([groupName, matches]) => (
+                <Box key={groupName} sx={{ marginBottom: "1rem" }}>
+                  <Typography
+                    variant="body1"
                     sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "100%",
+                      color: "#d1d5db",
+                      marginBottom: "0.5rem",
+                      paddingLeft: "1rem",
                     }}
                   >
-                    <Typography
-                      variant="body1"
+                    {groupName}
+                  </Typography>
+                  {matches.map((match, index) => (
+                    <ListItem
+                      key={index}
                       sx={{
-                        color: "#e5e7eb",
+                        borderBottom: "1px solid #2d3748",
+                        "&:last-child": { borderBottom: "none" },
+                        backgroundColor:
+                          index % 2 === 0 ? "#2f3e51" : "#374151",
                       }}
                     >
-                      {entry}
-                    </Typography>
-                  </Box>
-                }
-              />
-            </ListItem>
-          ))}
-        </List>
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: "#e5e7eb",
+                            }}
+                          >
+                            {match}
+                          </Typography>
+                        }
+                      />
+                    </ListItem>
+                  ))}
+                </Box>
+              ))}
+            </List>
+          </Box>
+        ))}
       </Box>
     </Box>
   );
