@@ -8,8 +8,8 @@ const Welcome: React.FC = () => {
       container
       spacing={4}
       sx={{
-        margin: "1rem",
-        maxWidth: "1500px",
+        margin: "1rem auto",
+        maxWidth: "1400px",
       }}
     >
       {/* Left Column */}
