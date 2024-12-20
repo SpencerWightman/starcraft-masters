@@ -5,22 +5,32 @@ import { Typography, Box, List, ListItem, ListItemText } from "@mui/material";
 
 const rounds = {
   "Round of 24": {
-    "Group A": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group B": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group C": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group D": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group E": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group F": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group A": ["", "", "", "", ""],
+    "Group B": ["", "", "", "", ""],
+    "Group C": ["", "", "", "", ""],
+    "Group D": ["", "", "", "", ""],
+    "Group E": ["", "", "", "", ""],
+    "Group F": ["", "", "", "", ""],
   },
   "Round of 16": {
-    "Group A": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group B": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group C": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
-    "Group D": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"],
+    "Group A": ["", "", "", "", "", "", "", "", "", "", ""],
+    "Group B": ["", "", "", "", "", "", "", "", "", "", ""],
+    "Group C": ["", "", "", "", "", "", "", "", "", "", ""],
+    "Group D": ["", "", "", "", "", "", "", "", "", "", ""],
   },
-  "Round of 8": { "Round of 8": ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"] },
-  Semifinal: { Semifinal: ["? vs. ?", "? vs. ?", "? vs. ?", "? vs. ?"] },
-  Final: { Final: ["? vs. ?", "? vs. ?"] },
+  "Round of 8": {
+    "Match 1": ["", "", "", "", "", "", ""],
+    "Match 2": ["", "", "", "", "", "", ""],
+    "Match 3": ["", "", "", "", "", "", ""],
+    "Match 4": ["", "", "", "", "", "", ""],
+  },
+  Semifinal: {
+    "Match 1": ["", "", "", "", "", "", ""],
+    "Match 2": ["", "", "", "", "", "", ""],
+  },
+  Final: {
+    "Match 1": ["", "", "", "", "", "", ""],
+  },
 };
 
 const Results = () => {
@@ -98,9 +108,10 @@ const Results = () => {
                             variant="body2"
                             sx={{
                               color: "#e5e7eb",
+                              fontStyle: "normal",
                             }}
                           >
-                            {match}
+                            {match === "" ? "? vs. ?" : match}
                           </Typography>
                         }
                       />
