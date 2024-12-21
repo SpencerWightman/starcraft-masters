@@ -276,6 +276,18 @@ const Welcome: React.FC = () => {
             </a>{" "}
             used by Brood War League.
           </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            •{" "}
+            <a
+              href="https://910map.tistory.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#10b981", textDecoration: "none" }}
+            >
+              910map
+            </a>{" "}
+            for ASL/SSL map information.
+          </Typography>
         </Box>
       </Grid2>
     </Grid2>
