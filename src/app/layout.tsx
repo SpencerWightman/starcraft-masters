@@ -136,24 +136,25 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 >
                   <List>
                     {navItems.map((item, index) => (
-                      <ListItemButton
-                        key={index}
-                        onClick={() => setIsNavOpen(false)}
-                        sx={{
-                          color: "#10b981",
-                          textDecoration: "none",
-                          "&:hover": { backgroundColor: "#374151" },
-                        }}
-                      >
-                        <Link href={item.href}>
+                      <Link href={item.href}>
+                        <ListItemButton
+                          key={index}
+                          onClick={() => setIsNavOpen(false)}
+                          sx={{
+                            color: "#10b981",
+                            textDecoration: "none",
+                            borderBottom: "1px solid #374151",
+                            "&:hover": { backgroundColor: "#374151" },
+                          }}
+                        >
                           <ListItemText
                             primary={item.text}
                             primaryTypographyProps={{
                               sx: { fontWeight: "bold", textAlign: "center" },
                             }}
                           />
-                        </Link>
-                      </ListItemButton>
+                        </ListItemButton>
+                      </Link>
                     ))}
                   </List>
                 </Box>
