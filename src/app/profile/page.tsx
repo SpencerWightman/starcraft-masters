@@ -5,6 +5,12 @@ import { Paper, Typography, Box } from "@mui/material";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
+declare module "@auth0/nextjs-auth0/client" {
+  interface UserProfile {
+    username?: string;
+  }
+}
+
 const Profile: React.FC = () => {
   const { user, error, isLoading } = useUser();
 
@@ -113,7 +119,7 @@ const Profile: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Welcome, {user.name || "User"}!
+            Welcome, {user.username || "User"}!
           </Typography>
           <Typography
             variant="body1"
