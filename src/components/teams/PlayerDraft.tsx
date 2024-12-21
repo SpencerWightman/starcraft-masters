@@ -48,7 +48,7 @@ const PlayerDraft: React.FC<{
 }> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const { user, isLoading } = useUser();
+  const { user } = useUser();
   const mutation = useMutation<
     void,
     Error,
