@@ -6,7 +6,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
 const Profile: React.FC = () => {
-  const { user, error, isLoading } = useUser();
+  const { user, error } = useUser();
 
   if (error) {
     return (
