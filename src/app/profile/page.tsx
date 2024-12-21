@@ -113,7 +113,7 @@ const Profile: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Welcome, {user.nickname || "User"}!
+            {String(user["https://broodwarleague.com/nickname"] || "User")}
           </Typography>
           <Typography
             variant="body1"
