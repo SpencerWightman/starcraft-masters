@@ -143,7 +143,7 @@ const PlayerList: React.FC = () => {
             minWidth: "300px",
           }}
         >
-          <PlayerSavedTeam selectedPlayers={fantasyTeam} />
+          <PlayerSavedTeam selectedPlayers={fantasyTeam} user={user} />
         </Box>
         <Box
           sx={{

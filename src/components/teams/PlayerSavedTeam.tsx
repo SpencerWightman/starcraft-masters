@@ -1,18 +1,18 @@
 import React from "react";
 import { Box, Typography, Grid2, Paper } from "@mui/material";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { UserProfile } from "@auth0/nextjs-auth0/client";
 
 const PlayerSavedTeam: React.FC<{
   selectedPlayers: string[];
-}> = ({ selectedPlayers }) => {
-  const { user, error } = useUser();
-
-  if (error || !user) {
+  user: UserProfile | undefined;
+}> = ({ selectedPlayers, user }) => {
+  if (!user) {
     return (
       <Paper
         elevation={3}
         sx={{
           padding: 4,
+          marginBottom: 2,
           maxWidth: 600,
           margin: "auto",
           marginTop: 4,
