@@ -7,7 +7,8 @@ import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
 import PlayerSavedTeam from "../../components/teams/PlayerSavedTeam";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import playerSummariesJson from "data/draftData15-18.json";
-import { PlayerSummaries } from "../types/teamTypes";
+import { PlayerSummaries } from "@/app/types/teamTypes";
+import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
@@ -17,6 +18,7 @@ const PlayerList: React.FC = () => {
   const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { user } = useUser();
 
   useEffect(() => {
     const savedTeam = localStorage.getItem("FantasyTeam");
@@ -28,6 +30,41 @@ const PlayerList: React.FC = () => {
     );
     setFilteredPlayers(filtered);
   }, []);
+
+  if (!user) {
+    <>
+      <Typography
+        variant="body1"
+        sx={{
+          marginBottom: 2,
+          color: "#ffffff",
+          lineHeight: 1.6,
+          textAlign: "center",
+        }}
+      >
+        Log in to save your team draft and compete in Brood War League
+      </Typography>
+      <Box sx={{ textAlign: "center", marginTop: 2 }}>
+        <Link href="/api/auth/login" passHref>
+          <Typography
+            component="span"
+            sx={{
+              display: "inline-block",
+              padding: "0.5rem 1rem",
+              backgroundColor: "#10b981",
+              color: "#fff",
+              borderRadius: "4px",
+              textDecoration: "none",
+              fontWeight: "bold",
+              cursor: "pointer",
+            }}
+          >
+            Sign up / Login
+          </Typography>
+        </Link>
+      </Box>
+    </>;
+  }
 
   if (!filteredPlayers.length) {
     return (
@@ -51,10 +88,10 @@ const PlayerList: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Log in to save your team draft and compete in Brood War League
+          Save a team draft to compete in Brood War League
         </Typography>
         <Box sx={{ textAlign: "center", marginTop: 2 }}>
-          <Link href="/api/auth/login" passHref>
+          <Link href="/draft" passHref>
             <Typography
               component="span"
               sx={{
@@ -68,7 +105,7 @@ const PlayerList: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              Sign up / Login
+              Draft
             </Typography>
           </Link>
         </Box>
