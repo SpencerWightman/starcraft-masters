@@ -60,12 +60,6 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (isLoading) {
-      setSnackbarMessage("Checking login status...");
-      setOpen(true);
-      return;
-    }
-
     if (!user) {
       setSnackbarMessage("Login to save your team");
       setOpen(true);
@@ -84,12 +78,15 @@ const PlayerDraft: React.FC<{
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Draft saved. View it on the Team page.");
+        setOpen(true);
         setHasSaved(true);
       } catch {
         setSnackbarMessage("Failed to save draft. Try again in a moment.");
+        setOpen(true);
       }
     } else {
       setSnackbarMessage("Please select 15 players.");
+      setOpen(true);
     }
   };
 
