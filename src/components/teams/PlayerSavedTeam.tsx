@@ -7,7 +7,7 @@ const PlayerSavedTeam: React.FC<{
 }> = ({ selectedPlayers }) => {
   const { user, error } = useUser();
 
-  if (error) {
+  if (error || !user) {
     return (
       <Paper
         elevation={3}
@@ -71,7 +71,7 @@ const PlayerSavedTeam: React.FC<{
                 lineHeight: 1,
               }}
             >
-              {String(user!["https://broodwarleague.com/nickname"] || "User")}
+              {String(user["https://broodwarleague.com/nickname"] || "User")}
             </Typography>
           </Box>
         </Box>

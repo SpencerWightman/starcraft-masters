@@ -139,6 +139,7 @@ const PlayerTable: React.FC<{
                             </Box>
                           }
                           placement="bottom"
+                          leaveDelay={200}
                           slotProps={{
                             tooltip: {
                               sx: {
@@ -178,6 +179,7 @@ const PlayerTable: React.FC<{
                             </Box>
                           }
                           placement="bottom"
+                          leaveDelay={200}
                           slotProps={{
                             tooltip: {
                               sx: {
@@ -322,6 +324,7 @@ const PlayerTable: React.FC<{
                           </Box>
                         }
                         placement="bottom"
+                        leaveDelay={200}
                         slotProps={{
                           tooltip: {
                             sx: {
@@ -361,6 +364,7 @@ const PlayerTable: React.FC<{
                           </Box>
                         }
                         placement="bottom"
+                        leaveDelay={200}
                         slotProps={{
                           tooltip: {
                             sx: {
