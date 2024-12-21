@@ -298,10 +298,13 @@ const PlayerList: React.FC = () => {
             setSelectedPlayers={setSelectedPlayers}
             setTierMaxSlots={setTierMaxSlots}
           />
+          <PlayerDraftDetails selectedPlayers={selectedPlayers} />
           {!isMobile && (
             <>
-              <PlayerDraftDetails selectedPlayers={selectedPlayers} />
-              <PlayerDraftChart selectedPlayers={selectedPlayers} />
+              <PlayerDraftChart
+                selectedPlayers={selectedPlayers}
+                widthProp="500px"
+              />
             </>
           )}
         </Box>

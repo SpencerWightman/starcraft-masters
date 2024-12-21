@@ -73,9 +73,9 @@ const Welcome: React.FC = () => {
             combined wins in the next ASL/SSL season.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-            • Follow your team on the{" "}
+            • Follow your rank on the{" "}
             <Link
-              href="/team"
+              href="/leaderboard"
               passHref
               style={{
                 textDecoration: "none",
@@ -83,10 +83,10 @@ const Welcome: React.FC = () => {
                 fontWeight: "bold",
               }}
             >
-              Results
+              Leaderboard
             </Link>{" "}
-            page through each day of the tournament and become the Brood War
-            League Champion!
+            through each day of the tournament and become the Brood War League
+            Champion!
           </Typography>
         </Box>
         <Box

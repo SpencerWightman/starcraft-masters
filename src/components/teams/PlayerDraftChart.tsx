@@ -15,9 +15,10 @@ import { PlayerSummary } from "@/app/types/teamTypes";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
-  selectedPlayers,
-}) => {
+const PlayerDraftChart: React.FC<{
+  selectedPlayers: PlayerSummary[];
+  widthProp: string;
+}> = ({ selectedPlayers, widthProp }) => {
   const [selectedMatchup, setSelectedMatchup] = useState(
     selectedPlayers.length > 0 && selectedPlayers[0].duration.length > 0
       ? selectedPlayers[0].duration[0].Matchup
@@ -122,7 +123,7 @@ const PlayerDraftChart: React.FC<{ selectedPlayers: PlayerSummary[] }> = ({
   return (
     <div
       style={{
-        width: "500px",
+        width: widthProp,
         height: "400px",
         padding: "5px",
         backgroundColor: "#1f2937",

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, useMediaQuery, useTheme } from "@mui/material";
 import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
 import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
 import PlayerSavedTeam from "../../components/teams/PlayerSavedTeam";
@@ -15,6 +15,8 @@ const playerSummaries: PlayerSummaries = playerSummariesJson;
 const PlayerList: React.FC = () => {
   const [fantasyTeam, setFantasyTeam] = useState<string[]>([]);
   const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     const savedTeam = localStorage.getItem("FantasyTeam");
@@ -82,7 +84,8 @@ const PlayerList: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         padding: 2,
-        gap: 4,
+        maxWidth: "800px",
+        margin: "0 auto",
       }}
     >
       <Box
@@ -90,9 +93,8 @@ const PlayerList: React.FC = () => {
           display: "flex",
           flexDirection: {
             xs: "column",
-            md: "row",
+            md: "column",
           },
-          gap: 4,
           width: "100%",
           maxWidth: 1200,
           justifyContent: "center",
@@ -115,15 +117,14 @@ const PlayerList: React.FC = () => {
           <PlayerDraftDetails selectedPlayers={filteredPlayers} />
         </Box>
       </Box>
-
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: 1200,
-        }}
-      >
-        <PlayerDraftChart selectedPlayers={filteredPlayers} />
-      </Box>
+      {!isMobile && (
+        <Box sx={{ marginBottom: 6 }}>
+          <PlayerDraftChart
+            selectedPlayers={filteredPlayers}
+            widthProp="1200px"
+          />
+        </Box>
+      )}
     </Box>
   );
 };

@@ -34,7 +34,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const navItems = [
     { text: "Welcome", href: "/welcome" },
     { text: "Leaderboard", href: "/leaderboard" },
-    { text: "Results", href: "/results" },
     { text: "Team", href: "/team" },
     { text: "Draft", href: "/draft" },
     { text: "Maps", href: "/maps" },
@@ -71,9 +70,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     Brood War League
                   </Typography>
-
-                  <CountdownWrapper targetDate={universalTargetDate} />
-
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <CountdownWrapper targetDate={universalTargetDate} />
+                  </Box>
                   <IconButton
                     edge="start"
                     color="inherit"
