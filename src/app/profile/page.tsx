@@ -8,30 +8,6 @@ import Link from "next/link";
 const Profile: React.FC = () => {
   const { user, error, isLoading } = useUser();
 
-  if (isLoading) {
-    return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
-        >
-          Loading...
-        </Typography>
-      </Paper>
-    );
-  }
-
   if (error) {
     return (
       <Paper
@@ -113,6 +89,7 @@ const Profile: React.FC = () => {
               fontWeight: "bold",
             }}
           >
+            Welcome{" "}
             {String(user["https://broodwarleague.com/nickname"] || "User")}
           </Typography>
           <Typography

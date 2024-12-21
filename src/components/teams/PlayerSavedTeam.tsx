@@ -1,9 +1,36 @@
 import React from "react";
-import { Box, Typography, Grid2 } from "@mui/material";
+import { Box, Typography, Grid2, Paper } from "@mui/material";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const PlayerSavedTeam: React.FC<{
   selectedPlayers: string[];
 }> = ({ selectedPlayers }) => {
+  const { user, error } = useUser();
+
+  if (error) {
+    return (
+      <Paper
+        elevation={3}
+        sx={{
+          padding: 4,
+          maxWidth: 600,
+          margin: "auto",
+          marginTop: 4,
+          backgroundColor: "#374151",
+          borderRadius: 2,
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
+        >
+          Something went wrong. Try again in a moment.
+        </Typography>
+      </Paper>
+    );
+  }
+
   return (
     <Box sx={{ paddingBottom: 2 }}>
       <Grid2
@@ -44,7 +71,7 @@ const PlayerSavedTeam: React.FC<{
                 lineHeight: 1,
               }}
             >
-              Team
+              {String(user!["https://broodwarleague.com/nickname"] || "User")}
             </Typography>
           </Box>
         </Box>
