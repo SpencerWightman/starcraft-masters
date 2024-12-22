@@ -32,38 +32,50 @@ const PlayerList: React.FC = () => {
   }, []);
 
   if (!user) {
-    <>
-      <Typography
-        variant="body1"
+    return (
+      <Paper
+        elevation={3}
         sx={{
-          marginBottom: 2,
-          color: "#ffffff",
-          lineHeight: 1.6,
-          textAlign: "center",
+          padding: 4,
+          maxWidth: 600,
+          margin: "auto",
+          marginTop: 4,
+          backgroundColor: "#374151",
+          borderRadius: 2,
         }}
       >
-        Log in to save your team draft and compete in Brood War League
-      </Typography>
-      <Box sx={{ textAlign: "center", marginTop: 2 }}>
-        <Link href="/api/auth/login" passHref>
-          <Typography
-            component="span"
-            sx={{
-              display: "inline-block",
-              padding: "0.5rem 1rem",
-              backgroundColor: "#10b981",
-              color: "#fff",
-              borderRadius: "4px",
-              textDecoration: "none",
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
-          >
-            Sign up / Login
-          </Typography>
-        </Link>
-      </Box>
-    </>;
+        <Typography
+          variant="body1"
+          sx={{
+            marginBottom: 2,
+            color: "#ffffff",
+            lineHeight: 1.6,
+            textAlign: "center",
+          }}
+        >
+          Log in to save your team draft and compete in Brood War League
+        </Typography>
+        <Box sx={{ textAlign: "center", marginTop: 2 }}>
+          <Link href="/api/auth/login" passHref>
+            <Typography
+              component="span"
+              sx={{
+                display: "inline-block",
+                padding: "0.5rem 1rem",
+                backgroundColor: "#10b981",
+                color: "#fff",
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Sign up / Login
+            </Typography>
+          </Link>
+        </Box>
+      </Paper>
+    );
   }
 
   if (!filteredPlayers.length) {

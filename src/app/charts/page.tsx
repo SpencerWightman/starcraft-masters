@@ -1,4 +1,4 @@
-import LowBaseCharts from "../../components/charts/LowBaseChart";
+import LowBaseCharts from "@/components/charts/LowBaseChart";
 
 const ChartsPage: React.FC = () => {
   return <LowBaseCharts />;

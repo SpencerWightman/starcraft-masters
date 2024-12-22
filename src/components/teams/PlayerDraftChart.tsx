@@ -134,6 +134,7 @@ const PlayerDraftChart: React.FC<{
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
+        marginTop: "16px",
       }}
     >
       <div
