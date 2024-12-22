@@ -1,44 +1,18 @@
 import React from "react";
-import { Box, Typography, Grid2, Paper } from "@mui/material";
-import { UserProfile } from "@auth0/nextjs-auth0/client";
+import { Box, Typography, Grid2 } from "@mui/material";
 
 const PlayerSavedTeam: React.FC<{
   selectedPlayers: string[];
-  user: UserProfile | undefined;
-}> = ({ selectedPlayers, user }) => {
-  if (!user) {
-    return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          marginBottom: 2,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
-        >
-          Something went wrong. Try again in a moment.
-        </Typography>
-      </Paper>
-    );
-  }
-
+}> = ({ selectedPlayers }) => {
   return (
-    <Box sx={{ paddingBottom: 2 }}>
+    <Box>
       <Grid2
         container
         sx={{
           backgroundColor: "#374151",
           borderRadius: "8px",
           width: "100%",
+          paddingBottom: 3.32,
         }}
       >
         <Box
@@ -50,7 +24,6 @@ const PlayerSavedTeam: React.FC<{
             userSelect: "none",
             flex: 1,
             display: "flex",
-            flexDirection: "column",
             overflow: "hidden",
           }}
         >
@@ -71,7 +44,7 @@ const PlayerSavedTeam: React.FC<{
                 lineHeight: 1,
               }}
             >
-              {String(user["https://broodwarleague.com/nickname"] || "User")}
+              SSL Spring 2025
             </Typography>
           </Box>
         </Box>

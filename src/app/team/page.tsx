@@ -121,7 +121,7 @@ const PlayerList: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         padding: 2,
-        maxWidth: "800px",
+        maxWidth: "1200px",
         margin: "0 auto",
       }}
     >
@@ -130,20 +130,22 @@ const PlayerList: React.FC = () => {
           display: "flex",
           flexDirection: {
             xs: "column",
-            md: "column",
+            md: "row",
           },
           width: "100%",
           maxWidth: 1200,
           justifyContent: "center",
+          gap: 2,
         }}
       >
         <Box
           sx={{
             flex: 1,
             minWidth: "300px",
+            height: "100%",
           }}
         >
-          <PlayerSavedTeam selectedPlayers={fantasyTeam} user={user} />
+          <PlayerSavedTeam selectedPlayers={fantasyTeam} />
         </Box>
         <Box
           sx={{
