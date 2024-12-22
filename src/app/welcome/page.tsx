@@ -159,16 +159,7 @@ const Welcome: React.FC = () => {
             Contact
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Lurkerbomb in the{" "}
-            <a
-              href="https://discord.com/invite/6bh6hhc"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#10b981", textDecoration: "none" }}
-            >
-              Artosis Discord channel
-            </a>
-            .
+            • Lurkerbomb @ ...
           </Typography>
         </Box>
       </Grid2>
