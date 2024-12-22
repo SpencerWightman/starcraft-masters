@@ -18,8 +18,9 @@ import { useMutation } from "@tanstack/react-query";
 const saveTeamToDB = async (params: {
   email: string;
   fantasyTeam: string[];
+  username: string;
 }) => {
-  const { email, fantasyTeam } = params;
+  const { email, fantasyTeam, username } = params;
 
   const response = await fetch("/api/save-team", {
     method: "POST",
@@ -27,6 +28,7 @@ const saveTeamToDB = async (params: {
     body: JSON.stringify({
       email,
       fantasyTeam,
+      username,
     }),
   });
 
@@ -52,7 +54,7 @@ const PlayerDraft: React.FC<{
   const mutation = useMutation<
     void,
     Error,
-    { email: string; fantasyTeam: string[] }
+    { email: string; fantasyTeam: string[]; username: string }
   >({
     mutationFn: saveTeamToDB,
   });
@@ -75,6 +77,7 @@ const PlayerDraft: React.FC<{
         await mutation.mutateAsync({
           email: user.email as string,
           fantasyTeam,
+          username: user.nickname as string,
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Draft saved. View it on the Team page.");

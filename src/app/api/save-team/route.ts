@@ -12,7 +12,7 @@ const client = new DynamoDBClient({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { email, fantasyTeam } = body;
+    const { email, fantasyTeam, username } = body;
 
     if (!email || !Array.isArray(fantasyTeam)) {
       console.error("Invalid input:", body);
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
         email: { S: email },
         team: { L: teamItems },
         season: { S: "18" },
+        username: { S: username },
       },
     };
 
