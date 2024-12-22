@@ -5,14 +5,17 @@ import {
   Paper,
   Typography,
   Box,
-  List,
-  ListItem,
-  ListItemText,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
 } from "@mui/material";
 
 type LeaderboardEntry = {
   username: string;
   points: number;
+  team: string[];
 };
 
 const CACHE_KEY = "leaderboard_cache";
@@ -66,7 +69,7 @@ const Leaderboard: React.FC = () => {
           setLastUpdated(updatedTime);
         }
       } catch {
-        setError("Failed to load leaderboard. Please try again later.");
+        setError("Failed to load leaderboard. Please try again in a moment.");
       } finally {
         setLoading(false);
       }
@@ -77,25 +80,9 @@ const Leaderboard: React.FC = () => {
 
   if (loading) {
     return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
-        >
-          Loading leaderboard...
-        </Typography>
-      </Paper>
+      <Typography variant="h6" sx={{ textAlign: "center", marginTop: 4 }}>
+        Loading leaderboard...
+      </Typography>
     );
   }
 
@@ -142,66 +129,71 @@ const Leaderboard: React.FC = () => {
             color: "#9ca3af",
           }}
         >
-          Last updated: {lastUpdated}
+          Last Updated: {lastUpdated}
         </Typography>
       </Box>
 
-      <Box
+      <TableContainer
+        component={Paper}
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          padding: "1rem",
+          margin: "1rem auto",
+          maxWidth: 1250,
         }}
       >
-        <List
-          sx={{
-            width: "100%",
-            maxWidth: "1000px",
-            margin: "0 auto",
-          }}
-        >
-          {leaderboard.map((entry, index) => (
-            <ListItem
-              key={index}
-              sx={{
-                borderBottom: "1px solid #2d3748",
-                "&:last-child": { borderBottom: "none" },
-                backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
-              }}
-            >
-              <ListItemText
-                primary={
-                  <Box
+        <Table>
+          <TableBody sx={{ backgroundColor: "#000000" }}>
+            {leaderboard.map((entry, index) => (
+              <TableRow
+                key={index}
+                sx={{
+                  backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
+                }}
+              >
+                <TableCell
+                  align="left"
+                  sx={{
+                    color: "#10b981",
+                    borderBottom: "none",
+                  }}
+                >
+                  {entry.points}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  sx={{
+                    color: "#e5e7eb",
+                    borderBottom: "none",
+                  }}
+                >
+                  {entry.username}
+                </TableCell>
+                {entry.team.map((member, memberIndex) => (
+                  <TableCell
+                    key={memberIndex}
+                    align="center"
                     sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "100%",
+                      color: "rgba(243, 244, 246, 0.6)",
+                      borderBottom: "none",
                     }}
                   >
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: "#e5e7eb",
-                      }}
-                    >
-                      {entry.username}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "#9ca3af",
-                      }}
-                    >
-                      {entry.points} points
-                    </Typography>
-                  </Box>
-                }
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Box>
+                    {member}
+                  </TableCell>
+                ))}
+                {Array.from({ length: 4 - entry.team.length }).map((_, i) => (
+                  <TableCell
+                    key={`placeholder-${i}`}
+                    align="center"
+                    sx={{
+                      backgroundColor: "#2f3e51",
+                      borderBottom: "none",
+                    }}
+                  />
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Box>
   );
 };

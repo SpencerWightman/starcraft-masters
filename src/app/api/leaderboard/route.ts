@@ -18,8 +18,12 @@ export async function GET() {
   try {
     const command = new ScanCommand(params);
     const data = await client.send(command);
+
+    // console.log("Raw DynamoDB Response:", JSON.stringify(data, null, 2));
+
     const leaderboard = (data.Items || []).map((item) => ({
       username: item.teamName?.S ?? "zzzzzz",
+      team: (item.team?.L ?? []).map((member) => member.S || "||||||"),
       points: parseInt(item.points?.N ?? "0", 10),
     }));
 
