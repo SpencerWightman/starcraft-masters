@@ -73,7 +73,7 @@ const PlayerDraft: React.FC<{
         const fantasyTeam = selectedPlayers.map(
           (player) => player.player.handle
         );
-        console.log(fantasyTeam);
+
         await mutation.mutateAsync({
           email: user.email as string,
           fantasyTeam,

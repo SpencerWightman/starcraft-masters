@@ -43,31 +43,30 @@ const Leaderboard: React.FC = () => {
       const now = Date.now();
 
       try {
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        const cacheExpiration = localStorage.getItem(CACHE_EXPIRATION_KEY);
-        const lastUpdatedCache = localStorage.getItem(CACHE_LAST_UPDATED_KEY);
+        // const cachedData = localStorage.getItem(CACHE_KEY);
+        // const cacheExpiration = localStorage.getItem(CACHE_EXPIRATION_KEY);
+        // const lastUpdatedCache = localStorage.getItem(CACHE_LAST_UPDATED_KEY);
 
-        if (
-          cachedData &&
-          cacheExpiration &&
-          now < parseInt(cacheExpiration, 10)
-        ) {
-          setLeaderboard(JSON.parse(cachedData));
-          setLastUpdated(lastUpdatedCache || "Unknown");
-        } else {
-          const freshData = await fetchLeaderboardFromApi();
-          const updatedTime = new Date().toLocaleString();
+        // if (
+        //   cachedData &&
+        //   cacheExpiration &&
+        //   now < parseInt(cacheExpiration, 10)
+        // ) {
+        //   setLeaderboard(JSON.parse(cachedData));
+        //   setLastUpdated(lastUpdatedCache || "Unknown");
+        // } else {
+        const freshData = await fetchLeaderboardFromApi();
+        const updatedTime = new Date().toLocaleString();
 
-          localStorage.setItem(CACHE_KEY, JSON.stringify(freshData));
-          localStorage.setItem(
-            CACHE_EXPIRATION_KEY,
-            (now + CACHE_EXPIRATION_MS).toString()
-          );
-          localStorage.setItem(CACHE_LAST_UPDATED_KEY, updatedTime);
+        localStorage.setItem(CACHE_KEY, JSON.stringify(freshData));
+        localStorage.setItem(
+          CACHE_EXPIRATION_KEY,
+          (now + CACHE_EXPIRATION_MS).toString()
+        );
+        localStorage.setItem(CACHE_LAST_UPDATED_KEY, updatedTime);
 
-          setLeaderboard(freshData);
-          setLastUpdated(updatedTime);
-        }
+        setLeaderboard(freshData);
+        setLastUpdated(updatedTime);
       } catch {
         setError("Failed to load leaderboard. Please try again in a moment.");
       } finally {
@@ -80,9 +79,23 @@ const Leaderboard: React.FC = () => {
 
   if (loading) {
     return (
-      <Typography variant="h6" sx={{ textAlign: "center", marginTop: 4 }}>
-        Loading leaderboard...
-      </Typography>
+      <>
+        <Typography
+          variant="h5"
+          component="h1"
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            padding: "1rem",
+          }}
+        >
+          SSL Spring 2025 Leaderboard
+        </Typography>
+        <Typography variant="h6" sx={{ textAlign: "center", marginTop: 4 }}>
+          ...
+        </Typography>
+      </>
     );
   }
 
@@ -121,7 +134,6 @@ const Leaderboard: React.FC = () => {
       >
         SSL Spring 2025 Leaderboard
       </Typography>
-
       <Box sx={{ textAlign: "center", marginTop: 2 }}>
         <Typography
           variant="body2"

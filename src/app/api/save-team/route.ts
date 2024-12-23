@@ -23,19 +23,20 @@ export async function POST(req: Request) {
 
     const params = {
       TableName: process.env.AWS_TABLE!,
-      Key: { email: { S: email } },
+      Key: {
+        email: { S: email },
+        season: { N: "19" },
+      },
       UpdateExpression:
-        "SET #team = :team, #username = :username, #season = :season",
+        "SET #team = :team, #username = :username, #points = :points",
       ExpressionAttributeNames: {
         "#team": "team",
         "#username": "username",
-        "#season": "season",
         "#points": "points",
       },
       ExpressionAttributeValues: {
         ":team": { L: teamItems },
         ":username": { S: username },
-        ":season": { N: "19" },
         ":points": { N: "0" },
       },
     };
