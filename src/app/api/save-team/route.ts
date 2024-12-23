@@ -35,14 +35,14 @@ export async function POST(req: Request) {
       ExpressionAttributeValues: {
         ":team": { L: teamItems },
         ":username": { S: username },
-        ":season": { S: "19" },
+        ":season": { N: "19" },
         ":points": { N: "0" },
       },
     };
 
-    await client.send(new UpdateItemCommand(params));
+    const response = await client.send(new UpdateItemCommand(params));
 
-    return NextResponse.json({ message: "Team saved successfully" });
+    return NextResponse.json({ message: "Team saved successfully", response });
   } catch (error) {
     console.error("Error saving team:", error);
     return NextResponse.json({ error: "Failed to save team" }, { status: 500 });
