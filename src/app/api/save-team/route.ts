@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION,
@@ -23,15 +23,24 @@ export async function POST(req: Request) {
 
     const params = {
       TableName: process.env.AWS_TABLE!,
-      Item: {
-        email: { S: email },
-        team: { L: teamItems },
-        season: { S: "18" },
-        username: { S: username },
+      Key: { email: { S: email } },
+      UpdateExpression:
+        "SET #team = :team, #username = :username, #season = :season",
+      ExpressionAttributeNames: {
+        "#team": "team",
+        "#username": "username",
+        "#season": "season",
+        "#points": "points",
+      },
+      ExpressionAttributeValues: {
+        ":team": { L: teamItems },
+        ":username": { S: username },
+        ":season": { S: "19" },
+        ":points": { N: "0" },
       },
     };
 
-    await client.send(new PutItemCommand(params));
+    await client.send(new UpdateItemCommand(params));
 
     return NextResponse.json({ message: "Team saved successfully" });
   } catch (error) {
