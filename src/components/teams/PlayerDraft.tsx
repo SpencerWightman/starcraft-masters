@@ -77,7 +77,9 @@ const PlayerDraft: React.FC<{
         await mutation.mutateAsync({
           email: user.email as string,
           fantasyTeam,
-          username: user.nickname as string,
+          username: String(
+            user["https://broodwarleague.com/nickname"] || "||||||||"
+          ),
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Draft saved. View it on the Team page.");

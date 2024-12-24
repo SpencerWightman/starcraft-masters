@@ -90,7 +90,7 @@ const Profile: React.FC = () => {
             }}
           >
             Username:{" "}
-            {String(user["https://broodwarleague.com/nickname"] || "User")}
+            {String(user["https://broodwarleague.com/nickname"] || "||||||||")}
           </Typography>
           <Typography
             variant="body1"
