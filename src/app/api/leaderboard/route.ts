@@ -20,8 +20,7 @@ export async function GET() {
     const data = await client.send(command);
 
     const leaderboard = (data.Items || []).map((item) => ({
-      // username: item.username?.S ?? "||||||",
-      username: "||||||",
+      username: item.username?.S ?? "||||||",
       team: (item.team?.L ?? []).map((member) => member.S || "||||||"),
       points: parseInt(item.points?.N ?? "0", 10),
     }));
