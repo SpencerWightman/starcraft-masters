@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "data/wins2base3rdsubtract.js"
+    "data/wins2base3rdsubtract.js",
+    "src/app/api/auth/[...auth0]/route.ts"
   ],
   "exclude": ["node_modules"]
 }

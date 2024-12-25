@@ -149,7 +149,7 @@ const Leaderboard: React.FC = () => {
         component={Paper}
         sx={{
           margin: "1rem auto",
-          maxWidth: 1250,
+          maxWidth: 1350,
         }}
       >
         <Table>

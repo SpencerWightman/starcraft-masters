@@ -6,7 +6,7 @@ const Welcome: React.FC = () => {
   return (
     <Grid2
       container
-      spacing={4}
+      spacing={{ xs: 0, sm: 4 }}
       sx={{
         margin: "1rem auto",
         maxWidth: "1400px",
@@ -73,7 +73,7 @@ const Welcome: React.FC = () => {
             combined wins in the next ASL/SSL season.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-            • Follow your rank on the{" "}
+            • Track your points on the{" "}
             <Link
               href="/leaderboard"
               passHref
@@ -208,8 +208,8 @@ const Welcome: React.FC = () => {
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • The player tiers have progressively increasing selection limits,
               and a minimum selection requirement. However, the minimum
-              requirement can be broken by &apos;spending&apos; lower (better
-              player) tier slots on higher tier players. That means you can
+              requirement can be broken by &apos;spending&apos; lower tier
+              (better player) slots on higher tier players. That means you can
               select all 15 players from Tier 4 if that&apos;s the team you want
               to draft!
             </Typography>
@@ -225,7 +225,7 @@ const Welcome: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics on the Team page (except the trophies) start
-              at ASL 15 (2023-2025).
+              at ASL 15 (February 2023).
             </Typography>
           </Box>
         </Box>
