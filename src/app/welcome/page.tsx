@@ -159,7 +159,7 @@ const Welcome: React.FC = () => {
             Contact
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Lurkerbomb @ ...
+            • Lurkerbomb @
           </Typography>
         </Box>
       </Grid2>
@@ -219,16 +219,9 @@ const Welcome: React.FC = () => {
               the other qualified players. The players in each tier are then
               divided evenly among the Ro24 groups, so that each group has 1
               player from each tier. Players do not often change tiers from
-              season to season.
-            </Typography>
-            <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • Brood War League generally follows the offical tiers as of the
-              start of the last ASL/SSL season. Seeded players are listed in
-              Tier 0. The 15th selection in your team draft is a wildcard
-              player, always drawn from Tier 4, who swaps in for any player in
-              the 14 who (if any) does not qualify for the Ro24. The wildcard
-              player may not qualify either, but it exists as a potential
-              backup.
+              season to season. Brood War League generally follows the offical
+              tiers as of the start of the last ASL/SSL season. Seeded players
+              are listed in Tier 0.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics on the Team page (except the trophies) start
