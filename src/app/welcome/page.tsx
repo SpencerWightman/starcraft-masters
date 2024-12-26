@@ -109,10 +109,8 @@ const Welcome: React.FC = () => {
             Maps
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • An image gallery of the latest ASL/SSL maps along with rush
-            distances, number of bases, and number of mains. The previous
-            season&apos;s maps are listed until the next season&apos;s maps are
-            announced.
+            • An image gallery of the most recent SSL maps along with rush
+            distances, number of bases, and number of mains.
           </Typography>
         </Box>
         <Box
@@ -136,7 +134,7 @@ const Welcome: React.FC = () => {
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • ASL/SSL analytics. The plan is to create more using
-            JackyVSO&apos;s ASL/KSL Database.
+            JackyVSO&apos;s database.
           </Typography>
         </Box>
         <Box
@@ -214,14 +212,13 @@ const Welcome: React.FC = () => {
               to draft!
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • ASL/SSL places qualified players in 1 of 4 tiers based on how
-              their ASL/SSL performance history ranks against the performance of
-              the other qualified players. The players in each tier are then
-              divided evenly among the Ro24 groups, so that each group has 1
-              player from each tier. Players do not often change tiers from
-              season to season. Brood War League generally follows the offical
-              tiers as of the start of the last ASL/SSL season. Seeded players
-              are listed in Tier 0.
+              • ASL/SSL places qualified players into 1 of 4 tiers based on how
+              their performance history ranks against the performance of the
+              other qualified players. The players in each tier are then divided
+              evenly among the Ro24 groups, so that each group has 1 player from
+              each tier. Players do not often change tiers from season to
+              season. Brood War League generally follows the offical tiers as of
+              the start of the last season. Seeded players are listed in Tier 0.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics on the Team page (except the trophies) start
@@ -270,7 +267,7 @@ const Welcome: React.FC = () => {
             >
               910map
             </a>{" "}
-            for ASL/SSL map information.
+            for map information.
           </Typography>
         </Box>
       </Grid2>
