@@ -77,7 +77,7 @@ const Profile: React.FC = () => {
         borderRadius: 2,
       }}
     >
-      {!session ? (
+      {status === "unauthenticated" ? (
         <>
           <Typography
             variant="body1"

@@ -18,7 +18,7 @@ const PlayerList: React.FC = () => {
   const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const { data: session } = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     const savedTeam = localStorage.getItem("FantasyTeam");
@@ -31,7 +31,7 @@ const PlayerList: React.FC = () => {
     setFilteredPlayers(filtered);
   }, []);
 
-  if (!session) {
+  if (status === "unauthenticated") {
     return (
       <Paper
         elevation={3}

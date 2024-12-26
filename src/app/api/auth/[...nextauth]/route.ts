@@ -103,7 +103,7 @@ const authOptions: NextAuthOptions = {
             throw new Error("Invalid password.");
           }
           throw new Error("User not found or password missing.");
-        } catch (error) {
+        } catch {
           throw new Error("Failed to authenticate");
         }
       },

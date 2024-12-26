@@ -50,7 +50,7 @@ const PlayerDraft: React.FC<{
 }> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const mutation = useMutation<
     void,
     Error,
@@ -62,7 +62,7 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (!session) {
+    if (status === "unauthenticated") {
       setSnackbarMessage("Login to save your team");
       setOpen(true);
       return;
@@ -75,9 +75,9 @@ const PlayerDraft: React.FC<{
         );
 
         await mutation.mutateAsync({
-          email: session.email as string,
+          email: session?.email as string,
           fantasyTeam,
-          username: session.username as string,
+          username: session?.username as string,
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Draft saved. View it on the Team page.");
