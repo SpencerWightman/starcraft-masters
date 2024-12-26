@@ -133,8 +133,8 @@ const Welcome: React.FC = () => {
             Charts
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • ASL/SSL analytics. The plan is to create more using
-            JackyVSO&apos;s database.
+            • ASL/SSL analytics. The plan is to create more using historical
+            data.
           </Typography>
         </Box>
         <Box
