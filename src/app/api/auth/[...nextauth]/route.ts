@@ -10,6 +10,7 @@ import {
 } from "@aws-sdk/client-dynamodb";
 import { JWT } from "next-auth/jwt";
 import { Session } from "next-auth";
+import { User } from "next-auth";
 
 const SALT_ROUNDS = 8;
 
@@ -117,7 +118,7 @@ const authOptions: NextAuthOptions = {
     maxAge: 365 * 24 * 60 * 60,
   },
   callbacks: {
-    async jwt({ token, user }: { token: JWT; user?: any }) {
+    async jwt({ token, user }: { token: JWT; user?: User }) {
       if (user) {
         token.id = user.id;
         token.username = user.username;
