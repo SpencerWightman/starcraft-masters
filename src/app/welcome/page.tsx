@@ -47,7 +47,7 @@ const Welcome: React.FC = () => {
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             •{" "}
             <Link
-              href="/api/auth/login"
+              href="/profile"
               passHref
               style={{
                 textDecoration: "none",
