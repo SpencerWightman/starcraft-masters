@@ -14,7 +14,7 @@ declare module "next-auth" {
 
 const Profile: React.FC = () => {
   const { data: session, status } = useSession();
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(true);
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -91,7 +91,7 @@ const Profile: React.FC = () => {
             <Typography
               variant="body1"
               sx={{
-                marginBottom: 2,
+                marginBottom: 4,
                 color: "#ffffff",
                 lineHeight: 1.6,
                 textAlign: "center",
@@ -107,7 +107,14 @@ const Profile: React.FC = () => {
                 name="email"
                 onChange={handleInputChange}
                 fullWidth
-                sx={{ marginBottom: 2 }}
+                slotProps={{
+                  input: {
+                    style: { color: "#ffffff" },
+                  },
+                }}
+                sx={{
+                  marginBottom: 2,
+                }}
               />
               <TextField
                 label="Password"
@@ -115,7 +122,15 @@ const Profile: React.FC = () => {
                 type="password"
                 onChange={handleInputChange}
                 fullWidth
-                sx={{ marginBottom: 2 }}
+                slotProps={{
+                  input: {
+                    style: { color: "#ffffff" },
+                  },
+                }}
+                sx={{
+                  marginBottom: 2,
+                  color: "#ffffff",
+                }}
               />
               {isSignUp && (
                 <TextField
@@ -123,13 +138,21 @@ const Profile: React.FC = () => {
                   name="username"
                   onChange={handleInputChange}
                   fullWidth
-                  sx={{ marginBottom: 2 }}
+                  slotProps={{
+                    input: {
+                      style: { color: "#ffffff" },
+                    },
+                  }}
+                  sx={{
+                    marginBottom: 2,
+                    color: "#ffffff",
+                  }}
                 />
               )}
               <Button
                 onClick={handleSignIn}
                 variant="contained"
-                sx={{ backgroundColor: "#10b981" }}
+                sx={{ backgroundColor: "#10b981", marginBottom: 2 }}
                 fullWidth
               >
                 {isSignUp ? "Sign Up" : "Log In"}
@@ -137,7 +160,12 @@ const Profile: React.FC = () => {
               <Button
                 onClick={() => setIsSignUp((prev) => !prev)}
                 variant="text"
-                sx={{ color: "#ffff" }}
+                sx={{
+                  color: "#ffff",
+                  "&:hover": {
+                    backgroundColor: "#059669",
+                  },
+                }}
                 fullWidth
               >
                 {isSignUp ? "Log In" : "Sign Up"}
