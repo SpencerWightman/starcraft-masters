@@ -10,6 +10,7 @@ import {
   TableCell,
   TableContainer,
   TableRow,
+  CircularProgress,
 } from "@mui/material";
 
 type LeaderboardEntry = {
@@ -79,23 +80,16 @@ const Leaderboard: React.FC = () => {
 
   if (loading) {
     return (
-      <>
-        <Typography
-          variant="h5"
-          component="h1"
-          sx={{
-            color: "rgba(243, 244, 246, 0.6)",
-            textAlign: "center",
-            fontWeight: "bold",
-            padding: "1rem",
-          }}
-        >
-          SSL Spring 2025 Leaderboard
-        </Typography>
-        <Typography variant="h6" sx={{ textAlign: "center", marginTop: 4 }}>
-          ...
-        </Typography>
-      </>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "50vh",
+        }}
+      >
+        <CircularProgress sx={{ color: "#10b981" }} />
+      </Box>
     );
   }
 

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { Paper, Typography, Box, TextField, Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Paper, Typography, Box, TextField, Button, Fade } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 declare module "next-auth" {
@@ -20,6 +20,14 @@ const Profile: React.FC = () => {
     password: "",
     email: "",
   });
+  const [isContentVisible, setIsContentVisible] = useState(false);
+
+  useEffect(() => {
+    if (status !== "loading") {
+      const timeout = setTimeout(() => setIsContentVisible(true), 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [status]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -66,113 +74,115 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        padding: 4,
-        maxWidth: 600,
-        margin: "auto",
-        marginTop: 4,
-        backgroundColor: "#374151",
-        borderRadius: 2,
-      }}
-    >
-      {status === "unauthenticated" ? (
-        <>
-          <Typography
-            variant="body1"
-            sx={{
-              marginBottom: 2,
-              color: "#ffffff",
-              lineHeight: 1.6,
-              textAlign: "center",
-            }}
-          >
-            {isSignUp
-              ? "Sign up to save your team draft and compete in Brood War League"
-              : "Log in to save your team draft and compete in Brood War League"}
-          </Typography>
-          <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <TextField
-              label="Email"
-              name="email"
-              onChange={handleInputChange}
-              fullWidth
-              sx={{ marginBottom: 2 }}
-            />
-            <TextField
-              label="Password"
-              name="password"
-              type="password"
-              onChange={handleInputChange}
-              fullWidth
-              sx={{ marginBottom: 2 }}
-            />
-            {isSignUp && (
+    <Fade in={isContentVisible} timeout={500}>
+      <Paper
+        elevation={3}
+        sx={{
+          padding: 4,
+          maxWidth: 600,
+          margin: "auto",
+          marginTop: 4,
+          backgroundColor: "#374151",
+          borderRadius: 2,
+        }}
+      >
+        {status === "unauthenticated" ? (
+          <>
+            <Typography
+              variant="body1"
+              sx={{
+                marginBottom: 2,
+                color: "#ffffff",
+                lineHeight: 1.6,
+                textAlign: "center",
+              }}
+            >
+              {isSignUp
+                ? "Sign up to save your team draft and compete in Brood War League"
+                : "Log in to save your team draft and compete in Brood War League"}
+            </Typography>
+            <Box sx={{ textAlign: "center", marginTop: 2 }}>
               <TextField
-                label="Username"
-                name="username"
+                label="Email"
+                name="email"
                 onChange={handleInputChange}
                 fullWidth
                 sx={{ marginBottom: 2 }}
               />
-            )}
-            <Button
-              onClick={handleSignIn}
-              variant="contained"
-              sx={{ backgroundColor: "#10b981" }}
-              fullWidth
+              <TextField
+                label="Password"
+                name="password"
+                type="password"
+                onChange={handleInputChange}
+                fullWidth
+                sx={{ marginBottom: 2 }}
+              />
+              {isSignUp && (
+                <TextField
+                  label="Username"
+                  name="username"
+                  onChange={handleInputChange}
+                  fullWidth
+                  sx={{ marginBottom: 2 }}
+                />
+              )}
+              <Button
+                onClick={handleSignIn}
+                variant="contained"
+                sx={{ backgroundColor: "#10b981" }}
+                fullWidth
+              >
+                {isSignUp ? "Sign Up" : "Log In"}
+              </Button>
+              <Button
+                onClick={() => setIsSignUp((prev) => !prev)}
+                variant="text"
+                sx={{ color: "#ffff" }}
+                fullWidth
+              >
+                {isSignUp ? "Log In" : "Sign Up"}
+              </Button>
+            </Box>
+          </>
+        ) : (
+          <>
+            <Typography
+              variant="h4"
+              component="h1"
+              sx={{
+                color: "rgba(243, 244, 246, 0.6)",
+                marginBottom: 2,
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
             >
-              {isSignUp ? "Sign Up" : "Log In"}
-            </Button>
-            <Button
-              onClick={() => setIsSignUp((prev) => !prev)}
-              variant="text"
-              sx={{ color: "#ffff" }}
-              fullWidth
+              Username: {session?.username || "||||||||"}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                marginBottom: 2,
+                color: "#6b7280",
+                lineHeight: 1.6,
+                textAlign: "center",
+              }}
             >
-              {isSignUp ? "Log In" : "Sign Up"}
-            </Button>
-          </Box>
-        </>
-      ) : (
-        <>
-          <Typography
-            variant="h4"
-            component="h1"
-            sx={{
-              color: "rgba(243, 244, 246, 0.6)",
-              marginBottom: 2,
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-          >
-            Username: {session?.username || "||||||||"}
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              marginBottom: 2,
-              color: "#6b7280",
-              lineHeight: 1.6,
-              textAlign: "center",
-            }}
-          >
-            Email: {session?.email || "No email available"}
-          </Typography>
-          <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Button
-              onClick={() => signOut()}
-              variant="contained"
-              sx={{ backgroundColor: "#10b981" }}
-              fullWidth
-            >
-              Logout
-            </Button>
-          </Box>
-        </>
-      )}
-    </Paper>
+              Email: {session?.email || "No email available"}
+            </Typography>
+            <Box sx={{ textAlign: "center", marginTop: 2 }}>
+              <Button
+                onClick={() => signOut()}
+                variant="contained"
+                sx={{ backgroundColor: "#10b981" }}
+                fullWidth
+              >
+                Logout
+              </Button>
+            </Box>
+          </>
+        )}
+      </Paper>
+    </Fade>
   );
 };
 
