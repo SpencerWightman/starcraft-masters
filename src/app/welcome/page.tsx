@@ -221,8 +221,8 @@ const Welcome: React.FC = () => {
               the start of the last season. Seeded players are listed in Tier 0.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • Player statistics on the Team page (except the trophies) start
-              at ASL 15 (February 2023).
+              • Player statistics (except trophies) start at ASL 15, February
+              2023.
             </Typography>
           </Box>
         </Box>
