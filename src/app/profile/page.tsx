@@ -1,36 +1,69 @@
 "use client";
 
-import React from "react";
-import { Paper, Typography, Box } from "@mui/material";
-import { useUser } from "@auth0/nextjs-auth0/client";
-import Link from "next/link";
+import React, { useState } from "react";
+import { Paper, Typography, Box, TextField, Button } from "@mui/material";
+import { useSession, signIn, signOut } from "next-auth/react";
+
+declare module "next-auth" {
+  interface Session {
+    id: string;
+    username: string;
+    email: string;
+  }
+}
 
 const Profile: React.FC = () => {
-  const { user, error } = useUser();
+  const { data: session, status } = useSession();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+    email: "",
+  });
 
-  if (error) {
-    return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ color: "rgba(243, 244, 246, 0.6)", fontWeight: "bold" }}
-        >
-          Something went wrong. Try again in a moment.
-        </Typography>
-      </Paper>
-    );
-  }
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCredentials((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const validateUsername = (username: string): boolean => {
+    return username.length >= 3 && username.length <= 14;
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password: string): boolean => {
+    return password.length >= 5 && password.length <= 50;
+  };
+
+  const handleSignIn = async () => {
+    const { username, password, email } = credentials;
+
+    if (isSignUp) {
+      if (!validateUsername(username)) {
+        alert("Username must be between 3 and 14 characters.");
+        return;
+      }
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+    }
+
+    if (!validatePassword(password)) {
+      alert("Password must be between 5 and 50 characters.");
+      return;
+    }
+
+    await signIn("credentials", {
+      username: isSignUp ? username : undefined,
+      password,
+      email,
+    });
+  };
 
   return (
     <Paper
@@ -44,7 +77,7 @@ const Profile: React.FC = () => {
         borderRadius: 2,
       }}
     >
-      {!user ? (
+      {!session ? (
         <>
           <Typography
             variant="body1"
@@ -55,26 +88,51 @@ const Profile: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Log in to save your team draft and compete in Brood War League
+            {isSignUp
+              ? "Sign up to save your team draft and compete in Brood War League"
+              : "Log in to save your team draft and compete in Brood War League"}
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Link href="/api/auth/login" passHref>
-              <Typography
-                component="span"
-                sx={{
-                  display: "inline-block",
-                  padding: "0.5rem 1rem",
-                  backgroundColor: "#10b981",
-                  color: "#fff",
-                  borderRadius: "4px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                }}
-              >
-                Sign up / Login
-              </Typography>
-            </Link>
+            <TextField
+              label="Email"
+              name="email"
+              onChange={handleInputChange}
+              fullWidth
+              sx={{ marginBottom: 2 }}
+            />
+            <TextField
+              label="Password"
+              name="password"
+              type="password"
+              onChange={handleInputChange}
+              fullWidth
+              sx={{ marginBottom: 2 }}
+            />
+            {isSignUp && (
+              <TextField
+                label="Username"
+                name="username"
+                onChange={handleInputChange}
+                fullWidth
+                sx={{ marginBottom: 2 }}
+              />
+            )}
+            <Button
+              onClick={handleSignIn}
+              variant="contained"
+              sx={{ backgroundColor: "#10b981" }}
+              fullWidth
+            >
+              {isSignUp ? "Sign Up" : "Log In"}
+            </Button>
+            <Button
+              onClick={() => setIsSignUp((prev) => !prev)}
+              variant="text"
+              sx={{ color: "#ffff" }}
+              fullWidth
+            >
+              {isSignUp ? "Log In" : "Sign Up"}
+            </Button>
           </Box>
         </>
       ) : (
@@ -89,8 +147,7 @@ const Profile: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Username:{" "}
-            {String(user["https://broodwarleague.com/nickname"] || "||||||||")}
+            Username: {session?.username || "||||||||"}
           </Typography>
           <Typography
             variant="body1"
@@ -101,26 +158,17 @@ const Profile: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Email: {user.email || "No email available"}
+            Email: {session?.email || "No email available"}
           </Typography>
           <Box sx={{ textAlign: "center", marginTop: 2 }}>
-            <Link href="/api/auth/logout" passHref>
-              <Typography
-                component="span"
-                sx={{
-                  display: "inline-block",
-                  padding: "0.5rem 1rem",
-                  backgroundColor: "#10b981",
-                  color: "#fff",
-                  borderRadius: "4px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                }}
-              >
-                Logout
-              </Typography>
-            </Link>
+            <Button
+              onClick={() => signOut()}
+              variant="contained"
+              sx={{ backgroundColor: "#10b981" }}
+              fullWidth
+            >
+              Logout
+            </Button>
           </Box>
         </>
       )}

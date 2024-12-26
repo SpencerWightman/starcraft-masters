@@ -12,7 +12,7 @@ import {
 import { PlayerSummary } from "@/app/types/teamTypes";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
 
 const saveTeamToDB = async (params: {
@@ -50,7 +50,7 @@ const PlayerDraft: React.FC<{
 }> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const { user } = useUser();
+  const { data: session } = useSession();
   const mutation = useMutation<
     void,
     Error,
@@ -62,7 +62,7 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (!user) {
+    if (!session) {
       setSnackbarMessage("Login to save your team");
       setOpen(true);
       return;
@@ -75,11 +75,9 @@ const PlayerDraft: React.FC<{
         );
 
         await mutation.mutateAsync({
-          email: user.email as string,
+          email: session.email as string,
           fantasyTeam,
-          username: String(
-            user["https://broodwarleague.com/nickname"] || "||||||||"
-          ),
+          username: session.username as string,
         });
         localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
         setSnackbarMessage("Draft saved. View it on the Team page.");

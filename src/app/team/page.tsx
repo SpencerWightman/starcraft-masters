@@ -8,7 +8,7 @@ import PlayerSavedTeam from "../../components/teams/PlayerSavedTeam";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import playerSummariesJson from "data/draftData15-18.json";
 import { PlayerSummaries } from "@/app/types/teamTypes";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
@@ -18,7 +18,7 @@ const PlayerList: React.FC = () => {
   const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const { user } = useUser();
+  const { data: session } = useSession();
 
   useEffect(() => {
     const savedTeam = localStorage.getItem("FantasyTeam");
@@ -31,7 +31,7 @@ const PlayerList: React.FC = () => {
     setFilteredPlayers(filtered);
   }, []);
 
-  if (!user) {
+  if (!session) {
     return (
       <Paper
         elevation={3}

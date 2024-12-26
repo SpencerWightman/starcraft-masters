@@ -14,13 +14,12 @@ import {
   Box,
 } from "@mui/material";
 import { usePathname } from "next/navigation";
-
+import { SessionProvider } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./global.css";
 import CountdownWrapper from "@/components/layout/Countdown";
 import Maps from "@/app/maps/page";
 import Draft from "@/app/draft/page";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
 const queryClient = new QueryClient();
@@ -45,7 +44,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <html lang="en">
       <body>
         <QueryClientProvider client={queryClient}>
-          <UserProvider>
+          <SessionProvider>
             <Box
               sx={{
                 minHeight: "100vh",
@@ -222,7 +221,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </Box>
               </Box>
             </Box>
-          </UserProvider>
+          </SessionProvider>
         </QueryClientProvider>
       </body>
     </html>
