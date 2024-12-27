@@ -157,7 +157,7 @@ const Welcome: React.FC = () => {
             Contact
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Lurkerbomb @
+            • Lurkerbomb on Discord.
           </Typography>
         </Box>
       </Grid2>

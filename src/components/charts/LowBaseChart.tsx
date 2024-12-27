@@ -226,7 +226,7 @@ const LowBaseCharts: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Increase the screen size to view the chart.
+            Increase your screen size to view the chart
           </Typography>
         </Paper>
       ) : (
