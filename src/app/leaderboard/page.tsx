@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   Paper,
@@ -30,19 +30,13 @@ async function fetchLeaderboardFromApi(): Promise<LeaderboardEntry[]> {
 }
 
 const Leaderboard: React.FC = () => {
-  const [lastUpdated, setLastUpdated] = useState<string>("...");
-
   const {
     data: leaderboard,
     error,
     isLoading,
   } = useQuery({
     queryKey: ["leaderboard"],
-    queryFn: async () => {
-      const data = await fetchLeaderboardFromApi();
-      setLastUpdated(new Date().toLocaleString());
-      return data;
-    },
+    queryFn: fetchLeaderboardFromApi,
     staleTime: 5000,
     gcTime: 20000,
   });
@@ -97,17 +91,6 @@ const Leaderboard: React.FC = () => {
       >
         SSL Spring 2025 Leaderboard
       </Typography>
-      <Box sx={{ textAlign: "center", marginTop: 2 }}>
-        <Typography
-          variant="body2"
-          sx={{
-            color: "#9ca3af",
-          }}
-        >
-          Last Updated: {lastUpdated}
-        </Typography>
-      </Box>
-
       <TableContainer
         component={Paper}
         sx={{

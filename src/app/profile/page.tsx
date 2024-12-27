@@ -20,6 +20,7 @@ const Profile: React.FC = () => {
     password: "",
     email: "",
   });
+  const [error, setError] = useState("");
   const [isContentVisible, setIsContentVisible] = useState(false);
 
   useEffect(() => {
@@ -48,29 +49,43 @@ const Profile: React.FC = () => {
   };
 
   const handleSignIn = async () => {
+    setError("");
+
     const { username, password, email } = credentials;
 
     if (isSignUp) {
       if (!validateUsername(username)) {
-        alert("Username must be between 3 and 14 characters.");
+        setError("Username must be between 3 and 14 characters.");
         return;
       }
       if (!validateEmail(email)) {
-        alert("Please enter a valid email address.");
+        setError("Enter a valid email address.");
         return;
       }
     }
 
     if (!validatePassword(password)) {
-      alert("Password must be between 5 and 50 characters.");
+      setError("Password must be between 5 and 50 characters.");
       return;
     }
 
-    await signIn("credentials", {
-      username: isSignUp ? username : undefined,
-      password,
-      email,
-    });
+    try {
+      const result = await signIn("credentials", {
+        username: isSignUp ? username : undefined,
+        password,
+        email,
+        mode: isSignUp ? "signup" : "login",
+        redirect: false,
+      });
+
+      if (!result?.ok) {
+        throw new Error(result?.error || "Authentication failed");
+      }
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unexpected error occurred";
+      setError(errorMessage);
+    }
   };
 
   return (
@@ -101,6 +116,18 @@ const Profile: React.FC = () => {
                 ? "Sign up to save your team draft and compete in Brood War League"
                 : "Log in to save your team draft and compete in Brood War League"}
             </Typography>
+            {error && (
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#10b981",
+                  marginBottom: 2,
+                  textAlign: "center",
+                }}
+              >
+                {error}
+              </Typography>
+            )}
             <Box sx={{ textAlign: "center", marginTop: 2 }}>
               <TextField
                 label="Email"

@@ -50,17 +50,26 @@ const authOptions: NextAuthOptions = {
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
         email: { label: "Email", type: "text", required: false },
+        mode: { label: "Mode", type: "text" },
       },
-      async authorize(credentials) {
+      async authorize(
+        credentials:
+          | Record<"email" | "username" | "password" | "mode", string>
+          | undefined
+      ) {
         if (!credentials) {
           throw new Error("Missing credentials");
         }
 
-        const { username, password, email } = credentials;
+        const { username, password, email, mode } = credentials;
         const tableName = process.env.AWS_TABLE_USERS;
 
         if (!tableName) {
-          throw new Error("Table name not defined in environment variables");
+          throw new Error("Nuclear error. Contact Lurkerbomb.");
+        }
+
+        if (!email || !password || !mode) {
+          throw new Error("Missing required fields");
         }
 
         const getParams: GetItemCommandInput = {
@@ -72,7 +81,13 @@ const authOptions: NextAuthOptions = {
 
         try {
           const user = await client.send(new GetItemCommand(getParams));
-          if (!user.Item) {
+
+          if (mode === "signup") {
+            // Handle sign-up
+            if (user.Item) {
+              throw new Error("User already exists");
+            }
+
             const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
             const putParams: PutItemCommandInput = {
               TableName: tableName,
@@ -85,9 +100,12 @@ const authOptions: NextAuthOptions = {
 
             await client.send(new PutItemCommand(putParams));
             return { id: email, username, email };
-          }
+          } else if (mode === "login") {
+            // Handle login
+            if (!user.Item || !user.Item.password?.S) {
+              throw new Error("Invalid credentials");
+            }
 
-          if (user.Item && user.Item.password?.S) {
             const isPasswordValid = await bcrypt.compare(
               password,
               user.Item.password.S
@@ -99,12 +117,16 @@ const authOptions: NextAuthOptions = {
                 username: user.Item.username.S ?? "",
                 email: user.Item.email.S ?? "",
               };
+            } else {
+              throw new Error("Invalid credentials");
             }
-            throw new Error("Invalid password.");
+          } else {
+            throw new Error("Invalid mode");
           }
-          throw new Error("User not found or password missing.");
-        } catch {
-          throw new Error("Failed to authenticate");
+        } catch (error: unknown) {
+          const message =
+            error instanceof Error ? error.message : "Failed to authenticate";
+          throw new Error(message);
         }
       },
     }),
