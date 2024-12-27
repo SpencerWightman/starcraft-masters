@@ -137,7 +137,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     {navItems.map((item, index) => (
                       <Link href={item.href} key={index}>
                         <ListItemButton
-                          onClick={() => setIsNavOpen(false)}
+                          onClick={() => {
+                            setTimeout(() => setIsNavOpen(false), 300);
+                          }}
                           sx={{
                             color: "#10b981",
                             textDecoration: "none",

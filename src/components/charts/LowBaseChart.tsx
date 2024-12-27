@@ -210,10 +210,10 @@ const LowBaseCharts: React.FC = () => {
         <Paper
           elevation={3}
           sx={{
-            padding: 4,
+            padding: 2,
             maxWidth: 600,
             margin: "auto",
-            marginTop: 4,
+            marginTop: 8,
             backgroundColor: "#374151",
             borderRadius: 2,
           }}
@@ -221,13 +221,12 @@ const LowBaseCharts: React.FC = () => {
           <Typography
             variant="body1"
             sx={{
-              marginBottom: 4,
               color: "#ffffff",
               lineHeight: 1.6,
               textAlign: "center",
             }}
           >
-            Increase screen size to view the chart.
+            Increase the screen size to view the chart.
           </Typography>
         </Paper>
       ) : (
