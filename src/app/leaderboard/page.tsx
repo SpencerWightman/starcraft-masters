@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import {
   Paper,
   Typography,
@@ -19,11 +20,6 @@ type LeaderboardEntry = {
   team: string[];
 };
 
-const CACHE_KEY = "leaderboard_cache";
-const CACHE_EXPIRATION_KEY = "leaderboard_cache_expiration";
-const CACHE_LAST_UPDATED_KEY = "leaderboard_last_updated";
-const CACHE_EXPIRATION_MS = 24 * 60 * 60 * 1000;
-
 async function fetchLeaderboardFromApi(): Promise<LeaderboardEntry[]> {
   const response = await fetch("/api/leaderboard");
   if (!response.ok) {
@@ -34,51 +30,24 @@ async function fetchLeaderboardFromApi(): Promise<LeaderboardEntry[]> {
 }
 
 const Leaderboard: React.FC = () => {
-  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [lastUpdated, setLastUpdated] = useState<string>("");
+  const [lastUpdated, setLastUpdated] = useState<string>("...");
 
-  useEffect(() => {
-    const loadLeaderboard = async () => {
-      const now = Date.now();
+  const {
+    data: leaderboard,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["leaderboard"],
+    queryFn: async () => {
+      const data = await fetchLeaderboardFromApi();
+      setLastUpdated(new Date().toLocaleString());
+      return data;
+    },
+    staleTime: 5000,
+    gcTime: 20000,
+  });
 
-      try {
-        // const cachedData = localStorage.getItem(CACHE_KEY);
-        // const cacheExpiration = localStorage.getItem(CACHE_EXPIRATION_KEY);
-        // const lastUpdatedCache = localStorage.getItem(CACHE_LAST_UPDATED_KEY);
-
-        // if (
-        //   cachedData &&
-        //   cacheExpiration &&
-        //   now < parseInt(cacheExpiration, 10)
-        // ) {
-        //   setLeaderboard(JSON.parse(cachedData));
-        //   setLastUpdated(lastUpdatedCache || "Unknown");
-        // } else {
-        const freshData = await fetchLeaderboardFromApi();
-        const updatedTime = new Date().toLocaleString();
-
-        localStorage.setItem(CACHE_KEY, JSON.stringify(freshData));
-        localStorage.setItem(
-          CACHE_EXPIRATION_KEY,
-          (now + CACHE_EXPIRATION_MS).toString()
-        );
-        localStorage.setItem(CACHE_LAST_UPDATED_KEY, updatedTime);
-
-        setLeaderboard(freshData);
-        setLastUpdated(updatedTime);
-      } catch {
-        setError("Failed to load leaderboard. Please try again in a moment.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadLeaderboard();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <Box
         sx={{
@@ -107,8 +76,8 @@ const Leaderboard: React.FC = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="h6" sx={{ color: "red", fontWeight: "bold" }}>
-          {error}
+        <Typography variant="h6" sx={{ color: "#10b981", fontWeight: "bold" }}>
+          Something went wrong. Try again soon.
         </Typography>
       </Paper>
     );
@@ -148,7 +117,7 @@ const Leaderboard: React.FC = () => {
       >
         <Table>
           <TableBody sx={{ backgroundColor: "#000000" }}>
-            {leaderboard.map((entry, index) => (
+            {leaderboard?.map((entry, index) => (
               <TableRow
                 key={index}
                 sx={{
