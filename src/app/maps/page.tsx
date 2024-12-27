@@ -12,10 +12,6 @@ import {
   Typography,
   IconButton,
   useMediaQuery,
-  Theme,
-  createTheme,
-  ThemeProvider,
-  CssBaseline,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -87,22 +83,7 @@ const imageGallery = [
   },
 ];
 
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
-
-const Maps = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Gallery />
-    </ThemeProvider>
-  );
-};
-
-const Gallery: React.FC = () => {
+const Maps: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<{
     img: string;
     title: string;
@@ -112,9 +93,7 @@ const Gallery: React.FC = () => {
     mains: number;
     numberBases: number;
   } | null>(null);
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
