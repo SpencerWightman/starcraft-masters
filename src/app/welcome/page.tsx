@@ -72,7 +72,8 @@ const Welcome: React.FC = () => {
             page to select the 15 players who you think will take the most
             combined wins in the next ASL/SSL season. You have until the first
             ASL qualifier (approximately when the countdown expires) to save
-            your team. One point is awarded for each match win.
+            your team. One point is awarded for each match win starting in the
+            Ro24.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
             • Track your points on the{" "}
