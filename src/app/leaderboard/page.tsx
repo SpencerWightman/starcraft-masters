@@ -80,7 +80,11 @@ const Leaderboard: React.FC = () => {
 
   return (
     <Fade in={!isLoading} timeout={500}>
-      <Box>
+      <Box
+        sx={{
+          backgroundColor: "#1f2937",
+        }}
+      >
         <Typography
           variant="h5"
           component="h1"
@@ -106,9 +110,10 @@ const Leaderboard: React.FC = () => {
               tableLayout: "auto",
               width: "100%",
               minWidth: 650,
+              backgroundColor: "#1f2937",
             }}
           >
-            <TableBody sx={{ backgroundColor: "#000000" }}>
+            <TableBody sx={{ backgroundColor: "#1f2937" }}>
               {leaderboard?.map((entry, index) => (
                 <TableRow
                   key={index}
