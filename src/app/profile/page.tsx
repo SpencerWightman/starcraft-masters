@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Paper, Typography, Box, TextField, Button, Fade } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
 
