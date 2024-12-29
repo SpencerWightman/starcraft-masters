@@ -95,10 +95,17 @@ const Leaderboard: React.FC = () => {
         component={Paper}
         sx={{
           margin: "1rem auto",
-          maxWidth: 1450,
+          maxWidth: "95%",
+          overflowX: "auto",
         }}
       >
-        <Table>
+        <Table
+          sx={{
+            tableLayout: "auto",
+            width: "100%",
+            minWidth: 650,
+          }}
+        >
           <TableBody sx={{ backgroundColor: "#000000" }}>
             {leaderboard?.map((entry, index) => (
               <TableRow
@@ -112,6 +119,8 @@ const Leaderboard: React.FC = () => {
                   sx={{
                     color: "#10b981",
                     borderBottom: "none",
+                    padding: "8px",
+                    fontSize: "0.9rem",
                   }}
                 >
                   {entry.points}
@@ -121,6 +130,8 @@ const Leaderboard: React.FC = () => {
                   sx={{
                     color: "#e5e7eb",
                     borderBottom: "none",
+                    padding: "8px",
+                    fontSize: "0.9rem",
                   }}
                 >
                   {entry.username}
@@ -132,6 +143,8 @@ const Leaderboard: React.FC = () => {
                     sx={{
                       color: "rgba(243, 244, 246, 0.6)",
                       borderBottom: "none",
+                      padding: "8px",
+                      fontSize: "0.8rem",
                     }}
                   >
                     {member}
@@ -144,6 +157,7 @@ const Leaderboard: React.FC = () => {
                     sx={{
                       backgroundColor: "#2f3e51",
                       borderBottom: "none",
+                      padding: "8px",
                     }}
                   />
                 ))}
