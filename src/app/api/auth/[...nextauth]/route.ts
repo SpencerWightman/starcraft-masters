@@ -34,6 +34,16 @@ declare module "next-auth" {
   }
 }
 
+const validateUsername = (username: string): boolean => {
+  const usernameRegex = /^[a-zA-Z0-9]{3,12}$/;
+  return usernameRegex.test(username);
+};
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+};
+
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION,
   credentials: {
@@ -64,8 +74,18 @@ const authOptions: NextAuthOptions = {
         const { username, password, email, mode } = credentials;
         const tableName = process.env.AWS_TABLE_USERS;
 
+        if (!validateEmail(email)) {
+          throw new Error("Invalid characters in the email.");
+        }
+
+        if (!validateUsername(username)) {
+          throw new Error(
+            "Username must be between 3 and 12 characters. No special characters."
+          );
+        }
+
         if (!tableName) {
-          throw new Error("Nuclear error. Contact Lurkerbomb.");
+          throw new Error("Nuclear error. Please message Lurkerbomb.");
         }
 
         if (!email || !password || !mode) {

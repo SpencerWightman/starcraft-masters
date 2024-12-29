@@ -36,11 +36,12 @@ const Profile: React.FC = () => {
   };
 
   const validateUsername = (username: string): boolean => {
-    return username.length >= 3 && username.length <= 14;
+    const usernameRegex = /^[a-zA-Z0-9]{3,12}$/;
+    return usernameRegex.test(username);
   };
 
   const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   };
 
@@ -55,7 +56,9 @@ const Profile: React.FC = () => {
 
     if (isSignUp) {
       if (!validateUsername(username)) {
-        setError("Username must be between 3 and 14 characters.");
+        setError(
+          "Username must be between 3 and 12 characters. No special characters."
+        );
         return;
       }
       if (!validateEmail(email)) {
