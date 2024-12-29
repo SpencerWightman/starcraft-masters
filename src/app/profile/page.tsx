@@ -21,14 +21,6 @@ const Profile: React.FC = () => {
     email: "",
   });
   const [error, setError] = useState("");
-  const [isContentVisible, setIsContentVisible] = useState(false);
-
-  useEffect(() => {
-    if (status !== "loading") {
-      const timeout = setTimeout(() => setIsContentVisible(true), 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [status]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -92,7 +84,7 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <Fade in={isContentVisible} timeout={500}>
+    <Fade in={status !== "loading"} timeout={500}>
       <Paper
         elevation={3}
         sx={{

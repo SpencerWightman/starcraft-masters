@@ -11,6 +11,7 @@ import {
   TableCell,
   TableContainer,
   TableRow,
+  Fade,
   CircularProgress,
 } from "@mui/material";
 
@@ -78,95 +79,97 @@ const Leaderboard: React.FC = () => {
   }
 
   return (
-    <Box>
-      <Typography
-        variant="h5"
-        component="h1"
-        sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          textAlign: "center",
-          fontWeight: "bold",
-          padding: "1rem",
-        }}
-      >
-        SSL Spring 2025 Leaderboard
-      </Typography>
-      <TableContainer
-        component={Paper}
-        sx={{
-          margin: "1rem auto",
-          maxWidth: "95%",
-          overflowX: "auto",
-        }}
-      >
-        <Table
+    <Fade in={!isLoading} timeout={500}>
+      <Box>
+        <Typography
+          variant="h5"
+          component="h1"
           sx={{
-            tableLayout: "auto",
-            width: "100%",
-            minWidth: 650,
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            padding: "1rem",
           }}
         >
-          <TableBody sx={{ backgroundColor: "#000000" }}>
-            {leaderboard?.map((entry, index) => (
-              <TableRow
-                key={index}
-                sx={{
-                  backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
-                }}
-              >
-                <TableCell
-                  align="left"
+          SSL Spring 2025 Leaderboard
+        </Typography>
+        <TableContainer
+          component={Paper}
+          sx={{
+            margin: "1rem auto",
+            maxWidth: "95%",
+            overflowX: "auto",
+          }}
+        >
+          <Table
+            sx={{
+              tableLayout: "auto",
+              width: "100%",
+              minWidth: 650,
+            }}
+          >
+            <TableBody sx={{ backgroundColor: "#000000" }}>
+              {leaderboard?.map((entry, index) => (
+                <TableRow
+                  key={index}
                   sx={{
-                    color: "#10b981",
-                    borderBottom: "none",
-                    padding: "8px",
-                    fontSize: "0.9rem",
+                    backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
                   }}
                 >
-                  {entry.points}
-                </TableCell>
-                <TableCell
-                  align="left"
-                  sx={{
-                    color: "#e5e7eb",
-                    borderBottom: "none",
-                    padding: "8px",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  {entry.username}
-                </TableCell>
-                {entry.team.map((member, memberIndex) => (
                   <TableCell
-                    key={memberIndex}
                     align="left"
                     sx={{
-                      color: "rgba(243, 244, 246, 0.6)",
+                      color: "#10b981",
                       borderBottom: "none",
                       padding: "8px",
-                      fontSize: "0.8rem",
+                      fontSize: "0.9rem",
                     }}
                   >
-                    {member}
+                    {entry.points}
                   </TableCell>
-                ))}
-                {Array.from({ length: 4 - entry.team.length }).map((_, i) => (
                   <TableCell
-                    key={`placeholder-${i}`}
-                    align="center"
+                    align="left"
                     sx={{
-                      backgroundColor: "#2f3e51",
+                      color: "#e5e7eb",
                       borderBottom: "none",
                       padding: "8px",
+                      fontSize: "0.9rem",
                     }}
-                  />
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Box>
+                  >
+                    {entry.username}
+                  </TableCell>
+                  {entry.team.map((member, memberIndex) => (
+                    <TableCell
+                      key={memberIndex}
+                      align="left"
+                      sx={{
+                        color: "rgba(243, 244, 246, 0.6)",
+                        borderBottom: "none",
+                        padding: "8px",
+                        fontSize: "0.8rem",
+                      }}
+                    >
+                      {member}
+                    </TableCell>
+                  ))}
+                  {Array.from({ length: 4 - entry.team.length }).map((_, i) => (
+                    <TableCell
+                      key={`placeholder-${i}`}
+                      align="center"
+                      sx={{
+                        backgroundColor: "#2f3e51",
+                        borderBottom: "none",
+                        padding: "8px",
+                      }}
+                    />
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+    </Fade>
   );
 };
 
