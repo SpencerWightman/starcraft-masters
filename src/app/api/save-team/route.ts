@@ -84,7 +84,7 @@ export async function POST(req: Request) {
     const response = await client.send(new UpdateItemCommand(params));
 
     return NextResponse.json({ message: "Team saved successfully", response });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to save team" }, { status: 500 });
   }
 }
