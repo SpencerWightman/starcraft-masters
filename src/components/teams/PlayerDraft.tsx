@@ -33,12 +33,6 @@ const saveTeamToDB = async (params: {
   });
 
   if (!response.ok) {
-    const errorDetails = await response.text();
-    console.error("Failed to save team:", {
-      status: response.status,
-      statusText: response.statusText,
-      body: errorDetails,
-    });
     throw new Error();
   }
 };

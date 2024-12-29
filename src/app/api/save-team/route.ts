@@ -9,14 +9,54 @@ const client = new DynamoDBClient({
   },
 });
 
+const validateUsername = (username: string): boolean => {
+  const usernameRegex = /^[a-zA-Z0-9]{3,12}$/;
+  return usernameRegex.test(username);
+};
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+};
+
+const validateFantasyTeam = (fantasyTeam: string[]): boolean => {
+  const playerRegex = /^[a-zA-Z0-9]{2,20}$/;
+  return fantasyTeam.every((player) => playerRegex.test(player));
+};
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { email, fantasyTeam, username } = body;
 
     if (!email || !Array.isArray(fantasyTeam)) {
-      console.error("Invalid input:", body);
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+    }
+
+    if (!validateEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid characters in the email." },
+        { status: 400 }
+      );
+    }
+
+    if (!validateUsername(username)) {
+      return NextResponse.json(
+        {
+          error:
+            "Username must be between 3 and 12 characters. No special characters.",
+        },
+        { status: 400 }
+      );
+    }
+
+    if (!validateFantasyTeam(fantasyTeam)) {
+      return NextResponse.json(
+        {
+          error: "Invalid player in your team.",
+        },
+        { status: 400 }
+      );
     }
 
     const teamItems = fantasyTeam.map((player) => ({ S: player }));
@@ -45,7 +85,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "Team saved successfully", response });
   } catch (error) {
-    console.error("Error saving team:", error);
     return NextResponse.json({ error: "Failed to save team" }, { status: 500 });
   }
 }
