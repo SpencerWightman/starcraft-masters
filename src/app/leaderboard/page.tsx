@@ -139,7 +139,7 @@ const Leaderboard: React.FC = () => {
                 {entry.team.map((member, memberIndex) => (
                   <TableCell
                     key={memberIndex}
-                    align="center"
+                    align="left"
                     sx={{
                       color: "rgba(243, 244, 246, 0.6)",
                       borderBottom: "none",
