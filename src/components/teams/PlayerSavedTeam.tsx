@@ -82,7 +82,7 @@ const PlayerSavedTeam: React.FC<{
               >
                 <Typography
                   sx={{
-                    color: slotIndex === 14 ? "#94A3B8" : "#10b981",
+                    color: "#10b981",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
