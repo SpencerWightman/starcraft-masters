@@ -12,7 +12,7 @@ export async function GET() {
 
   const params = {
     TableName: process.env.AWS_TABLE,
-    Limit: 10,
+    Limit: 100,
   };
 
   try {
