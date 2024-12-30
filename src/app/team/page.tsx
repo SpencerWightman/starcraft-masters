@@ -56,7 +56,7 @@ const PlayerList: React.FC = () => {
           Log in to save your team draft and compete in Brood War League
         </Typography>
         <Box sx={{ textAlign: "center", marginTop: 2 }}>
-          <Link href="/api/auth/login" passHref>
+          <Link href="/profile" passHref>
             <Typography
               component="span"
               sx={{
