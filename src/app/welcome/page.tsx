@@ -70,10 +70,12 @@ const Welcome: React.FC = () => {
               Draft
             </Link>{" "}
             page to select the 15 players who you think will take the most
-            combined wins in the next ASL/SSL season. You have until the first
-            ASL qualifier (approximately when the countdown expires) to save
-            your team. One point is awarded for each match win starting in the
-            Ro24.
+            combined wins in the next ASL/SSL season.
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
+            • You have until the first ASL qualifier (approximately when the
+            countdown expires) to save your team. One point is awarded for each
+            match win starting in the Ro24.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
             • Track your points on the{" "}
@@ -142,8 +144,8 @@ const Welcome: React.FC = () => {
         </Box>
         <Box
           sx={{
-            borderTop: "2px solid rgba(243, 244, 246, 0.6)",
-            borderRight: "2px solid rgba(243, 244, 246, 0.6)",
+            borderTop: "2px solid #D22B2B",
+            borderRight: "2px solid #D22B2B",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -154,13 +156,14 @@ const Welcome: React.FC = () => {
             sx={{
               fontWeight: "bold",
               textTransform: "uppercase",
-              color: "rgba(243, 244, 246, 0.6)",
+              color: "#D22B2B",
             }}
           >
-            Contact
+            VS
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Lurkerbomb on Discord.
+            • Compare player win rates by matchup and match duration from all 18
+            seasons of ASL/SSL and all 4 seasons of KSL.
           </Typography>
         </Box>
       </Grid2>
@@ -271,6 +274,29 @@ const Welcome: React.FC = () => {
               910map
             </a>{" "}
             for map information.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            borderTop: "2px solid rgba(243, 244, 246, 0.6)",
+            borderRight: "2px solid rgba(243, 244, 246, 0.6)",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "rgba(243, 244, 246, 0.6)",
+            }}
+          >
+            Contact
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Lurkerbomb on Discord.
           </Typography>
         </Box>
       </Grid2>

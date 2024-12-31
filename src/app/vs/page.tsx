@@ -9,6 +9,7 @@ import {
   Paper,
   Typography,
   Fade,
+  Box,
   useMediaQuery,
 } from "@mui/material";
 import { Bar } from "react-chartjs-2";
@@ -43,7 +44,7 @@ const historicalData: HistoricalData = rawHistoricalData;
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const VSChart: React.FC<{}> = () => {
-  const isXS = useMediaQuery("(max-width:600px)");
+  const isXS = useMediaQuery("(max-width:900px)");
 
   // First chart state
   const [selectedPlayer1, setSelectedPlayer1] = useState(
@@ -219,25 +220,24 @@ const VSChart: React.FC<{}> = () => {
           </Typography>
         </Paper>
       ) : (
-        <div
-          style={{
+        <Box
+          sx={{
             display: "flex",
-            justifyContent: "center",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
             alignItems: "flex-start",
-            gap: "40px",
             padding: "20px",
             backgroundColor: "#1f2937",
             borderRadius: "8px",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-            flexWrap: "wrap",
           }}
         >
           {/* First Chart */}
-          <div
-            style={{
-              flex: "1 1 500px",
-              maxWidth: "800px",
+          <Box
+            sx={{
+              width: "49%",
               textAlign: "center",
+              maxWidth: "100%",
             }}
           >
             <Select
@@ -308,14 +308,14 @@ const VSChart: React.FC<{}> = () => {
                 options={options(selectedPlayer1, selectedMatchup1)}
               />
             </div>
-          </div>
+          </Box>
 
           {/* Second Chart */}
-          <div
-            style={{
-              flex: "1 1 500px",
-              maxWidth: "800px",
+          <Box
+            sx={{
+              width: "49%",
               textAlign: "center",
+              maxWidth: "100%",
             }}
           >
             <Select
@@ -386,8 +386,8 @@ const VSChart: React.FC<{}> = () => {
                 options={options(selectedPlayer2, selectedMatchup2)}
               />
             </div>
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
     </Fade>
   );
