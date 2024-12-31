@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
 
-const PlayerList: React.FC = () => {
+const Team: React.FC = () => {
   const [fantasyTeam, setFantasyTeam] = useState<string[]>([]);
   const [filteredPlayers, setFilteredPlayers] = useState<PlayerSummary[]>([]);
   const theme = useTheme();
@@ -180,4 +180,4 @@ const PlayerList: React.FC = () => {
   );
 };
 
-export default PlayerList;
+export default Team;

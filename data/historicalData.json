@@ -1,0 +1,5297 @@
+{
+  "815": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "1127": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Action": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 50,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "31.25",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "27.27",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 29,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 44,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "41.67",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "Ample": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 14,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 17,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "75.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "BarrackS": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 14,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "25.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 18,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Best": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 64,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "74.07",
+          "TotalGames": 27
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "46.67",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 67,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "63.64",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "71.43",
+          "TotalGames": 14
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "68.42",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "45.45",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "30.00",
+          "TotalGames": 10
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 44,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "36.84",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "36.36",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "BishOp": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Bisu": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 58,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "55.56",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "62.50",
+          "TotalGames": 24
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 18,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "60.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Brain": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "ByuL": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Calm": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 10,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "EffOrt": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 36,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "72.73",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "37.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 15,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 23,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "75.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "FlaSh": [
+    {
+      "Matchup": "PvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 27,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 29,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "81.82",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 55,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "72.73",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "79.17",
+          "TotalGames": 24
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "58.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "ForGG": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Force(Name)": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "GuemChi": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 14,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 10,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Hint": [
+    {
+      "Matchup": "PvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "HiyA": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Horang2": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 11,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 12,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "HyuN": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Hyuk": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 8,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Iris": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "JJabNewDa": [
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Jaedong": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 30,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "75.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "37.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 26,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 41,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 14
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "9.09",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "Jaehoon": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 13,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 12,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "JyJ": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 36,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "57.14",
+          "TotalGames": 14
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 23,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 41,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "58.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "Killer": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 15,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 11,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Larva": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 24,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 38,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "45.45",
+          "TotalGames": 22
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 51,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "44.44",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        }
+      ]
+    }
+  ],
+  "Last": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 25,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 51,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "46.15",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 41,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "78.95",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Lazy": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Leta": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 11,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Light": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 38,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "30.77",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 69,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "40.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "68.42",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "52.63",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 84,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "52.00",
+          "TotalGames": 25
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "48.28",
+          "TotalGames": 29
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "70.59",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        }
+      ]
+    }
+  ],
+  "MIsO": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 22,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "80.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "20.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 10,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "22.22",
+          "TotalGames": 9
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 15,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Maru": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "Mind": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 35,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "33.33",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 46,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "90.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "45.45",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 37,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        }
+      ]
+    }
+  ],
+  "Mini": [
+    {
+      "Matchup": "PvP",
+      "TotalGames": 34,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "46.67",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 111,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "57.89",
+          "TotalGames": 38
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 33
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "41.18",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 71,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "81.82",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "54.17",
+          "TotalGames": 24
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "53.33",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        }
+      ]
+    }
+  ],
+  "Modesty": [
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 32,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "30.77",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "44.44",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Mong": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 26,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "14.29",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 20,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "Motive": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Movie": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 16,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "12.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 13,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 9,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "NaDa": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "PURPOSE": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Piano": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 8,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        }
+      ]
+    }
+  ],
+  "Pusan": [
+    {
+      "Matchup": "PvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Queen": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 47,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "84.62",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "38.89",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "60.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 44,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "14.29",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "59.26",
+          "TotalGames": 27
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 52,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "48.00",
+          "TotalGames": 25
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "44.44",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Rain": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 62,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "85.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "62.50",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 51,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "80.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "77.78",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 69,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "55.56",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "41.18",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "47.06",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        }
+      ]
+    }
+  ],
+  "RoyaL": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 22,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 27,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 37,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Ruin": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "Rush": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 39,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "76.92",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "25.00",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 69,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "27.78",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "62.50",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "55.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 49,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "66.67",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "36.36",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        }
+      ]
+    }
+  ],
+  "Sacsri": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 23,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "14.29",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "9.09",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 18,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "44.44",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        }
+      ]
+    }
+  ],
+  "Scan": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Sea": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 25,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "25.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "83.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 17,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "83.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Sharp": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 57,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "38.46",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "88.89",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 16
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 64,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "64.71",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "38.46",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 69,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "53.33",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "45.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "52.94",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        }
+      ]
+    }
+  ],
+  "Shine": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 24,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "72.73",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 17,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 38,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "44.44",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "20.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Shuttle": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 37,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "22.22",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "53.85",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 44,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "61.54",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "25.00",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "28.57",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Sky": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Snow": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 48,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "70.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "53.85",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "71.43",
+          "TotalGames": 14
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 48,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "56.25",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "52.94",
+          "TotalGames": 17
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 91,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "16.00",
+          "TotalGames": 25
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "45.83",
+          "TotalGames": 24
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 24
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "90.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        }
+      ]
+    }
+  ],
+  "Soma": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 39,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "83.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "60.00",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 26,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "38.89",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 36,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "55.56",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "42.86",
+          "TotalGames": 14
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "12.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        }
+      ]
+    }
+  ],
+  "SoulKey": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 89,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "77.42",
+          "TotalGames": 31
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "47.83",
+          "TotalGames": 23
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 18
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "83.33",
+          "TotalGames": 6
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 61,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "53.66",
+          "TotalGames": 41
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 94,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "77.78",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "73.68",
+          "TotalGames": 19
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "55.88",
+          "TotalGames": 34
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "73.33",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        }
+      ]
+    }
+  ],
+  "Speed": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 9,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Ss1nz": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "Stork": [
+    {
+      "Matchup": "PvP",
+      "TotalGames": 48,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "39.13",
+          "TotalGames": 23
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "54.55",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 19,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "62.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 32,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "46.15",
+          "TotalGames": 13
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "50.00",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "TY": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "TaeNgGu": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Terror": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Tinkle": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "Tyson": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "YSC": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "Yoon": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "ZeLoT": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "beast": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 9,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "firebathero": [
+    {
+      "Matchup": "TvT",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "free": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 11,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 9,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 11,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "ggaemo": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 7,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 6,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "hero": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 47,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "88.89",
+          "TotalGames": 9
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "53.33",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 15
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "60.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 54,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "57.14",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "56.76",
+          "TotalGames": 37
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "37.50",
+          "TotalGames": 8
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 85,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "40.00",
+          "TotalGames": 10
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "65.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "33.33",
+          "TotalGames": 21
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "55.00",
+          "TotalGames": 20
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "63.64",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 3
+        }
+      ]
+    }
+  ],
+  "ivOry": [
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "nOOb": [
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 5,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvP",
+      "TotalGames": 3,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ],
+  "sSak": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 12,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "16.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvT",
+      "TotalGames": 16,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "66.67",
+          "TotalGames": 3
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "66.67",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
+    }
+  ],
+  "soso": [
+    {
+      "Matchup": "TvP",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
+    }
+  ]
+}

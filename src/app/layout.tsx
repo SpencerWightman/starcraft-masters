@@ -36,6 +36,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { text: "Team", href: "/team" },
     { text: "Draft", href: "/draft" },
     { text: "Maps", href: "/maps" },
+    { text: "VS", href: "/vs" },
     { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },
   ];
