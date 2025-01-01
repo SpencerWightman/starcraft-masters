@@ -20,6 +20,7 @@ import {
   BarElement,
   Tooltip,
   Legend,
+  TooltipItem,
 } from "chart.js";
 
 type DurationWinRate = {
@@ -43,7 +44,7 @@ const historicalData: HistoricalData = rawHistoricalData;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const VSChart: React.FC<{}> = () => {
+const VSChart: React.FC = () => {
   const isXS = useMediaQuery("(max-width:900px)");
 
   // First chart state
@@ -127,7 +128,7 @@ const VSChart: React.FC<{}> = () => {
       },
       tooltip: {
         callbacks: {
-          label: (context: any) => {
+          label: (context: TooltipItem<"bar">) => {
             if (!playerHandle || !selectedMatchup) {
               return `Win Rate: ${context.raw}%`;
             }
@@ -266,7 +267,7 @@ const VSChart: React.FC<{}> = () => {
                 "& .MuiSvgIcon-root": { color: "rgba(54, 162, 235, 1)" },
               }}
             >
-              {Object.entries(historicalData).map(([handle, _]) => (
+              {Object.entries(historicalData).map(([handle]) => (
                 <MenuItem key={handle} value={handle}>
                   {handle}
                 </MenuItem>
@@ -344,7 +345,7 @@ const VSChart: React.FC<{}> = () => {
                 "& .MuiSvgIcon-root": { color: "rgba(75, 192, 192, 1)" },
               }}
             >
-              {Object.entries(historicalData).map(([handle, _]) => (
+              {Object.entries(historicalData).map(([handle]) => (
                 <MenuItem key={handle} value={handle}>
                   {handle}
                 </MenuItem>
