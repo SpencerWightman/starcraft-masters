@@ -96,6 +96,30 @@ const Welcome: React.FC = () => {
         </Box>
         <Box
           sx={{
+            borderTop: "2px solid #D22B2B",
+            borderRight: "2px solid #D22B2B",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "#D22B2B",
+            }}
+          >
+            VS
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Compare player win rates by matchup and match duration from all
+            seasons of ASL/SSL and KSL.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
             borderTop: "2px solid #9F2B68",
             borderRight: "2px solid #9F2B68",
             padding: "1rem",
@@ -140,30 +164,6 @@ const Welcome: React.FC = () => {
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • ASL/SSL analytics. The plan is to create more using historical
             data.
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            borderTop: "2px solid #D22B2B",
-            borderRight: "2px solid #D22B2B",
-            padding: "1rem",
-            borderRadius: "8px",
-            marginBottom: "1rem",
-          }}
-        >
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              color: "#D22B2B",
-            }}
-          >
-            VS
-          </Typography>
-          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Compare player win rates by matchup and match duration from all 18
-            seasons of ASL/SSL and all 4 seasons of KSL.
           </Typography>
         </Box>
       </Grid2>
