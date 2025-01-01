@@ -7,6 +7,7 @@ import {
   PutItemCommand,
   GetItemCommandInput,
   PutItemCommandInput,
+  QueryCommand,
 } from "@aws-sdk/client-dynamodb";
 import { JWT } from "next-auth/jwt";
 import { Session } from "next-auth";
@@ -106,6 +107,24 @@ const authOptions: NextAuthOptions = {
             // Handle sign-up
             if (user.Item) {
               throw new Error("User already exists");
+            }
+
+            // Check if username is unique
+            const usernameCheckParams = {
+              TableName: tableName,
+              IndexName: "username-index",
+              KeyConditionExpression: "username = :username",
+              ExpressionAttributeValues: {
+                ":username": { S: username },
+              },
+            };
+
+            const usernameCheck = await client.send(
+              new QueryCommand(usernameCheckParams)
+            );
+
+            if (usernameCheck.Count && usernameCheck.Count > 0) {
+              throw new Error("Username already taken");
             }
 
             const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
