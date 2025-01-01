@@ -1,7 +1,7 @@
 {
   "815": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 5,
       "WinRates": [
         {
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -85,7 +85,7 @@
   ],
   "Action": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 50,
       "WinRates": [
         {
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 44,
       "WinRates": [
         {
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 67,
       "WinRates": [
         {
@@ -530,13 +530,38 @@
       ]
     },
     {
-      "Matchup": "TvP",
-      "TotalGames": 1,
+      "Matchup": "PvT",
+      "TotalGames": 53,
       "WinRates": [
         {
+          "Interval": "1-5",
+          "WinRate": "75.00",
+          "TotalGames": 4
+        },
+        {
           "Interval": "6-10",
-          "WinRate": "100.00",
-          "TotalGames": 1
+          "WinRate": "83.33",
+          "TotalGames": 12
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "37.50",
+          "TotalGames": 16
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "63.64",
+          "TotalGames": 11
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "40.00",
+          "TotalGames": 5
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "40.00",
+          "TotalGames": 5
         }
       ]
     },
@@ -574,7 +599,7 @@
   ],
   "Brain": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -637,7 +662,7 @@
   ],
   "Calm": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 10,
       "WinRates": [
         {
@@ -689,7 +714,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 7,
       "WinRates": [
         {
@@ -722,7 +747,7 @@
   ],
   "EffOrt": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 36,
       "WinRates": [
         {
@@ -789,7 +814,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 23,
       "WinRates": [
         {
@@ -821,49 +846,6 @@
     }
   ],
   "FlaSh": [
-    {
-      "Matchup": "PvP",
-      "TotalGames": 2,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "100.00",
-          "TotalGames": 2
-        }
-      ]
-    },
-    {
-      "Matchup": "ZvZ",
-      "TotalGames": 4,
-      "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "50.00",
-          "TotalGames": 2
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "100.00",
-          "TotalGames": 1
-        }
-      ]
-    },
-    {
-      "Matchup": "PvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    },
     {
       "Matchup": "TvT",
       "TotalGames": 27,
@@ -956,6 +938,49 @@
           "TotalGames": 1
         }
       ]
+    },
+    {
+      "Matchup": "ZvZ",
+      "TotalGames": 4,
+      "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "6-10",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 1
+        }
+      ]
+    },
+    {
+      "Matchup": "PvP",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        }
+      ]
+    },
+    {
+      "Matchup": "PvZ",
+      "TotalGames": 1,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        }
+      ]
     }
   ],
   "ForGG": [
@@ -1040,7 +1065,7 @@
   ],
   "Force(Name)": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -1051,7 +1076,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -1064,7 +1089,7 @@
   ],
   "GuemChi": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 14,
       "WinRates": [
         {
@@ -1165,7 +1190,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -1270,7 +1295,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 19,
       "WinRates": [
         {
@@ -1308,7 +1333,7 @@
   ],
   "HyuN": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -1340,7 +1365,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 6,
       "WinRates": [
         {
@@ -1363,7 +1388,7 @@
   ],
   "Hyuk": [
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 5,
       "WinRates": [
         {
@@ -1384,7 +1409,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -1469,7 +1494,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -1482,7 +1507,7 @@
   ],
   "Jaedong": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 30,
       "WinRates": [
         {
@@ -1549,7 +1574,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 41,
       "WinRates": [
         {
@@ -1629,7 +1654,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 12,
       "WinRates": [
         {
@@ -1767,7 +1792,7 @@
   ],
   "Killer": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 15,
       "WinRates": [
         {
@@ -1809,7 +1834,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 11,
       "WinRates": [
         {
@@ -1837,7 +1862,7 @@
   ],
   "Larva": [
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 24,
       "WinRates": [
         {
@@ -1899,7 +1924,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 51,
       "WinRates": [
         {
@@ -2069,7 +2094,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -2282,7 +2307,7 @@
   ],
   "MIsO": [
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 22,
       "WinRates": [
         {
@@ -2324,7 +2349,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 15,
       "WinRates": [
         {
@@ -2542,7 +2567,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 71,
       "WinRates": [
         {
@@ -2591,7 +2616,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 7,
       "WinRates": [
         {
@@ -2617,7 +2642,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 32,
       "WinRates": [
         {
@@ -2768,7 +2793,7 @@
   ],
   "Movie": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 16,
       "WinRates": [
         {
@@ -2883,7 +2908,7 @@
   ],
   "PURPOSE": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -3004,7 +3029,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -3017,7 +3042,7 @@
   ],
   "Queen": [
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 47,
       "WinRates": [
         {
@@ -3074,7 +3099,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 52,
       "WinRates": [
         {
@@ -3179,7 +3204,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 69,
       "WinRates": [
         {
@@ -3343,7 +3368,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 4,
       "WinRates": [
         {
@@ -3471,7 +3496,7 @@
   ],
   "Sacsri": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 23,
       "WinRates": [
         {
@@ -3513,7 +3538,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 18,
       "WinRates": [
         {
@@ -3780,7 +3805,7 @@
   ],
   "Shine": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 24,
       "WinRates": [
         {
@@ -3837,7 +3862,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 38,
       "WinRates": [
         {
@@ -3911,7 +3936,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 44,
       "WinRates": [
         {
@@ -3996,7 +4021,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -4025,7 +4050,7 @@
   ],
   "Snow": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 48,
       "WinRates": [
         {
@@ -4130,7 +4155,7 @@
   ],
   "Soma": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 39,
       "WinRates": [
         {
@@ -4192,7 +4217,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 36,
       "WinRates": [
         {
@@ -4220,7 +4245,7 @@
   ],
   "SoulKey": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 89,
       "WinRates": [
         {
@@ -4282,7 +4307,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 94,
       "WinRates": [
         {
@@ -4391,7 +4416,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 4,
       "WinRates": [
         {
@@ -4476,7 +4501,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 32,
       "WinRates": [
         {
@@ -4568,7 +4593,7 @@
   ],
   "Terror": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -4579,7 +4604,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -4616,7 +4641,7 @@
   ],
   "Tyson": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -4677,7 +4702,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 3,
       "WinRates": [
         {
@@ -4695,7 +4720,7 @@
   ],
   "Yoon": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -4711,7 +4736,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -4724,7 +4749,7 @@
   ],
   "ZeLoT": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 2,
       "WinRates": [
         {
@@ -4740,7 +4765,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 6,
       "WinRates": [
         {
@@ -4769,7 +4794,7 @@
   ],
   "beast": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 5,
       "WinRates": [
         {
@@ -4806,7 +4831,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 9,
       "WinRates": [
         {
@@ -4863,7 +4888,7 @@
   ],
   "free": [
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 11,
       "WinRates": [
         {
@@ -4958,7 +4983,7 @@
   ],
   "ggaemo": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 7,
       "WinRates": [
         {
@@ -4984,7 +5009,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 6,
       "WinRates": [
         {
@@ -5023,7 +5048,7 @@
   ],
   "hero": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 47,
       "WinRates": [
         {
@@ -5085,7 +5110,7 @@
       ]
     },
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 85,
       "WinRates": [
         {
@@ -5123,7 +5148,7 @@
   ],
   "ivOry": [
     {
-      "Matchup": "TvZ",
+      "Matchup": "ZvT",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -5134,7 +5159,7 @@
       ]
     },
     {
-      "Matchup": "PvZ",
+      "Matchup": "ZvP",
       "TotalGames": 1,
       "WinRates": [
         {
@@ -5179,7 +5204,7 @@
       ]
     },
     {
-      "Matchup": "TvP",
+      "Matchup": "PvT",
       "TotalGames": 3,
       "WinRates": [
         {
@@ -5203,12 +5228,37 @@
   "sSak": [
     {
       "Matchup": "TvP",
-      "TotalGames": 1,
+      "TotalGames": 20,
       "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
         {
           "Interval": "6-10",
           "WinRate": "0.00",
+          "TotalGames": 2
+        },
+        {
+          "Interval": "11-15",
+          "WinRate": "42.86",
+          "TotalGames": 7
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "33.33",
+          "TotalGames": 6
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
           "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
+          "WinRate": "33.33",
+          "TotalGames": 3
         }
       ]
     },
