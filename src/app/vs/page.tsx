@@ -228,10 +228,10 @@ const VSChart: React.FC = () => {
             flexWrap: "wrap",
             justifyContent: "space-around",
             alignItems: "flex-start",
+            marginTop: "10px",
             padding: "20px",
             backgroundColor: "#1f2937",
             borderRadius: "8px",
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
           {/* First Chart */}

@@ -42,3 +42,8 @@ input:-webkit-autofill:active {
   color: #ffffff !important;
   border-color: #374151 !important;
 }
+
+body {
+  background-color: #374151;
+  margin: 0;
+}
