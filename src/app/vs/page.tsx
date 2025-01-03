@@ -167,8 +167,6 @@ const VSChart: React.FC = () => {
     },
     scales: {
       x: {
-        beginAtZero: true,
-        max: 100,
         grid: {
           color: "rgba(255, 255, 255, 0.1)",
         },
@@ -177,6 +175,9 @@ const VSChart: React.FC = () => {
         },
       },
       y: {
+        beginAtZero: true,
+        min: 0,
+        max: 100,
         grid: {
           color: "rgba(255, 255, 255, 0.1)",
         },
