@@ -83,6 +83,8 @@ const Leaderboard: React.FC = () => {
       <Box
         sx={{
           backgroundColor: "#1f2937",
+          maxWidth: "100vw",
+          overflowX: "hidden",
         }}
       >
         <Typography
@@ -101,8 +103,11 @@ const Leaderboard: React.FC = () => {
           component={Paper}
           sx={{
             margin: "1rem auto",
+            backgroundColor: "#1f2937",
             maxWidth: "95%",
             overflowX: "auto",
+            borderRadius: "8px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
           <Table

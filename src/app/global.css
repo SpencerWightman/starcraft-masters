@@ -26,6 +26,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: #1f2937;
 }
 
 input:-webkit-autofill {
@@ -41,9 +42,4 @@ input:-webkit-autofill:active {
   background-color: #374151 !important;
   color: #ffffff !important;
   border-color: #374151 !important;
-}
-
-body {
-  background-color: #374151;
-  margin: 0;
 }
