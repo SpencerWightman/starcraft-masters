@@ -1,4 +1,5 @@
 import { fetchLeaderboard } from "@/utils/leaderboard";
+import { Placeholder } from "@/utils/placeholder";
 import {
   Box,
   Typography,
@@ -107,28 +108,7 @@ const LeaderboardPage = async () => {
     );
   } catch {
     return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 2,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 8,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-        }}
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            color: "#ffffff",
-            lineHeight: 1.6,
-            textAlign: "center",
-          }}
-        >
-          Something went wrong. Reload the page in a minute.
-        </Typography>
-      </Paper>
+      <Placeholder message="Something went wrong. Reload the page in a minute." />
     );
   }
 };

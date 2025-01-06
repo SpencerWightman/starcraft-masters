@@ -8,10 +8,10 @@ import {
   Typography,
   Box,
   useMediaQuery,
-  Paper,
   Fade,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
+import { Placeholder } from "@/utils/placeholder";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -207,28 +207,7 @@ const LowBaseCharts: React.FC = () => {
   return (
     <Fade in={true} timeout={500}>
       {isXS ? (
-        <Paper
-          elevation={3}
-          sx={{
-            padding: 2,
-            maxWidth: 600,
-            margin: "auto",
-            marginTop: 8,
-            backgroundColor: "#374151",
-            borderRadius: 2,
-          }}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#ffffff",
-              lineHeight: 1.6,
-              textAlign: "center",
-            }}
-          >
-            Increase your screen size to view the chart
-          </Typography>
-        </Paper>
+        <Placeholder message="Increase your screen size to view the chart" />
       ) : (
         <Box
           sx={{

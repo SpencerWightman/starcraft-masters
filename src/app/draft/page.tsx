@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
-import PlayerTable from "../../components/teams/PlayerListTable";
-import PlayerDraft from "../../components/teams/PlayerDraft";
-import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
-import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
+import PlayerTable from "@/components/teams/PlayerListTable";
+import PlayerDraft from "@/components/teams/PlayerDraft";
+import PlayerDraftChart from "@/components/teams/PlayerDraftChart";
+import PlayerDraftDetails from "@/components/teams/PlayerDraftDetails";
 import playerSummariesJson from "data/draftData15-18.json";
-import { PlayerSummaries, PlayerSummary } from "../types/teamTypes";
+import { PlayerSummaries, PlayerSummary } from "@/app/types/teamTypes";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
 

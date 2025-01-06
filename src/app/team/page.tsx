@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Box, Typography, Paper, useMediaQuery, useTheme } from "@mui/material";
-import PlayerDraftChart from "../../components/teams/PlayerDraftChart";
-import PlayerDraftDetails from "../../components/teams/PlayerDraftDetails";
-import PlayerSavedTeam from "../../components/teams/PlayerSavedTeam";
+import PlayerDraftChart from "@/components/teams/PlayerDraftChart";
+import PlayerDraftDetails from "@/components/teams/PlayerDraftDetails";
+import PlayerSavedTeam from "@/components/teams/PlayerSavedTeam";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import playerSummariesJson from "data/draftData15-18.json";
 import { PlayerSummaries } from "@/app/types/teamTypes";
