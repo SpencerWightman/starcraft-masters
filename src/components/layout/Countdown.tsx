@@ -9,11 +9,12 @@ const countdownRenderer = ({
   completed,
 }: CountdownRenderProps) => {
   if (completed) {
-    return <span>Drafting has closed!</span>;
+    return <span>Drafting closed for SSL Winter 2025</span>;
   } else {
     return (
       <span>
-        {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+        SSL Countdown: {days} Days {hours} Hours {minutes} Minutes {seconds}{" "}
+        Seconds
       </span>
     );
   }
@@ -36,7 +37,6 @@ const CountdownWrapper = ({ targetDate }: { targetDate: Date }) => {
         display: { xs: "none", md: "block" },
       }}
     >
-      SSL Countdown:{" "}
       <Countdown date={targetDate} renderer={countdownRenderer} />{" "}
     </Typography>
   ) : null;
