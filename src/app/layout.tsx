@@ -161,6 +161,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </Box>
               )}
 
+              {/* Maps */}
               <Box
                 sx={{
                   display: pathname === "/maps" ? "flex" : "none",
@@ -181,6 +182,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </Box>
               </Box>
 
+              {/* Draft */}
               <Box
                 sx={{
                   display: pathname === "/draft" ? "flex" : "none",
