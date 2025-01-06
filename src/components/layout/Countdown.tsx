@@ -9,7 +9,7 @@ const countdownRenderer = ({
   completed,
 }: CountdownRenderProps) => {
   if (completed) {
-    return <span>Drafting closed for SSL Winter 2025</span>;
+    return <span>Drafting closed for SSL Spring 2025</span>;
   } else {
     return (
       <span>

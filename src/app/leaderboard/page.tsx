@@ -68,8 +68,7 @@ const LeaderboardPage = async () => {
                     sx={{
                       color: "#10b981",
                       padding: "8px",
-                      borderBottom:
-                        index === leaderboard.length - 1 ? "none" : undefined,
+                      borderBottom: "none",
                     }}
                   >
                     {entry.points}
@@ -79,8 +78,7 @@ const LeaderboardPage = async () => {
                     sx={{
                       color: "#e5e7eb",
                       padding: "8px",
-                      borderBottom:
-                        index === leaderboard.length - 1 ? "none" : undefined,
+                      borderBottom: "none",
                     }}
                   >
                     {entry.username}
@@ -92,8 +90,7 @@ const LeaderboardPage = async () => {
                       sx={{
                         color: "rgba(243, 244, 246, 0.6)",
                         padding: "8px",
-                        borderBottom:
-                          index === leaderboard.length - 1 ? "none" : undefined,
+                        borderBottom: "none",
                       }}
                     >
                       {member}
