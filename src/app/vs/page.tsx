@@ -196,180 +196,182 @@ const VSChart: React.FC = () => {
   );
 
   return (
-    <Fade in={true} timeout={500}>
+    <>
       {isXS ? (
         <Placeholder message="Increase your screen size to view the chart" />
       ) : (
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-            alignItems: "flex-start",
-            marginTop: "10px",
-            padding: "20px",
-            backgroundColor: "#1f2937",
-            borderRadius: "8px",
-          }}
-        >
-          {/* First Chart */}
+        <Fade in={true} timeout={500}>
           <Box
             sx={{
-              width: "49%",
-              textAlign: "center",
-              maxWidth: "100%",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              alignItems: "flex-start",
+              marginTop: "10px",
+              padding: "20px",
+              backgroundColor: "#1f2937",
+              borderRadius: "8px",
             }}
           >
-            <Select
-              value={selectedPlayer1}
-              onChange={handlePlayerChange1}
-              displayEmpty
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "#374151",
-                    color: "#e5e7eb",
-                  },
-                },
-              }}
+            {/* First Chart */}
+            <Box
               sx={{
-                marginBottom: "20px",
-                color: "#e5e7eb",
-                backgroundColor: "#374151",
-                borderRadius: "4px",
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(54, 162, 235, 1)",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "transparent",
-                },
-                "& .MuiSvgIcon-root": { color: "rgba(54, 162, 235, 1)" },
+                width: "49%",
+                textAlign: "center",
+                maxWidth: "100%",
               }}
             >
-              {Object.entries(historicalData).map(([handle]) => (
-                <MenuItem key={handle} value={handle}>
-                  {handle}
-                </MenuItem>
-              ))}
-            </Select>
-
-            <div
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              {allMatchups1.map((matchup) => (
-                <Button
-                  key={matchup}
-                  variant="outlined"
-                  onClick={() => setSelectedMatchup1(matchup)}
-                  sx={{
-                    color: "rgba(54, 162, 235, 1)",
-                    textTransform: "none",
-                    borderColor:
-                      selectedMatchup1 === matchup
-                        ? "rgba(54, 162, 235, 1)"
-                        : "transparent",
-                    backgroundColor: "#374151",
-                    "&:hover": { borderColor: "rgba(54, 162, 235, 1)" },
-                  }}
-                >
-                  {matchup}
-                </Button>
-              ))}
-            </div>
-            <div style={{ height: "500px" }}>
-              <Bar
-                data={chartProps1}
-                options={options(selectedPlayer1, selectedMatchup1)}
-              />
-            </div>
-          </Box>
-
-          {/* Second Chart */}
-          <Box
-            sx={{
-              width: "49%",
-              textAlign: "center",
-              maxWidth: "100%",
-            }}
-          >
-            <Select
-              value={selectedPlayer2}
-              onChange={handlePlayerChange2}
-              displayEmpty
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "#374151",
-                    color: "#e5e7eb",
+              <Select
+                value={selectedPlayer1}
+                onChange={handlePlayerChange1}
+                displayEmpty
+                MenuProps={{
+                  PaperProps: {
+                    sx: {
+                      backgroundColor: "#374151",
+                      color: "#e5e7eb",
+                    },
                   },
-                },
-              }}
-              sx={{
-                marginBottom: "20px",
-                color: "#e5e7eb",
-                backgroundColor: "#374151",
-                borderRadius: "4px",
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(75, 192, 192, 1)",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "transparent",
-                },
-                "& .MuiSvgIcon-root": { color: "rgba(75, 192, 192, 1)" },
-              }}
-            >
-              {Object.entries(historicalData).map(([handle]) => (
-                <MenuItem key={handle} value={handle}>
-                  {handle}
-                </MenuItem>
-              ))}
-            </Select>
+                }}
+                sx={{
+                  marginBottom: "20px",
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "4px",
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(54, 162, 235, 1)",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "transparent",
+                  },
+                  "& .MuiSvgIcon-root": { color: "rgba(54, 162, 235, 1)" },
+                }}
+              >
+                {Object.entries(historicalData).map(([handle]) => (
+                  <MenuItem key={handle} value={handle}>
+                    {handle}
+                  </MenuItem>
+                ))}
+              </Select>
 
-            <div
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
+              <div
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                }}
+              >
+                {allMatchups1.map((matchup) => (
+                  <Button
+                    key={matchup}
+                    variant="outlined"
+                    onClick={() => setSelectedMatchup1(matchup)}
+                    sx={{
+                      color: "rgba(54, 162, 235, 1)",
+                      textTransform: "none",
+                      borderColor:
+                        selectedMatchup1 === matchup
+                          ? "rgba(54, 162, 235, 1)"
+                          : "transparent",
+                      backgroundColor: "#374151",
+                      "&:hover": { borderColor: "rgba(54, 162, 235, 1)" },
+                    }}
+                  >
+                    {matchup}
+                  </Button>
+                ))}
+              </div>
+              <div style={{ height: "500px" }}>
+                <Bar
+                  data={chartProps1}
+                  options={options(selectedPlayer1, selectedMatchup1)}
+                />
+              </div>
+            </Box>
+
+            {/* Second Chart */}
+            <Box
+              sx={{
+                width: "49%",
+                textAlign: "center",
+                maxWidth: "100%",
               }}
             >
-              {allMatchups2.map((matchup) => (
-                <Button
-                  key={matchup}
-                  variant="outlined"
-                  onClick={() => setSelectedMatchup2(matchup)}
-                  sx={{
-                    color: "rgba(75, 192, 192, 1)",
-                    textTransform: "none",
-                    borderColor:
-                      selectedMatchup2 === matchup
-                        ? "rgba(75, 192, 192, 1)"
-                        : "transparent",
-                    backgroundColor: "#374151",
-                    "&:hover": { borderColor: "rgba(75, 192, 192, 1)" },
-                  }}
-                >
-                  {matchup}
-                </Button>
-              ))}
-            </div>
-            <div style={{ height: "500px" }}>
-              <Bar
-                data={chartProps2}
-                options={options(selectedPlayer2, selectedMatchup2)}
-              />
-            </div>
+              <Select
+                value={selectedPlayer2}
+                onChange={handlePlayerChange2}
+                displayEmpty
+                MenuProps={{
+                  PaperProps: {
+                    sx: {
+                      backgroundColor: "#374151",
+                      color: "#e5e7eb",
+                    },
+                  },
+                }}
+                sx={{
+                  marginBottom: "20px",
+                  color: "#e5e7eb",
+                  backgroundColor: "#374151",
+                  borderRadius: "4px",
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(75, 192, 192, 1)",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "transparent",
+                  },
+                  "& .MuiSvgIcon-root": { color: "rgba(75, 192, 192, 1)" },
+                }}
+              >
+                {Object.entries(historicalData).map(([handle]) => (
+                  <MenuItem key={handle} value={handle}>
+                    {handle}
+                  </MenuItem>
+                ))}
+              </Select>
+
+              <div
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                }}
+              >
+                {allMatchups2.map((matchup) => (
+                  <Button
+                    key={matchup}
+                    variant="outlined"
+                    onClick={() => setSelectedMatchup2(matchup)}
+                    sx={{
+                      color: "rgba(75, 192, 192, 1)",
+                      textTransform: "none",
+                      borderColor:
+                        selectedMatchup2 === matchup
+                          ? "rgba(75, 192, 192, 1)"
+                          : "transparent",
+                      backgroundColor: "#374151",
+                      "&:hover": { borderColor: "rgba(75, 192, 192, 1)" },
+                    }}
+                  >
+                    {matchup}
+                  </Button>
+                ))}
+              </div>
+              <div style={{ height: "500px" }}>
+                <Bar
+                  data={chartProps2}
+                  options={options(selectedPlayer2, selectedMatchup2)}
+                />
+              </div>
+            </Box>
           </Box>
-        </Box>
+        </Fade>
       )}
-    </Fade>
+    </>
   );
 };
 
