@@ -19,67 +19,70 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const imageGallery = [
   {
-    img: "/maps/1.jpg",
-    title: "Deja Vu 1.1",
-    horizontal: 31,
-    vertical: 31,
-    cross: 37,
-    mains: 4,
+    img: "/maps/DeathValley0.85.jpg",
+    title: "Death Valley 0.85",
+    size: "128 x 128",
+    horizontal: 40,
+    vertical: 32,
+    cross: 0,
+    mains: 2,
     numberBases: 13,
+    creator: "김응서",
   },
   {
-    img: "/maps/2.jpg",
-    title: "Dominator 1.2",
+    img: "/maps/DejaVuSE1.95b.jpg",
+    title: "Deja Vu SE 1.95b",
+    size: "128 x 128",
+    horizontal: 21,
+    vertical: 21,
+    cross: 37,
+    mains: 4,
+    numberBases: 12,
+    creator: "유현상",
+  },
+  {
+    img: "/maps/DominatorSE1.9.jpg",
+    title: "Dominator SE 1.9",
+    size: "128 x 128",
     horizontal: 35,
     vertical: 35,
     cross: 35,
     mains: 3,
     numberBases: 15,
+    creator: "주현서",
   },
   {
-    img: "/maps/3.jpg",
-    title: "Kick Back 1.3",
-    horizontal: 25,
-    vertical: 25,
-    cross: 37,
-    mains: 4,
-    numberBases: 17,
-  },
-  {
-    img: "/maps/4.jpg",
-    title: "Minstrel 1.0",
-    horizontal: 37,
-    vertical: 37,
-    cross: 37,
-    mains: 2,
-    numberBases: 16,
-  },
-  {
-    img: "/maps/5.jpg",
-    title: "Monty Hall SE 2.3",
+    img: "/maps/Eclipse1.3.jpg",
+    title: "Eclipse 1.3",
+    size: "128 x 112",
     horizontal: 0,
     vertical: 0,
-    cross: 0,
+    cross: 34,
     mains: 2,
-    numberBases: 14,
+    numberBases: 11,
+    creator: "주현서",
   },
   {
-    img: "/maps/6.jpeg",
-    title: "Pantheon 1.0",
+    img: "/maps/Metropolis0.80.jpg",
+    title: "Metropolis 0.80",
+    size: "128 x 128",
     horizontal: 30,
     vertical: 30,
-    cross: 40,
+    cross: 37,
     mains: 4,
-    numberBases: 16,
+    numberBases: 12,
+    creator: "김응서",
   },
   {
-    img: "/maps/7.jpeg",
-    title: "Radeon 1.0",
-    horizontal: 31,
-    vertical: 32,
+    img: "/maps/PoleStar0.94.jpg",
+    title: "PoleStar 0.94",
+    size: "128 x 128",
+    horizontal: 29,
+    vertical: 29,
     cross: 39,
     mains: 4,
-    numberBases: 14,
+    numberBases: 16,
+    creator: "?",
   },
 ];
 
@@ -87,11 +90,13 @@ const Maps: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<{
     img: string;
     title: string;
+    size: string;
     horizontal: number;
     vertical: number;
     cross: number;
     mains: number;
     numberBases: number;
+    creator: string;
   } | null>(null);
   const isMobile = useMediaQuery("(max-width:600px)");
 
@@ -165,7 +170,7 @@ const Maps: React.FC = () => {
           paddingBottom: "1.5rem",
         }}
       >
-        SSL Autumn 2024 Maps
+        SSL Spring 2025 Maps
       </Typography>
 
       {/* Gallery */}
@@ -285,6 +290,7 @@ const Maps: React.FC = () => {
             >
               {[
                 { label: "Name", value: selectedImage.title },
+                { label: "Size", value: selectedImage.size },
                 { label: "Mains", value: selectedImage.mains },
                 { label: "Bases", value: selectedImage.numberBases },
                 {
@@ -296,6 +302,7 @@ const Maps: React.FC = () => {
                   value: selectedImage.horizontal,
                 },
                 { label: "Cross rush distance", value: selectedImage.cross },
+                { label: "Creator", value: selectedImage.creator },
               ].map((stat, idx) => (
                 <DialogContentText
                   key={idx}
@@ -307,7 +314,13 @@ const Maps: React.FC = () => {
                     wordBreak: "break-word",
                   }}
                 >
-                  {`${stat.label}: `}
+                  {selectedImage.title === "Death Valley 0.85" &&
+                  stat.label === "Vertical rush distance"
+                    ? "Top battlefield rush distance: "
+                    : selectedImage.title === "Death Valley 0.85" &&
+                      stat.label === "Horizontal rush distance"
+                    ? "Bottom battlefield rush distance: "
+                    : `${stat.label}: `}
                   <span style={{ color: "#10b981", fontWeight: "bold" }}>
                     {stat.value}
                   </span>
