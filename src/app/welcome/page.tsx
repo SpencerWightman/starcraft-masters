@@ -73,7 +73,7 @@ const Welcome: React.FC = () => {
             combined wins in the next ASL/SSL season.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-            • You have until the first ASL qualifier (approximately when the
+            • You have until the first SSL qualifier (approximately when the
             countdown expires) to save your team. One point is awarded for each
             match win starting in the Ro24.
           </Typography>

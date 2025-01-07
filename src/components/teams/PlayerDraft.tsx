@@ -15,6 +15,8 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
 
+const universalTargetDate = new Date("2025-02-03T23:59:59Z");
+
 const saveTeamToDB = async (params: {
   email: string;
   fantasyTeam: string[];
@@ -56,6 +58,12 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
+    if (universalTargetDate <= new Date()) {
+      setSnackbarMessage("SSL has already started");
+      setOpen(true);
+      return;
+    }
+
     if (status === "unauthenticated") {
       setSnackbarMessage("Login to save your team");
       setOpen(true);
@@ -82,7 +90,7 @@ const PlayerDraft: React.FC<{
         setOpen(true);
       }
     } else {
-      setSnackbarMessage("Please select 15 players.");
+      setSnackbarMessage("Please select 15 players");
       setOpen(true);
     }
   };
