@@ -14,8 +14,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
-
-const universalTargetDate = new Date("2025-02-03T23:59:59Z");
+import { deadlineDate } from "@/constants/constants";
 
 const saveTeamToDB = async (params: {
   email: string;
@@ -58,8 +57,8 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (universalTargetDate <= new Date()) {
-      setSnackbarMessage("SSL has already started");
+    if (deadlineDate <= new Date()) {
+      setSnackbarMessage("The drafting deadline has passed for this season");
       setOpen(true);
       return;
     }

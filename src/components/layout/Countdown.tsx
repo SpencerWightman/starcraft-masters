@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Countdown, { CountdownRenderProps } from "react-countdown";
+import { deadlineDate } from "@/constants/constants";
 import { Typography } from "@mui/material";
 const countdownRenderer = ({
   days,
@@ -9,7 +10,7 @@ const countdownRenderer = ({
   completed,
 }: CountdownRenderProps) => {
   if (completed) {
-    return <span>Drafting closed for SSL Spring 2025</span>;
+    return <span>SSL Spring 2025 is underway</span>;
   } else {
     return (
       <span>
@@ -20,7 +21,7 @@ const countdownRenderer = ({
   }
 };
 
-const CountdownWrapper = ({ targetDate }: { targetDate: Date }) => {
+const CountdownWrapper = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const CountdownWrapper = ({ targetDate }: { targetDate: Date }) => {
         display: { xs: "none", md: "block" },
       }}
     >
-      <Countdown date={targetDate} renderer={countdownRenderer} />{" "}
+      <Countdown date={deadlineDate} renderer={countdownRenderer} />
     </Typography>
   ) : null;
 };

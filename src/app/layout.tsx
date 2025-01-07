@@ -24,8 +24,6 @@ import Link from "next/link";
 
 const queryClient = new QueryClient();
 
-const universalTargetDate = new Date("2025-02-03T23:59:59Z");
-
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathname = usePathname();
@@ -77,7 +75,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                       alignItems: "center",
                     }}
                   >
-                    <CountdownWrapper targetDate={universalTargetDate} />
+                    <CountdownWrapper />
                   </Box>
                   <IconButton
                     edge="start"
