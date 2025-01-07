@@ -114,8 +114,8 @@ const Welcome: React.FC = () => {
             VS
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Compare player win rates by matchup and match duration from all
-            seasons of ASL/SSL and KSL.
+            • Compare player win rates by matchup and match duration using their
+            aggregate ASL, SSL, and KSL performance.
           </Typography>
         </Box>
         <Box
@@ -216,6 +216,8 @@ const Welcome: React.FC = () => {
               (better player) slots on higher tier players. That means you can
               select all 15 players from Tier 4 if that&apos;s the team you want
               to draft! You can update your saved team by saving a new draft.
+              There is no guarantee that all of the players listed will choose
+              to compete in the next SSL.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • ASL/SSL places qualified players into 1 of 4 tiers based on how
