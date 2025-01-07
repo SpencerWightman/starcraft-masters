@@ -53,11 +53,16 @@ const PlayerDraftChart: React.FC<{
       }
     });
 
-    const labels = Object.keys(aggregatedWinRates);
+    const sortedLabels = Object.keys(aggregatedWinRates).sort((a, b) => {
+      const [aStart] = a.split("-").map(Number);
+      const [bStart] = b.split("-").map(Number);
+      return aStart - bStart;
+    });
+
     const datasets = [
       {
         label: `Team Win Rate by Duration  - ${totalGames} Games`,
-        data: labels.map(
+        data: sortedLabels.map(
           (interval) =>
             aggregatedWinRates[interval].totalWinRate /
             aggregatedWinRates[interval].count
@@ -68,7 +73,7 @@ const PlayerDraftChart: React.FC<{
       },
     ];
 
-    return { labels, datasets };
+    return { labels: sortedLabels, datasets };
   };
 
   const chartProps = aggregateData(selectedMatchup);
