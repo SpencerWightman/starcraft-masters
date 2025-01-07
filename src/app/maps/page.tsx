@@ -75,7 +75,7 @@ const imageGallery = [
   },
   {
     img: "/maps/PoleStar0.94.jpg",
-    title: "PoleStar 0.94",
+    title: "Pole Star 0.94",
     size: "128 x 128",
     horizontal: 29,
     vertical: 29,
