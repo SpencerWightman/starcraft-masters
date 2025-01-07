@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   AppBar,
@@ -13,6 +13,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
 import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -26,14 +27,21 @@ const queryClient = new QueryClient();
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isMapsNew, setIsMapsNew] = useState(true);
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname === "/maps" && isMapsNew) {
+      setIsMapsNew(false);
+    }
+  }, [pathname, isMapsNew]);
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
     { text: "Leaderboard", href: "/leaderboard" },
     { text: "Team", href: "/team" },
     { text: "Draft", href: "/draft" },
-    { text: "Maps", href: "/maps" },
+    { text: "Maps", href: "/maps", isNew: isMapsNew },
     { text: "VS", href: "/vs" },
     { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },
@@ -89,6 +97,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     <MenuIcon />
                   </IconButton>
+
                   {/* Desktop Nav */}
                   <Box
                     component="nav"
@@ -99,19 +108,37 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   >
                     {navItems.map((item, index) => (
                       <Link key={index} href={item.href} passHref>
-                        <Button
+                        <Box
                           sx={{
-                            color: "#10b981",
-                            textTransform: "none",
-                            fontWeight: "bold",
-                            "&:hover": {
-                              color: "rgba(16, 185, 129, 0.7)",
-                              backgroundColor: "transparent",
-                            },
+                            position: "relative",
                           }}
                         >
-                          {item.text}
-                        </Button>
+                          <Button
+                            sx={{
+                              color: "#10b981",
+                              textTransform: "none",
+                              fontWeight: "bold",
+                              "&:hover": {
+                                color: "rgba(16, 185, 129, 0.7)",
+                                backgroundColor: "transparent",
+                              },
+                            }}
+                          >
+                            {item.text}
+                          </Button>
+                          {/* New icon */}
+                          {item.isNew && (
+                            <NewReleasesIcon
+                              sx={{
+                                position: "absolute",
+                                top: "-2px",
+                                right: "-2px",
+                                fontSize: "1rem",
+                                color: "#f87171",
+                              }}
+                            />
+                          )}
+                        </Box>
                       </Link>
                     ))}
                   </Box>
