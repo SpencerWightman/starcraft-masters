@@ -5,7 +5,7 @@ type PlaceholderProps = {
   message: string;
 };
 
-export const Placeholder: React.FC<PlaceholderProps> = ({ message }) => {
+export const PaperPlaceholder: React.FC<PlaceholderProps> = ({ message }) => {
   return (
     <Paper
       elevation={3}

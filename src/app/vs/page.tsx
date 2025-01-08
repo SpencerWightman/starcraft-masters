@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Placeholder } from "@/utils/Placeholder";
+import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import {
   MenuItem,
   Select,
@@ -198,7 +198,7 @@ const VSChart: React.FC = () => {
   return (
     <>
       {isXS ? (
-        <Placeholder message="Increase your screen size to view the chart" />
+        <PaperPlaceholder message="Increase your screen size to view the chart" />
       ) : (
         <Fade in={true} timeout={500}>
           <Box

@@ -1,5 +1,5 @@
 import { fetchLeaderboard } from "@/utils/leaderboard";
-import { Placeholder } from "@/utils/Placeholder";
+import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import {
   Box,
   Typography,
@@ -106,7 +106,7 @@ const LeaderboardPage = async () => {
     );
   } catch {
     return (
-      <Placeholder message="Something went wrong. Reload the page in a minute." />
+      <PaperPlaceholder message="Something went wrong. Reload the page in a minute." />
     );
   }
 };
