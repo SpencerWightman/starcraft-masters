@@ -11,7 +11,7 @@ import {
   Fade,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
-import { Placeholder } from "@/utils/placeholder";
+import { Placeholder } from "@/utils/Placeholder";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,

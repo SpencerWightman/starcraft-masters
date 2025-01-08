@@ -1,5 +1,5 @@
 import { fetchLeaderboard } from "@/utils/leaderboard";
-import { Placeholder } from "@/utils/placeholder";
+import { Placeholder } from "@/utils/Placeholder";
 import {
   Box,
   Typography,
