@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Paper, Typography, Box, TextField, Button, Fade } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { mapsNotificationSeason } from "@/constants/constants";
 
 declare module "next-auth" {
   interface Session {
@@ -75,6 +76,10 @@ const Profile: React.FC = () => {
 
       if (!result?.ok) {
         throw new Error(result?.error || "Authentication failed");
+      }
+
+      if (isSignUp) {
+        localStorage.setItem("mapsNotificationSeason", mapsNotificationSeason);
       }
     } catch (error: unknown) {
       const errorMessage =
