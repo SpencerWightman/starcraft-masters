@@ -29,6 +29,7 @@ const LeaderboardPage = async () => {
           backgroundColor: "#1f2937",
           maxWidth: "100vw",
           overflowX: "hidden",
+          paddingBottom: "2rem",
         }}
       >
         <Typography
@@ -38,7 +39,7 @@ const LeaderboardPage = async () => {
             color: "rgba(243, 244, 246, 0.6)",
             textAlign: "center",
             fontWeight: "bold",
-            padding: "1rem",
+            paddingTop: "1rem",
           }}
         >
           SSL Spring 2025 Leaderboard
