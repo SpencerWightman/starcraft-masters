@@ -1,4 +1,5 @@
-import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, QueryCommand } from "@aws-sdk/client-dynamodb";
+import { leaderboardSeason } from "@/constants/constants";
 
 export async function fetchLeaderboard() {
   const client = new DynamoDBClient({
@@ -11,11 +12,17 @@ export async function fetchLeaderboard() {
 
   const params = {
     TableName: process.env.AWS_TABLE,
+    IndexName: "season-points-index",
+    KeyConditionExpression: "season = :season",
+    ExpressionAttributeValues: {
+      ":season": { N: leaderboardSeason },
+    },
+    ScanIndexForward: false,
     Limit: 100,
   };
 
   try {
-    const command = new ScanCommand(params);
+    const command = new QueryCommand(params);
     const data = await client.send(command);
 
     return (data.Items || []).map((item) => ({

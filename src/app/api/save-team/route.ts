@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { DynamoDBClient, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
+import { leaderboardSeason } from "@/constants/constants";
 
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION,
@@ -65,7 +66,7 @@ export async function POST(req: Request) {
       TableName: process.env.AWS_TABLE!,
       Key: {
         email: { S: email },
-        season: { N: "19" },
+        season: { N: leaderboardSeason },
       },
       UpdateExpression:
         "SET #team = :team, #username = :username, #points = :points",
