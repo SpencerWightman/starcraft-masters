@@ -167,7 +167,7 @@ const Maps: React.FC = () => {
           color: "rgba(243, 244, 246, 0.6)",
           textAlign: "center",
           fontWeight: "bold",
-          paddingBottom: "1.5rem",
+          paddingBottom: "1rem",
         }}
       >
         SSL Spring 2025 Maps
