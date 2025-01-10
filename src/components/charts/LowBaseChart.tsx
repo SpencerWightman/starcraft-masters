@@ -8,7 +8,6 @@ import {
   Typography,
   Box,
   useMediaQuery,
-  Fade,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
@@ -209,90 +208,88 @@ const LowBaseCharts: React.FC = () => {
       {isXS ? (
         <PaperPlaceholder message="Increase your screen size to view the chart" />
       ) : (
-        <Fade in={true} timeout={500}>
-          <Box
-            sx={{
-              width: "90%",
-              margin: "0 auto",
-              marginTop: "1rem",
-              padding: "20px",
-              backgroundColor: "#1f2937",
-              borderRadius: "8px",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-              maxWidth: {
-                xs: "100%",
-                sm: "600px",
-                md: "900px",
-                lg: "1100px",
-                xl: "1400px",
-              },
+        <Box
+          sx={{
+            width: "90%",
+            margin: "0 auto",
+            marginTop: "1rem",
+            padding: "20px",
+            backgroundColor: "#1f2937",
+            borderRadius: "8px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+            maxWidth: {
+              xs: "100%",
+              sm: "600px",
+              md: "900px",
+              lg: "1100px",
+              xl: "1400px",
+            },
+          }}
+        >
+          <div
+            style={{
+              marginBottom: "20px",
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: "10px",
             }}
           >
-            <div
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
+            <Button
+              variant="outlined"
+              onMouseEnter={() => setChartType("Players")}
+              sx={{
+                color: "#10b981",
+                borderColor:
+                  chartType === "Players" ? "#10b981" : "transparent",
+                backgroundColor: "#374151",
+                "&:hover": { borderColor: "#10b981" },
               }}
             >
-              <Button
-                variant="outlined"
-                onMouseEnter={() => setChartType("Players")}
-                sx={{
-                  color: "#10b981",
-                  borderColor:
-                    chartType === "Players" ? "#10b981" : "transparent",
-                  backgroundColor: "#374151",
-                  "&:hover": { borderColor: "#10b981" },
-                }}
-              >
-                Players
-              </Button>
-              <Button
-                variant="outlined"
-                onMouseEnter={() => setChartType("Matchups")}
-                sx={{
-                  color: "#10b981",
-                  borderColor:
-                    chartType === "Matchups" ? "#10b981" : "transparent",
-                  backgroundColor: "#374151",
-                  "&:hover": { borderColor: "#10b981" },
-                }}
-              >
-                Matchups
-              </Button>
-              <MuiTooltip
-                title={
-                  <div>
-                    <Typography variant="body2" component="span">
-                      SSL Autumn 2024. Loss Percent is when the winning
-                      opponent/race used only 1-2 bases. A 3rd base must be
-                      complete and on location for at least 1 minute to be
-                      counted; 45 seconds in ZvZ.
-                    </Typography>
-                  </div>
-                }
-              >
-                <IconButton>
-                  <InfoIcon
-                    sx={{
-                      color: "#374151",
-                      "&:hover": { color: "#10b981" },
-                    }}
-                  />
-                </IconButton>
-              </MuiTooltip>
-            </div>
-            <LowBaseChart
-              labels={chartProps.labels}
-              datasets={chartProps.datasets}
-              title={chartProps.title}
-              tooltipData={chartProps.tooltipData}
-            />
-          </Box>
-        </Fade>
+              Players
+            </Button>
+            <Button
+              variant="outlined"
+              onMouseEnter={() => setChartType("Matchups")}
+              sx={{
+                color: "#10b981",
+                borderColor:
+                  chartType === "Matchups" ? "#10b981" : "transparent",
+                backgroundColor: "#374151",
+                "&:hover": { borderColor: "#10b981" },
+              }}
+            >
+              Matchups
+            </Button>
+            <MuiTooltip
+              title={
+                <div>
+                  <Typography variant="body2" component="span">
+                    SSL Autumn 2024. Loss Percent is when the winning
+                    opponent/race used only 1-2 bases. A 3rd base must be
+                    complete and on location for at least 1 minute to be
+                    counted; 45 seconds in ZvZ.
+                  </Typography>
+                </div>
+              }
+            >
+              <IconButton>
+                <InfoIcon
+                  sx={{
+                    color: "#374151",
+                    "&:hover": { color: "#10b981" },
+                  }}
+                />
+              </IconButton>
+            </MuiTooltip>
+          </div>
+          <LowBaseChart
+            labels={chartProps.labels}
+            datasets={chartProps.datasets}
+            title={chartProps.title}
+            tooltipData={chartProps.tooltipData}
+          />
+        </Box>
       )}
     </>
   );

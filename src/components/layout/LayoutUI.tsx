@@ -18,6 +18,7 @@ import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CountdownWrapper from "@/components/layout/Countdown";
 import { mapsNotificationSeason } from "@/constants/constants";
+import Welcome from "@/app/welcome/page";
 import Link from "next/link";
 
 const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -187,10 +188,31 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Box>
           )}
 
+          {/* Welcome */}
+          <Box
+            sx={{
+              display: pathname === "/welcome" ? "flex" : "none",
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: "center",
+              gap: "1rem",
+              padding: "1rem",
+            }}
+          >
+            <Box
+              sx={{
+                flex: 3,
+                backgroundColor: "transparent",
+                borderRadius: "8px",
+              }}
+            >
+              <Welcome />
+            </Box>
+          </Box>
+
           {/* Content */}
           <Box
             sx={{
-              display: "flex",
+              display: pathname !== "/welcome" ? "flex" : "none",
               flexDirection: { xs: "column", md: "row" },
               justifyContent: "center",
               gap: "1rem",
