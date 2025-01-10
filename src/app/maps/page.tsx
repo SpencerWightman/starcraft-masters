@@ -12,6 +12,7 @@ import {
   Typography,
   IconButton,
   useMediaQuery,
+  Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -148,204 +149,206 @@ const Maps: React.FC = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        marginRight: {
-          xs: 0,
-          md: "0.8rem",
-        },
-      }}
-    >
-      <Typography
-        variant="h5"
-        component="h1"
+    <Fade in={true} timeout={500}>
+      <Box
         sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          textAlign: "center",
-          fontWeight: "bold",
-          paddingBottom: "1rem",
-        }}
-      >
-        SSL Spring 2025 Maps
-      </Typography>
-
-      {/* Gallery */}
-      <ImageList
-        cols={isMobile ? 1 : 4}
-        gap={8}
-        sx={{
-          gridTemplateColumns: isMobile
-            ? "1fr"
-            : "repeat(auto-fill, minmax(250px, 1fr))",
-        }}
-      >
-        {imageGallery.map((item, index) => (
-          <ImageListItem
-            key={index}
-            onClick={() => handleOpen(item)}
-            sx={{
-              cursor: "pointer",
-              aspectRatio: "1 / 1",
-              overflow: "hidden",
-              borderRadius: 2,
-            }}
-          >
-            <img
-              src={item.img}
-              alt={item.title}
-              loading="eager"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-            <ImageListItemBar title={item.title} />
-          </ImageListItem>
-        ))}
-      </ImageList>
-
-      {/* Lightbox */}
-      <Dialog
-        open={Boolean(selectedImage)}
-        onClose={handleClose}
-        maxWidth="xl"
-        fullWidth={isMobile}
-        sx={{
-          "& .MuiDialog-paper": {
-            margin: 0,
-            width: "100%",
-            maxHeight: "100vh",
-            flexDirection: isMobile ? "column" : "row",
-            overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: {
+            xs: 0,
+            md: "0.8rem",
           },
         }}
       >
-        <IconButton
-          onClick={handleClose}
+        <Typography
+          variant="h5"
+          component="h1"
           sx={{
-            position: "absolute",
-            top: 8,
-            right: 8,
-            color: "white",
-            zIndex: 10,
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            paddingBottom: "1rem",
           }}
         >
-          <CloseIcon />
-        </IconButton>
-        {selectedImage && (
-          <DialogContent
-            sx={{
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: 0,
-              height: "100%",
+          SSL Spring 2025 Maps
+        </Typography>
+
+        {/* Gallery */}
+        <ImageList
+          cols={isMobile ? 1 : 4}
+          gap={8}
+          sx={{
+            gridTemplateColumns: isMobile
+              ? "1fr"
+              : "repeat(auto-fill, minmax(250px, 1fr))",
+          }}
+        >
+          {imageGallery.map((item, index) => (
+            <ImageListItem
+              key={index}
+              onClick={() => handleOpen(item)}
+              sx={{
+                cursor: "pointer",
+                aspectRatio: "1 / 1",
+                overflow: "hidden",
+                borderRadius: 2,
+              }}
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                loading="eager"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+              <ImageListItemBar title={item.title} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+
+        {/* Lightbox */}
+        <Dialog
+          open={Boolean(selectedImage)}
+          onClose={handleClose}
+          maxWidth="xl"
+          fullWidth={isMobile}
+          sx={{
+            "& .MuiDialog-paper": {
+              margin: 0,
               width: "100%",
-              backgroundColor: "#1f2937",
-              gap: isMobile ? 2 : 4,
-              position: "relative",
+              maxHeight: "100vh",
+              flexDirection: isMobile ? "column" : "row",
+              overflow: "hidden",
+            },
+          }}
+        >
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              color: "white",
+              zIndex: 10,
             }}
           >
-            <IconButton
-              onClick={handlePrevious}
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "16px",
-                transform: "translateY(-50%)",
-                color: "white",
-                zIndex: 10,
-                backgroundColor: "rgba(0,0,0,0.5)",
-                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-              }}
-            >
-              <KeyboardArrowLeftIcon />
-            </IconButton>
-            <img
-              src={selectedImage.img}
-              alt="Selected"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100vh",
-                borderRadius: "8px",
-                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
-              }}
-            />
-            <Box
+            <CloseIcon />
+          </IconButton>
+          {selectedImage && (
+            <DialogContent
               sx={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: isMobile ? "column" : "row",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 0,
+                height: "100%",
+                width: "100%",
                 backgroundColor: "#1f2937",
-                borderRadius: "8px",
-                padding: "1rem",
-                maxWidth: isMobile ? "100%" : "40%",
-                boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+                gap: isMobile ? 2 : 4,
+                position: "relative",
               }}
             >
-              {[
-                { label: "Name", value: selectedImage.title },
-                { label: "Size", value: selectedImage.size },
-                { label: "Mains", value: selectedImage.mains },
-                { label: "Bases", value: selectedImage.numberBases },
-                {
-                  label: "Vertical rush distance",
-                  value: selectedImage.vertical,
-                },
-                {
-                  label: "Horizontal rush distance",
-                  value: selectedImage.horizontal,
-                },
-                { label: "Cross rush distance", value: selectedImage.cross },
-                { label: "Creator", value: selectedImage.creator },
-              ].map((stat, idx) => (
-                <DialogContentText
-                  key={idx}
-                  sx={{
-                    textAlign: "left",
-                    fontSize: "14px",
-                    color: "rgba(243, 244, 246, 0.8)",
-                    marginBottom: "0.5rem",
-                    wordBreak: "break-word",
-                  }}
-                >
-                  {selectedImage.title === "Death Valley 0.85" &&
-                  stat.label === "Vertical rush distance"
-                    ? "Top battlefield rush distance: "
-                    : selectedImage.title === "Death Valley 0.85" &&
-                      stat.label === "Horizontal rush distance"
-                    ? "Bottom battlefield rush distance: "
-                    : `${stat.label}: `}
-                  <span style={{ color: "#10b981", fontWeight: "bold" }}>
-                    {stat.value}
-                  </span>
-                </DialogContentText>
-              ))}
-            </Box>
-            <IconButton
-              onClick={handleNext}
-              sx={{
-                position: "absolute",
-                top: "50%",
-                right: "16px",
-                transform: "translateY(-50%)",
-                color: "white",
-                zIndex: 10,
-                backgroundColor: "rgba(0,0,0,0.5)",
-                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-              }}
-            >
-              <KeyboardArrowRightIcon />
-            </IconButton>
-          </DialogContent>
-        )}
-      </Dialog>
-    </Box>
+              <IconButton
+                onClick={handlePrevious}
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "16px",
+                  transform: "translateY(-50%)",
+                  color: "white",
+                  zIndex: 10,
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+                }}
+              >
+                <KeyboardArrowLeftIcon />
+              </IconButton>
+              <img
+                src={selectedImage.img}
+                alt="Selected"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "100vh",
+                  borderRadius: "8px",
+                  boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+                }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  backgroundColor: "#1f2937",
+                  borderRadius: "8px",
+                  padding: "1rem",
+                  maxWidth: isMobile ? "100%" : "40%",
+                  boxShadow: "0px 4px 12px rgba(0,0,0,0.5)",
+                }}
+              >
+                {[
+                  { label: "Name", value: selectedImage.title },
+                  { label: "Size", value: selectedImage.size },
+                  { label: "Mains", value: selectedImage.mains },
+                  { label: "Bases", value: selectedImage.numberBases },
+                  {
+                    label: "Vertical rush distance",
+                    value: selectedImage.vertical,
+                  },
+                  {
+                    label: "Horizontal rush distance",
+                    value: selectedImage.horizontal,
+                  },
+                  { label: "Cross rush distance", value: selectedImage.cross },
+                  { label: "Creator", value: selectedImage.creator },
+                ].map((stat, idx) => (
+                  <DialogContentText
+                    key={idx}
+                    sx={{
+                      textAlign: "left",
+                      fontSize: "14px",
+                      color: "rgba(243, 244, 246, 0.8)",
+                      marginBottom: "0.5rem",
+                      wordBreak: "break-word",
+                    }}
+                  >
+                    {selectedImage.title === "Death Valley 0.85" &&
+                    stat.label === "Vertical rush distance"
+                      ? "Top battlefield rush distance: "
+                      : selectedImage.title === "Death Valley 0.85" &&
+                        stat.label === "Horizontal rush distance"
+                      ? "Bottom battlefield rush distance: "
+                      : `${stat.label}: `}
+                    <span style={{ color: "#10b981", fontWeight: "bold" }}>
+                      {stat.value}
+                    </span>
+                  </DialogContentText>
+                ))}
+              </Box>
+              <IconButton
+                onClick={handleNext}
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "16px",
+                  transform: "translateY(-50%)",
+                  color: "white",
+                  zIndex: 10,
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+                }}
+              >
+                <KeyboardArrowRightIcon />
+              </IconButton>
+            </DialogContent>
+          )}
+        </Dialog>
+      </Box>
+    </Fade>
   );
 };
 

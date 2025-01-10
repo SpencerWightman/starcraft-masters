@@ -17,9 +17,7 @@ import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CountdownWrapper from "@/components/layout/Countdown";
-import Maps from "@/app/maps/page";
 import { mapsNotificationSeason } from "@/constants/constants";
-import Draft from "@/app/draft/page";
 import Link from "next/link";
 
 const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -189,56 +187,14 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Box>
           )}
 
-          {/* Maps */}
-          <Box
-            sx={{
-              display: pathname === "/maps" ? "flex" : "none",
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: "center",
-              gap: "1rem",
-              padding: "1rem",
-            }}
-          >
-            <Box
-              sx={{
-                flex: 3,
-                backgroundColor: "transparent",
-                borderRadius: "8px",
-              }}
-            >
-              <Maps />
-            </Box>
-          </Box>
-
-          {/* Draft */}
-          <Box
-            sx={{
-              display: pathname === "/draft" ? "flex" : "none",
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: "center",
-              gap: "1rem",
-              padding: "1rem",
-            }}
-          >
-            <Box
-              sx={{
-                flex: 3,
-                backgroundColor: "transparent",
-                borderRadius: "8px",
-              }}
-            >
-              <Draft />
-            </Box>
-          </Box>
-
           {/* Content */}
           <Box
             sx={{
-              display:
-                pathname !== "/maps" && pathname !== "/draft" ? "flex" : "none",
+              display: "flex",
               flexDirection: { xs: "column", md: "row" },
               justifyContent: "center",
               gap: "1rem",
+              padding: "1rem",
             }}
           >
             <Box
