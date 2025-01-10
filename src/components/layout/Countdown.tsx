@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Countdown, { CountdownRenderProps } from "react-countdown";
 import { deadlineDate } from "@/constants/constants";
-import { Typography } from "@mui/material";
+import { Typography, Fade } from "@mui/material";
 const countdownRenderer = ({
   days,
   hours,
@@ -9,16 +9,17 @@ const countdownRenderer = ({
   seconds,
   completed,
 }: CountdownRenderProps) => {
-  if (completed) {
-    return <span>SSL Spring 2025 is underway</span>;
-  } else {
-    return (
-      <span>
-        SSL Countdown: {days} Days {hours} Hours {minutes} Minutes {seconds}{" "}
-        Seconds
-      </span>
-    );
-  }
+  return (
+    <Fade in={true} timeout={2000}>
+      {completed ? (
+        <span>SSL Spring 2025 is underway</span>
+      ) : (
+        <span>
+          {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+        </span>
+      )}
+    </Fade>
+  );
 };
 
 const CountdownWrapper = () => {
