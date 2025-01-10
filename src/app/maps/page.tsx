@@ -168,6 +168,7 @@ const Maps: React.FC = () => {
           textAlign: "center",
           fontWeight: "bold",
           paddingBottom: "1rem",
+          marginRight: "-0.8rem",
         }}
       >
         SSL Spring 2025 Maps
