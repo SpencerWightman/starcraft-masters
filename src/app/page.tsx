@@ -1,16 +1,8 @@
-"use client";
-
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React from "react";
+import WelcomePage from "@/app/welcome/page";
 
 const HomePage: React.FC = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace("/welcome");
-  }, [router]);
-
-  return null;
+  return <WelcomePage />;
 };
 
 export default HomePage;
