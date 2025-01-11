@@ -61,6 +61,7 @@ const LeaderboardPage = async () => {
                   key={index}
                   sx={{
                     backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
+                    cursor: "default",
                   }}
                 >
                   <TableCell

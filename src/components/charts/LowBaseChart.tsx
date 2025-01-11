@@ -264,7 +264,11 @@ const LowBaseCharts: React.FC = () => {
             <MuiTooltip
               title={
                 <div>
-                  <Typography variant="body2" component="span">
+                  <Typography
+                    variant="body2"
+                    component="span"
+                    sx={{ cursor: "default" }}
+                  >
                     SSL Autumn 2024. Loss Percent is when the winning
                     opponent/race used only 1-2 bases. A 3rd base must be
                     complete and on location for at least 1 minute to be
