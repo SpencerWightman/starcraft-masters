@@ -27,13 +27,12 @@ export const deselectPlayerDraft = (
 
     let skip = false;
 
-    for (let tier = dynamicTier; tier <= playerTier; tier++) {
+    for (let tier = 0; tier < playerTier; tier++) {
       runningCount += tierCounts[tier];
       if (tier === playerTier) {
         runningCount--;
       }
-      console.log(tier, runningCount, defaultSlots[tier]);
-      if (runningCount >= defaultSlots[tier]) {
+      if (runningCount >= defaultSlots[dynamicTier]) {
         skip = true;
         break;
       }
@@ -47,6 +46,7 @@ export const deselectPlayerDraft = (
 
     // Update lower tiers
     for (let tier = 0; tier < player.tier; tier++) {
+      console.log("TIER ", tier);
       if (maxRangeSum(tier, player.tier)) {
         continue;
       }
