@@ -6,7 +6,7 @@ import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
 import PlayerChart from "./PlayerChart";
 
-const PlayerTable: React.FC<{
+const PlayerGrid: React.FC<{
   groupedPlayers: Record<string, PlayerSummary[]>;
   onPlayerClick: (player: PlayerSummary) => void;
   selectedPlayers: PlayerSummary[];
@@ -84,11 +84,7 @@ const PlayerTable: React.FC<{
                       userSelect: "none",
                     }}
                   >
-                    {`${selectedCount} ${
-                      maxSlots[index] <= groupedPlayers[tier].length
-                        ? `/ ${maxSlots[index]}`
-                        : `/ ${groupedPlayers[tier].length}`
-                    }`}
+                    {`${selectedCount} / ${maxSlots[index]}`}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
@@ -397,4 +393,4 @@ const PlayerTable: React.FC<{
   );
 };
 
-export default PlayerTable;
+export default PlayerGrid;

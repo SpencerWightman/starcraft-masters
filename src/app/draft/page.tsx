@@ -2,7 +2,9 @@
 
 import React, { useState } from "react";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
-import PlayerTable from "@/components/teams/PlayerListTable";
+import PlayerGrid from "@/components/teams/PlayerGrid";
+import { selectPlayerDraft } from "@/utils/selectPlayerDraft";
+import { deselectPlayerDraft } from "@/utils/deselectPlayerDraft";
 import PlayerDraft from "@/components/teams/PlayerDraft";
 import PlayerDraftChart from "@/components/teams/PlayerDraftChart";
 import PlayerDraftDetails from "@/components/teams/PlayerDraftDetails";
@@ -49,212 +51,22 @@ const PlayerList: React.FC = () => {
     };
 
     if (isAlreadySelected) {
-      setSelectedPlayers((prev) =>
-        prev.filter(
-          (selectedPlayer) =>
-            selectedPlayer.player.handle !== player.player.handle
-        )
+      return deselectPlayerDraft(
+        player,
+        setSelectedPlayers,
+        setTierMaxSlots,
+        defaultSlots,
+        selectedPlayers
       );
-      setTierMaxSlots((prev) => {
-        const updatedSlots = { ...prev };
-
-        const lowerTiers = [];
-        for (let tier = player.tier - 1; tier >= 0; tier--) {
-          lowerTiers.push({ tier, value: updatedSlots[tier] });
-        }
-
-        type ValueGroups = { [key: number]: number[] };
-
-        const valueGroups = lowerTiers.reduce<ValueGroups>(
-          (groups, { tier, value }) => {
-            if (!groups[value]) {
-              groups[value] = [];
-            }
-            groups[value].push(tier);
-            return groups;
-          },
-          {}
-        );
-
-        let shouldReturn = false;
-
-        Object.values(valueGroups).forEach((tiers) => {
-          if (tiers.length > 1) {
-            shouldReturn = true;
-            tiers.forEach((tier) => {
-              updatedSlots[tier] = Math.min(
-                updatedSlots[tier] + 1,
-                defaultSlots[tier]
-              );
-            });
-          }
-        });
-
-        if (shouldReturn) {
-          return updatedSlots;
-        }
-
-        if (updatedSlots[player.tier] <= defaultSlots[player.tier - 4]) {
-          updatedSlots[player.tier - 1] = Math.min(
-            updatedSlots[player.tier - 1] + 1,
-            defaultSlots[player.tier - 1]
-          );
-          updatedSlots[player.tier - 2] = Math.min(
-            updatedSlots[player.tier - 2] + 1,
-            defaultSlots[player.tier - 2]
-          );
-          updatedSlots[player.tier - 3] = Math.min(
-            updatedSlots[player.tier - 3] + 1,
-            defaultSlots[player.tier - 3]
-          );
-          updatedSlots[player.tier - 4] = Math.min(
-            updatedSlots[player.tier - 4] + 1,
-            defaultSlots[player.tier - 4]
-          );
-        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 3]) {
-          updatedSlots[player.tier - 1] = Math.min(
-            updatedSlots[player.tier - 1] + 1,
-            defaultSlots[player.tier - 1]
-          );
-          updatedSlots[player.tier - 2] = Math.min(
-            updatedSlots[player.tier - 2] + 1,
-            defaultSlots[player.tier - 2]
-          );
-          updatedSlots[player.tier - 3] = Math.min(
-            updatedSlots[player.tier - 3] + 1,
-            defaultSlots[player.tier - 3]
-          );
-        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 2]) {
-          updatedSlots[player.tier - 1] = Math.min(
-            updatedSlots[player.tier - 1] + 1,
-            defaultSlots[player.tier - 1]
-          );
-          updatedSlots[player.tier - 2] = Math.min(
-            updatedSlots[player.tier - 2] + 1,
-            defaultSlots[player.tier - 2]
-          );
-        } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 1]) {
-          updatedSlots[player.tier - 1] = Math.min(
-            updatedSlots[player.tier - 1] + 1,
-            defaultSlots[player.tier - 1]
-          );
-        }
-
-        return updatedSlots;
-      });
-
-      setTierMaxSlots((prev) => {
-        const updatedSlots = { ...prev };
-        Object.keys(updatedSlots).forEach((key) => {
-          const tier = parseInt(key, 10);
-          if (tier >= player.tier) {
-            updatedSlots[tier] += 1;
-          }
-        });
-        return updatedSlots;
-      });
-
-      return;
     }
 
-    if (tierMaxSlots[player.tier] === 0) return;
-
-    setTierMaxSlots((prev) => {
-      const updatedSlots = { ...prev };
-
-      const lowerTiers = [];
-      for (let tier = player.tier - 1; tier >= 0; tier--) {
-        lowerTiers.push({ tier, value: updatedSlots[tier] });
-      }
-
-      type ValueGroups = { [key: number]: number[] };
-
-      const valueGroups = lowerTiers.reduce<ValueGroups>(
-        (groups, { tier, value }) => {
-          if (!groups[value]) {
-            groups[value] = [];
-          }
-          groups[value].push(tier);
-          return groups;
-        },
-        {}
-      );
-
-      let shouldReturn = false;
-
-      Object.values(valueGroups).forEach((tiers) => {
-        if (tiers.length > 1) {
-          shouldReturn = true;
-          tiers.forEach((tier) => {
-            updatedSlots[tier] = Math.max(updatedSlots[tier] - 1, 0);
-          });
-        }
-      });
-
-      if (shouldReturn) {
-        return updatedSlots;
-      }
-
-      if (updatedSlots[player.tier] <= defaultSlots[player.tier - 4]) {
-        updatedSlots[player.tier - 1] = Math.max(
-          updatedSlots[player.tier - 1] - 1,
-          0
-        );
-        updatedSlots[player.tier - 2] = Math.max(
-          updatedSlots[player.tier - 2] - 1,
-          0
-        );
-        updatedSlots[player.tier - 3] = Math.max(
-          updatedSlots[player.tier - 3] - 1,
-          0
-        );
-        updatedSlots[player.tier - 4] = Math.max(
-          updatedSlots[player.tier - 4] - 1,
-          0
-        );
-      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 3]) {
-        updatedSlots[player.tier - 1] = Math.max(
-          updatedSlots[player.tier - 1] - 1,
-          0
-        );
-        updatedSlots[player.tier - 2] = Math.max(
-          updatedSlots[player.tier - 2] - 1,
-          0
-        );
-        updatedSlots[player.tier - 3] = Math.max(
-          updatedSlots[player.tier - 3] - 1,
-          0
-        );
-      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 2]) {
-        updatedSlots[player.tier - 1] = Math.max(
-          updatedSlots[player.tier - 1] - 1,
-          0
-        );
-        updatedSlots[player.tier - 2] = Math.max(
-          updatedSlots[player.tier - 2] - 1,
-          0
-        );
-      } else if (updatedSlots[player.tier] <= defaultSlots[player.tier - 1]) {
-        updatedSlots[player.tier - 1] = Math.max(
-          updatedSlots[player.tier - 1] - 1,
-          0
-        );
-      }
-
-      return updatedSlots;
-    });
-
-    setTierMaxSlots((prev) => {
-      const updatedSlots = { ...prev };
-      Object.keys(updatedSlots).forEach((key) => {
-        const tier = parseInt(key, 10);
-        if (tier >= player.tier) {
-          updatedSlots[tier] = Math.max(0, updatedSlots[tier] - 1);
-        }
-      });
-      return updatedSlots;
-    });
-    setSelectedPlayers((prev) => [...prev, player]);
+    return selectPlayerDraft(
+      player,
+      setSelectedPlayers,
+      setTierMaxSlots,
+      defaultSlots,
+      tierMaxSlots
+    );
   };
 
   return (
@@ -310,7 +122,7 @@ const PlayerList: React.FC = () => {
         </Box>
       </Box>
 
-      <PlayerTable
+      <PlayerGrid
         groupedPlayers={groupedPlayers}
         onPlayerClick={addPlayerToDraft}
         selectedPlayers={selectedPlayers}
