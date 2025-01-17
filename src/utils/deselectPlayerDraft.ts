@@ -16,53 +16,54 @@ export const deselectPlayerDraft = (
     tierCounts[tier] = selectedCount;
   });
 
+  setTierMaxSlots((prev) => {
+    const tierSlotLimit = { ...prev };
+    const deselectedPlayerTier = player.tier;
+
+    for (let outerTier = 0; outerTier <= 4; outerTier++) {
+      // Own tier
+      if (outerTier === deselectedPlayerTier) {
+        tierSlotLimit[outerTier]++;
+        continue;
+      }
+
+      // Higher tiers
+      if (
+        outerTier > deselectedPlayerTier &&
+        tierSlotLimit[outerTier] + 1 + tierCounts[outerTier] <=
+          defaultSlots[outerTier]
+      ) {
+        tierSlotLimit[outerTier]++;
+        continue;
+      }
+
+      // Lower tiers
+      let runningCount = -1;
+      let skip = false;
+
+      for (let innerTier = 0; innerTier <= deselectedPlayerTier; innerTier++) {
+        runningCount += tierCounts[innerTier];
+
+        if (
+          (runningCount + tierSlotLimit[outerTier] + 1 >
+            defaultSlots[outerTier] ||
+            tierSlotLimit[outerTier] + 1 + runningCount >
+              defaultSlots[outerTier]) &&
+          true
+        ) {
+          skip = true;
+          break;
+        }
+      }
+
+      if (!skip) tierSlotLimit[outerTier]++;
+    }
+    return tierSlotLimit;
+  });
+
   setSelectedPlayers((prev) =>
     prev.filter(
       (selectedPlayer) => selectedPlayer.player.handle !== player.player.handle
     )
   );
-
-  function maxRangeSum(dynamicTier: number, playerTier: number) {
-    let runningCount = 0;
-
-    let skip = false;
-
-    for (let tier = 0; tier < playerTier; tier++) {
-      runningCount += tierCounts[tier];
-      if (tier === playerTier) {
-        runningCount--;
-      }
-      if (runningCount >= defaultSlots[dynamicTier]) {
-        skip = true;
-        break;
-      }
-    }
-
-    return skip;
-  }
-
-  setTierMaxSlots((prev) => {
-    const availableSlots = { ...prev };
-
-    // Update lower tiers
-    for (let tier = 0; tier < player.tier; tier++) {
-      console.log("TIER ", tier);
-      if (maxRangeSum(tier, player.tier)) {
-        continue;
-      }
-
-      if (availableSlots[tier] + 1 <= defaultSlots[tier])
-        availableSlots[tier]++;
-    }
-
-    // Update higher tiers and self
-    [0, 1, 2, 3, 4].map((tier) => {
-      if (tier >= player.tier) {
-        if (availableSlots[tier] + 1 <= defaultSlots[tier])
-          availableSlots[tier]++;
-      }
-    });
-
-    return availableSlots;
-  });
 };
