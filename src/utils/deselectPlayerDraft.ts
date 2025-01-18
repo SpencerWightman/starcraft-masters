@@ -36,12 +36,14 @@ export const deselectPlayerDraft = (
         continue;
       }
 
-      // Lower tiers
-      if (tierSlotLimit[deselectedPlayerTier] >= tierSlotLimit[outerTier]) {
-        tierSlotLimit[outerTier] = Math.min(
-          defaultSlots[outerTier],
-          tierSlotLimit[outerTier] + 1
-        );
+      // Otherwise handle lower tiers
+      if (tierSlotLimit[deselectedPlayerTier] === tierSlotLimit[outerTier]) {
+        if (
+          tierSlotLimit[outerTier] + 1 + tierCounts[outerTier] <=
+          defaultSlots[outerTier]
+        ) {
+          tierSlotLimit[outerTier]++;
+        }
       }
     }
 

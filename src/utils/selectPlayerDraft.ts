@@ -38,8 +38,8 @@ export const selectPlayerDraft = (
         continue;
       }
 
-      // Lower tiers
-      if (tierSlotLimit[selectedPlayerTier] <= tierSlotLimit[outerTier]) {
+      // Otherwise handle lower tiers
+      if (tierSlotLimit[selectedPlayerTier] === tierSlotLimit[outerTier]) {
         tierSlotLimit[outerTier] = Math.max(0, tierSlotLimit[outerTier] - 1);
       }
     }
