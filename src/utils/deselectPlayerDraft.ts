@@ -28,36 +28,23 @@ export const deselectPlayerDraft = (
       }
 
       // Higher tiers
-      if (
-        outerTier > deselectedPlayerTier &&
-        tierSlotLimit[outerTier] + 1 + tierCounts[outerTier] <=
-          defaultSlots[outerTier]
-      ) {
-        tierSlotLimit[outerTier]++;
+      if (outerTier > deselectedPlayerTier) {
+        tierSlotLimit[outerTier] = Math.min(
+          defaultSlots[outerTier],
+          tierSlotLimit[outerTier] + 1
+        );
         continue;
       }
 
       // Lower tiers
-      let runningCount = -1;
-      let skip = false;
-
-      for (let innerTier = 0; innerTier <= deselectedPlayerTier; innerTier++) {
-        runningCount += tierCounts[innerTier];
-
-        if (
-          (runningCount + tierSlotLimit[outerTier] + 1 >
-            defaultSlots[outerTier] ||
-            tierSlotLimit[outerTier] + 1 + runningCount >
-              defaultSlots[outerTier]) &&
-          true
-        ) {
-          skip = true;
-          break;
-        }
+      if (tierSlotLimit[deselectedPlayerTier] >= tierSlotLimit[outerTier]) {
+        tierSlotLimit[outerTier] = Math.min(
+          defaultSlots[outerTier],
+          tierSlotLimit[outerTier] + 1
+        );
       }
-
-      if (!skip) tierSlotLimit[outerTier]++;
     }
+
     return tierSlotLimit;
   });
 

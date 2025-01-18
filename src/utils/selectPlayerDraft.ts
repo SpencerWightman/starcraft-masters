@@ -4,71 +4,48 @@ export const selectPlayerDraft = (
   player: PlayerSummary,
   setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>,
   setTierMaxSlots: React.Dispatch<React.SetStateAction<Record<number, number>>>,
-  defaultSlots: Record<number, number>,
-  tierMaxSlots: Record<number, number>
+  // defaultSlots: Record<number, number>,
+  maxTierSlots: Record<number, number>,
+  selectedPlayers: PlayerSummary[]
 ) => {
-  if (tierMaxSlots[player.tier] === 0) return;
+  const tierCounts: { [key: string]: number } = {};
+  ["0", "1", "2", "3", "4"].map((tier) => {
+    const selectedCount = selectedPlayers.filter(
+      (selectedPlayer) => `${selectedPlayer.tier}` === tier
+    ).length;
 
-  setTierMaxSlots((prev) => {
-    const availableSlots = { ...prev };
-
-    // Update lower tiers
-    if (availableSlots[player.tier] <= defaultSlots[player.tier - 4]) {
-      availableSlots[player.tier - 1] = Math.max(
-        availableSlots[player.tier - 1] - 1,
-        0
-      );
-      availableSlots[player.tier - 2] = Math.max(
-        availableSlots[player.tier - 2] - 1,
-        0
-      );
-      availableSlots[player.tier - 3] = Math.max(
-        availableSlots[player.tier - 3] - 1,
-        0
-      );
-      availableSlots[player.tier - 4] = Math.max(
-        availableSlots[player.tier - 4] - 1,
-        0
-      );
-    } else if (availableSlots[player.tier] <= defaultSlots[player.tier - 3]) {
-      availableSlots[player.tier - 1] = Math.max(
-        availableSlots[player.tier - 1] - 1,
-        0
-      );
-      availableSlots[player.tier - 2] = Math.max(
-        availableSlots[player.tier - 2] - 1,
-        0
-      );
-      availableSlots[player.tier - 3] = Math.max(
-        availableSlots[player.tier - 3] - 1,
-        0
-      );
-    } else if (availableSlots[player.tier] <= defaultSlots[player.tier - 2]) {
-      availableSlots[player.tier - 1] = Math.max(
-        availableSlots[player.tier - 1] - 1,
-        0
-      );
-      availableSlots[player.tier - 2] = Math.max(
-        availableSlots[player.tier - 2] - 1,
-        0
-      );
-    } else if (availableSlots[player.tier] <= defaultSlots[player.tier - 1]) {
-      availableSlots[player.tier - 1] = Math.max(
-        availableSlots[player.tier - 1] - 1,
-        0
-      );
-    }
-
-    // Update higher tiers and self
-    [0, 1, 2, 3, 4].map((tier) => {
-      if (tier >= player.tier) {
-        availableSlots[tier] = Math.max(availableSlots[tier] - 1, 0);
-      }
-    });
-
-    return availableSlots;
+    tierCounts[tier] = selectedCount;
   });
 
-  // Set team draft display
+  if (maxTierSlots[player.tier] === 0) {
+    return;
+  }
+
+  setTierMaxSlots((prev) => {
+    const tierSlotLimit = { ...prev };
+    const selectedPlayerTier = player.tier;
+
+    for (let outerTier = 0; outerTier <= 4; outerTier++) {
+      // Own tier
+      if (outerTier === selectedPlayerTier) {
+        tierSlotLimit[outerTier]--;
+        continue;
+      }
+
+      // Higher tiers
+      if (outerTier > selectedPlayerTier) {
+        tierSlotLimit[outerTier] = Math.max(0, tierSlotLimit[outerTier] - 1);
+        continue;
+      }
+
+      // Lower tiers
+      if (tierSlotLimit[selectedPlayerTier] <= tierSlotLimit[outerTier]) {
+        tierSlotLimit[outerTier] = Math.max(0, tierSlotLimit[outerTier] - 1);
+      }
+    }
+
+    return tierSlotLimit;
+  });
+
   setSelectedPlayers((prev) => [...prev, player]);
 };
