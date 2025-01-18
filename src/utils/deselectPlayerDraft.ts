@@ -20,7 +20,7 @@ export const deselectPlayerDraft = (
     const tierSlotLimit = { ...prev };
     const deselectedPlayerTier = player.tier;
 
-    for (let outerTier = 0; outerTier <= 4; outerTier++) {
+    for (let outerTier = 4; outerTier >= 0; outerTier--) {
       // Own tier
       if (outerTier === deselectedPlayerTier) {
         tierSlotLimit[outerTier]++;
@@ -37,12 +37,21 @@ export const deselectPlayerDraft = (
       }
 
       // Otherwise handle lower tiers
-      if (tierSlotLimit[deselectedPlayerTier] === tierSlotLimit[outerTier]) {
+      if (tierSlotLimit[outerTier] <= tierSlotLimit[deselectedPlayerTier]) {
         if (
-          tierSlotLimit[outerTier] + 1 + tierCounts[outerTier] <=
-          defaultSlots[outerTier]
+          tierSlotLimit[outerTier] + 1 <= tierSlotLimit[outerTier + 1] &&
+          tierSlotLimit[outerTier] + 1 <=
+            defaultSlots[outerTier] - (tierCounts[outerTier - 1] ?? 0)
         ) {
-          tierSlotLimit[outerTier]++;
+          if (
+            tierSlotLimit[outerTier] + 1 + tierCounts[outerTier] <=
+            defaultSlots[outerTier]
+          ) {
+            tierSlotLimit[outerTier] = Math.min(
+              defaultSlots[outerTier],
+              tierSlotLimit[outerTier] + 1
+            );
+          }
         }
       }
     }

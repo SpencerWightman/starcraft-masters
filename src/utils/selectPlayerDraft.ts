@@ -4,19 +4,8 @@ export const selectPlayerDraft = (
   player: PlayerSummary,
   setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>,
   setTierMaxSlots: React.Dispatch<React.SetStateAction<Record<number, number>>>,
-  // defaultSlots: Record<number, number>,
-  maxTierSlots: Record<number, number>,
-  selectedPlayers: PlayerSummary[]
+  maxTierSlots: Record<number, number>
 ) => {
-  const tierCounts: { [key: string]: number } = {};
-  ["0", "1", "2", "3", "4"].map((tier) => {
-    const selectedCount = selectedPlayers.filter(
-      (selectedPlayer) => `${selectedPlayer.tier}` === tier
-    ).length;
-
-    tierCounts[tier] = selectedCount;
-  });
-
   if (maxTierSlots[player.tier] === 0) {
     return;
   }

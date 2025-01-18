@@ -64,8 +64,7 @@ const PlayerList: React.FC = () => {
       player,
       setSelectedPlayers,
       setTierMaxSlots,
-      tierMaxSlots,
-      selectedPlayers
+      tierMaxSlots
     );
   };
 
