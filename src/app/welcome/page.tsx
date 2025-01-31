@@ -9,7 +9,6 @@ const Welcome: React.FC = () => {
       spacing={{ xs: 0, sm: 4 }}
       sx={{
         margin: "1rem auto",
-        maxWidth: "1400px",
       }}
     >
       {/* Left Column */}
