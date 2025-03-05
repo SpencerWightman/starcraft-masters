@@ -209,9 +209,9 @@ const Welcome: React.FC = () => {
             }}
           >
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • The player tiers have progressively increasing selection limits,
-              and a minimum selection requirement. You can update your saved
-              team by saving a new draft. There is no guarantee that all of the
+              • Each player tier has a selection requirement, enforcing
+              selections from all player tiers. You can update your saved team
+              by saving a new draft. There is no guarantee that all of the
               players listed will choose to compete in the next SSL.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
