@@ -21,10 +21,10 @@ const PlayerList: React.FC = () => {
   const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
   const [tierMaxSlots, setTierMaxSlots] = useState<Record<number, number>>({
     0: 2,
-    1: 5,
-    2: 8,
-    3: 11,
-    4: 15,
+    1: 3,
+    2: 3,
+    3: 3,
+    4: 4,
   });
 
   const groupedPlayers = playerList.reduce(
@@ -42,22 +42,8 @@ const PlayerList: React.FC = () => {
       (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
     );
 
-    const defaultSlots: Record<number, number> = {
-      0: 2,
-      1: 5,
-      2: 8,
-      3: 11,
-      4: 15,
-    };
-
     if (isAlreadySelected) {
-      return deselectPlayerDraft(
-        player,
-        setSelectedPlayers,
-        setTierMaxSlots,
-        defaultSlots,
-        selectedPlayers
-      );
+      return deselectPlayerDraft(player, setSelectedPlayers, setTierMaxSlots);
     }
 
     return selectPlayerDraft(

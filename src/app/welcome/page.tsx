@@ -210,13 +210,9 @@ const Welcome: React.FC = () => {
           >
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • The player tiers have progressively increasing selection limits,
-              and a minimum selection requirement. However, the minimum
-              requirement can be broken by &apos;spending&apos; lower tier
-              (better player) slots on higher tier players. That means you can
-              select all 15 players from Tier 4 if that&apos;s the team you want
-              to draft! You can update your saved team by saving a new draft.
-              There is no guarantee that all of the players listed will choose
-              to compete in the next SSL.
+              and a minimum selection requirement. You can update your saved
+              team by saving a new draft. There is no guarantee that all of the
+              players listed will choose to compete in the next SSL.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • ASL/SSL places qualified players into 1 of 4 tiers based on how

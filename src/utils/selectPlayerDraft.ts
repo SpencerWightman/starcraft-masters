@@ -14,24 +14,10 @@ export const selectPlayerDraft = (
     const tierSlotLimit = { ...prev };
     const selectedPlayerTier = player.tier;
 
-    for (let outerTier = 0; outerTier <= 4; outerTier++) {
-      // Own tier
-      if (outerTier === selectedPlayerTier) {
-        tierSlotLimit[outerTier]--;
-        continue;
-      }
-
-      // Higher tiers
-      if (outerTier > selectedPlayerTier) {
-        tierSlotLimit[outerTier] = Math.max(0, tierSlotLimit[outerTier] - 1);
-        continue;
-      }
-
-      // Otherwise handle lower tiers
-      if (tierSlotLimit[selectedPlayerTier] === tierSlotLimit[outerTier]) {
-        tierSlotLimit[outerTier] = Math.max(0, tierSlotLimit[outerTier] - 1);
-      }
-    }
+    tierSlotLimit[selectedPlayerTier] = Math.max(
+      0,
+      tierSlotLimit[selectedPlayerTier] - 1
+    );
 
     return tierSlotLimit;
   });
