@@ -98,10 +98,10 @@ const PlayerDraft: React.FC<{
     setSelectedPlayers([]);
     setTierMaxSlots({
       0: 2,
-      1: 5,
-      2: 8,
-      3: 11,
-      4: 15,
+      1: 3,
+      2: 3,
+      3: 3,
+      4: 4,
     });
     setHasSaved(false);
   };
