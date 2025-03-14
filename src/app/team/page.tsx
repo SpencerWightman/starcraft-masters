@@ -100,7 +100,9 @@ const Team: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Save a team draft to compete in Brood War League
+          {
+            "Save a team draft to compete in Brood War League\n(or login on the browser where you saved your team)"
+          }
         </Typography>
         <Box sx={{ textAlign: "center", marginTop: 2 }}>
           <Link href="/draft" passHref>

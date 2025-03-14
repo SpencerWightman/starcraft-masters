@@ -12,7 +12,7 @@ const countdownRenderer = ({
   return (
     <Fade in={true} timeout={2000}>
       {completed ? (
-        <span>SSL Spring 2025 is underway</span>
+        <span>ASL Spring 2025 is underway</span>
       ) : (
         <span>
           {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds

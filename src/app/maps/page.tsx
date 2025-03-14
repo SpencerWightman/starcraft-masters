@@ -171,7 +171,7 @@ const Maps: React.FC = () => {
           marginRight: "-0.8rem",
         }}
       >
-        SSL Spring 2025 Maps
+        ASL Spring 2025 Maps
       </Typography>
 
       {/* Gallery */}

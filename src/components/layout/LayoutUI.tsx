@@ -54,184 +54,180 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   ];
 
   return (
-    <html lang="en">
-      <body>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        minWidth: "100vw",
+        backgroundColor: "#1f2937",
+        color: "#f3f4f6",
+        margin: 0,
+        padding: 0,
+        overflow: "hidden",
+        userSelect: "none",
+      }}
+    >
+      {/* Info Bar */}
+      <AppBar position="static" sx={{ backgroundColor: "#111827" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: "bold", color: "#10b981" }}
+          >
+            Brood War League
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <CountdownWrapper />
+          </Box>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            sx={{
+              fontSize: "1.5rem",
+              display: { xs: "block", md: "none" },
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          {/* Desktop Nav */}
+          <Box
+            component="nav"
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: 2,
+            }}
+          >
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.href} passHref>
+                <Box
+                  sx={{
+                    position: "relative",
+                  }}
+                >
+                  <Button
+                    sx={{
+                      color: "#10b981",
+                      textTransform: "none",
+                      fontWeight: "bold",
+                      "&:hover": {
+                        color: "rgba(16, 185, 129, 0.7)",
+                        backgroundColor: "transparent",
+                      },
+                    }}
+                  >
+                    {item.text}
+                  </Button>
+                  {/* New icon */}
+                  {item.isNew && (
+                    <NewReleasesIcon
+                      sx={{
+                        position: "absolute",
+                        top: "-2px",
+                        right: "-2px",
+                        fontSize: "1rem",
+                        color: "#f87171",
+                      }}
+                    />
+                  )}
+                </Box>
+              </Link>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      {/* Mobile Nav */}
+      {isNavOpen && (
         <Box
+          component="nav"
           sx={{
-            minHeight: "100vh",
-            minWidth: "100vw",
             backgroundColor: "#1f2937",
-            color: "#f3f4f6",
-            margin: 0,
-            padding: 0,
-            overflow: "hidden",
-            userSelect: "none",
+            padding: "1rem",
+            position: "absolute",
+            top: 64,
+            width: "100%",
+            zIndex: 1000,
+            display: { xs: "block", md: "none" },
           }}
         >
-          {/* Info Bar */}
-          <AppBar position="static" sx={{ backgroundColor: "#111827" }}>
-            <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ fontWeight: "bold", color: "#10b981" }}
-              >
-                Brood War League
-              </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <CountdownWrapper />
-              </Box>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={() => setIsNavOpen(!isNavOpen)}
-                sx={{
-                  fontSize: "1.5rem",
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-
-              {/* Desktop Nav */}
-              <Box
-                component="nav"
-                sx={{
-                  display: { xs: "none", md: "flex" },
-                  gap: 2,
-                }}
-              >
-                {navItems.map((item, index) => (
-                  <Link key={index} href={item.href} passHref>
-                    <Box
-                      sx={{
-                        position: "relative",
-                      }}
-                    >
-                      <Button
-                        sx={{
-                          color: "#10b981",
-                          textTransform: "none",
-                          fontWeight: "bold",
-                          "&:hover": {
-                            color: "rgba(16, 185, 129, 0.7)",
-                            backgroundColor: "transparent",
-                          },
-                        }}
-                      >
-                        {item.text}
-                      </Button>
-                      {/* New icon */}
-                      {item.isNew && (
-                        <NewReleasesIcon
-                          sx={{
-                            position: "absolute",
-                            top: "-2px",
-                            right: "-2px",
-                            fontSize: "1rem",
-                            color: "#f87171",
-                          }}
-                        />
-                      )}
-                    </Box>
-                  </Link>
-                ))}
-              </Box>
-            </Toolbar>
-          </AppBar>
-
-          {/* Mobile Nav */}
-          {isNavOpen && (
-            <Box
-              component="nav"
-              sx={{
-                backgroundColor: "#1f2937",
-                padding: "1rem",
-                position: "absolute",
-                top: 64,
-                width: "100%",
-                zIndex: 1000,
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <List>
-                {navItems.map((item, index) => (
-                  <Link href={item.href} key={index}>
-                    <ListItemButton
-                      onClick={() => {
-                        setTimeout(() => setIsNavOpen(false), 300);
-                      }}
-                      sx={{
-                        color: "#10b981",
-                        textDecoration: "none",
-                        borderBottom: "1px solid #374151",
-                        "&:hover": { backgroundColor: "#374151" },
-                      }}
-                    >
-                      <ListItemText
-                        primary={item.text}
-                        primaryTypographyProps={{
-                          sx: { fontWeight: "bold", textAlign: "center" },
-                        }}
-                      />
-                    </ListItemButton>
-                  </Link>
-                ))}
-              </List>
-            </Box>
-          )}
-
-          {/* Welcome */}
-          <Box
-            sx={{
-              display: pathname === "/welcome" ? "flex" : "none",
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: "center",
-              gap: "1rem",
-              padding: "1rem",
-            }}
-          >
-            <Box
-              sx={{
-                flex: 3,
-                backgroundColor: "transparent",
-                borderRadius: "8px",
-              }}
-            >
-              <Welcome />
-            </Box>
-          </Box>
-
-          {/* Content */}
-          <Box
-            sx={{
-              display: pathname !== "/welcome" ? "flex" : "none",
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: "center",
-              gap: "1rem",
-              padding: "1rem",
-            }}
-          >
-            <Box
-              sx={{
-                flex: 3,
-                backgroundColor: "transparent",
-                borderRadius: "8px",
-              }}
-            >
-              {children}
-            </Box>
-          </Box>
+          <List>
+            {navItems.map((item, index) => (
+              <Link href={item.href} key={index}>
+                <ListItemButton
+                  onClick={() => {
+                    setTimeout(() => setIsNavOpen(false), 300);
+                  }}
+                  sx={{
+                    color: "#10b981",
+                    textDecoration: "none",
+                    borderBottom: "1px solid #374151",
+                    "&:hover": { backgroundColor: "#374151" },
+                  }}
+                >
+                  <ListItemText
+                    primary={item.text}
+                    primaryTypographyProps={{
+                      sx: { fontWeight: "bold", textAlign: "center" },
+                    }}
+                  />
+                </ListItemButton>
+              </Link>
+            ))}
+          </List>
         </Box>
-      </body>
-    </html>
+      )}
+
+      {/* Welcome */}
+      <Box
+        sx={{
+          display: pathname === "/welcome" ? "flex" : "none",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "center",
+          gap: "1rem",
+          padding: "1rem",
+        }}
+      >
+        <Box
+          sx={{
+            flex: 3,
+            backgroundColor: "transparent",
+            borderRadius: "8px",
+          }}
+        >
+          <Welcome />
+        </Box>
+      </Box>
+
+      {/* Content */}
+      <Box
+        sx={{
+          display: pathname !== "/welcome" ? "flex" : "none",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "center",
+          gap: "1rem",
+          padding: "1rem",
+        }}
+      >
+        <Box
+          sx={{
+            flex: 3,
+            backgroundColor: "transparent",
+            borderRadius: "8px",
+          }}
+        >
+          {children}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

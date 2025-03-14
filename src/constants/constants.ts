@@ -1,3 +1,33 @@
 export const deadlineDate = new Date("2025-03-07T00:00:00Z");
 export const mapsNotificationSeason = "19";
 export const leaderboardSeason = "19";
+export const season19QualifiedPlayers = [
+  "Mini",
+  "Shuttle",
+  "Queen",
+  "SoulKey",
+  "Snow",
+  "Rain",
+  "Sharp",
+  "Calm",
+  "Scan",
+  "Rush",
+  "RoyaL",
+  "Speed",
+  "HyuN",
+  "Best",
+  "Mind",
+  "BarrackS",
+  "Alone",
+  "hero",
+  "Action",
+  "sSak",
+  "YSC",
+  "Stork",
+  "Skey",
+  "Tyson",
+  "JD",
+  "Bisu",
+  "Killer",
+  "Light",
+];
