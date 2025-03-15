@@ -140,6 +140,7 @@ const Pod: React.FC = () => {
   const [url, setURL] = useState("");
   const [error, setError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
+  const { data: session, status } = useSession();
 
   // Load saved URL and jobId on mount
   useEffect(() => {
@@ -194,6 +195,10 @@ const Pod: React.FC = () => {
       return 20000;
     },
   });
+
+  if (status === "unauthenticated" || session?.username !== "Lurkerbomb") {
+    return <PaperPlaceholder message="New feature coming soon" />;
+  }
 
   return (
     <Paper
