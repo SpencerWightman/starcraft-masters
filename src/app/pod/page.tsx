@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Paper,
   Typography,
@@ -10,6 +10,7 @@ import {
   LinearProgress,
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import WaveSurfer from "wavesurfer.js";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import { useSession } from "next-auth/react";
 
@@ -69,13 +70,83 @@ const getProgressFromStatus = (
   }
 };
 
+interface WaveformProps {
+  audioData: string; // base64-encoded audio data
+}
+
+const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
+  const waveformRef = useRef<HTMLDivElement>(null);
+  const wavesurferRef = useRef<WaveSurfer | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Helper function to convert base64 to a Blob
+  const base64ToBlob = (base64: string, mime: string) => {
+    const byteCharacters = atob(base64);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: mime });
+  };
+
+  useEffect(() => {
+    if (waveformRef.current && audioData) {
+      // Create Wavesurfer instance
+      wavesurferRef.current = WaveSurfer.create({
+        container: waveformRef.current,
+        waveColor: "#a0d8ef",
+        progressColor: "#1e88e5",
+        height: 80,
+      });
+      // Convert the base64 audio data to a Blob and then to an Object URL
+      const blob = base64ToBlob(audioData, "audio/wav");
+      const blobUrl = URL.createObjectURL(blob);
+      wavesurferRef.current.load(blobUrl);
+
+      // When ready, reset the play state
+      wavesurferRef.current.on("ready", () => {
+        setIsPlaying(false);
+      });
+    }
+
+    return () => {
+      wavesurferRef.current?.destroy();
+    };
+  }, [audioData]);
+
+  const togglePlay = () => {
+    if (wavesurferRef.current) {
+      wavesurferRef.current.playPause();
+      setIsPlaying(wavesurferRef.current.isPlaying());
+    }
+  };
+
+  return (
+    <Box>
+      <div ref={waveformRef} />
+      <Button
+        variant="contained"
+        onClick={togglePlay}
+        sx={{ marginTop: 2, backgroundColor: "#10b981" }}
+      >
+        {isPlaying ? "Pause" : "Play"}
+      </Button>
+    </Box>
+  );
+};
+
 const Pod: React.FC = () => {
   const [url, setURL] = useState("");
   const [error, setError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
-  const { data: session, status } = useSession();
 
+  // Load saved URL and jobId on mount
   useEffect(() => {
+    const savedURL = localStorage.getItem("youtubeUrl");
+    if (savedURL) {
+      setURL(savedURL);
+    }
     const savedJobId = localStorage.getItem("jobId");
     if (savedJobId) {
       setJobId(savedJobId);
@@ -95,6 +166,8 @@ const Pod: React.FC = () => {
 
   const handleClick = async () => {
     setError("");
+    // Save the URL to local storage immediately upon submit
+    localStorage.setItem("youtubeUrl", url);
     await submitMutation.mutateAsync(url);
   };
 
@@ -121,10 +194,6 @@ const Pod: React.FC = () => {
       return 20000;
     },
   });
-
-  if (status === "unauthenticated" || session?.username !== "Lurkerbomb") {
-    return <PaperPlaceholder message="New feature coming soon" />;
-  }
 
   return (
     <Paper
@@ -163,8 +232,8 @@ const Pod: React.FC = () => {
         <Box mt={2}>
           {jobStatus ? (
             <Box>
-              <Typography color="white">
-                Status: {jobStatus.data.status}
+              <Typography color="rgba(243, 244, 246, 0.6)">
+                {jobStatus.data.status}
               </Typography>
               <LinearProgress
                 variant="determinate"
@@ -174,19 +243,7 @@ const Pod: React.FC = () => {
               {jobStatus.data.status === "Job's finished" &&
               jobStatus.data.audioData ? (
                 <Box mt={2}>
-                  <Typography
-                    variant="h6"
-                    color="white"
-                    sx={{ marginBottom: 1 }}
-                  >
-                    Processed Audio:
-                  </Typography>
-                  <audio
-                    controls
-                    src={`data:audio/wav;base64,${jobStatus.data.audioData}`}
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
+                  <Waveform audioData={jobStatus.data.audioData} />
                 </Box>
               ) : null}
             </Box>
