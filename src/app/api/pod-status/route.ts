@@ -11,13 +11,14 @@ export async function GET(req: Request) {
     );
   }
 
-  const backendUrl = `http://localhost:8080/job-status?job_id=${encodeURIComponent(
+  const backendUrl = `https://0311-2407-7000-ad31-100-2d08-81d1-85da-4023.ngrok-free.app/job-status?job_id=${encodeURIComponent(
     job_id
   )}`;
 
   const backendResponse = await fetch(backendUrl, {
     method: "GET",
     headers: {
+      "X-API-Key": process.env.POD_API_KEY as string,
       "Content-Type": "application/json",
     },
   });

@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   LinearProgress,
+  Fade,
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import WaveSurfer from "wavesurfer.js";
@@ -25,7 +26,7 @@ interface JobStatusResponse {
   data: {
     status:
       | "Something broke. Try again in a few minutes and contact Lurkerbomb if the error persists."
-      | "Orders received"
+      | "Orders received. Extracting data..."
       | "Extracting data..."
       | "Parsing gameplay..."
       | "Analyzing gameplay (this could take a while)..."
@@ -53,7 +54,7 @@ const getProgressFromStatus = (
   status: JobStatusResponse["data"]["status"]
 ): number => {
   switch (status) {
-    case "Extracting data...":
+    case "Orders received. Extracting data...":
       return 20;
     case "Parsing gameplay...":
       return 40;
@@ -71,7 +72,7 @@ const getProgressFromStatus = (
 };
 
 interface WaveformProps {
-  audioData: string; // base64-encoded audio data
+  audioData: string;
 }
 
 const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
@@ -79,7 +80,6 @@ const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Helper function to convert base64 to a Blob
   const base64ToBlob = (base64: string, mime: string) => {
     const byteCharacters = atob(base64);
     const byteNumbers = new Array(byteCharacters.length);
@@ -92,26 +92,40 @@ const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
 
   useEffect(() => {
     if (waveformRef.current && audioData) {
-      // Create Wavesurfer instance
       wavesurferRef.current = WaveSurfer.create({
         container: waveformRef.current,
         waveColor: "#a0d8ef",
         progressColor: "#1e88e5",
         height: 80,
+        backend: "MediaElement",
       });
-      // Convert the base64 audio data to a Blob and then to an Object URL
+
+      wavesurferRef.current.on("error", (err) => {
+        if (err && err.name === "AbortError") {
+          console.debug("Caught WaveSurfer abort:", err);
+        } else {
+          console.error("WaveSurfer error:", err);
+        }
+      });
+
       const blob = base64ToBlob(audioData, "audio/wav");
       const blobUrl = URL.createObjectURL(blob);
       wavesurferRef.current.load(blobUrl);
 
-      // When ready, reset the play state
       wavesurferRef.current.on("ready", () => {
         setIsPlaying(false);
       });
     }
 
     return () => {
-      wavesurferRef.current?.destroy();
+      wavesurferRef.current?.unAll();
+      try {
+        wavesurferRef.current?.destroy();
+      } catch (error: unknown) {
+        if (error instanceof Error && error.name !== "AbortError") {
+          console.error("Error destroying wavesurfer:", error);
+        }
+      }
     };
   }, [audioData]);
 
@@ -136,13 +150,12 @@ const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
   );
 };
 
-const Pod: React.FC = () => {
+const Vod: React.FC = () => {
   const [url, setURL] = useState("");
-  const [error, setError] = useState("");
+  const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
-  // Load saved URL and jobId on mount
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
     if (savedURL) {
@@ -161,18 +174,17 @@ const Pod: React.FC = () => {
       localStorage.setItem("jobId", response.data.job_id);
     },
     onError: () => {
-      setError("Failed to submit URL. Try again in a moment.");
+      setSubmitError("Failed to submit URL. Try again in a moment.");
     },
   });
 
   const handleClick = async () => {
-    setError("");
-    // Save the URL to local storage immediately upon submit
+    setSubmitError("");
     localStorage.setItem("youtubeUrl", url);
     await submitMutation.mutateAsync(url);
   };
 
-  const { data: jobStatus } = useQuery<JobStatusResponse, Error>({
+  const { data: jobStatus, error } = useQuery<JobStatusResponse, Error>({
     queryKey: ["jobStatus", jobId],
     queryFn: async () => {
       const res = await fetch(`/api/pod-status?job_id=${jobId}`);
@@ -186,8 +198,8 @@ const Pod: React.FC = () => {
       const jobData = query.state.data;
       if (
         jobData &&
-        (jobData.data.status === "Job's finished" ||
-          jobData.data.status ===
+        (jobData.data?.status === "Job's finished" ||
+          jobData.data?.status ===
             "Something broke. Try again in a few minutes and contact Lurkerbomb if the error persists.")
       ) {
         return false;
@@ -196,67 +208,76 @@ const Pod: React.FC = () => {
     },
   });
 
-  if (status === "unauthenticated" || session?.username !== "Lurkerbomb") {
-    return <PaperPlaceholder message="New feature coming soon" />;
+  useEffect(() => {
+    if (error) {
+      localStorage.removeItem("jobId");
+      setJobId(null);
+    }
+  }, [error]);
+
+  if (status === "unauthenticated") {
+    return <PaperPlaceholder message="Sign in to use this feature" />;
   }
 
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        padding: 4,
-        maxWidth: 600,
-        margin: "auto",
-        marginTop: 4,
-        backgroundColor: "#374151",
-        borderRadius: 2,
-      }}
-    >
-      <TextField
-        label="YouTube video URL"
-        variant="outlined"
-        fullWidth
-        value={url}
-        onChange={(e) => setURL(e.target.value)}
-        sx={{ marginBottom: 2 }}
-      />
-      <Button
-        onClick={handleClick}
-        variant="contained"
-        fullWidth
-        sx={{ backgroundColor: "#10b981" }}
+    <Fade in={status !== "loading"} timeout={500}>
+      <Paper
+        elevation={3}
+        sx={{
+          padding: 4,
+          maxWidth: 600,
+          margin: "auto",
+          marginTop: 4,
+          backgroundColor: "#374151",
+          borderRadius: 2,
+        }}
       >
-        Submit
-      </Button>
-      {error && (
-        <Typography color="error" sx={{ marginTop: 2 }}>
-          {error}
-        </Typography>
-      )}
-      {jobId && (
-        <Box mt={2}>
-          {jobStatus ? (
-            <Box>
-              <Typography color="rgba(243, 244, 246, 0.6)">
-                {jobStatus.data.status}
-              </Typography>
-              <LinearProgress
-                variant="determinate"
-                value={getProgressFromStatus(jobStatus.data.status)}
-                sx={{ marginTop: 2 }}
-              />
-              {jobStatus.data.status === "Job's finished" &&
-              jobStatus.data.audioData ? (
-                <Box mt={2}>
-                  <Waveform audioData={jobStatus.data.audioData} />
-                </Box>
-              ) : null}
-            </Box>
-          ) : null}
-        </Box>
-      )}
-    </Paper>
+        <TextField
+          label="YouTube Brood War Gameplay URL"
+          variant="outlined"
+          fullWidth
+          value={url}
+          onChange={(e) => setURL(e.target.value)}
+          sx={{ marginBottom: 2 }}
+        />
+        <Button
+          onClick={handleClick}
+          variant="contained"
+          fullWidth
+          sx={{ backgroundColor: "#10b981" }}
+        >
+          Submit
+        </Button>
+        {error && (
+          <Typography color="error" sx={{ marginTop: 2 }}>
+            {submitError}
+          </Typography>
+        )}
+        {jobId && (
+          <Box mt={2}>
+            {jobStatus ? (
+              <Box>
+                <Typography color="rgba(243, 244, 246, 0.6)">
+                  {jobStatus.data.status}
+                </Typography>
+                <LinearProgress
+                  variant="determinate"
+                  value={getProgressFromStatus(jobStatus.data.status)}
+                  sx={{ marginTop: 2 }}
+                />
+                {jobStatus.data.status === "Job's finished" &&
+                jobStatus.data.audioData ? (
+                  <Box mt={2}>
+                    <Waveform audioData={jobStatus.data.audioData} />
+                  </Box>
+                ) : null}
+              </Box>
+            ) : null}
+          </Box>
+        )}
+      </Paper>
+    </Fade>
   );
 };
 
-export default Pod;
+export default Vod;

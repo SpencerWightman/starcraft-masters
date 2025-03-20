@@ -9,13 +9,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    const backendResponse = await fetch("http://localhost:8080/process-batch", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url }),
-    });
+    console.log(process.env.POD_API_KEY as string);
+
+    const backendResponse = await fetch(
+      "https://0311-2407-7000-ad31-100-2d08-81d1-85da-4023.ngrok-free.app/process-batch",
+      {
+        method: "POST",
+        headers: {
+          "X-API-Key": process.env.POD_API_KEY as string,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+      }
+    );
 
     if (!backendResponse.ok) {
       throw new Error("Backend processing failed");

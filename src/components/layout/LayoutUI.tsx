@@ -50,6 +50,7 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { text: "Maps", href: "/maps", isNew: isMapsNew },
     { text: "VS", href: "/vs" },
     { text: "Charts", href: "/charts" },
+    { text: "Vod", href: "/vod" },
     { text: "Profile", href: "/profile" },
   ];
 
@@ -69,13 +70,15 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Info Bar */}
       <AppBar position="static" sx={{ backgroundColor: "#111827" }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ fontWeight: "bold", color: "#10b981" }}
-          >
-            Brood War League
-          </Typography>
+          <Link href="/welcome" passHref>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ fontWeight: "bold", color: "#10b981" }}
+            >
+              Brood War League
+            </Typography>
+          </Link>
           <Box
             sx={{
               display: "flex",
