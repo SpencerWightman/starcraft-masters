@@ -154,7 +154,7 @@ const Vod: React.FC = () => {
   const [url, setURL] = useState("");
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
-  const { status } = useSession();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
@@ -215,8 +215,10 @@ const Vod: React.FC = () => {
     }
   }, [error]);
 
-  if (status === "unauthenticated") {
-    return <PaperPlaceholder message="Sign in to use this feature" />;
+  if (status === "unauthenticated" || session?.username !== "GoliathRush") {
+    return (
+      <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
+    );
   }
 
   return (
