@@ -228,51 +228,54 @@ const Vod: React.FC = () => {
           borderRadius: 2,
         }}
       >
-        {status === "unauthenticated" || session?.username !== "GoliathRush"} ?
-        <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
-        :
-        <TextField
-          label="YouTube Brood War Gameplay URL"
-          variant="outlined"
-          fullWidth
-          value={url}
-          onChange={(e) => setURL(e.target.value)}
-          sx={{ marginBottom: 2 }}
-        />
-        <Button
-          onClick={handleClick}
-          variant="contained"
-          fullWidth
-          sx={{ backgroundColor: "#10b981" }}
-        >
-          Submit
-        </Button>
-        {error && (
-          <Typography color="error" sx={{ marginTop: 2 }}>
-            {submitError}
-          </Typography>
-        )}
-        {jobId && (
-          <Box mt={2}>
-            {jobStatus ? (
-              <Box>
-                <Typography color="rgba(243, 244, 246, 0.6)">
-                  {jobStatus.data.status}
-                </Typography>
-                <LinearProgress
-                  variant="determinate"
-                  value={getProgressFromStatus(jobStatus.data.status)}
-                  sx={{ marginTop: 2 }}
-                />
-                {jobStatus.data.status === "Job's finished" &&
-                jobStatus.data.audioData ? (
-                  <Box mt={2}>
-                    <Waveform audioData={jobStatus.data.audioData} />
+        {status === "unauthenticated" || session?.username !== "GoliathRush" ? (
+          <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
+        ) : (
+          <>
+            <TextField
+              label="YouTube Brood War Gameplay URL"
+              variant="outlined"
+              fullWidth
+              value={url}
+              onChange={(e) => setURL(e.target.value)}
+              sx={{ marginBottom: 2 }}
+            />
+            <Button
+              onClick={handleClick}
+              variant="contained"
+              fullWidth
+              sx={{ backgroundColor: "#10b981" }}
+            >
+              Submit
+            </Button>
+            {error && (
+              <Typography color="error" sx={{ marginTop: 2 }}>
+                {submitError}
+              </Typography>
+            )}
+            {jobId && (
+              <Box mt={2}>
+                {jobStatus ? (
+                  <Box>
+                    <Typography color="rgba(243, 244, 246, 0.6)">
+                      {jobStatus.data.status}
+                    </Typography>
+                    <LinearProgress
+                      variant="determinate"
+                      value={getProgressFromStatus(jobStatus.data.status)}
+                      sx={{ marginTop: 2 }}
+                    />
+                    {jobStatus.data.status === "Job's finished" &&
+                    jobStatus.data.audioData ? (
+                      <Box mt={2}>
+                        <Waveform audioData={jobStatus.data.audioData} />
+                      </Box>
+                    ) : null}
                   </Box>
                 ) : null}
               </Box>
-            ) : null}
-          </Box>
+            )}
+          </>
         )}
       </Paper>
     </Fade>
