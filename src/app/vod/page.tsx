@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import WaveSurfer from "wavesurfer.js";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import { useSession } from "next-auth/react";
 
 interface SubmitURLResponse {
