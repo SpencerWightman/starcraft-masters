@@ -229,7 +229,17 @@ const Vod: React.FC = () => {
         }}
       >
         {status === "unauthenticated" || session?.username !== "GoliathRush" ? (
-          <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
+          <Typography
+            variant="body1"
+            sx={{
+              marginBottom: 4,
+              color: "#ffffff",
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
+            Feature temporarily restricted until my API limits increase...
+          </Typography>
         ) : (
           <>
             <TextField
