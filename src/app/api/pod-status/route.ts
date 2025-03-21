@@ -11,7 +11,7 @@ export async function GET(req: Request) {
     );
   }
 
-  const backendUrl = `https://0311-2407-7000-ad31-100-2d08-81d1-85da-4023.ngrok-free.app/job-status?job_id=${encodeURIComponent(
+  const backendUrl = `https://bwl-vod.ngrok.app/job-status?job_id=${encodeURIComponent(
     job_id
   )}`;
 

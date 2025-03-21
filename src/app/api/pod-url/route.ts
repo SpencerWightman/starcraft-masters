@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     console.log(process.env.POD_API_KEY as string);
 
     const backendResponse = await fetch(
-      "https://0311-2407-7000-ad31-100-2d08-81d1-85da-4023.ngrok-free.app/process-batch",
+      "https://bwl-vod.ngrok.app/process-batch",
       {
         method: "POST",
         headers: {

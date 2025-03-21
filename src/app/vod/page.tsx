@@ -154,7 +154,7 @@ const Vod: React.FC = () => {
   const [url, setURL] = useState("");
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
@@ -215,8 +215,8 @@ const Vod: React.FC = () => {
     }
   }, [error]);
 
-  if (status === "unauthenticated" || session?.username !== "Lurkerbomb") {
-    return <PaperPlaceholder message="New feature coming soon" />;
+  if (status === "unauthenticated") {
+    return <PaperPlaceholder message="Sign in to use this feature" />;
   }
 
   return (
