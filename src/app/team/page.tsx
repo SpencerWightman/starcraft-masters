@@ -92,17 +92,26 @@ const Team: React.FC = () => {
         }}
       >
         <Typography
-          variant="body1"
+          variant="h6"
           sx={{
-            marginBottom: 2,
+            marginBottom: 1,
             color: "#ffffff",
             lineHeight: 1.6,
             textAlign: "center",
           }}
         >
-          {
-            "Save a team draft to compete in Brood War League\n(or login on the browser where you saved your team)"
-          }
+          Save a team draft to compete in Brood War League
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            display: "block",
+            marginBottom: 2,
+            color: "#ffffff",
+            textAlign: "center",
+          }}
+        >
+          (or login on the browser where you saved your team)
         </Typography>
         <Box sx={{ textAlign: "center", marginTop: 2 }}>
           <Link href="/draft" passHref>
