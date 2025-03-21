@@ -215,14 +215,8 @@ const Vod: React.FC = () => {
     }
   }, [error]);
 
-  if (status === "unauthenticated" || session?.username !== "GoliathRush") {
-    return (
-      <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
-    );
-  }
-
   return (
-    <Fade in={status !== "loading"} timeout={800}>
+    <Fade in={status !== "loading"} timeout={500}>
       <Paper
         elevation={3}
         sx={{
@@ -234,6 +228,9 @@ const Vod: React.FC = () => {
           borderRadius: 2,
         }}
       >
+        {status === "unauthenticated" || session?.username !== "GoliathRush"} ?
+        <PaperPlaceholder message="Feature is getting smashed so it's temporarily restricted" />
+        :
         <TextField
           label="YouTube Brood War Gameplay URL"
           variant="outlined"
