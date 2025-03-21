@@ -222,7 +222,7 @@ const Vod: React.FC = () => {
   }
 
   return (
-    <Fade in={status !== "loading"} timeout={500}>
+    <Fade in={status !== "loading"} timeout={800}>
       <Paper
         elevation={3}
         sx={{
