@@ -219,8 +219,9 @@ const Welcome: React.FC = () => {
               other qualified players. The players in each tier are then divided
               evenly among the Ro24 groups, so that each group has 1 player from
               each tier. Players do not often change tiers from season to
-              season. Brood War League generally follows the offical tiers as of
-              the start of the last season. Seeded players are listed in Tier 0.
+              season. Brood War League generally follows the official tiers as
+              of the start of the last season. Seeded players are listed in Tier
+              0.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics (except trophies) start at ASL 15, February

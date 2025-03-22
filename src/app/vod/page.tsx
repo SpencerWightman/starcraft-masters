@@ -231,7 +231,6 @@ const Vod: React.FC = () => {
           <Typography
             variant="body1"
             sx={{
-              marginBottom: 4,
               color: "#ffffff",
               lineHeight: 1.6,
               textAlign: "center",
