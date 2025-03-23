@@ -45,7 +45,12 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   return (
     <div>
       <div ref={waveformRef} style={{ width: "100%", minWidth: "300px" }} />
-      <Button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</Button>
+      <Button
+        onClick={togglePlay}
+        sx={{ marginTop: 2, backgroundColor: "#10b981" }}
+      >
+        {isPlaying ? "Pause" : "Play"}
+      </Button>
     </div>
   );
 };
