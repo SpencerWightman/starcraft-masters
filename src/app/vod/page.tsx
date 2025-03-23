@@ -217,7 +217,7 @@ const Vod: React.FC = () => {
           borderRadius: 2,
         }}
       >
-        {status === "unauthenticated" || session?.username !== "fffff" ? (
+        {status === "unauthenticated" || session?.username !== "GoliathRush" ? (
           <Typography
             variant="body1"
             sx={{
