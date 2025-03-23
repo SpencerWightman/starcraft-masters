@@ -33,7 +33,7 @@ interface JobStatusResponse {
       | "Generating audio..."
       | "Job's finished"
       | "Job cancelled";
-    audioData?: string;
+    audioUrl?: string;
   };
 }
 
@@ -71,26 +71,16 @@ const getProgressFromStatus = (
 };
 
 interface WaveformProps {
-  audioData: string;
+  audioUrl: string;
 }
 
-const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
+const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   const waveformRef = useRef<HTMLDivElement>(null);
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const base64ToBlob = (base64: string, mime: string) => {
-    const byteCharacters = atob(base64);
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    const byteArray = new Uint8Array(byteNumbers);
-    return new Blob([byteArray], { type: mime });
-  };
-
   useEffect(() => {
-    if (waveformRef.current && audioData) {
+    if (waveformRef.current && audioUrl) {
       wavesurferRef.current = WaveSurfer.create({
         container: waveformRef.current,
         waveColor: "#a0d8ef",
@@ -107,10 +97,9 @@ const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
         }
       });
 
-      const blob = base64ToBlob(audioData, "audio/wav");
-      const blobUrl = URL.createObjectURL(blob);
-      wavesurferRef.current.load(blobUrl);
+      wavesurferRef.current.load(audioUrl);
 
+      // Pause init
       wavesurferRef.current.on("ready", () => {
         setIsPlaying(false);
       });
@@ -126,7 +115,7 @@ const Waveform: React.FC<WaveformProps> = ({ audioData }) => {
         }
       }
     };
-  }, [audioData]);
+  }, [audioUrl]);
 
   const togglePlay = () => {
     if (wavesurferRef.current) {
@@ -183,6 +172,7 @@ const Vod: React.FC = () => {
     await submitMutation.mutateAsync(url);
   };
 
+  // Status polling
   const { data: jobStatus, error } = useQuery<JobStatusResponse, Error>({
     queryKey: ["jobStatus", jobId],
     queryFn: async () => {
@@ -201,9 +191,9 @@ const Vod: React.FC = () => {
           jobData.data?.status ===
             "Something broke. Try again in a few minutes and contact Lurkerbomb if the error persists.")
       ) {
-        return false;
+        return false; // Stop polling if finished or broken
       }
-      return 20000;
+      return 20000; // 20s
     },
   });
 
@@ -227,7 +217,7 @@ const Vod: React.FC = () => {
           borderRadius: 2,
         }}
       >
-        {status === "unauthenticated" || session?.username !== "GoliathRush" ? (
+        {status === "unauthenticated" || session?.username !== "fffff" ? (
           <Typography
             variant="body1"
             sx={{
@@ -256,6 +246,7 @@ const Vod: React.FC = () => {
             >
               Submit
             </Button>
+            {console.log("Audio URL:", jobStatus?.data.audioUrl)}
             {error && (
               <Typography color="error" sx={{ marginTop: 2 }}>
                 {submitError}
@@ -274,9 +265,9 @@ const Vod: React.FC = () => {
                       sx={{ marginTop: 2 }}
                     />
                     {jobStatus.data.status === "Job's finished" &&
-                    jobStatus.data.audioData ? (
+                    jobStatus.data.audioUrl ? (
                       <Box mt={2}>
-                        <Waveform audioData={jobStatus.data.audioData} />
+                        <Waveform audioUrl={jobStatus.data.audioUrl} />
                       </Box>
                     ) : null}
                   </Box>
