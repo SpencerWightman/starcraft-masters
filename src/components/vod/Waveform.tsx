@@ -47,6 +47,7 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
       <div ref={waveformRef} style={{ width: "100%", minWidth: "300px" }} />
       <Button
         onClick={togglePlay}
+        variant="contained"
         sx={{ marginTop: 2, backgroundColor: "#10b981" }}
       >
         {isPlaying ? "Pause" : "Play"}
