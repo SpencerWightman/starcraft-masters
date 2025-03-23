@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Paper,
   Typography,
@@ -11,8 +11,8 @@ import {
   Fade,
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import WaveSurfer from "wavesurfer.js";
 import { useSession } from "next-auth/react";
+import Waveform from "../../components/vod/Waveform";
 
 interface SubmitURLResponse {
   data: {
@@ -68,74 +68,6 @@ const getProgressFromStatus = (
     default:
       return 0;
   }
-};
-
-interface WaveformProps {
-  audioUrl: string;
-}
-
-const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
-  const waveformRef = useRef<HTMLDivElement>(null);
-  const wavesurferRef = useRef<WaveSurfer | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    if (waveformRef.current && audioUrl) {
-      wavesurferRef.current = WaveSurfer.create({
-        container: waveformRef.current,
-        waveColor: "#a0d8ef",
-        progressColor: "#1e88e5",
-        height: 80,
-        backend: "MediaElement",
-      });
-
-      wavesurferRef.current.on("error", (err) => {
-        if (err && err.name === "AbortError") {
-          console.debug("Caught WaveSurfer abort:", err);
-        } else {
-          console.error("WaveSurfer error:", err);
-        }
-      });
-
-      wavesurferRef.current.load(audioUrl);
-
-      // Pause init
-      wavesurferRef.current.on("ready", () => {
-        setIsPlaying(false);
-      });
-    }
-
-    return () => {
-      wavesurferRef.current?.unAll();
-      try {
-        wavesurferRef.current?.destroy();
-      } catch (error: unknown) {
-        if (error instanceof Error && error.name !== "AbortError") {
-          console.error("Error destroying wavesurfer:", error);
-        }
-      }
-    };
-  }, [audioUrl]);
-
-  const togglePlay = () => {
-    if (wavesurferRef.current) {
-      wavesurferRef.current.playPause();
-      setIsPlaying(wavesurferRef.current.isPlaying());
-    }
-  };
-
-  return (
-    <Box>
-      <div ref={waveformRef} />
-      <Button
-        variant="contained"
-        onClick={togglePlay}
-        sx={{ marginTop: 2, backgroundColor: "#10b981" }}
-      >
-        {isPlaying ? "Pause" : "Play"}
-      </Button>
-    </Box>
-  );
 };
 
 const Vod: React.FC = () => {
@@ -246,7 +178,6 @@ const Vod: React.FC = () => {
             >
               Submit
             </Button>
-            {console.log("Audio URL:", jobStatus?.data.audioUrl)}
             {error && (
               <Typography color="error" sx={{ marginTop: 2 }}>
                 {submitError}
