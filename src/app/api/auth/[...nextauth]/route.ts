@@ -20,18 +20,21 @@ declare module "next-auth" {
     id: string;
     username: string;
     email: string;
+    lastSubmission?: string;
   }
 
   interface Session {
     id: string;
     username: string;
     email: string;
+    lastSubmission?: string;
   }
 
   interface JWT {
     id: string;
     username: string;
     email: string;
+    lastSubmission?: string;
   }
 }
 
@@ -53,7 +56,7 @@ const client = new DynamoDBClient({
   },
 });
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -155,6 +158,7 @@ const authOptions: NextAuthOptions = {
                 id: user.Item.email.S ?? "",
                 username: user.Item.username.S ?? "",
                 email: user.Item.email.S ?? "",
+                lastSubmission: user.Item.lastSubmission?.S || "",
               };
             } else {
               throw new Error("Invalid credentials");
@@ -184,6 +188,7 @@ const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.username = user.username;
         token.email = user.email;
+        token.lastSubmission = user.lastSubmission;
       }
       return token;
     },
@@ -192,6 +197,7 @@ const authOptions: NextAuthOptions = {
         session.id = token.id as string;
         session.username = token.username as string;
         session.email = token.email as string;
+        session.lastSubmission = token.lastSubmission as string;
       }
       return session;
     },

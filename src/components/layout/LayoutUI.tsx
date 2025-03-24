@@ -16,10 +16,11 @@ import NewReleasesIcon from "@mui/icons-material/NewReleases";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
-import CountdownWrapper from "@/components/layout/Countdown";
+import CountdownWrapper from "@/components/timer/Countdown";
 import { mapsNotificationSeason } from "@/constants/constants";
 import Welcome from "@/app/welcome/page";
 import Link from "next/link";
+import { deadlineDate } from "@/constants/constants";
 
 const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { data: session } = useSession();
@@ -86,7 +87,10 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               alignItems: "center",
             }}
           >
-            <CountdownWrapper />
+            <CountdownWrapper
+              deadline={deadlineDate}
+              msg={"ASL Spring 2025 is underway"}
+            />
           </Box>
           <IconButton
             edge="start"

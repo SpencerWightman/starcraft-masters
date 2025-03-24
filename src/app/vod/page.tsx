@@ -10,21 +10,26 @@ import {
   LinearProgress,
   Fade,
 } from "@mui/material";
+import { deadlineDate } from "@/constants/constants";
+
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Waveform from "../../components/vod/Waveform";
+import Link from "next/link";
+import CountdownWrapper from "@/components/timer/Countdown";
 
 interface SubmitURLResponse {
   data: {
     message: string;
     job_id: string;
   };
+  lastSubmission: number;
 }
 
 interface JobStatusResponse {
   data: {
     status:
-      | "Something broke. Try again in a few minutes and contact Lurkerbomb if the error persists."
+      | "Something went wrong. Contact Lurkerbomb if the error persists."
       | "Orders received. Extracting data..."
       | "Extracting data..."
       | "Parsing gameplay..."
@@ -44,7 +49,12 @@ const submitURL = async (url: string): Promise<SubmitURLResponse> => {
     body: JSON.stringify({ url }),
   });
   if (!response.ok) {
-    throw new Error("Submission failed");
+    let errorMessage = "Submission failed. Try again in a few minutes.";
+    const errorData = await response.json();
+    if (errorData.error) {
+      errorMessage = errorData.error;
+    }
+    throw new Error(errorMessage);
   }
   return response.json();
 };
@@ -74,7 +84,7 @@ const Vod: React.FC = () => {
   const [url, setURL] = useState("");
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
-  const { data: session, status } = useSession();
+  const { data: session, status, update } = useSession();
 
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
@@ -92,9 +102,15 @@ const Vod: React.FC = () => {
     onSuccess: (response) => {
       setJobId(response.data.job_id);
       localStorage.setItem("jobId", response.data.job_id);
+      if (update && response.lastSubmission) {
+        update({
+          ...session,
+          lastSubmission: new Date(response.lastSubmission),
+        });
+      }
     },
-    onError: () => {
-      setSubmitError("Failed to submit URL. Try again in a moment.");
+    onError: (error: Error) => {
+      setSubmitError(error.message);
     },
   });
 
@@ -121,11 +137,12 @@ const Vod: React.FC = () => {
         jobData &&
         (jobData.data?.status === "Job's finished" ||
           jobData.data?.status ===
-            "Something broke. Try again in a few minutes and contact Lurkerbomb if the error persists.")
+            "Something went wrong. Contact Lurkerbomb if the error persists." ||
+          jobData.data?.status === "Job cancelled")
       ) {
-        return false; // Stop polling if finished or broken
+        return false;
       }
-      return 20000; // 20s
+      return 20000;
     },
   });
 
@@ -136,12 +153,26 @@ const Vod: React.FC = () => {
     }
   }, [error]);
 
+  const jobInProgress =
+    jobId &&
+    (!jobStatus ||
+      (jobStatus.data.status !== "Job's finished" &&
+        jobStatus.data.status !== "Job cancelled" &&
+        jobStatus.data.status !==
+          "Something went wrong. Contact Lurkerbomb if the error persists."));
+
+  const isLastSubmissionRecent = session?.lastSubmission
+    ? new Date().getTime() - new Date(session.lastSubmission).getTime() <
+      24 * 60 * 60 * 1000
+    : false;
+
   return (
     <Fade in={status !== "loading"} timeout={500}>
       <Paper
         elevation={3}
         sx={{
           padding: 4,
+          paddingTop: 2,
           maxWidth: 600,
           margin: "auto",
           marginTop: 4,
@@ -149,36 +180,124 @@ const Vod: React.FC = () => {
           borderRadius: 2,
         }}
       >
-        {status === "unauthenticated" || session?.username !== "GoliathRush" ? (
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#ffffff",
-              lineHeight: 1.6,
-              textAlign: "center",
-            }}
-          >
-            Feature temporarily restricted until my API limits increase...
-          </Typography>
+        <Typography
+          variant="h5"
+          component="h1"
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            marginBottom: 1,
+            marginRight: "-0.8rem",
+          }}
+        >
+          Gameplay Review
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            display: "block",
+            marginBottom: 4,
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+          }}
+        >
+          Generate a brief, light-hearted audio summary of BW gameplay
+        </Typography>
+        {status === "unauthenticated" ? (
+          <>
+            <Typography
+              variant="h6"
+              sx={{
+                marginBottom: 2,
+                color: "rgba(243, 244, 246, 0.6)",
+                lineHeight: 1.6,
+                textAlign: "center",
+              }}
+            >
+              Sign up or login to use this feature
+            </Typography>
+            <Box sx={{ textAlign: "center", marginTop: 2 }}>
+              <Link href="/profile" passHref>
+                <Typography
+                  component="span"
+                  sx={{
+                    display: "inline-block",
+                    variant: "contained",
+                    padding: "0.5rem 1rem",
+                    backgroundColor: "#10b981",
+                    color: "#ffff",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  SIGN UP / LOGIN
+                </Typography>
+              </Link>
+            </Box>
+          </>
         ) : (
           <>
+            <Typography
+              variant="h5"
+              component="h1"
+              sx={{
+                color: "rgba(243, 244, 246, 0.6)",
+                textAlign: "center",
+                fontWeight: "bold",
+                paddingBottom: 4,
+                marginRight: "-0.8rem",
+              }}
+            >
+              <CountdownWrapper
+                deadline={deadlineDate}
+                msg={"You can submit once every 24 hours"}
+              />
+            </Typography>
+
             <TextField
-              label="YouTube Brood War Gameplay URL"
+              label="YouTube Brood War gameplay URL under 60 minutes"
               variant="outlined"
               fullWidth
               value={url}
               onChange={(e) => setURL(e.target.value)}
-              sx={{ marginBottom: 2 }}
+              sx={{
+                marginBottom: 2,
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "rgba(243, 244, 246, 0.6)",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#10b981",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#10b981",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  color: "#10b981",
+                },
+                input: {
+                  color: "rgba(243, 244, 246, 0.6)",
+                },
+              }}
             />
             <Button
               onClick={handleClick}
               variant="contained"
               fullWidth
-              sx={{ backgroundColor: "#10b981" }}
+              disabled={!!jobInProgress || isLastSubmissionRecent}
+              sx={{
+                backgroundColor:
+                  !!jobInProgress || isLastSubmissionRecent
+                    ? "#9e9e9e"
+                    : "#10b981",
+              }}
             >
               Submit
             </Button>
-            {error && (
+            {submitError && (
               <Typography color="error" sx={{ marginTop: 2 }}>
                 {submitError}
               </Typography>
@@ -193,7 +312,12 @@ const Vod: React.FC = () => {
                     <LinearProgress
                       variant="determinate"
                       value={getProgressFromStatus(jobStatus.data.status)}
-                      sx={{ marginTop: 2 }}
+                      sx={{
+                        marginTop: 2,
+                        "& .MuiLinearProgress-bar": {
+                          backgroundColor: "#10b981",
+                        },
+                      }}
                     />
                     {jobStatus.data.status === "Job's finished" &&
                     jobStatus.data.audioUrl ? (
