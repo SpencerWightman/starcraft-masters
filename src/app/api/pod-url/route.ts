@@ -63,7 +63,7 @@ export async function POST(req: Request) {
     const now = Date.now();
     if (lastSubmission && now - lastSubmission < 24 * 60 * 60 * 1000) {
       return NextResponse.json(
-        { error: "You can only submit once every 24 hours" },
+        { error: "You can submit once every 24 hours" },
         { status: 429 }
       );
     }

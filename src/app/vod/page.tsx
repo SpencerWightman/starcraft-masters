@@ -33,7 +33,7 @@ interface JobStatusResponse {
       | "Orders received. Extracting data..."
       | "Extracting data..."
       | "Parsing gameplay..."
-      | "Analyzing gameplay (this could take a while)..."
+      | "Analyzing gameplay..."
       | "Crafting a response..."
       | "Generating audio..."
       | "Job's finished"
@@ -67,7 +67,7 @@ const getProgressFromStatus = (
       return 20;
     case "Parsing gameplay...":
       return 40;
-    case "Analyzing gameplay (this could take a while)...":
+    case "Analyzing gameplay...":
       return 60;
     case "Crafting a response...":
       return 80;
