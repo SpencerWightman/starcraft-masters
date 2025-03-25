@@ -160,8 +160,9 @@ const Vod: React.FC = () => {
         jobStatus.data.status !==
           "Something went wrong. Contact Lurkerbomb if the error persists."));
 
+  const lastSubmissionTimestamp = Number(session?.lastSubmission);
   const isLastSubmissionRecent = session?.lastSubmission
-    ? Date.now() < new Date(session.lastSubmission).getTime()
+    ? Date.now() < lastSubmissionTimestamp
     : false;
 
   return (
@@ -200,7 +201,7 @@ const Vod: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Generate a brief, light-hearted audio summary of BW gameplay
+          Generate a brief AI audio summary of BW gameplay
         </Typography>
         {status === "unauthenticated" ? (
           <>
@@ -237,26 +238,12 @@ const Vod: React.FC = () => {
           </>
         ) : (
           <>
-            <Typography
-              variant="h5"
-              component="h1"
-              sx={{
-                color: "rgba(243, 244, 246, 0.6)",
-                textAlign: "center",
-                fontWeight: "bold",
-                paddingBottom: 4,
-                marginRight: "-0.8rem",
-              }}
-            >
+            <Box sx={{ textAlign: "center", marginBottom: 4 }}>
               <CountdownWrapper
-                deadline={
-                  session?.lastSubmission
-                    ? new Date(session.lastSubmission).getTime()
-                    : Date.now()
-                }
-                msg="You can submit once every 24 hours"
+                deadline={session?.lastSubmission ?? Date.now()}
+                msg={"You can submit once every 24 hours"}
               />
-            </Typography>
+            </Box>
 
             <TextField
               label="YouTube Brood War gameplay URL under 60 minutes"
@@ -278,6 +265,9 @@ const Vod: React.FC = () => {
                   },
                 },
                 "& .MuiInputLabel-root": {
+                  color: "#10b981",
+                },
+                "& .MuiInputLabel-root.Mui-focused": {
                   color: "#10b981",
                 },
                 input: {
