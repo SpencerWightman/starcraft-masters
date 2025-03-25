@@ -10,7 +10,6 @@ import {
   LinearProgress,
   Fade,
 } from "@mui/material";
-import { deadlineDate } from "@/constants/constants";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
@@ -162,8 +161,7 @@ const Vod: React.FC = () => {
           "Something went wrong. Contact Lurkerbomb if the error persists."));
 
   const isLastSubmissionRecent = session?.lastSubmission
-    ? new Date().getTime() - new Date(session.lastSubmission).getTime() <
-      24 * 60 * 60 * 1000
+    ? Date.now() < new Date(session.lastSubmission).getTime()
     : false;
 
   return (
@@ -251,8 +249,12 @@ const Vod: React.FC = () => {
               }}
             >
               <CountdownWrapper
-                deadline={deadlineDate}
-                msg={"You can submit once every 24 hours"}
+                deadline={
+                  session?.lastSubmission
+                    ? new Date(session.lastSubmission).getTime()
+                    : Date.now()
+                }
+                msg="You can submit once every 24 hours"
               />
             </Typography>
 

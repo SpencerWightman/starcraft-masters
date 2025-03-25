@@ -50,6 +50,9 @@ export async function POST(req: Request) {
       ProjectionExpression: "lastSubmission",
     };
 
+    const now = Date.now();
+    const nextAllowedSubmission = now + 24 * 60 * 60 * 1000;
+
     const result = await dynamoClient.send(new GetItemCommand(getParams));
     let lastSubmission = 0;
     if (
@@ -60,8 +63,7 @@ export async function POST(req: Request) {
       lastSubmission = Number(result.Item.lastSubmission.N);
     }
 
-    const now = Date.now();
-    if (lastSubmission && now - lastSubmission < 24 * 60 * 60 * 1000) {
+    if (lastSubmission && now < lastSubmission) {
       return NextResponse.json(
         { error: "You can submit once every 24 hours" },
         { status: 429 }
@@ -73,9 +75,9 @@ export async function POST(req: Request) {
       Key: {
         email: { S: session.email },
       },
-      UpdateExpression: "SET lastSubmission = :now",
+      UpdateExpression: "SET lastSubmission = :next",
       ExpressionAttributeValues: {
-        ":now": { N: now.toString() },
+        ":next": { N: nextAllowedSubmission.toString() },
       },
     };
 

@@ -3,13 +3,11 @@ export const mapsNotificationSeason = "19";
 export const leaderboardSeason = "19";
 export const season19QualifiedPlayers = [
   "Mini",
-  "Shuttle",
   "Queen",
   "SoulKey",
   "Snow",
   "Rain",
   "Sharp",
-  "Calm",
   "Scan",
   "Rush",
   "RoyaL",

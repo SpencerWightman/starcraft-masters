@@ -29,7 +29,6 @@ const CountdownWrapper: React.FC<CountdownWrapperProps> = ({
   msg,
 }) => {
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     setIsClient(true);
   }, []);
