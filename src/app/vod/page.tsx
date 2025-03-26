@@ -191,6 +191,13 @@ const Vod: React.FC = () => {
           }}
         >
           Gameplay Review
+          <Typography
+            variant="caption"
+            component="span"
+            sx={{ fontSize: "0.75rem", verticalAlign: "middle", ml: 1 }}
+          >
+            * experimental feature
+          </Typography>
         </Typography>
         <Typography
           variant="body1"
