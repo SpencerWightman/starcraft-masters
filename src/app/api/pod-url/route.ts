@@ -47,23 +47,23 @@ export async function POST(req: Request) {
       Key: {
         email: { S: session.email },
       },
-      ProjectionExpression: "lastSubmission",
+      ProjectionExpression: "nextSubmission",
     };
 
     const now = Date.now();
     const nextAllowedSubmission = now + 24 * 60 * 60 * 1000;
 
     const result = await dynamoClient.send(new GetItemCommand(getParams));
-    let lastSubmission = 0;
+    let nextSubmission = 0;
     if (
       result.Item &&
-      result.Item.lastSubmission &&
-      result.Item.lastSubmission.N
+      result.Item.nextSubmission &&
+      result.Item.nextSubmission.N
     ) {
-      lastSubmission = Number(result.Item.lastSubmission.N);
+      nextSubmission = Number(result.Item.nextSubmission.N);
     }
 
-    if (lastSubmission && now < lastSubmission) {
+    if (nextSubmission && now < nextSubmission) {
       return NextResponse.json(
         { error: "You can submit once every 24 hours" },
         { status: 429 }
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
       Key: {
         email: { S: session.email },
       },
-      UpdateExpression: "SET lastSubmission = :next",
+      UpdateExpression: "SET nextSubmission = :next",
       ExpressionAttributeValues: {
         ":next": { N: nextAllowedSubmission.toString() },
       },
@@ -102,7 +102,7 @@ export async function POST(req: Request) {
     const data = await backendResponse.json();
 
     return NextResponse.json(
-      { message: "URL sent successfully", data, lastSubmission: now },
+      { message: "URL sent successfully", data, nextAllowedSubmission },
       { status: 200 }
     );
   } catch (error) {

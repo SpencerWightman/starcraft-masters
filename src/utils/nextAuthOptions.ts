@@ -20,21 +20,21 @@ declare module "next-auth" {
     id: string;
     username: string;
     email: string;
-    lastSubmission?: string;
+    nextSubmission?: number;
   }
 
   interface Session {
     id: string;
     username: string;
     email: string;
-    lastSubmission?: string;
+    nextSubmission?: number;
   }
 
   interface JWT {
     id: string;
     username: string;
     email: string;
-    lastSubmission?: string;
+    nextSubmission?: number;
   }
 }
 
@@ -158,7 +158,9 @@ export const authOptions: NextAuthOptions = {
                 id: user.Item.email.S ?? "",
                 username: user.Item.username.S ?? "",
                 email: user.Item.email.S ?? "",
-                lastSubmission: user.Item.lastSubmission?.S || "",
+                nextSubmission: user.Item.nextSubmission
+                  ? Number(user.Item.nextSubmission.N)
+                  : undefined,
               };
             } else {
               throw new Error("Invalid credentials");
@@ -188,7 +190,7 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.username = user.username;
         token.email = user.email;
-        token.lastSubmission = user.lastSubmission;
+        token.nextSubmission = user.nextSubmission;
       }
       return token;
     },
@@ -197,7 +199,7 @@ export const authOptions: NextAuthOptions = {
         session.id = token.id as string;
         session.username = token.username as string;
         session.email = token.email as string;
-        session.lastSubmission = token.lastSubmission as string;
+        session.nextSubmission = token.nextSubmission as number | undefined;
       }
       return session;
     },

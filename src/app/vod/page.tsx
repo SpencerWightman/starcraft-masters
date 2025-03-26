@@ -22,7 +22,7 @@ interface SubmitURLResponse {
     message: string;
     job_id: string;
   };
-  lastSubmission: number;
+  nextAllowedSubmission: number;
 }
 
 interface JobStatusResponse {
@@ -101,10 +101,10 @@ const Vod: React.FC = () => {
     onSuccess: (response) => {
       setJobId(response.data.job_id);
       localStorage.setItem("jobId", response.data.job_id);
-      if (update && response.lastSubmission) {
+      if (update && response.nextAllowedSubmission) {
         update({
           ...session,
-          lastSubmission: new Date(response.lastSubmission),
+          nextSubmission: response.nextAllowedSubmission,
         });
       }
     },
@@ -160,9 +160,8 @@ const Vod: React.FC = () => {
         jobStatus.data.status !==
           "Something went wrong. Contact Lurkerbomb if the error persists."));
 
-  const lastSubmissionTimestamp = Number(session?.lastSubmission);
-  const isLastSubmissionRecent = session?.lastSubmission
-    ? Date.now() < lastSubmissionTimestamp
+  const isLastSubmissionRecent = session?.nextSubmission
+    ? Date.now() < session?.nextSubmission
     : false;
 
   return (
@@ -247,7 +246,11 @@ const Vod: React.FC = () => {
           <>
             <Box sx={{ textAlign: "center", marginBottom: 4 }}>
               <CountdownWrapper
-                deadline={lastSubmissionTimestamp ?? Date.now()}
+                deadline={
+                  session?.nextSubmission
+                    ? new Date(session?.nextSubmission)
+                    : Date.now()
+                }
                 msg={"You can submit once every 24 hours"}
               />
             </Box>
