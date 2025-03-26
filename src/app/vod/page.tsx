@@ -247,7 +247,7 @@ const Vod: React.FC = () => {
           <>
             <Box sx={{ textAlign: "center", marginBottom: 4 }}>
               <CountdownWrapper
-                deadline={session?.lastSubmission ?? Date.now()}
+                deadline={lastSubmissionTimestamp ?? Date.now()}
                 msg={"You can submit once every 24 hours"}
               />
             </Box>
