@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   Paper,
   Typography,
@@ -84,6 +84,12 @@ const Vod: React.FC = () => {
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
   const { data: session, status, update } = useSession();
+
+  const memoizedDeadline = useMemo(() => {
+    return session?.nextSubmission
+      ? new Date(session.nextSubmission)
+      : Date.now();
+  }, [session?.nextSubmission]);
 
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
@@ -246,11 +252,7 @@ const Vod: React.FC = () => {
           <>
             <Box sx={{ textAlign: "center", marginBottom: 4 }}>
               <CountdownWrapper
-                deadline={
-                  session?.nextSubmission
-                    ? new Date(session?.nextSubmission)
-                    : Date.now()
-                }
+                deadline={memoizedDeadline}
                 msg={"You can submit once every 24 hours"}
                 showDays={false}
               />
