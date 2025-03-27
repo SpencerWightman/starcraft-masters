@@ -243,6 +243,22 @@ const Vod: React.FC = () => {
           </>
         ) : (
           <>
+            {!jobInProgress && session?.nextSubmission && (
+              <Box sx={{ textAlign: "center", marginBottom: 4 }}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "rgba(243, 244, 246, 0.6)",
+                    textAlign: "left",
+                    userSelect: "none",
+                    display: { xs: "none", md: "block" },
+                  }}
+                >
+                  You can submit a video once every 24 hours
+                </Typography>
+              </Box>
+            )}
+
             <TextField
               label="YouTube Brood War gameplay URL under 60 minutes"
               variant="outlined"
