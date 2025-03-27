@@ -51,4 +51,4 @@ const CountdownWrapper: React.FC<CountdownWrapperProps> = ({
   ) : null;
 };
 
-export default React.memo(CountdownWrapper);
+export default CountdownWrapper;
