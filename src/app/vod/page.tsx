@@ -250,13 +250,15 @@ const Vod: React.FC = () => {
           </>
         ) : (
           <>
-            <Box sx={{ textAlign: "center", marginBottom: 4 }}>
-              <CountdownWrapper
-                deadline={memoizedDeadline}
-                msg={"You can submit once every 24 hours"}
-                showDays={false}
-              />
-            </Box>
+            {!jobInProgress && (
+              <Box sx={{ textAlign: "center", marginBottom: 4 }}>
+                <CountdownWrapper
+                  deadline={memoizedDeadline}
+                  msg={"You can submit once every 24 hours"}
+                  showDays={false}
+                />
+              </Box>
+            )}
 
             <TextField
               label="YouTube Brood War gameplay URL under 60 minutes"
