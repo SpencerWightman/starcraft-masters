@@ -10,8 +10,7 @@ import {
   QueryCommand,
 } from "@aws-sdk/client-dynamodb";
 import { JWT } from "next-auth/jwt";
-import { Session } from "next-auth";
-import { User } from "next-auth";
+import { Session, User } from "next-auth";
 
 const SALT_ROUNDS = 8;
 
@@ -37,6 +36,13 @@ declare module "next-auth" {
     nextSubmission?: number;
   }
 }
+
+type JWTCallbackParams = {
+  token: JWT;
+  user?: User;
+  trigger?: "update" | "signIn" | "signUp";
+  session?: Partial<Session>;
+};
 
 const validateUsername = (username: string): boolean => {
   const usernameRegex = /^[a-zA-Z0-9]{3,12}$/;
@@ -185,7 +191,10 @@ export const authOptions: NextAuthOptions = {
     maxAge: 365 * 24 * 60 * 60,
   },
   callbacks: {
-    async jwt({ token, user }: { token: JWT; user?: User }) {
+    async jwt({ token, user, trigger, session }: JWTCallbackParams) {
+      if (trigger === "update" && session?.nextSubmission) {
+        token.nextSubmission = session.nextSubmission;
+      }
       if (user) {
         token.id = user.id;
         token.username = user.username;

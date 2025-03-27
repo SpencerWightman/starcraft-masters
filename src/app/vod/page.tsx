@@ -252,6 +252,7 @@ const Vod: React.FC = () => {
                     : Date.now()
                 }
                 msg={"You can submit once every 24 hours"}
+                showDays={false}
               />
             </Box>
 

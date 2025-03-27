@@ -6,10 +6,11 @@ import { Typography, Fade } from "@mui/material";
 interface CountdownWrapperProps {
   deadline: Date | number | string;
   msg: string;
+  showDays: boolean;
 }
 
 const countdownRenderer =
-  (msg: string) =>
+  (msg: string, showDays: boolean) =>
   ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
     return (
       <Fade in={true} timeout={2000}>
@@ -17,7 +18,8 @@ const countdownRenderer =
           <span>{msg}</span>
         ) : (
           <span>
-            {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+            {showDays ? `${days} Days ` : ""}
+            {hours} Hours {minutes} Minutes {seconds} Seconds
           </span>
         )}
       </Fade>
@@ -27,6 +29,7 @@ const countdownRenderer =
 const CountdownWrapper: React.FC<CountdownWrapperProps> = ({
   deadline,
   msg,
+  showDays,
 }) => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
@@ -43,7 +46,7 @@ const CountdownWrapper: React.FC<CountdownWrapperProps> = ({
         display: { xs: "none", md: "block" },
       }}
     >
-      <Countdown date={deadline} renderer={countdownRenderer(msg)} />
+      <Countdown date={deadline} renderer={countdownRenderer(msg, showDays)} />
     </Typography>
   ) : null;
 };
