@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Paper,
   Typography,
@@ -15,7 +15,6 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Waveform from "../../components/vod/Waveform";
 import Link from "next/link";
-import CountdownWrapper from "@/components/timer/Countdown";
 
 interface SubmitURLResponse {
   data: {
@@ -84,12 +83,6 @@ const Vod: React.FC = () => {
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
   const { data: session, status, update } = useSession();
-
-  const memoizedDeadline = useMemo(() => {
-    return session?.nextSubmission
-      ? new Date(session.nextSubmission)
-      : Date.now();
-  }, [session?.nextSubmission]);
 
   useEffect(() => {
     const savedURL = localStorage.getItem("youtubeUrl");
@@ -250,16 +243,6 @@ const Vod: React.FC = () => {
           </>
         ) : (
           <>
-            {!jobInProgress && (
-              <Box sx={{ textAlign: "center", marginBottom: 4 }}>
-                <CountdownWrapper
-                  deadline={memoizedDeadline}
-                  msg={"You can submit once every 24 hours"}
-                  showDays={false}
-                />
-              </Box>
-            )}
-
             <TextField
               label="YouTube Brood War gameplay URL under 60 minutes"
               variant="outlined"
