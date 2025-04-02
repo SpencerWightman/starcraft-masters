@@ -17,7 +17,6 @@ export const season19QualifiedPlayers = [
   "Action",
   "sSak",
   "YSC",
-  "Stork",
   "Skey",
   "JD",
   "Bisu",
