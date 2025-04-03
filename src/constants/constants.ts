@@ -15,8 +15,6 @@ export const season19QualifiedPlayers = [
   "BarrackS",
   "hero",
   "Action",
-  "sSak",
-  "YSC",
   "Skey",
   "JD",
   "Bisu",
