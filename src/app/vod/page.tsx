@@ -208,7 +208,7 @@ const Vod: React.FC = () => {
         >
           Generate a brief AI audio summary of BW gameplay
         </Typography>
-        {status === "unauthenticated" ? (
+        {status === "unauthenticated" || session?.username !== "Lurkerbomb" ? (
           <>
             <Typography
               variant="h6"
@@ -219,7 +219,7 @@ const Vod: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              Sign up or login to use this feature
+              This feature is currently unavailable.
             </Typography>
             <Box sx={{ textAlign: "center", marginTop: 2 }}>
               <Link href="/profile" passHref>
