@@ -14,7 +14,6 @@ import {
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Waveform from "../../components/vod/Waveform";
-import Link from "next/link";
 
 interface SubmitURLResponse {
   data: {
@@ -209,38 +208,17 @@ const Vod: React.FC = () => {
           Generate a brief AI audio summary of BW gameplay
         </Typography>
         {status === "unauthenticated" || session?.username !== "Lurkerbomb" ? (
-          <>
-            <Typography
-              variant="h6"
-              sx={{
-                marginBottom: 2,
-                color: "rgba(243, 244, 246, 0.6)",
-                lineHeight: 1.6,
-                textAlign: "center",
-              }}
-            >
-              This feature is currently unavailable.
-            </Typography>
-            <Box sx={{ textAlign: "center", marginTop: 2 }}>
-              <Link href="/profile" passHref>
-                <Typography
-                  component="span"
-                  sx={{
-                    display: "inline-block",
-                    variant: "contained",
-                    padding: "0.5rem 1rem",
-                    backgroundColor: "#10b981",
-                    color: "#ffff",
-                    borderRadius: "4px",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  SIGN UP / LOGIN
-                </Typography>
-              </Link>
-            </Box>
-          </>
+          <Typography
+            variant="h6"
+            sx={{
+              marginBottom: 2,
+              color: "rgba(243, 244, 246, 0.6)",
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
+            This feature is currently unavailable.
+          </Typography>
         ) : (
           <>
             {!jobInProgress && session?.nextSubmission && (
