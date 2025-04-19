@@ -84,6 +84,17 @@ const imageGallery = [
     numberBases: 16,
     creator: "?",
   },
+  {
+    img: "/maps/Radeon1.0.jpg",
+    title: "Radeon 1.0",
+    size: "128 x 128",
+    horizontal: 31,
+    vertical: 32,
+    cross: 39,
+    mains: 4,
+    numberBases: 14,
+    creator: "양창목",
+  },
 ];
 
 const Maps: React.FC = () => {
@@ -171,7 +182,7 @@ const Maps: React.FC = () => {
           marginRight: "-0.8rem",
         }}
       >
-        SSL Spring 2025 Maps
+        ASL Spring 2025 Maps
       </Typography>
 
       {/* Gallery */}

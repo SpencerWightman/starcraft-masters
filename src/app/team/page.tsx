@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Paper, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Paper,
+  useMediaQuery,
+  useTheme,
+  Fade,
+} from "@mui/material";
 import PlayerDraftChart from "@/components/teams/PlayerDraftChart";
 import PlayerDraftDetails from "@/components/teams/PlayerDraftDetails";
 import PlayerSavedTeam from "@/components/teams/PlayerSavedTeam";
@@ -31,152 +38,156 @@ const Team: React.FC = () => {
     setFilteredPlayers(filtered);
   }, []);
 
-  if (status === "unauthenticated") {
-    return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-        }}
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            marginBottom: 2,
-            color: "#ffffff",
-            lineHeight: 1.6,
-            textAlign: "center",
-          }}
-        >
-          Log in to save your team draft and compete in Brood War League
-        </Typography>
-        <Box sx={{ textAlign: "center", marginTop: 2 }}>
-          <Link href="/profile" passHref>
-            <Typography
-              component="span"
-              sx={{
-                display: "inline-block",
-                padding: "0.5rem 1rem",
-                backgroundColor: "#10b981",
-                color: "#fff",
-                borderRadius: "4px",
-                textDecoration: "none",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Sign up / Login
-            </Typography>
-          </Link>
-        </Box>
-      </Paper>
-    );
-  }
-
-  if (!filteredPlayers.length) {
-    return (
-      <Paper
-        elevation={3}
-        sx={{
-          padding: 4,
-          maxWidth: 600,
-          margin: "auto",
-          marginTop: 4,
-          backgroundColor: "#374151",
-          borderRadius: 2,
-        }}
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            marginBottom: 2,
-            color: "#ffffff",
-            lineHeight: 1.6,
-            textAlign: "center",
-          }}
-        >
-          Save a team draft to compete in Brood War League
-        </Typography>
-        <Box sx={{ textAlign: "center", marginTop: 2 }}>
-          <Link href="/draft" passHref>
-            <Typography
-              component="span"
-              sx={{
-                display: "inline-block",
-                padding: "0.5rem 1rem",
-                backgroundColor: "#10b981",
-                color: "#fff",
-                borderRadius: "4px",
-                textDecoration: "none",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Draft
-            </Typography>
-          </Link>
-        </Box>
-      </Paper>
-    );
-  }
-
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 2,
-        maxWidth: "1200px",
-        margin: "0 auto",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: "row",
-          },
-          width: "100%",
-          maxWidth: 1200,
-          justifyContent: "center",
-          gap: 2,
-        }}
-      >
-        <Box
+    <Fade in={status !== "loading"} timeout={500}>
+      {status === "unauthenticated" ? (
+        <Paper
+          elevation={3}
           sx={{
-            flex: 1,
-            minWidth: "300px",
-            height: "100%",
+            padding: 4,
+            maxWidth: 600,
+            margin: "auto",
+            marginTop: 4,
+            backgroundColor: "#374151",
+            borderRadius: 2,
           }}
         >
-          <PlayerSavedTeam selectedPlayers={fantasyTeam} />
-        </Box>
-        <Box
+          <Typography
+            variant="h6"
+            sx={{
+              marginBottom: 2,
+              color: "rgba(243, 244, 246, 0.6)",
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
+            Log in and save a draft and compete in Brood War League
+          </Typography>
+          <Box sx={{ textAlign: "center", marginTop: 2 }}>
+            <Link href="/profile" passHref>
+              <Typography
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  variant: "contained",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "#10b981",
+                  color: "#ffff",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                SIGN UP / LOGIN
+              </Typography>
+            </Link>
+          </Box>
+        </Paper>
+      ) : !filteredPlayers.length ? (
+        <Paper
+          elevation={3}
           sx={{
-            flex: 1,
-            minWidth: "300px",
+            padding: 4,
+            maxWidth: 600,
+            margin: "auto",
+            marginTop: 4,
+            backgroundColor: "#374151",
+            borderRadius: 2,
           }}
         >
-          <PlayerDraftDetails selectedPlayers={filteredPlayers} />
-        </Box>
-      </Box>
-      {!isMobile && (
-        <Box sx={{ marginBottom: 6 }}>
-          <PlayerDraftChart
-            selectedPlayers={filteredPlayers}
-            widthProp="1200px"
-          />
+          <Typography
+            variant="h6"
+            sx={{
+              marginBottom: 1,
+              color: "rgba(243, 244, 246, 0.6)",
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
+            Save a team draft to compete in Brood War League
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              display: "block",
+              marginBottom: 2,
+              color: "rgba(243, 244, 246, 0.6)",
+              textAlign: "center",
+            }}
+          >
+            (or login on the browser where you saved your team)
+          </Typography>
+          <Box sx={{ textAlign: "center", marginTop: 2 }}>
+            <Link href="/draft" passHref>
+              <Typography
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  padding: "0.5rem 1rem",
+                  variant: "contained",
+                  backgroundColor: "#10b981",
+                  color: "#ffff",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                DRAFT
+              </Typography>
+            </Link>
+          </Box>
+        </Paper>
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 2,
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              width: "100%",
+              maxWidth: 1200,
+              justifyContent: "center",
+              gap: 2,
+            }}
+          >
+            <Box
+              sx={{
+                flex: 1,
+                minWidth: "300px",
+                height: "100%",
+              }}
+            >
+              <PlayerSavedTeam selectedPlayers={fantasyTeam} />
+            </Box>
+            <Box
+              sx={{
+                flex: 1,
+                minWidth: "300px",
+              }}
+            >
+              <PlayerDraftDetails selectedPlayers={filteredPlayers} />
+            </Box>
+          </Box>
+          {!isMobile && (
+            <Box sx={{ marginBottom: 6 }}>
+              <PlayerDraftChart
+                selectedPlayers={filteredPlayers}
+                widthProp="1200px"
+              />
+            </Box>
+          )}
         </Box>
       )}
-    </Box>
+    </Fade>
   );
 };
 

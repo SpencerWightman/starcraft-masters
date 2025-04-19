@@ -1,3 +1,4 @@
+import { season19QualifiedPlayers } from "@/constants/constants";
 import { fetchLeaderboard } from "@/utils/leaderboard";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import {
@@ -41,7 +42,7 @@ const LeaderboardPage = async () => {
             fontWeight: "bold",
           }}
         >
-          SSL Spring 2025 Leaderboard
+          ASL Spring 2025 Leaderboard
         </Typography>
         <TableContainer
           component={Paper}
@@ -89,7 +90,9 @@ const LeaderboardPage = async () => {
                       key={memberIndex}
                       align="left"
                       sx={{
-                        color: "rgba(243, 244, 246, 0.6)",
+                        color: season19QualifiedPlayers.includes(member)
+                          ? "#b39910"
+                          : "rgba(243, 244, 246, 0.6)",
                         padding: "8px",
                         borderBottom: "none",
                       }}

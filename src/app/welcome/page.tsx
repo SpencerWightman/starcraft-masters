@@ -69,10 +69,10 @@ const Welcome: React.FC = () => {
               Draft
             </Link>{" "}
             page to select the 15 players who you think will take the most
-            combined wins in the next ASL/SSL season.
+            combined wins in the next ASL season.
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-            • You have until the first SSL qualifier (approximately when the
+            • You have until the first ASL qualifier (approximately when the
             countdown expires) to save your team. One point is awarded for each
             match win starting in the Ro24.
           </Typography>
@@ -137,7 +137,7 @@ const Welcome: React.FC = () => {
             Maps
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • An image gallery of the most recent SSL maps along with rush
+            • An image gallery of the most recent ASL maps along with rush
             distances, number of bases, and number of mains.
           </Typography>
         </Box>
@@ -161,8 +161,7 @@ const Welcome: React.FC = () => {
             Charts
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • ASL/SSL analytics. The plan is to create more using historical
-            data.
+            • ASL analytics. The plan is to create more using historical data.
           </Typography>
         </Box>
       </Grid2>
@@ -209,19 +208,20 @@ const Welcome: React.FC = () => {
             }}
           >
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • The player tiers have progressively increasing selection limits,
-              and a minimum selection requirement. You can update your saved
-              team by saving a new draft. There is no guarantee that all of the
-              players listed will choose to compete in the next SSL.
+              • Each player tier has a selection requirement, enforcing
+              selections from all player tiers. You can update your saved team
+              by saving a new draft. There is no guarantee that all of the
+              players listed will choose to compete in the next ASL.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-              • ASL/SSL places qualified players into 1 of 4 tiers based on how
+              • ASL places qualified players into 1 of 4 tiers based on how
               their performance history ranks against the performance of the
               other qualified players. The players in each tier are then divided
               evenly among the Ro24 groups, so that each group has 1 player from
               each tier. Players do not often change tiers from season to
-              season. Brood War League generally follows the offical tiers as of
-              the start of the last season. Seeded players are listed in Tier 0.
+              season. Brood War League generally follows the official tiers as
+              of the start of the last season. Seeded players are listed in Tier
+              0.
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
               • Player statistics (except trophies) start at ASL 15, February
