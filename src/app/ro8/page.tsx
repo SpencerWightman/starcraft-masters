@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, IconButton, Typography } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Bar } from "react-chartjs-2";
@@ -27,16 +27,16 @@ type MatchupDurationStats = {
   TotalGames: number;
   WinRates: DurationWinRate[];
 };
-type HistoricalData = { [key: string]: MatchupDurationStats[] };
+type HistoricalData = { [player: string]: MatchupDurationStats };
 const historicalData: HistoricalData = rawData;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const slides = [
-  { left: "Queen", right: "Best", matchLeft: "ZvP", matchRight: "PvZ" },
-  { left: "Jaedong", right: "Light", matchLeft: "ZvT", matchRight: "TvZ" },
-  { left: "Snow", right: "Rain", matchLeft: "PvP", matchRight: "PvP" },
-  { left: "SoulKey", right: "Rush", matchLeft: "ZvT", matchRight: "TvZ" },
+const slides: Array<[string, string]> = [
+  ["Queen", "Best"],
+  ["Jaedong", "Light"],
+  ["Snow", "Rain"],
+  ["SoulKey", "Rush"],
 ];
 
 const Ro8: React.FC = () => {
@@ -45,64 +45,60 @@ const Ro8: React.FC = () => {
   const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
   const next = () => setCurrent((c) => (c + 1) % slides.length);
 
-  React.useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const { left, right, matchLeft, matchRight } = slides[current];
-  const leftStats = historicalData[left]?.find((s) => s.Matchup === matchLeft);
-  const rightStats = historicalData[right]?.find(
-    (s) => s.Matchup === matchRight
-  );
+  const [left, right] = slides[current];
+  const leftStats = historicalData[left];
+  const rightStats = historicalData[right];
 
   const hexToRgb = (hex: string) => {
-    const parsed = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
-    return `${parseInt(parsed[1], 16)},${parseInt(parsed[2], 16)},${parseInt(
-      parsed[3],
-      16
-    )}`;
+    const [, r, g, b] = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
+    return `${parseInt(r, 16)},${parseInt(g, 16)},${parseInt(b, 16)}`;
   };
 
   const makeData = (
-    stats: MatchupDurationStats | undefined,
+    stats: MatchupDurationStats,
     player: string,
     color: string,
     invert = false
   ) => {
-    const allIntervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
+    const intervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
     const rgb = hexToRgb(color);
 
-    const data: number[] = [];
-    const backgroundColor: string[] = [];
-    const borderColor: string[] = [];
-
-    allIntervals.forEach((iv) => {
-      const entry = stats?.WinRates.find((r) => r.Interval === iv);
-      // treat missing or zero as placeholder
+    const data = intervals.map((iv) => {
+      const entry = stats.WinRates.find((r) => r.Interval === iv);
       const rawRate = entry ? parseFloat(entry.WinRate) : 0;
       const isPlaceholder = !entry || rawRate === 0;
       const val = isPlaceholder ? 100 : rawRate;
+      return invert ? -val : val;
+    });
 
-      // push invert if left side
-      data.push(invert ? -val : val);
+    const backgroundColor = intervals.map((iv) => {
+      const entry = stats.WinRates.find((r) => r.Interval === iv);
+      const rawRate = entry ? parseFloat(entry.WinRate) : 0;
+      const isPlaceholder = !entry || rawRate === 0;
+      return `rgba(${rgb},${isPlaceholder ? 0.1 : 0.3})`;
+    });
 
-      const opacity = isPlaceholder ? 0.1 : 0.3;
-      backgroundColor.push(`rgba(${rgb},${opacity})`);
-      borderColor.push(isPlaceholder ? `rgba(${rgb},${opacity})` : color);
+    const borderColor = intervals.map((iv) => {
+      const entry = stats.WinRates.find((r) => r.Interval === iv);
+      const rawRate = entry ? parseFloat(entry.WinRate) : 0;
+      const isPlaceholder = !entry || rawRate === 0;
+      return isPlaceholder ? `rgba(${rgb},0.1)` : color;
     });
 
     return {
-      labels: allIntervals,
+      labels: intervals,
       datasets: [
         {
-          label: `${player} ${stats?.Matchup} (${
-            stats?.TotalGames ?? 0
-          } games)`,
+          label: `${player} ${stats.Matchup} (${stats.TotalGames} games)`,
           data,
           backgroundColor,
           borderColor,
@@ -126,32 +122,25 @@ const Ro8: React.FC = () => {
   const leftData = makeData(leftStats, left, colorMap[left], true);
   const rightData = makeData(rightStats, right, colorMap[right], false);
 
-  // tooltip + legend
-  const commonOptions = {
+  const commonOpts = {
     responsive: true,
     maintainAspectRatio: false as const,
     indexAxis: "y" as const,
     plugins: {
       legend: {
         position: "top" as const,
-        labels: {
-          color: "rgba(243, 244, 246, 0.6)",
-          font: {
-            size: 20,
-          },
-        },
+        labels: { color: "rgba(243,244,246,0.6)", font: { size: 20 } },
       },
       tooltip: {
         callbacks: {
           label: (ctx: TooltipItem<"bar">) => {
-            const interval = ctx.label as string;
-            const stats = ctx.dataset.label?.startsWith(left)
+            const iv = ctx.label as string;
+            const stats = ctx.dataset.label!.startsWith(left)
               ? leftStats
               : rightStats;
-            const entry = stats?.WinRates.find((r) => r.Interval === interval);
-            const actualRate = entry ? parseFloat(entry.WinRate) : 0;
-            const games = entry?.TotalGames ?? 0;
-            return `Win Rate: ${actualRate}% | Games: ${games}`;
+            const entry = stats.WinRates.find((r) => r.Interval === iv);
+            const rate = entry ? parseFloat(entry.WinRate) : 0;
+            return `Win Rate: ${rate}% | Games: ${entry?.TotalGames ?? 0}`;
           },
         },
       },
@@ -164,34 +153,48 @@ const Ro8: React.FC = () => {
     },
   };
 
-  const leftOptions = {
-    ...commonOptions,
+  const rightOpts = {
+    ...commonOpts,
     scales: {
-      ...commonOptions.scales,
-      x: {
-        min: -100,
-        max: 0,
-        ticks: {
-          callback: (v: string | number) => Math.abs(Number(v)),
-          color: "#e5e7eb",
-        },
-        grid: { color: "rgba(255,255,255,0.1)" },
-      },
-      y: { ...(commonOptions.scales.y as any), position: "left" as const },
-    },
-  };
-
-  const rightOptions = {
-    ...commonOptions,
-    scales: {
-      ...commonOptions.scales,
+      ...commonOpts.scales,
       x: {
         min: 0,
         max: 100,
         ticks: { color: "#e5e7eb" },
-        grid: { color: "rgba(255,255,255,0.1)" },
+        grid: {
+          color: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === 50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
+          lineWidth: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === 50 ? 2 : 1,
+        },
       },
-      y: { ...(commonOptions.scales.y as any), position: "right" as const },
+      y: { ...(commonOpts.scales.y as any), position: "right" as const },
+    },
+  };
+
+  const leftOpts = {
+    ...commonOpts,
+    scales: {
+      ...commonOpts.scales,
+      x: {
+        min: -100,
+        max: 0,
+        ticks: {
+          callback: (v: any) => Math.abs(Number(v)),
+          color: "#e5e7eb",
+        },
+        grid: {
+          color: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === -50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
+          lineWidth: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === -50 ? 2 : 1,
+        },
+      },
+      y: { ...(commonOpts.scales.y as any), position: "left" as const },
     },
   };
 
@@ -213,22 +216,13 @@ const Ro8: React.FC = () => {
         </IconButton>
 
         <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            px: 4,
-            height: "100%",
-            gap: 2,
-          }}
+          sx={{ display: "flex", width: "100%", px: 4, height: "100%", gap: 2 }}
         >
-          {/* Left Chart */}
-          <Box sx={{ flex: 1, height: "100%" }}>
-            <Bar data={leftData} options={leftOptions} />
+          <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
+            <Bar data={leftData} options={leftOpts} />
           </Box>
-
-          {/* Right Chart */}
-          <Box sx={{ flex: 1, height: "100%" }}>
-            <Bar data={rightData} options={rightOptions} />
+          <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
+            <Bar data={rightData} options={rightOpts} />
           </Box>
         </Box>
 
@@ -239,9 +233,10 @@ const Ro8: React.FC = () => {
           <ArrowForwardIos />
         </IconButton>
       </Box>
+
       <Box sx={{ textAlign: "center", mt: 1 }}>
         <Typography variant="caption" color="rgba(243, 244, 246, 0.6)">
-          * ASL, SSL, and KSL data
+          * ASL, SSL, and KSL data. Vertical axis is match duration.
         </Typography>
       </Box>
     </>
