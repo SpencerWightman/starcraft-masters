@@ -45,13 +45,13 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
+    { text: "Ro8", href: "/ro8" },
     { text: "Leaderboard", href: "/leaderboard" },
     { text: "Team", href: "/team" },
     { text: "Draft", href: "/draft" },
     { text: "Maps", href: "/maps", isNew: isMapsNew },
     { text: "VS", href: "/vs" },
     { text: "Charts", href: "/charts" },
-    { text: "Vod", href: "/vod" },
     { text: "Profile", href: "/profile" },
   ];
 
