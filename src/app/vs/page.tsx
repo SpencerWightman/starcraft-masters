@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import {
   MenuItem,
   Select,
   SelectChangeEvent,
   Button,
   Box,
-  useMediaQuery,
 } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
@@ -21,353 +19,341 @@ import {
   TooltipItem,
 } from "chart.js";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 type DurationWinRate = {
   Interval: string;
   WinRate: string;
   TotalGames: number;
 };
-
 type MatchupDurationStats = {
   Matchup: string;
   TotalGames: number;
   WinRates: DurationWinRate[];
 };
-
-type HistoricalData = {
-  [key: string]: MatchupDurationStats[];
-};
+type HistoricalData = { [key: string]: MatchupDurationStats[] };
 
 import rawHistoricalData from "data/historicalData.json";
 const historicalData: HistoricalData = rawHistoricalData;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const VSChart: React.FC = () => {
-  const isXS = useMediaQuery("(max-width:900px)");
+const intervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
+const hexToRgb = (hex: string) => {
+  const [, r, g, b] = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
+  return `${parseInt(r, 16)},${parseInt(g, 16)},${parseInt(b, 16)}`;
+};
 
-  // First chart state
-  const [selectedPlayer1, setSelectedPlayer1] = useState(
-    Object.keys(historicalData)[0]
-  );
-  const [selectedMatchup1, setSelectedMatchup1] = useState("");
-
-  // Second chart state
-  const [selectedPlayer2, setSelectedPlayer2] = useState(
-    Object.keys(historicalData)[0]
-  );
-  const [selectedMatchup2, setSelectedMatchup2] = useState("");
-
-  useEffect(() => {
-    const initialPlayer1 = historicalData[selectedPlayer1];
-    if (initialPlayer1 && initialPlayer1.length > 0) {
-      setSelectedMatchup1(initialPlayer1[0].Matchup);
-    }
-
-    const initialPlayer2 = historicalData[selectedPlayer2];
-    if (initialPlayer2 && initialPlayer2.length > 0) {
-      setSelectedMatchup2(initialPlayer2[0].Matchup);
-    }
-  }, [selectedPlayer1, selectedPlayer2]);
-
-  const handlePlayerChange1 = (event: SelectChangeEvent) => {
-    setSelectedPlayer1(event.target.value);
-  };
-
-  const handlePlayerChange2 = (event: SelectChangeEvent) => {
-    setSelectedPlayer2(event.target.value);
-  };
-
-  const aggregateData = (
-    matchup: string,
-    playerHandle: string,
-    isFirstChart: boolean
-  ) => {
-    const player = historicalData[playerHandle];
-    if (!player) return { labels: [], datasets: [] };
-
-    // Specific matchup data
-    const matchupData = player.find((d) => d.Matchup === matchup);
-    if (!matchupData) return { labels: [], datasets: [] };
-
-    // Generate labels and datasets
-    const labels = matchupData.WinRates.map((rate) => rate.Interval);
-    const datasets = [
+const makeData = (
+  stats: MatchupDurationStats,
+  player: string,
+  color: string,
+  invert = false
+) => {
+  const rgb = hexToRgb(color);
+  const data = intervals.map((iv) => {
+    const entry = stats.WinRates.find((r) => r.Interval === iv);
+    const rawRate = entry ? parseFloat(entry.WinRate) : 0;
+    const val = rawRate === 0 ? 100 : rawRate;
+    return invert ? -val : val;
+  });
+  const backgroundColor = intervals.map((iv) => {
+    const entry = stats.WinRates.find((r) => r.Interval === iv);
+    const rawRate = entry ? parseFloat(entry.WinRate) : 0;
+    return `rgba(${rgb},${rawRate === 0 ? 0.1 : 0.3})`;
+  });
+  const borderColor = intervals.map((iv) => {
+    const entry = stats.WinRates.find((r) => r.Interval === iv);
+    const rawRate = entry ? parseFloat(entry.WinRate) : 0;
+    return rawRate === 0 ? `rgba(${rgb},0.1)` : color;
+  });
+  return {
+    labels: intervals,
+    datasets: [
       {
-        label: `Win Rate for ${playerHandle} - ${matchupData.TotalGames} Games`,
-        data: matchupData.WinRates.map((rate) => parseFloat(rate.WinRate)),
-        backgroundColor: isFirstChart
-          ? "rgba(54, 162, 235, 0.2)" // Light blue -- chart 1
-          : "rgba(75, 192, 192, 0.2)", // Light green -- chart 2
-        borderColor: isFirstChart
-          ? "rgba(54, 162, 235, 1)" // Dark blue -- chart 1
-          : "rgba(75, 192, 192, 1)", // Dark green -- chart 2
+        label: `${player} ${stats.Matchup} (${stats.TotalGames} games)`,
+        data,
+        backgroundColor,
+        borderColor,
         borderWidth: 1,
       },
-    ];
-
-    return { labels, datasets };
+    ],
   };
+};
 
-  const chartProps1 = aggregateData(selectedMatchup1, selectedPlayer1, true);
-  const chartProps2 = aggregateData(selectedMatchup2, selectedPlayer2, false);
+const getColorForMatchup = (matchup: string): string => {
+  if (matchup.startsWith("T")) return "#457b9d";
+  if (matchup.startsWith("P")) return "#2a9d8f";
+  if (matchup.startsWith("Z")) return "#e63946";
+  return "#6c757d";
+};
 
-  const options = (playerHandle: string, selectedMatchup: string) => ({
+const VSChart: React.FC = () => {
+  const players = Object.keys(historicalData);
+
+  const [selectedPlayer1, setSelectedPlayer1] = useState("SoulKey");
+  const [selectedPlayer2, setSelectedPlayer2] = useState("Light");
+
+  const matchups1 = historicalData[selectedPlayer1] || [];
+  const matchups2 = historicalData[selectedPlayer2] || [];
+  const allMatchups1 = matchups1.map((d) => d.Matchup);
+  const allMatchups2 = matchups2.map((d) => d.Matchup);
+
+  const [selectedMatchup1, setSelectedMatchup1] = useState(
+    allMatchups1[0] || ""
+  );
+  const [selectedMatchup2, setSelectedMatchup2] = useState(
+    allMatchups2[0] || ""
+  );
+  useEffect(() => {
+    setSelectedMatchup1(allMatchups1[0] || "");
+  }, [selectedPlayer1]);
+  useEffect(() => {
+    setSelectedMatchup2(allMatchups2[0] || "");
+  }, [selectedPlayer2]);
+
+  const stats1 = matchups1.find((d) => d.Matchup === selectedMatchup1);
+  const stats2 = matchups2.find((d) => d.Matchup === selectedMatchup2);
+
+  const color1 = getColorForMatchup(selectedMatchup1);
+  const color2 = getColorForMatchup(selectedMatchup2);
+
+  const leftData = stats1
+    ? makeData(stats1, selectedPlayer1, color1, true)
+    : { labels: [], datasets: [] };
+  const rightData = stats2
+    ? makeData(stats2, selectedPlayer2, color2, false)
+    : { labels: [], datasets: [] };
+
+  const commonOpts = {
     responsive: true,
-    maintainAspectRatio: true,
-    indexAxis: "x" as const,
+    maintainAspectRatio: false as const,
+    indexAxis: "y" as const,
     plugins: {
       legend: {
         position: "top" as const,
-        labels: {
-          font: {
-            size: 16,
-          },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          label: (context: TooltipItem<"bar">) => {
-            if (!playerHandle || !selectedMatchup) {
-              return `Win Rate: ${context.raw}%`;
-            }
-
-            // Find player data
-            const playerData = historicalData[playerHandle];
-            if (!playerData) {
-              return `Win Rate: ${context.raw}%`;
-            }
-
-            // Find matchup data
-            const matchupData = playerData.find(
-              (m) => m.Matchup === selectedMatchup
-            );
-            if (!matchupData) {
-              return `Win Rate: ${context.raw}%`;
-            }
-
-            // Find interval data
-            const interval = context.label;
-            const intervalData = matchupData.WinRates.find(
-              (rate) => rate.Interval === interval
-            );
-
-            if (!intervalData) {
-              return `Win Rate: ${context.raw}%`;
-            }
-
-            const totalGames = intervalData.TotalGames || 0;
-            const winRate = context.raw;
-
-            return `Win Rate: ${winRate}% | Total Games: ${totalGames}`;
-          },
-        },
+        labels: { color: "rgba(243,244,246,0.6)", font: { size: 16 } },
       },
     },
     scales: {
+      y: {
+        grid: { color: "rgba(255,255,255,0.1)" },
+        ticks: { color: "#e5e7eb" },
+      },
+    },
+  };
+
+  const leftOpts = {
+    ...commonOpts,
+    scales: {
       x: {
+        min: -100,
+        max: 0,
+        ticks: { callback: (v: any) => Math.abs(Number(v)), color: "#e5e7eb" },
         grid: {
-          color: "rgba(255, 255, 255, 0.1)",
-        },
-        ticks: {
-          color: "#e5e7eb",
+          color: (ctx: any) =>
+            ctx.tick.value === -50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
+          lineWidth: (ctx: any) => (ctx.tick.value === -50 ? 2 : 1),
         },
       },
-      y: {
-        beginAtZero: true,
-        min: 0,
-        max: 100,
-        grid: {
-          color: "rgba(255, 255, 255, 0.1)",
-        },
-        ticks: {
-          color: "#e5e7eb",
+      y: { ...(commonOpts.scales.y as any), position: "left" as const },
+    },
+    plugins: {
+      ...commonOpts.plugins,
+      tooltip: {
+        callbacks: {
+          label: (ctx: TooltipItem<"bar">) => {
+            const iv = ctx.label as string;
+            const entry = stats1?.WinRates.find((r) => r.Interval === iv);
+            const rate = entry ? parseFloat(entry.WinRate) : 0;
+            return `Win Rate: ${rate}% | Games: ${entry?.TotalGames ?? 0}`;
+          },
         },
       },
     },
-  });
+  };
 
-  const allMatchups1 = Array.from(
-    new Set(historicalData[selectedPlayer1]?.map((d) => d.Matchup) || [])
-  );
-
-  const allMatchups2 = Array.from(
-    new Set(historicalData[selectedPlayer2]?.map((d) => d.Matchup) || [])
-  );
+  const rightOpts = {
+    ...commonOpts,
+    scales: {
+      x: {
+        min: 0,
+        max: 100,
+        ticks: { color: "#e5e7eb" },
+        grid: {
+          color: (ctx: any) =>
+            ctx.tick.value === 50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
+          lineWidth: (ctx: any) => (ctx.tick.value === 50 ? 2 : 1),
+        },
+      },
+      y: { ...(commonOpts.scales.y as any), position: "right" as const },
+    },
+    plugins: {
+      ...commonOpts.plugins,
+      tooltip: {
+        callbacks: {
+          label: (ctx: TooltipItem<"bar">) => {
+            const iv = ctx.label as string;
+            const entry = stats2?.WinRates.find((r) => r.Interval === iv);
+            const rate = entry ? parseFloat(entry.WinRate) : 0;
+            return `Win Rate: ${rate}% | Games: ${entry?.TotalGames ?? 0}`;
+          },
+        },
+      },
+    },
+  };
 
   return (
     <>
-      {isXS ? (
-        <PaperPlaceholder message="Increase your screen size to view the chart" />
-      ) : (
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          p: 2,
+          backgroundColor: "#1f2937",
+          borderRadius: 2,
+          height: 600,
+        }}
+      >
         <Box
           sx={{
+            flex: 1,
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-            alignItems: "flex-start",
-            marginTop: "10px",
-            padding: "20px",
-            backgroundColor: "#1f2937",
-            borderRadius: "8px",
+            flexDirection: "column",
+            height: "100%",
           }}
         >
-          {/* First Chart */}
           <Box
             sx={{
-              width: "49%",
-              textAlign: "center",
-              maxWidth: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mb: 2,
+              gap: 1,
+              flex: "0 0 auto",
             }}
           >
             <Select
               value={selectedPlayer1}
-              onChange={handlePlayerChange1}
+              onChange={(e: SelectChangeEvent) =>
+                setSelectedPlayer1(e.target.value)
+              }
               displayEmpty
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "#374151",
-                    color: "#e5e7eb",
-                  },
-                },
-              }}
               sx={{
-                marginBottom: "20px",
-                color: "#e5e7eb",
-                backgroundColor: "#374151",
-                borderRadius: "4px",
+                color: "rgba(243, 244, 246, 0.6)",
+                "& .MuiSvgIcon-root": { color: "rgba(243, 244, 246, 0.6)" },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(243, 244, 246, 0.6)",
+                },
                 "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(54, 162, 235, 1)",
+                  borderColor: "rgba(243, 244, 246, 0.6)",
                 },
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "transparent",
+                  borderColor: "rgba(243, 244, 246, 0.6)",
                 },
-                "& .MuiSvgIcon-root": { color: "rgba(54, 162, 235, 1)" },
+                "& .MuiSelect-select:focus": {
+                  outline: "none",
+                  boxShadow: "none",
+                },
               }}
             >
-              {Object.entries(historicalData).map(([handle]) => (
-                <MenuItem key={handle} value={handle}>
-                  {handle}
+              {players.map((p) => (
+                <MenuItem key={p} value={p}>
+                  {p}
                 </MenuItem>
               ))}
             </Select>
-
-            <div
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              {allMatchups1.map((matchup) => (
-                <Button
-                  key={matchup}
-                  variant="outlined"
-                  onClick={() => setSelectedMatchup1(matchup)}
-                  sx={{
-                    color: "rgba(54, 162, 235, 1)",
-                    textTransform: "none",
-                    borderColor:
-                      selectedMatchup1 === matchup
-                        ? "rgba(54, 162, 235, 1)"
-                        : "transparent",
-                    backgroundColor: "#374151",
-                    "&:hover": { borderColor: "rgba(54, 162, 235, 1)" },
-                  }}
-                >
-                  {matchup}
-                </Button>
-              ))}
-            </div>
-            <div style={{ height: "500px" }}>
-              <Bar
-                data={chartProps1}
-                options={options(selectedPlayer1, selectedMatchup1)}
-              />
-            </div>
+            {allMatchups1.map((m) => (
+              <Button
+                key={m}
+                variant="outlined"
+                onClick={() => setSelectedMatchup1(m)}
+                sx={{
+                  textTransform: "none",
+                  color: color1,
+                  borderColor: selectedMatchup1 === m ? color1 : "transparent",
+                }}
+              >
+                {m}
+              </Button>
+            ))}
           </Box>
-
-          {/* Second Chart */}
+          <Box sx={{ flex: 1, position: "relative" }}>
+            <Bar data={leftData} options={leftOpts} />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+        >
           <Box
             sx={{
-              width: "49%",
-              textAlign: "center",
-              maxWidth: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mb: 2,
+              gap: 1,
+              flex: "0 0 auto",
             }}
           >
             <Select
               value={selectedPlayer2}
-              onChange={handlePlayerChange2}
+              onChange={(e: SelectChangeEvent) =>
+                setSelectedPlayer2(e.target.value)
+              }
               displayEmpty
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "#374151",
-                    color: "#e5e7eb",
-                  },
-                },
-              }}
               sx={{
-                marginBottom: "20px",
-                color: "#e5e7eb",
-                backgroundColor: "#374151",
-                borderRadius: "4px",
+                color: "rgba(243, 244, 246, 0.6)",
+                "& .MuiSvgIcon-root": { color: "rgba(243, 244, 246, 0.6)" },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(243, 244, 246, 0.6)",
+                },
                 "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderColor: "rgba(243, 244, 246, 0.6)",
                 },
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "transparent",
+                  borderColor: "rgba(243, 244, 246, 0.6)",
                 },
-                "& .MuiSvgIcon-root": { color: "rgba(75, 192, 192, 1)" },
+                "& .MuiSelect-select:focus": {
+                  outline: "none",
+                  boxShadow: "none",
+                },
               }}
             >
-              {Object.entries(historicalData).map(([handle]) => (
-                <MenuItem key={handle} value={handle}>
-                  {handle}
+              {players.map((p) => (
+                <MenuItem key={p} value={p}>
+                  {p}
                 </MenuItem>
               ))}
             </Select>
-
-            <div
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              {allMatchups2.map((matchup) => (
-                <Button
-                  key={matchup}
-                  variant="outlined"
-                  onClick={() => setSelectedMatchup2(matchup)}
-                  sx={{
-                    color: "rgba(75, 192, 192, 1)",
-                    textTransform: "none",
-                    borderColor:
-                      selectedMatchup2 === matchup
-                        ? "rgba(75, 192, 192, 1)"
-                        : "transparent",
-                    backgroundColor: "#374151",
-                    "&:hover": { borderColor: "rgba(75, 192, 192, 1)" },
-                  }}
-                >
-                  {matchup}
-                </Button>
-              ))}
-            </div>
-            <div style={{ height: "500px" }}>
-              <Bar
-                data={chartProps2}
-                options={options(selectedPlayer2, selectedMatchup2)}
-              />
-            </div>
+            {allMatchups2.map((m) => (
+              <Button
+                key={m}
+                variant="outlined"
+                onClick={() => setSelectedMatchup2(m)}
+                sx={{
+                  textTransform: "none",
+                  color: color2,
+                  borderColor: selectedMatchup2 === m ? color2 : "transparent",
+                }}
+              >
+                {m}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ flex: 1, position: "relative" }}>
+            <Bar data={rightData} options={rightOpts} />
           </Box>
         </Box>
-      )}
+      </Box>
     </>
   );
 };

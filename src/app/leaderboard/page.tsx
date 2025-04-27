@@ -12,7 +12,7 @@ import {
   Paper,
 } from "@mui/material";
 
-export const revalidate = 10; // Revalidation interval
+export const revalidate = 60; // Revalidation interval
 
 type LeaderboardEntry = {
   username: string;
