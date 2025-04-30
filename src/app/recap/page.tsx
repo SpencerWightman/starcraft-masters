@@ -3,8 +3,8 @@
 import React from "react";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 
-const Meta: React.FC = () => {
+const Recap: React.FC = () => {
   return <PaperPlaceholder message="Coming soon." />;
 };
 
-export default Meta;
+export default Recap;
