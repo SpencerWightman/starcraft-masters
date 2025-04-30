@@ -8,6 +8,5 @@ export const season19QualifiedPlayers = [
   "Rush",
   "Best",
   "Skey",
-  "JD",
   "Light",
 ];
