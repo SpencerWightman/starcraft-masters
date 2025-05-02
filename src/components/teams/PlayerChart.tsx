@@ -8,6 +8,7 @@ import {
   BarElement,
   Tooltip,
   Legend,
+  TooltipItem,
 } from "chart.js";
 import { PlayerSummary } from "@/app/types/teamTypes";
 
@@ -53,8 +54,7 @@ const PlayerChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
       },
       tooltip: {
         callbacks: {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          label: (context: any) => `${context.raw}%`,
+          label: (context: TooltipItem<"bar">) => `${context.raw}%`,
         },
       },
     },

@@ -21,6 +21,7 @@ import {
   Tooltip,
   TooltipItem,
   Legend,
+  ChartDataset,
 } from "chart.js";
 
 import data from "data/lowBaseResults.json";
@@ -36,8 +37,7 @@ ChartJS.register(
 
 interface ChartProps {
   labels: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  datasets: any[];
+  datasets: ChartDataset<"line">[];
   title: string;
   tooltipData: (index: number, datasetLabel: string, value: number) => string;
 }

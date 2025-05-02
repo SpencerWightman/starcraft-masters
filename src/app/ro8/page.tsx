@@ -1,8 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
+import {
+  alpha,
+  Box,
+  IconButton,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Bar } from "react-chartjs-2";
 import {
@@ -60,11 +65,6 @@ const Ro8: React.FC = () => {
   const leftStats = historicalData[left];
   const rightStats = historicalData[right];
 
-  const hexToRgb = (hex: string) => {
-    const [, r, g, b] = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
-    return `${parseInt(r, 16)},${parseInt(g, 16)},${parseInt(b, 16)}`;
-  };
-
   const makeData = (
     stats: MatchupDurationStats,
     player: string,
@@ -72,7 +72,6 @@ const Ro8: React.FC = () => {
     invert = false
   ) => {
     const intervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
-    const rgb = hexToRgb(color);
 
     const data = intervals.map((iv) => {
       const entry = stats.WinRates.find((r) => r.Interval === iv);
@@ -86,14 +85,14 @@ const Ro8: React.FC = () => {
       const entry = stats.WinRates.find((r) => r.Interval === iv);
       const rawRate = entry ? parseFloat(entry.WinRate) : 0;
       const isPlaceholder = !entry || rawRate === 0;
-      return `rgba(${rgb},${isPlaceholder ? 0.1 : 0.3})`;
+      return alpha(color, isPlaceholder ? 0.1 : 0.3);
     });
 
     const borderColor = intervals.map((iv) => {
       const entry = stats.WinRates.find((r) => r.Interval === iv);
       const rawRate = entry ? parseFloat(entry.WinRate) : 0;
       const isPlaceholder = !entry || rawRate === 0;
-      return isPlaceholder ? `rgba(${rgb},0.1)` : color;
+      return isPlaceholder ? alpha(color, 0.1) : color;
     });
 
     return {
@@ -172,7 +171,7 @@ const Ro8: React.FC = () => {
             ctx.tick.value === 50 ? 2 : 1,
         },
       },
-      y: { ...(commonOpts.scales.y as any), position: "right" as const },
+      y: { ...commonOpts.scales.y, position: "right" as const },
     },
   };
 
@@ -184,7 +183,7 @@ const Ro8: React.FC = () => {
         min: -100,
         max: 0,
         ticks: {
-          callback: (v: any) => Math.abs(Number(v)),
+          callback: (v: number | string) => Math.abs(Number(v)),
           color: "#e5e7eb",
         },
         grid: {
@@ -196,7 +195,7 @@ const Ro8: React.FC = () => {
             ctx.tick.value === -50 ? 2 : 1,
         },
       },
-      y: { ...(commonOpts.scales.y as any), position: "left" as const },
+      y: { ...commonOpts.scales.y, position: "left" as const },
     },
   };
 

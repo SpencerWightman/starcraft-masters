@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   useMediaQuery,
+  alpha,
 } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
@@ -19,8 +20,6 @@ import {
   Legend,
   TooltipItem,
 } from "chart.js";
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 type DurationWinRate = {
   Interval: string;
@@ -41,10 +40,6 @@ const historicalData: HistoricalData = rawHistoricalData;
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const intervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
-const hexToRgb = (hex: string) => {
-  const [, r, g, b] = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
-  return `${parseInt(r, 16)},${parseInt(g, 16)},${parseInt(b, 16)}`;
-};
 
 const makeData = (
   stats: MatchupDurationStats,
@@ -52,23 +47,27 @@ const makeData = (
   color: string,
   invert = false
 ) => {
-  const rgb = hexToRgb(color);
   const data = intervals.map((iv) => {
     const entry = stats.WinRates.find((r) => r.Interval === iv);
     const rawRate = entry ? parseFloat(entry.WinRate) : 0;
     const val = rawRate === 0 ? 100 : rawRate;
     return invert ? -val : val;
   });
+
   const backgroundColor = intervals.map((iv) => {
     const entry = stats.WinRates.find((r) => r.Interval === iv);
     const rawRate = entry ? parseFloat(entry.WinRate) : 0;
-    return `rgba(${rgb},${rawRate === 0 ? 0.1 : 0.3})`;
+    const isPlaceholder = !entry || rawRate === 0;
+    return alpha(color, isPlaceholder ? 0.1 : 0.3);
   });
+
   const borderColor = intervals.map((iv) => {
     const entry = stats.WinRates.find((r) => r.Interval === iv);
     const rawRate = entry ? parseFloat(entry.WinRate) : 0;
-    return rawRate === 0 ? `rgba(${rgb},0.1)` : color;
+    const isPlaceholder = !entry || rawRate === 0;
+    return isPlaceholder ? alpha(color, 0.1) : color;
   });
+
   return {
     labels: intervals,
     datasets: [
@@ -110,10 +109,10 @@ const VSChart: React.FC = () => {
   );
   useEffect(() => {
     setSelectedMatchup1(allMatchups1[0] || "");
-  }, [selectedPlayer1]);
+  }, [allMatchups1, selectedPlayer1]);
   useEffect(() => {
     setSelectedMatchup2(allMatchups2[0] || "");
-  }, [selectedPlayer2]);
+  }, [allMatchups2, selectedPlayer2]);
 
   const stats1 = matchups1.find((d) => d.Matchup === selectedMatchup1);
   const stats2 = matchups2.find((d) => d.Matchup === selectedMatchup2);
@@ -152,16 +151,20 @@ const VSChart: React.FC = () => {
       x: {
         min: -100,
         max: 0,
-        ticks: { callback: (v: any) => Math.abs(Number(v)), color: "#e5e7eb" },
+        ticks: {
+          callback: (v: number | string) => Math.abs(Number(v)),
+          color: "#e5e7eb",
+        },
         grid: {
-          color: (ctx: any) =>
+          color: (ctx: { tick: { value: number } }) =>
             ctx.tick.value === -50
               ? "rgba(197, 218, 37, 0.49)"
               : "rgba(255,255,255,0.1)",
-          lineWidth: (ctx: any) => (ctx.tick.value === -50 ? 2 : 1),
+          lineWidth: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === -50 ? 2 : 1,
         },
       },
-      y: { ...(commonOpts.scales.y as any), position: "left" as const },
+      y: { ...commonOpts.scales.y, position: "left" as const },
     },
     plugins: {
       ...commonOpts.plugins,
@@ -186,14 +189,15 @@ const VSChart: React.FC = () => {
         max: 100,
         ticks: { color: "#e5e7eb" },
         grid: {
-          color: (ctx: any) =>
+          color: (ctx: { tick: { value: number } }) =>
             ctx.tick.value === 50
               ? "rgba(197, 218, 37, 0.49)"
               : "rgba(255,255,255,0.1)",
-          lineWidth: (ctx: any) => (ctx.tick.value === 50 ? 2 : 1),
+          lineWidth: (ctx: { tick: { value: number } }) =>
+            ctx.tick.value === 50 ? 2 : 1,
         },
       },
-      y: { ...(commonOpts.scales.y as any), position: "right" as const },
+      y: { ...commonOpts.scales.y, position: "right" as const },
     },
     plugins: {
       ...commonOpts.plugins,
