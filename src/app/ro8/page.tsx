@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Bar } from "react-chartjs-2";
 import {
@@ -16,6 +16,7 @@ import {
 } from "chart.js";
 
 import rawData from "data/19ro8.json";
+import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 
 type DurationWinRate = {
   Interval: string;
@@ -41,6 +42,7 @@ const slides: Array<[string, string]> = [
 
 const Ro8: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const isXS = useMediaQuery("(max-width:600px)");
 
   const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
   const next = () => setCurrent((c) => (c + 1) % slides.length);
@@ -200,45 +202,57 @@ const Ro8: React.FC = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          height: 600,
-        }}
-      >
-        <IconButton
-          onClick={prev}
-          sx={{ position: "absolute", left: 0, color: "#e5e7eb" }}
-        >
-          <ArrowBackIos />
-        </IconButton>
+      {isXS ? (
+        <PaperPlaceholder message="Increase your screen size to view the chart" />
+      ) : (
+        <>
+          <Box
+            sx={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              height: 600,
+            }}
+          >
+            <IconButton
+              onClick={prev}
+              sx={{ position: "absolute", left: 0, color: "#e5e7eb" }}
+            >
+              <ArrowBackIos />
+            </IconButton>
 
-        <Box
-          sx={{ display: "flex", width: "100%", px: 4, height: "100%", gap: 2 }}
-        >
-          <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
-            <Bar data={leftData} options={leftOpts} />
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                px: 4,
+                height: "100%",
+                gap: 2,
+              }}
+            >
+              <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
+                <Bar data={leftData} options={leftOpts} />
+              </Box>
+              <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
+                <Bar data={rightData} options={rightOpts} />
+              </Box>
+            </Box>
+
+            <IconButton
+              onClick={next}
+              sx={{ position: "absolute", right: 0, color: "#e5e7eb" }}
+            >
+              <ArrowForwardIos />
+            </IconButton>
           </Box>
-          <Box sx={{ flex: "1 1 0", minWidth: 0, height: "100%" }}>
-            <Bar data={rightData} options={rightOpts} />
+
+          <Box sx={{ textAlign: "center", mt: 1 }}>
+            <Typography variant="caption" color="rgba(243, 244, 246, 0.6)">
+              * ASL, SSL, and KSL data. Vertical axis is match duration.
+            </Typography>
           </Box>
-        </Box>
-
-        <IconButton
-          onClick={next}
-          sx={{ position: "absolute", right: 0, color: "#e5e7eb" }}
-        >
-          <ArrowForwardIos />
-        </IconButton>
-      </Box>
-
-      <Box sx={{ textAlign: "center", mt: 1 }}>
-        <Typography variant="caption" color="rgba(243, 244, 246, 0.6)">
-          * ASL, SSL, and KSL data. Vertical axis is match duration.
-        </Typography>
-      </Box>
+        </>
+      )}
     </>
   );
 };

@@ -51,6 +51,7 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { text: "Draft", href: "/draft" },
     { text: "Maps", href: "/maps", isNew: isMapsNew },
     { text: "Recap", href: "/recap" },
+    { text: "Vod", href: "/vod" },
     { text: "VS", href: "/vs" },
     { text: "Charts", href: "/charts" },
     { text: "Profile", href: "/profile" },

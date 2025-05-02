@@ -10,7 +10,6 @@ import {
   LinearProgress,
   Fade,
 } from "@mui/material";
-
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Waveform from "../../components/vod/Waveform";
@@ -78,7 +77,7 @@ const getProgressFromStatus = (
 };
 
 const Vod: React.FC = () => {
-  const [url, setURL] = useState("");
+  const [url, setURL] = useState("https://www.youtube.com/watch?v=YnQd6qsJZC4");
   const [submitError, setSubmitError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
   const { data: session, status, update } = useSession();
@@ -207,7 +206,7 @@ const Vod: React.FC = () => {
         >
           Generate a brief AI audio summary of BW gameplay
         </Typography>
-        {status === "unauthenticated" || session?.username !== "Lurkerbomb" ? (
+        {status === "unauthenticated" ? (
           <Typography
             variant="h6"
             sx={{
@@ -217,7 +216,7 @@ const Vod: React.FC = () => {
               textAlign: "center",
             }}
           >
-            This feature is currently unavailable.
+            Sign in to use this feature.
           </Typography>
         ) : (
           <>

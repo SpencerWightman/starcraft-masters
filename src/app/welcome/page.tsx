@@ -95,8 +95,8 @@ const Welcome: React.FC = () => {
         </Box>
         <Box
           sx={{
-            borderTop: "2px solid #D22B2B",
-            borderRight: "2px solid #D22B2B",
+            borderTop: "2px solid #ec7063 ",
+            borderRight: "2px solid #ec7063 ",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -107,7 +107,7 @@ const Welcome: React.FC = () => {
             sx={{
               fontWeight: "bold",
               textTransform: "uppercase",
-              color: "#D22B2B",
+              color: "#ec7063 ",
             }}
           >
             VS
@@ -119,8 +119,8 @@ const Welcome: React.FC = () => {
         </Box>
         <Box
           sx={{
-            borderTop: "2px solid #9F2B68",
-            borderRight: "2px solid #9F2B68",
+            borderTop: "2px solid #bb8fce",
+            borderRight: "2px solid #bb8fce",
             padding: "1rem",
             borderRadius: "8px",
             marginBottom: "1rem",
@@ -131,7 +131,7 @@ const Welcome: React.FC = () => {
             sx={{
               fontWeight: "bold",
               textTransform: "uppercase",
-              color: "#9F2B68",
+              color: "#bb8fce",
             }}
           >
             Maps
@@ -139,6 +139,55 @@ const Welcome: React.FC = () => {
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • An image gallery of the most recent ASL maps along with rush
             distances, number of bases, and number of mains.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            borderTop: "2px solid #7dcea0",
+            borderRight: "2px solid #7dcea0",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "#7dcea0",
+            }}
+          >
+            Recap
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Upcoming feature: Charts showing player supplies per second for
+            each ASL 19 match.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            borderTop: "2px solid #a06b3c",
+            borderRight: "2px solid #a06b3c",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "#a06b3c",
+            }}
+          >
+            Vod
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Experimental feature. Submit the URL of a short YouTube gameplay
+            video (Artosis Casts etc.) and receive back AI-generated gameplay
+            commentary.
           </Typography>
         </Box>
         <Box
@@ -162,6 +211,30 @@ const Welcome: React.FC = () => {
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
             • ASL analytics. The plan is to create more using historical data.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            borderTop: "2px solid #5d6d7e",
+            borderRight: "2px solid #5d6d7e",
+            padding: "1rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              color: "#5d6d7e",
+            }}
+          >
+            Ro8
+          </Typography>
+          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+            • Temporary page until the ASL 19 Ro8 is over. The same players/data
+            can be selected on the VS page.
           </Typography>
         </Box>
       </Grid2>
