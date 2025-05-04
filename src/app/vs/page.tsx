@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   MenuItem,
   Select,
@@ -96,26 +96,40 @@ const VSChart: React.FC = () => {
   const [selectedPlayer1, setSelectedPlayer1] = useState("SoulKey");
   const [selectedPlayer2, setSelectedPlayer2] = useState("Light");
 
-  const matchups1 = historicalData[selectedPlayer1] || [];
-  const matchups2 = historicalData[selectedPlayer2] || [];
-  const allMatchups1 = matchups1.map((d) => d.Matchup);
-  const allMatchups2 = matchups2.map((d) => d.Matchup);
+  const dataPlayer1 = useMemo(
+    () => historicalData[selectedPlayer1] || [],
+    [selectedPlayer1]
+  );
+  const dataPlayer2 = useMemo(
+    () => historicalData[selectedPlayer2] || [],
+    [selectedPlayer2]
+  );
+
+  const allMatchups1 = useMemo(
+    () => dataPlayer1.map((d) => d.Matchup),
+    [dataPlayer1]
+  );
+  const allMatchups2 = useMemo(
+    () => dataPlayer2.map((d) => d.Matchup),
+    [dataPlayer2]
+  );
 
   const [selectedMatchup1, setSelectedMatchup1] = useState(
-    allMatchups1[0] || ""
+    () => allMatchups1[0] ?? ""
   );
   const [selectedMatchup2, setSelectedMatchup2] = useState(
-    allMatchups2[0] || ""
+    () => allMatchups2[0] ?? ""
   );
-  useEffect(() => {
-    setSelectedMatchup1(allMatchups1[0] || "");
-  }, [allMatchups1, selectedPlayer1]);
-  useEffect(() => {
-    setSelectedMatchup2(allMatchups2[0] || "");
-  }, [allMatchups2, selectedPlayer2]);
 
-  const stats1 = matchups1.find((d) => d.Matchup === selectedMatchup1);
-  const stats2 = matchups2.find((d) => d.Matchup === selectedMatchup2);
+  useEffect(() => {
+    setSelectedMatchup1(allMatchups1[0] ?? "");
+  }, [allMatchups1]);
+  useEffect(() => {
+    setSelectedMatchup2(allMatchups2[0] ?? "");
+  }, [allMatchups2]);
+
+  const stats1 = dataPlayer1.find((d) => d.Matchup === selectedMatchup1);
+  const stats2 = dataPlayer2.find((d) => d.Matchup === selectedMatchup2);
 
   const color1 = getColorForMatchup(selectedMatchup1);
   const color2 = getColorForMatchup(selectedMatchup2);
