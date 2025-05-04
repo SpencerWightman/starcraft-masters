@@ -84,7 +84,7 @@ export async function POST(req: Request) {
     await dynamoClient.send(new UpdateItemCommand(updateParams));
 
     const backendResponse = await fetch(
-      "https://bwl-vod.ngrok.app/process-batch",
+      `${process.env.VOD_URL}/process-batch`,
       {
         method: "POST",
         headers: {

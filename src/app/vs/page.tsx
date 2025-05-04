@@ -252,7 +252,6 @@ const VSChart: React.FC = () => {
                 onChange={(e: SelectChangeEvent) =>
                   setSelectedPlayer1(e.target.value)
                 }
-                displayEmpty
                 sx={{
                   color: "rgba(243, 244, 246, 0.6)",
                   "& .MuiSvgIcon-root": { color: "rgba(243, 244, 246, 0.6)" },
@@ -320,7 +319,6 @@ const VSChart: React.FC = () => {
                 onChange={(e: SelectChangeEvent) =>
                   setSelectedPlayer2(e.target.value)
                 }
-                displayEmpty
                 sx={{
                   color: "rgba(243, 244, 246, 0.6)",
                   "& .MuiSvgIcon-root": { color: "rgba(243, 244, 246, 0.6)" },

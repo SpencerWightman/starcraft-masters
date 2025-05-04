@@ -13,9 +13,9 @@ export async function GET(req: Request) {
     );
   }
 
-  const backendUrl = `https://bwl-vod.ngrok.app/job-status?job_id=${encodeURIComponent(
-    job_id
-  )}`;
+  const backendUrl = `${
+    process.env.VOD_URL
+  }/job-status?job_id=${encodeURIComponent(job_id)}`;
 
   const backendResponse = await fetch(backendUrl, {
     method: "GET",
