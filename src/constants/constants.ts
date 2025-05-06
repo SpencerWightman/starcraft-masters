@@ -4,7 +4,6 @@ export const leaderboardSeason = "19";
 export const season19QualifiedPlayers = [
   "SoulKey",
   "Snow",
-  "Rain",
   "Rush",
   "Best",
   "Skey",
