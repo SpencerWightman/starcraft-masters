@@ -213,30 +213,6 @@ const Welcome: React.FC = () => {
             • ASL analytics. The plan is to create more using historical data.
           </Typography>
         </Box>
-        <Box
-          sx={{
-            borderTop: "2px solid #5d6d7e",
-            borderRight: "2px solid #5d6d7e",
-            padding: "1rem",
-            borderRadius: "8px",
-            marginBottom: "1rem",
-          }}
-        >
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              color: "#5d6d7e",
-            }}
-          >
-            Ro8
-          </Typography>
-          <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Temporary page until the ASL 19 Ro8 is over. The same players/data
-            can be selected on the VS page.
-          </Typography>
-        </Box>
       </Grid2>
 
       {/* Right Column */}
