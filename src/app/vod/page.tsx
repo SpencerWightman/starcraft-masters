@@ -206,7 +206,7 @@ const Vod: React.FC = () => {
         >
           Generate a brief AI audio summary of BW gameplay
         </Typography>
-        {status === "unauthenticated" ? (
+        {session?.username !== "Lurkerbomb" ? (
           <Typography
             variant="h6"
             sx={{
@@ -216,7 +216,7 @@ const Vod: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Sign in to use this feature.
+            This feature is currently unavailable.
           </Typography>
         ) : (
           <>
