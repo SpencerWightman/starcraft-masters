@@ -1,0 +1,4323 @@
+{
+  "match1": {
+    "dateTime": "03/24/2025",
+    "gameData": {
+      "01:02": {
+        "player1supply": "8/89",
+        "player2supply": "9/10"
+      },
+      "01:06": {
+        "player1supply": "8/89",
+        "player2supply": "10/10"
+      },
+      "01:10": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:11": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:12": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:13": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:14": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:15": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:16": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:28": {
+        "player1supply": "11/17",
+        "player2supply": "11/18"
+      },
+      "01:29": {
+        "player1supply": "11/17",
+        "player2supply": "11/18"
+      },
+      "01:34": {
+        "player1supply": "11/17",
+        "player2supply": "12/18"
+      },
+      "01:35": {
+        "player1supply": "11/17",
+        "player2supply": "12/18"
+      },
+      "01:39": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:40": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:41": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:42": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:43": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:47": {
+        "player1supply": "12/17",
+        "player2supply": "13/18"
+      },
+      "01:51": {
+        "player1supply": "13/17",
+        "player2supply": "13/18"
+      },
+      "01:52": {
+        "player1supply": "13/17",
+        "player2supply": "13/18"
+      },
+      "01:53": {
+        "player1supply": "13/17",
+        "player2supply": "13/18"
+      },
+      "01:54": {
+        "player1supply": "13/17",
+        "player2supply": "13/18"
+      },
+      "02:00": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "02:01": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "02:08": {
+        "player1supply": "16/17",
+        "player2supply": "15/18"
+      },
+      "02:09": {
+        "player1supply": "16/17",
+        "player2supply": "15/18"
+      },
+      "02:13": {
+        "player1supply": "16/17",
+        "player2supply": "16/18"
+      },
+      "02:17": {
+        "player1supply": "17/17",
+        "player2supply": "16/18"
+      },
+      "02:18": {
+        "player1supply": "17/17",
+        "player2supply": "16/18"
+      },
+      "02:19": {
+        "player1supply": "17/17",
+        "player2supply": "16/18"
+      },
+      "02:25": {
+        "player1supply": "18/25",
+        "player2supply": "18/18"
+      },
+      "02:30": {
+        "player1supply": "20/25",
+        "player2supply": "18/18"
+      },
+      "02:31": {
+        "player1supply": "20/25",
+        "player2supply": "18/18"
+      },
+      "02:32": {
+        "player1supply": "20/25",
+        "player2supply": "18/18"
+      },
+      "02:38": {
+        "player1supply": "20/25",
+        "player2supply": "20/26"
+      },
+      "02:39": {
+        "player1supply": "20/25",
+        "player2supply": "20/26"
+      },
+      "02:40": {
+        "player1supply": "20/25",
+        "player2supply": "20/26"
+      },
+      "02:44": {
+        "player1supply": "21/25",
+        "player2supply": "20/26"
+      },
+      "02:45": {
+        "player1supply": "21/25",
+        "player2supply": "20/26"
+      },
+      "02:46": {
+        "player1supply": "21/25",
+        "player2supply": "20/26"
+      },
+      "02:47": {
+        "player1supply": "21/25",
+        "player2supply": "20/26"
+      },
+      "02:54": {
+        "player1supply": "21/25",
+        "player2supply": "22/26"
+      },
+      "02:55": {
+        "player1supply": "21/25",
+        "player2supply": "22/26"
+      },
+      "02:59": {
+        "player1supply": "22/25",
+        "player2supply": "22/26"
+      },
+      "03:03": {
+        "player1supply": "22/25",
+        "player2supply": "23/26"
+      },
+      "03:04": {
+        "player1supply": "22/25",
+        "player2supply": "23/26"
+      },
+      "03:05": {
+        "player1supply": "22/25",
+        "player2supply": "23/26"
+      },
+      "03:09": {
+        "player1supply": "22/25",
+        "player2supply": "24/26"
+      },
+      "03:10": {
+        "player1supply": "22/25",
+        "player2supply": "24/26"
+      },
+      "03:14": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:15": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:16": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:17": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:18": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:19": {
+        "player1supply": "23/25",
+        "player2supply": "24/26"
+      },
+      "03:25": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:26": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:27": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:28": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:29": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:30": {
+        "player1supply": "25/25",
+        "player2supply": "25/26"
+      },
+      "03:34": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:35": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:36": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:42": {
+        "player1supply": "21/33",
+        "player2supply": "24/26"
+      },
+      "03:46": {
+        "player1supply": "22/33",
+        "player2supply": "24/26"
+      },
+      "03:47": {
+        "player1supply": "22/33",
+        "player2supply": "24/26"
+      },
+      "03:53": {
+        "player1supply": "24/33",
+        "player2supply": "25/26"
+      },
+      "03:54": {
+        "player1supply": "24/33",
+        "player2supply": "25/26"
+      },
+      "03:55": {
+        "player1supply": "24/33",
+        "player2supply": "25/26"
+      },
+      "03:59": {
+        "player1supply": "25/33",
+        "player2supply": "25/26"
+      },
+      "04:00": {
+        "player1supply": "25/33",
+        "player2supply": "25/26"
+      },
+      "04:04": {
+        "player1supply": "25/33",
+        "player2supply": "26/26"
+      },
+      "04:05": {
+        "player1supply": "25/33",
+        "player2supply": "26/26"
+      },
+      "04:06": {
+        "player1supply": "25/33",
+        "player2supply": "26/26"
+      },
+      "04:07": {
+        "player1supply": "25/33",
+        "player2supply": "26/26"
+      },
+      "04:18": {
+        "player1supply": "29/42",
+        "player2supply": "27/34"
+      },
+      "04:19": {
+        "player1supply": "29/42",
+        "player2supply": "27/34"
+      },
+      "04:20": {
+        "player1supply": "29/42",
+        "player2supply": "27/34"
+      },
+      "04:29": {
+        "player1supply": "31/42",
+        "player2supply": "29/44"
+      },
+      "04:30": {
+        "player1supply": "31/42",
+        "player2supply": "29/44"
+      },
+      "04:31": {
+        "player1supply": "31/42",
+        "player2supply": "29/44"
+      },
+      "04:32": {
+        "player1supply": "31/42",
+        "player2supply": "29/44"
+      },
+      "04:33": {
+        "player1supply": "31/42",
+        "player2supply": "29/44"
+      },
+      "04:44": {
+        "player1supply": "35/42",
+        "player2supply": "31/44"
+      },
+      "04:45": {
+        "player1supply": "35/42",
+        "player2supply": "31/44"
+      },
+      "04:46": {
+        "player1supply": "35/42",
+        "player2supply": "31/44"
+      },
+      "04:55": {
+        "player1supply": "37/42",
+        "player2supply": "33/44"
+      },
+      "04:59": {
+        "player1supply": "37/42",
+        "player2supply": "34/44"
+      },
+      "05:00": {
+        "player1supply": "37/42",
+        "player2supply": "34/44"
+      },
+      "05:20": {
+        "player1supply": "43/50",
+        "player2supply": "36/44"
+      },
+      "05:24": {
+        "player1supply": "41/50",
+        "player2supply": "36/44"
+      },
+      "05:36": {
+        "player1supply": "41/50",
+        "player2supply": "38/44"
+      },
+      "05:37": {
+        "player1supply": "41/50",
+        "player2supply": "38/44"
+      },
+      "05:38": {
+        "player1supply": "41/50",
+        "player2supply": "38/44"
+      },
+      "05:39": {
+        "player1supply": "41/50",
+        "player2supply": "38/44"
+      },
+      "05:48": {
+        "player1supply": "45/50",
+        "player2supply": "40/44"
+      },
+      "05:49": {
+        "player1supply": "45/50",
+        "player2supply": "40/44"
+      },
+      "05:57": {
+        "player1supply": "47/50",
+        "player2supply": "44/44"
+      },
+      "05:58": {
+        "player1supply": "47/50",
+        "player2supply": "44/44"
+      },
+      "05:59": {
+        "player1supply": "47/50",
+        "player2supply": "44/44"
+      },
+      "06:03": {
+        "player1supply": "47/58",
+        "player2supply": "44/44"
+      },
+      "06:13": {
+        "player1supply": "51/66",
+        "player2supply": "46/52"
+      },
+      "06:14": {
+        "player1supply": "51/66",
+        "player2supply": "46/52"
+      },
+      "06:15": {
+        "player1supply": "51/66",
+        "player2supply": "46/52"
+      },
+      "06:16": {
+        "player1supply": "51/66",
+        "player2supply": "46/52"
+      },
+      "06:17": {
+        "player1supply": "51/66",
+        "player2supply": "46/52"
+      },
+      "06:21": {
+        "player1supply": "54/74",
+        "player2supply": "46/52"
+      },
+      "06:34": {
+        "player1supply": "56/74",
+        "player2supply": "52/60"
+      },
+      "06:47": {
+        "player1supply": "62/82",
+        "player2supply": "53/68"
+      },
+      "06:48": {
+        "player1supply": "62/82",
+        "player2supply": "53/68"
+      },
+      "06:59": {
+        "player1supply": "66/90",
+        "player2supply": "60/68"
+      },
+      "07:00": {
+        "player1supply": "66/90",
+        "player2supply": "60/68"
+      },
+      "07:01": {
+        "player1supply": "66/90",
+        "player2supply": "60/68"
+      },
+      "07:02": {
+        "player1supply": "66/90",
+        "player2supply": "60/68"
+      },
+      "07:06": {
+        "player1supply": "67/90",
+        "player2supply": "60/68"
+      },
+      "07:07": {
+        "player1supply": "67/90",
+        "player2supply": "60/68"
+      },
+      "07:08": {
+        "player1supply": "67/90",
+        "player2supply": "60/68"
+      },
+      "07:22": {
+        "player1supply": "70/98",
+        "player2supply": "64/76"
+      },
+      "07:23": {
+        "player1supply": "70/98",
+        "player2supply": "64/76"
+      },
+      "07:27": {
+        "player1supply": "72/98",
+        "player2supply": "64/76"
+      },
+      "07:28": {
+        "player1supply": "72/98",
+        "player2supply": "64/76"
+      },
+      "07:33": {
+        "player1supply": "76/98",
+        "player2supply": "66/76"
+      },
+      "07:34": {
+        "player1supply": "76/98",
+        "player2supply": "66/76"
+      },
+      "07:35": {
+        "player1supply": "76/98",
+        "player2supply": "66/76"
+      },
+      "07:41": {
+        "player1supply": "76/106",
+        "player2supply": "72/76"
+      },
+      "07:45": {
+        "player1supply": "78/106",
+        "player2supply": "72/76"
+      },
+      "07:49": {
+        "player1supply": "78/114",
+        "player2supply": "72/76"
+      },
+      "07:50": {
+        "player1supply": "78/114",
+        "player2supply": "72/76"
+      },
+      "08:15": {
+        "player1supply": "82/130",
+        "player2supply": "67/76"
+      },
+      "08:16": {
+        "player1supply": "82/130",
+        "player2supply": "67/76"
+      },
+      "08:17": {
+        "player1supply": "82/130",
+        "player2supply": "67/76"
+      },
+      "08:59": {
+        "player1supply": "64/138",
+        "player2supply": "56/76"
+      },
+      "09:00": {
+        "player1supply": "64/138",
+        "player2supply": "56/76"
+      },
+      "09:01": {
+        "player1supply": "64/138",
+        "player2supply": "56/76"
+      },
+      "09:02": {
+        "player1supply": "64/138",
+        "player2supply": "56/76"
+      },
+      "09:08": {
+        "player1supply": "67/138",
+        "player2supply": "61/76"
+      },
+      "09:09": {
+        "player1supply": "67/138",
+        "player2supply": "61/76"
+      },
+      "09:13": {
+        "player1supply": "68/138",
+        "player2supply": "62/76"
+      },
+      "09:33": {
+        "player1supply": "52/130",
+        "player2supply": "53/84"
+      },
+      "09:45": {
+        "player1supply": "58/122",
+        "player2supply": "46/84"
+      },
+      "09:49": {
+        "player1supply": "62/122",
+        "player2supply": "46/84"
+      },
+      "09:50": {
+        "player1supply": "62/122",
+        "player2supply": "46/84"
+      },
+      "09:51": {
+        "player1supply": "62/122",
+        "player2supply": "46/84"
+      },
+      "10:12": {
+        "player1supply": "57/106",
+        "player2supply": "43/84"
+      },
+      "10:13": {
+        "player1supply": "57/106",
+        "player2supply": "43/84"
+      },
+      "10:14": {
+        "player1supply": "57/106",
+        "player2supply": "43/84"
+      },
+      "10:15": {
+        "player1supply": "57/106",
+        "player2supply": "43/84"
+      },
+      "10:37": {
+        "player1supply": "44/106",
+        "player2supply": "20/84"
+      },
+      "10:38": {
+        "player1supply": "44/106",
+        "player2supply": "20/84"
+      },
+      "10:39": {
+        "player1supply": "44/106",
+        "player2supply": "20/84"
+      },
+      "10:40": {
+        "player1supply": "44/106",
+        "player2supply": "20/84"
+      },
+      "10:44": {
+        "player1supply": "48/106",
+        "player2supply": "20/84"
+      },
+      "10:49": {
+        "player1supply": "45/106",
+        "player2supply": "16/84"
+      },
+      "10:50": {
+        "player1supply": "45/106",
+        "player2supply": "16/84"
+      },
+      "10:51": {
+        "player1supply": "45/106",
+        "player2supply": "16/84"
+      },
+      "10:59": {
+        "player1supply": "41/106",
+        "player2supply": "14/84"
+      },
+      "11:03": {
+        "player1supply": "41/106",
+        "player2supply": "13/84"
+      },
+      "11:04": {
+        "player1supply": "41/106",
+        "player2supply": "13/84"
+      },
+      "11:05": {
+        "player1supply": "41/106",
+        "player2supply": "13/84"
+      },
+      "11:06": {
+        "player1supply": "41/106",
+        "player2supply": "13/84"
+      },
+      "11:10": {
+        "player1supply": "41/106",
+        "player2supply": "11/84"
+      }
+    },
+    "org": "ASL",
+    "orgSeason": 19,
+    "orgXtra": 0,
+    "player1": "Mini",
+    "player2": "Scan",
+    "race1": "Protoss",
+    "race2": "Terran",
+    "winner": "Mini"
+  },
+  "match2": {
+    "dateTime": "03/24/2025",
+    "gameData": {
+      "01:12": {
+        "player1supply": "10/17",
+        "player2supply": "9/9"
+      },
+      "01:13": {
+        "player1supply": "10/17",
+        "player2supply": "9/9"
+      },
+      "01:14": {
+        "player1supply": "10/17",
+        "player2supply": "9/9"
+      },
+      "01:15": {
+        "player1supply": "10/17",
+        "player2supply": "9/9"
+      },
+      "01:27": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:28": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:29": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:30": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:31": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:32": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:33": {
+        "player1supply": "11/17",
+        "player2supply": "12/17"
+      },
+      "01:39": {
+        "player1supply": "12/17",
+        "player2supply": "11/17"
+      },
+      "01:50": {
+        "player1supply": "12/17",
+        "player2supply": "11/17"
+      },
+      "01:57": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "02:05": {
+        "player1supply": "13/17",
+        "player2supply": "12/17"
+      },
+      "02:06": {
+        "player1supply": "13/17",
+        "player2supply": "12/17"
+      },
+      "02:10": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:11": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:15": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:16": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:17": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:18": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:19": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:20": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:21": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:22": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:23": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:24": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:28": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:29": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:30": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:31": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:32": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:33": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:34": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:35": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:36": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:37": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:42": {
+        "player1supply": "16/17",
+        "player2supply": "12/17"
+      },
+      "02:43": {
+        "player1supply": "16/17",
+        "player2supply": "12/17"
+      },
+      "02:44": {
+        "player1supply": "16/17",
+        "player2supply": "12/17"
+      },
+      "02:55": {
+        "player1supply": "17/17",
+        "player2supply": "14/18"
+      },
+      "02:56": {
+        "player1supply": "17/17",
+        "player2supply": "14/18"
+      },
+      "03:11": {
+        "player1supply": "18/26",
+        "player2supply": "16/18"
+      },
+      "03:12": {
+        "player1supply": "18/26",
+        "player2supply": "16/18"
+      },
+      "03:17": {
+        "player1supply": "18/26",
+        "player2supply": "16/18"
+      },
+      "03:18": {
+        "player1supply": "18/26",
+        "player2supply": "16/18"
+      },
+      "03:19": {
+        "player1supply": "18/26",
+        "player2supply": "16/18"
+      },
+      "03:25": {
+        "player1supply": "21/26",
+        "player2supply": "17/18"
+      },
+      "03:26": {
+        "player1supply": "21/26",
+        "player2supply": "17/18"
+      },
+      "03:27": {
+        "player1supply": "21/26",
+        "player2supply": "17/18"
+      },
+      "03:28": {
+        "player1supply": "21/26",
+        "player2supply": "17/18"
+      },
+      "03:32": {
+        "player1supply": "21/26",
+        "player2supply": "18/18"
+      },
+      "03:39": {
+        "player1supply": "25/26",
+        "player2supply": "18/18"
+      },
+      "03:40": {
+        "player1supply": "25/26",
+        "player2supply": "18/18"
+      },
+      "03:52": {
+        "player1supply": "26/34",
+        "player2supply": "19/26"
+      },
+      "04:00": {
+        "player1supply": "26/34",
+        "player2supply": "22/27"
+      },
+      "04:07": {
+        "player1supply": "28/34",
+        "player2supply": "23/27"
+      },
+      "04:08": {
+        "player1supply": "28/34",
+        "player2supply": "23/27"
+      },
+      "04:09": {
+        "player1supply": "28/34",
+        "player2supply": "23/27"
+      },
+      "04:15": {
+        "player1supply": "30/34",
+        "player2supply": "24/27"
+      },
+      "04:16": {
+        "player1supply": "30/34",
+        "player2supply": "24/27"
+      },
+      "04:17": {
+        "player1supply": "30/34",
+        "player2supply": "24/27"
+      },
+      "04:22": {
+        "player1supply": "32/34",
+        "player2supply": "26/27"
+      },
+      "04:23": {
+        "player1supply": "32/34",
+        "player2supply": "26/27"
+      },
+      "04:24": {
+        "player1supply": "32/34",
+        "player2supply": "26/27"
+      },
+      "04:28": {
+        "player1supply": "32/34",
+        "player2supply": "27/27"
+      },
+      "04:29": {
+        "player1supply": "32/34",
+        "player2supply": "27/27"
+      },
+      "04:30": {
+        "player1supply": "32/34",
+        "player2supply": "27/27"
+      },
+      "04:31": {
+        "player1supply": "32/34",
+        "player2supply": "27/27"
+      },
+      "04:37": {
+        "player1supply": "34/34",
+        "player2supply": "28/35"
+      },
+      "04:38": {
+        "player1supply": "34/34",
+        "player2supply": "28/35"
+      },
+      "04:39": {
+        "player1supply": "34/34",
+        "player2supply": "28/35"
+      },
+      "04:40": {
+        "player1supply": "34/34",
+        "player2supply": "28/35"
+      },
+      "04:41": {
+        "player1supply": "34/34",
+        "player2supply": "28/35"
+      },
+      "04:56": {
+        "player1supply": "38/42",
+        "player2supply": "32/35"
+      },
+      "04:57": {
+        "player1supply": "38/42",
+        "player2supply": "32/35"
+      },
+      "05:01": {
+        "player1supply": "38/42",
+        "player2supply": "32/43"
+      },
+      "05:07": {
+        "player1supply": "40/42",
+        "player2supply": "34/43"
+      },
+      "05:18": {
+        "player1supply": "44/50",
+        "player2supply": "36/43"
+      },
+      "05:19": {
+        "player1supply": "44/50",
+        "player2supply": "36/43"
+      },
+      "05:20": {
+        "player1supply": "44/50",
+        "player2supply": "36/43"
+      },
+      "05:27": {
+        "player1supply": "44/50",
+        "player2supply": "37/43"
+      },
+      "05:28": {
+        "player1supply": "44/50",
+        "player2supply": "37/43"
+      },
+      "05:33": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:34": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:35": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:36": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:37": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:38": {
+        "player1supply": "44/50",
+        "player2supply": "39/43"
+      },
+      "05:42": {
+        "player1supply": "44/50",
+        "player2supply": "40/43"
+      },
+      "05:46": {
+        "player1supply": "44/50",
+        "player2supply": "41/43"
+      },
+      "05:47": {
+        "player1supply": "44/50",
+        "player2supply": "41/43"
+      },
+      "05:54": {
+        "player1supply": "46/50",
+        "player2supply": "42/43"
+      },
+      "05:55": {
+        "player1supply": "46/50",
+        "player2supply": "42/43"
+      },
+      "05:56": {
+        "player1supply": "46/50",
+        "player2supply": "42/43"
+      },
+      "06:00": {
+        "player1supply": "46/50",
+        "player2supply": "41/43"
+      },
+      "06:04": {
+        "player1supply": "48/50",
+        "player2supply": "41/43"
+      },
+      "06:05": {
+        "player1supply": "48/50",
+        "player2supply": "41/43"
+      },
+      "06:14": {
+        "player1supply": "50/50",
+        "player2supply": "43/51"
+      },
+      "06:15": {
+        "player1supply": "50/50",
+        "player2supply": "43/51"
+      },
+      "06:20": {
+        "player1supply": "52/58",
+        "player2supply": "42/51"
+      },
+      "06:30": {
+        "player1supply": "52/58",
+        "player2supply": "45/52"
+      },
+      "06:31": {
+        "player1supply": "52/58",
+        "player2supply": "45/52"
+      },
+      "06:32": {
+        "player1supply": "52/58",
+        "player2supply": "45/52"
+      },
+      "06:37": {
+        "player1supply": "54/58",
+        "player2supply": "45/60"
+      },
+      "06:38": {
+        "player1supply": "54/58",
+        "player2supply": "45/60"
+      },
+      "06:39": {
+        "player1supply": "54/58",
+        "player2supply": "45/60"
+      },
+      "06:40": {
+        "player1supply": "54/58",
+        "player2supply": "45/60"
+      },
+      "06:41": {
+        "player1supply": "54/58",
+        "player2supply": "45/60"
+      },
+      "06:45": {
+        "player1supply": "56/58",
+        "player2supply": "46/60"
+      },
+      "06:46": {
+        "player1supply": "56/58",
+        "player2supply": "46/60"
+      },
+      "06:50": {
+        "player1supply": "56/58",
+        "player2supply": "49/60"
+      },
+      "07:03": {
+        "player1supply": "58/58",
+        "player2supply": "53/60"
+      },
+      "07:07": {
+        "player1supply": "58/58",
+        "player2supply": "53/68"
+      },
+      "07:08": {
+        "player1supply": "58/58",
+        "player2supply": "53/68"
+      },
+      "07:16": {
+        "player1supply": "58/58",
+        "player2supply": "57/69"
+      },
+      "07:17": {
+        "player1supply": "58/58",
+        "player2supply": "57/69"
+      },
+      "08:07": {
+        "player1supply": "76/82",
+        "player2supply": "68/86"
+      },
+      "08:08": {
+        "player1supply": "76/82",
+        "player2supply": "68/86"
+      },
+      "08:09": {
+        "player1supply": "76/82",
+        "player2supply": "68/86"
+      },
+      "08:13": {
+        "player1supply": "76/82",
+        "player2supply": "71/86"
+      },
+      "08:22": {
+        "player1supply": "78/82",
+        "player2supply": "75/86"
+      },
+      "08:23": {
+        "player1supply": "78/82",
+        "player2supply": "75/86"
+      },
+      "08:27": {
+        "player1supply": "78/82",
+        "player2supply": "76/86"
+      },
+      "08:28": {
+        "player1supply": "78/82",
+        "player2supply": "76/86"
+      },
+      "08:34": {
+        "player1supply": "78/90",
+        "player2supply": "78/86"
+      },
+      "08:35": {
+        "player1supply": "78/90",
+        "player2supply": "78/86"
+      },
+      "08:58": {
+        "player1supply": "82/106",
+        "player2supply": "83/94"
+      },
+      "09:05": {
+        "player1supply": "80/106",
+        "player2supply": "84/94"
+      },
+      "09:06": {
+        "player1supply": "80/106",
+        "player2supply": "84/94"
+      },
+      "09:07": {
+        "player1supply": "80/106",
+        "player2supply": "84/94"
+      },
+      "10:14": {
+        "player1supply": "118/138",
+        "player2supply": "100/134"
+      },
+      "10:15": {
+        "player1supply": "118/138",
+        "player2supply": "100/134"
+      },
+      "10:16": {
+        "player1supply": "118/138",
+        "player2supply": "100/134"
+      },
+      "10:17": {
+        "player1supply": "118/138",
+        "player2supply": "100/134"
+      },
+      "10:28": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:29": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:30": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:31": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:32": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:33": {
+        "player1supply": "116/138",
+        "player2supply": "98/134"
+      },
+      "10:40": {
+        "player1supply": "117/138",
+        "player2supply": "108/134"
+      },
+      "10:41": {
+        "player1supply": "117/138",
+        "player2supply": "108/134"
+      },
+      "10:42": {
+        "player1supply": "117/138",
+        "player2supply": "108/134"
+      },
+      "10:56": {
+        "player1supply": "120/146",
+        "player2supply": "108/126"
+      },
+      "10:57": {
+        "player1supply": "120/146",
+        "player2supply": "108/126"
+      },
+      "10:58": {
+        "player1supply": "120/146",
+        "player2supply": "108/126"
+      },
+      "10:59": {
+        "player1supply": "120/146",
+        "player2supply": "108/126"
+      },
+      "12:03": {
+        "player1supply": "130/171",
+        "player2supply": "113/158"
+      },
+      "12:04": {
+        "player1supply": "130/171",
+        "player2supply": "113/158"
+      },
+      "12:16": {
+        "player1supply": "131/171",
+        "player2supply": "122/158"
+      },
+      "12:36": {
+        "player1supply": "147/171",
+        "player2supply": "136/158"
+      },
+      "12:37": {
+        "player1supply": "147/171",
+        "player2supply": "136/158"
+      },
+      "12:38": {
+        "player1supply": "147/171",
+        "player2supply": "136/158"
+      },
+      "13:05": {
+        "player1supply": "150/188",
+        "player2supply": "146/158"
+      },
+      "13:25": {
+        "player1supply": "164/188",
+        "player2supply": "146/158"
+      },
+      "14:15": {
+        "player1supply": "178/196",
+        "player2supply": "141/191"
+      },
+      "14:26": {
+        "player1supply": "178/196",
+        "player2supply": "148/181"
+      },
+      "15:36": {
+        "player1supply": "188/200",
+        "player2supply": "163/185"
+      },
+      "15:46": {
+        "player1supply": "188/200",
+        "player2supply": "172/185"
+      },
+      "15:47": {
+        "player1supply": "188/200",
+        "player2supply": "172/185"
+      },
+      "16:46": {
+        "player1supply": "166/200",
+        "player2supply": "164/200"
+      },
+      "17:06": {
+        "player1supply": "179/200",
+        "player2supply": "162/200"
+      },
+      "17:52": {
+        "player1supply": "188/200",
+        "player2supply": "168/200"
+      },
+      "17:56": {
+        "player1supply": "200/200",
+        "player2supply": "170/200"
+      },
+      "17:57": {
+        "player1supply": "200/200",
+        "player2supply": "170/200"
+      },
+      "18:07": {
+        "player1supply": "200/200",
+        "player2supply": "183/200"
+      },
+      "18:08": {
+        "player1supply": "200/200",
+        "player2supply": "183/200"
+      },
+      "18:09": {
+        "player1supply": "200/200",
+        "player2supply": "183/200"
+      },
+      "18:10": {
+        "player1supply": "200/200",
+        "player2supply": "183/200"
+      },
+      "18:16": {
+        "player1supply": "200/200",
+        "player2supply": "184/200"
+      },
+      "19:51": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "19:52": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "19:53": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "19:54": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "19:59": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "20:00": {
+        "player1supply": "200/200",
+        "player2supply": "185/185"
+      },
+      "20:05": {
+        "player1supply": "200/200",
+        "player2supply": "184/185"
+      },
+      "20:06": {
+        "player1supply": "200/200",
+        "player2supply": "184/185"
+      },
+      "22:46": {
+        "player1supply": "176/200",
+        "player2supply": "182/200"
+      },
+      "22:51": {
+        "player1supply": "178/200",
+        "player2supply": "183/200"
+      },
+      "23:18": {
+        "player1supply": "182/200",
+        "player2supply": "180/200"
+      },
+      "23:38": {
+        "player1supply": "179/200",
+        "player2supply": "186/200"
+      },
+      "24:06": {
+        "player1supply": "184/200",
+        "player2supply": "194/200"
+      },
+      "24:07": {
+        "player1supply": "184/200",
+        "player2supply": "194/200"
+      },
+      "24:20": {
+        "player1supply": "200/200",
+        "player2supply": "200/200"
+      },
+      "24:21": {
+        "player1supply": "200/200",
+        "player2supply": "200/200"
+      },
+      "24:22": {
+        "player1supply": "200/200",
+        "player2supply": "200/200"
+      },
+      "24:30": {
+        "player1supply": "200/200",
+        "player2supply": "196/200"
+      },
+      "25:19": {
+        "player1supply": "183/200",
+        "player2supply": "171/200"
+      },
+      "25:51": {
+        "player1supply": "163/200",
+        "player2supply": "160/200"
+      },
+      "26:24": {
+        "player1supply": "172/200",
+        "player2supply": "162/200"
+      },
+      "27:24": {
+        "player1supply": "148/200",
+        "player2supply": "128/200"
+      },
+      "27:38": {
+        "player1supply": "162/200",
+        "player2supply": "125/200"
+      },
+      "27:39": {
+        "player1supply": "162/200",
+        "player2supply": "125/200"
+      },
+      "27:40": {
+        "player1supply": "162/200",
+        "player2supply": "125/200"
+      },
+      "27:41": {
+        "player1supply": "162/200",
+        "player2supply": "125/200"
+      },
+      "27:42": {
+        "player1supply": "162/200",
+        "player2supply": "125/200"
+      },
+      "28:03": {
+        "player1supply": "141/200",
+        "player2supply": "112/200"
+      },
+      "28:04": {
+        "player1supply": "141/200",
+        "player2supply": "112/200"
+      },
+      "28:06": {
+        "player1supply": "141/200",
+        "player2supply": "112/200"
+      },
+      "28:07": {
+        "player1supply": "141/200",
+        "player2supply": "112/200"
+      },
+      "28:19": {
+        "player1supply": "138/200",
+        "player2supply": "117/200"
+      },
+      "28:27": {
+        "player1supply": "138/200",
+        "player2supply": "121/200"
+      },
+      "28:28": {
+        "player1supply": "138/200",
+        "player2supply": "121/200"
+      },
+      "28:34": {
+        "player1supply": "138/200",
+        "player2supply": "120/200"
+      },
+      "28:35": {
+        "player1supply": "138/200",
+        "player2supply": "120/200"
+      },
+      "28:37": {
+        "player1supply": "138/200",
+        "player2supply": "120/200"
+      },
+      "28:43": {
+        "player1supply": "138/200",
+        "player2supply": "124/200"
+      },
+      "29:04": {
+        "player1supply": "115/200",
+        "player2supply": "111/200"
+      },
+      "29:42": {
+        "player1supply": "89/200",
+        "player2supply": "100/200"
+      },
+      "29:47": {
+        "player1supply": "89/200",
+        "player2supply": "98/200"
+      },
+      "29:52": {
+        "player1supply": "89/200",
+        "player2supply": "100/200"
+      }
+    },
+    "org": "ASL",
+    "orgSeason": 19,
+    "orgXtra": 0,
+    "player1": "Shuttle",
+    "player2": "Calm",
+    "race1": "Protoss",
+    "race2": "Zerg",
+    "winner": "Calm"
+  },
+  "match3": {
+    "dateTime": "03/24/2025",
+    "gameData": {
+      "01:12": {
+        "player1supply": "10/17",
+        "player2supply": "9/9"
+      },
+      "01:23": {
+        "player1supply": "11/17",
+        "player2supply": "10/17"
+      },
+      "01:24": {
+        "player1supply": "11/17",
+        "player2supply": "10/17"
+      },
+      "01:25": {
+        "player1supply": "11/17",
+        "player2supply": "10/17"
+      },
+      "01:29": {
+        "player1supply": "11/17",
+        "player2supply": "9/17"
+      },
+      "01:30": {
+        "player1supply": "11/17",
+        "player2supply": "9/17"
+      },
+      "01:31": {
+        "player1supply": "11/17",
+        "player2supply": "9/17"
+      },
+      "01:36": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "01:37": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "01:38": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "01:39": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "01:40": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
+      "01:48": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:49": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:50": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:51": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:52": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:53": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:54": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:55": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:56": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:57": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:58": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "01:59": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:00": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:01": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:02": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:03": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:07": {
+        "player1supply": "13/17",
+        "player2supply": "12/17"
+      },
+      "02:08": {
+        "player1supply": "13/17",
+        "player2supply": "12/17"
+      },
+      "02:12": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:13": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:14": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:15": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:16": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:17": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:18": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:19": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:20": {
+        "player1supply": "13/17",
+        "player2supply": "13/17"
+      },
+      "02:24": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:25": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
+      "02:29": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:30": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:31": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:32": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:33": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:34": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:35": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:36": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:37": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:41": {
+        "player1supply": "15/17",
+        "player2supply": "12/17"
+      },
+      "02:42": {
+        "player1supply": "15/17",
+        "player2supply": "12/17"
+      },
+      "02:43": {
+        "player1supply": "15/17",
+        "player2supply": "12/17"
+      },
+      "02:47": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:48": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:53": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:54": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:55": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:56": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:57": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:58": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "02:59": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:00": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:01": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:02": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:03": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:04": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
+      "03:08": {
+        "player1supply": "17/17",
+        "player2supply": "14/17"
+      },
+      "03:12": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:13": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:14": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:15": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:16": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:17": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:18": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:19": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:20": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:21": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:22": {
+        "player1supply": "17/17",
+        "player2supply": "16/17"
+      },
+      "03:29": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:30": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:31": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:32": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:33": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:34": {
+        "player1supply": "18/34",
+        "player2supply": "17/17"
+      },
+      "03:38": {
+        "player1supply": "21/34",
+        "player2supply": "17/17"
+      },
+      "03:45": {
+        "player1supply": "23/34",
+        "player2supply": "17/18"
+      },
+      "03:46": {
+        "player1supply": "23/34",
+        "player2supply": "17/18"
+      },
+      "03:47": {
+        "player1supply": "23/34",
+        "player2supply": "17/18"
+      },
+      "03:48": {
+        "player1supply": "23/34",
+        "player2supply": "17/18"
+      },
+      "03:55": {
+        "player1supply": "25/34",
+        "player2supply": "18/18"
+      },
+      "03:56": {
+        "player1supply": "25/34",
+        "player2supply": "18/18"
+      },
+      "04:00": {
+        "player1supply": "25/34",
+        "player2supply": "17/18"
+      },
+      "04:07": {
+        "player1supply": "29/34",
+        "player2supply": "18/18"
+      },
+      "04:08": {
+        "player1supply": "29/34",
+        "player2supply": "18/18"
+      },
+      "04:09": {
+        "player1supply": "29/34",
+        "player2supply": "18/18"
+      },
+      "04:10": {
+        "player1supply": "29/34",
+        "player2supply": "18/18"
+      },
+      "04:14": {
+        "player1supply": "29/34",
+        "player2supply": "18/26"
+      },
+      "04:15": {
+        "player1supply": "29/34",
+        "player2supply": "18/26"
+      },
+      "04:20": {
+        "player1supply": "30/34",
+        "player2supply": "18/26"
+      },
+      "04:21": {
+        "player1supply": "30/34",
+        "player2supply": "18/26"
+      },
+      "04:22": {
+        "player1supply": "30/34",
+        "player2supply": "18/26"
+      },
+      "04:23": {
+        "player1supply": "30/34",
+        "player2supply": "18/26"
+      },
+      "04:24": {
+        "player1supply": "30/34",
+        "player2supply": "18/26"
+      },
+      "04:37": {
+        "player1supply": "34/42",
+        "player2supply": "22/26"
+      },
+      "04:38": {
+        "player1supply": "34/42",
+        "player2supply": "22/26"
+      },
+      "04:42": {
+        "player1supply": "34/42",
+        "player2supply": "23/26"
+      },
+      "04:43": {
+        "player1supply": "34/42",
+        "player2supply": "23/26"
+      },
+      "04:48": {
+        "player1supply": "36/42",
+        "player2supply": "24/26"
+      },
+      "04:49": {
+        "player1supply": "36/42",
+        "player2supply": "24/26"
+      },
+      "04:50": {
+        "player1supply": "36/42",
+        "player2supply": "24/26"
+      },
+      "04:51": {
+        "player1supply": "36/42",
+        "player2supply": "24/26"
+      },
+      "04:55": {
+        "player1supply": "38/42",
+        "player2supply": "24/26"
+      },
+      "04:56": {
+        "player1supply": "38/42",
+        "player2supply": "24/26"
+      },
+      "04:57": {
+        "player1supply": "38/42",
+        "player2supply": "24/26"
+      },
+      "04:58": {
+        "player1supply": "38/42",
+        "player2supply": "24/26"
+      },
+      "04:59": {
+        "player1supply": "38/42",
+        "player2supply": "24/26"
+      },
+      "05:07": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:08": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:09": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:10": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:11": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:12": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:13": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:14": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:15": {
+        "player1supply": "40/50",
+        "player2supply": "26/26"
+      },
+      "05:19": {
+        "player1supply": "42/50",
+        "player2supply": "26/26"
+      },
+      "05:20": {
+        "player1supply": "42/50",
+        "player2supply": "26/26"
+      },
+      "05:21": {
+        "player1supply": "42/50",
+        "player2supply": "26/26"
+      },
+      "05:31": {
+        "player1supply": "44/50",
+        "player2supply": "29/34"
+      },
+      "05:32": {
+        "player1supply": "44/50",
+        "player2supply": "29/34"
+      },
+      "05:36": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:38": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:39": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:40": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:41": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:42": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:43": {
+        "player1supply": "42/50",
+        "player2supply": "29/34"
+      },
+      "05:49": {
+        "player1supply": "44/50",
+        "player2supply": "31/34"
+      },
+      "05:50": {
+        "player1supply": "44/50",
+        "player2supply": "31/34"
+      },
+      "05:51": {
+        "player1supply": "44/50",
+        "player2supply": "31/34"
+      },
+      "05:55": {
+        "player1supply": "46/50",
+        "player2supply": "31/34"
+      },
+      "05:56": {
+        "player1supply": "46/50",
+        "player2supply": "31/34"
+      },
+      "05:57": {
+        "player1supply": "46/50",
+        "player2supply": "31/34"
+      },
+      "05:58": {
+        "player1supply": "46/50",
+        "player2supply": "31/34"
+      },
+      "05:59": {
+        "player1supply": "46/50",
+        "player2supply": "31/34"
+      },
+      "06:03": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:04": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:05": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:06": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:07": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:08": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:09": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:10": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "06:11": {
+        "player1supply": "46/50",
+        "player2supply": "32/34"
+      },
+      "07:04": {
+        "player1supply": "33/50",
+        "player2supply": "25/34"
+      },
+      "07:09": {
+        "player1supply": "35/50",
+        "player2supply": "25/34"
+      },
+      "07:10": {
+        "player1supply": "35/50",
+        "player2supply": "25/34"
+      },
+      "07:11": {
+        "player1supply": "35/50",
+        "player2supply": "25/34"
+      },
+      "07:19": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:20": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:21": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:22": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:23": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:24": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:25": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:26": {
+        "player1supply": "37/50",
+        "player2supply": "27/42"
+      },
+      "07:32": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:33": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:34": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:35": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:36": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:37": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:38": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:39": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:40": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:41": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:42": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:43": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      },
+      "07:44": {
+        "player1supply": "37/50",
+        "player2supply": "29/42"
+      }
+    },
+    "org": "ASL",
+    "orgSeason": 19,
+    "orgXtra": 0,
+    "player1": "Mini",
+    "player2": "Calm",
+    "race1": "Protoss",
+    "race2": "Zerg",
+    "winner": "Mini"
+  },
+  "match4": {
+    "dateTime": "03/24/2025",
+    "gameData": {
+      "01:01": {
+        "player1supply": "8/89",
+        "player2supply": "9/10"
+      },
+      "01:05": {
+        "player1supply": "8/89",
+        "player2supply": "10/10"
+      },
+      "01:06": {
+        "player1supply": "8/89",
+        "player2supply": "10/10"
+      },
+      "01:13": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:14": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:15": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:16": {
+        "player1supply": "10/17",
+        "player2supply": "10/10"
+      },
+      "01:34": {
+        "player1supply": "11/17",
+        "player2supply": "12/18"
+      },
+      "01:39": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:40": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:41": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:42": {
+        "player1supply": "12/17",
+        "player2supply": "12/18"
+      },
+      "01:46": {
+        "player1supply": "12/17",
+        "player2supply": "13/18"
+      },
+      "01:47": {
+        "player1supply": "12/17",
+        "player2supply": "13/18"
+      },
+      "01:48": {
+        "player1supply": "12/17",
+        "player2supply": "13/18"
+      },
+      "01:53": {
+        "player1supply": "15/17",
+        "player2supply": "13/18"
+      },
+      "01:54": {
+        "player1supply": "15/17",
+        "player2supply": "13/18"
+      },
+      "01:58": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "01:59": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "02:00": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "02:01": {
+        "player1supply": "15/17",
+        "player2supply": "14/18"
+      },
+      "02:05": {
+        "player1supply": "16/17",
+        "player2supply": "14/18"
+      },
+      "02:06": {
+        "player1supply": "16/17",
+        "player2supply": "14/18"
+      },
+      "02:07": {
+        "player1supply": "16/17",
+        "player2supply": "14/18"
+      },
+      "02:11": {
+        "player1supply": "16/17",
+        "player2supply": "15/18"
+      },
+      "02:18": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:19": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:20": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:21": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:22": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:23": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:24": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:25": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:26": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:27": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:28": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:29": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:30": {
+        "player1supply": "18/25",
+        "player2supply": "16/18"
+      },
+      "02:35": {
+        "player1supply": "20/25",
+        "player2supply": "17/18"
+      },
+      "02:36": {
+        "player1supply": "20/25",
+        "player2supply": "17/18"
+      },
+      "02:53": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:54": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:55": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:56": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:57": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:58": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "02:59": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "03:00": {
+        "player1supply": "23/25",
+        "player2supply": "20/26"
+      },
+      "03:05": {
+        "player1supply": "24/25",
+        "player2supply": "21/26"
+      },
+      "03:09": {
+        "player1supply": "23/25",
+        "player2supply": "21/26"
+      },
+      "03:10": {
+        "player1supply": "23/25",
+        "player2supply": "21/26"
+      },
+      "03:14": {
+        "player1supply": "25/25",
+        "player2supply": "21/26"
+      },
+      "03:24": {
+        "player1supply": "25/25",
+        "player2supply": "21/26"
+      },
+      "03:29": {
+        "player1supply": "26/33",
+        "player2supply": "23/26"
+      },
+      "03:30": {
+        "player1supply": "26/33",
+        "player2supply": "23/26"
+      },
+      "03:31": {
+        "player1supply": "26/33",
+        "player2supply": "23/26"
+      },
+      "03:32": {
+        "player1supply": "26/33",
+        "player2supply": "23/26"
+      },
+      "03:36": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:37": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:38": {
+        "player1supply": "26/33",
+        "player2supply": "24/26"
+      },
+      "03:46": {
+        "player1supply": "29/33",
+        "player2supply": "25/26"
+      },
+      "03:47": {
+        "player1supply": "29/33",
+        "player2supply": "25/26"
+      },
+      "03:51": {
+        "player1supply": "29/33",
+        "player2supply": "26/26"
+      },
+      "03:52": {
+        "player1supply": "29/33",
+        "player2supply": "26/26"
+      },
+      "03:57": {
+        "player1supply": "30/33",
+        "player2supply": "25/26"
+      },
+      "04:05": {
+        "player1supply": "30",
+        "player2supply": "24/26"
+      },
+      "04:12": {
+        "player1supply": "30",
+        "player2supply": "25/26"
+      },
+      "04:22": {
+        "player1supply": "32/33",
+        "player2supply": "27/34"
+      },
+      "04:26": {
+        "player1supply": "32/33",
+        "player2supply": "25/34"
+      },
+      "04:27": {
+        "player1supply": "32/33",
+        "player2supply": "25/34"
+      },
+      "04:28": {
+        "player1supply": "32/33",
+        "player2supply": "25/34"
+      },
+      "04:29": {
+        "player1supply": "32/33",
+        "player2supply": "25/34"
+      },
+      "04:30": {
+        "player1supply": "32/33",
+        "player2supply": "25/34"
+      },
+      "04:34": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:35": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:36": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:37": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:38": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:39": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:40": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:41": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:42": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:43": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:44": {
+        "player1supply": "33/33",
+        "player2supply": "27/34"
+      },
+      "04:53": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "04:54": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "04:55": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "04:56": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "04:57": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "04:58": {
+        "player1supply": "36/41",
+        "player2supply": "27/34"
+      },
+      "05:05": {
+        "player1supply": "36/41",
+        "player2supply": "30/34"
+      },
+      "05:06": {
+        "player1supply": "36/41",
+        "player2supply": "30/34"
+      },
+      "05:07": {
+        "player1supply": "36/41",
+        "player2supply": "30/34"
+      },
+      "05:08": {
+        "player1supply": "36/41",
+        "player2supply": "30/34"
+      },
+      "05:12": {
+        "player1supply": "37/41",
+        "player2supply": "30/34"
+      },
+      "05:13": {
+        "player1supply": "37/41",
+        "player2supply": "30/34"
+      },
+      "05:14": {
+        "player1supply": "37/41",
+        "player2supply": "30/34"
+      },
+      "05:15": {
+        "player1supply": "37/41",
+        "player2supply": "30/34"
+      },
+      "05:19": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:20": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:21": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:22": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:23": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:24": {
+        "player1supply": "37/41",
+        "player2supply": "31/34"
+      },
+      "05:33": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:34": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:35": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:36": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:37": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:38": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:39": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:40": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:41": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:42": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:43": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:44": {
+        "player1supply": "43/50",
+        "player2supply": "34/34"
+      },
+      "05:48": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:49": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:50": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:51": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:52": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:53": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:54": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:55": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:56": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:57": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "05:58": {
+        "player1supply": "45/50",
+        "player2supply": "34/34"
+      },
+      "06:12": {
+        "player1supply": "51/58",
+        "player2supply": "35/44"
+      },
+      "06:17": {
+        "player1supply": "51/66",
+        "player2supply": "37/44"
+      },
+      "06:18": {
+        "player1supply": "51/66",
+        "player2supply": "37/44"
+      },
+      "06:22": {
+        "player1supply": "53/66",
+        "player2supply": "37/44"
+      },
+      "06:23": {
+        "player1supply": "53/66",
+        "player2supply": "37/44"
+      },
+      "06:24": {
+        "player1supply": "53/66",
+        "player2supply": "37/44"
+      },
+      "06:25": {
+        "player1supply": "53/66",
+        "player2supply": "37/44"
+      },
+      "06:35": {
+        "player1supply": "60/66",
+        "player2supply": "39/52"
+      },
+      "06:36": {
+        "player1supply": "60/66",
+        "player2supply": "39/52"
+      },
+      "06:41": {
+        "player1supply": "60/66",
+        "player2supply": "42/52"
+      },
+      "06:42": {
+        "player1supply": "60/66",
+        "player2supply": "42/52"
+      },
+      "06:43": {
+        "player1supply": "60/66",
+        "player2supply": "42/52"
+      },
+      "06:48": {
+        "player1supply": "62/66",
+        "player2supply": "43/52"
+      },
+      "06:49": {
+        "player1supply": "62/66",
+        "player2supply": "43/52"
+      },
+      "06:50": {
+        "player1supply": "62/66",
+        "player2supply": "43/52"
+      },
+      "06:51": {
+        "player1supply": "62/66",
+        "player2supply": "43/52"
+      },
+      "06:52": {
+        "player1supply": "62/66",
+        "player2supply": "43/52"
+      },
+      "07:01": {
+        "player1supply": "65/74",
+        "player2supply": "49/52"
+      },
+      "07:02": {
+        "player1supply": "65/74",
+        "player2supply": "49/52"
+      },
+      "07:03": {
+        "player1supply": "65/74",
+        "player2supply": "49/52"
+      },
+      "07:04": {
+        "player1supply": "65/74",
+        "player2supply": "49/52"
+      },
+      "07:09": {
+        "player1supply": "69/74",
+        "player2supply": "49/52"
+      },
+      "07:10": {
+        "player1supply": "69/74",
+        "player2supply": "49/52"
+      },
+      "07:43": {
+        "player1supply": "75/82",
+        "player2supply": "55/60"
+      },
+      "07:47": {
+        "player1supply": "76/90",
+        "player2supply": "57/60"
+      },
+      "07:48": {
+        "player1supply": "76/90",
+        "player2supply": "57/60"
+      },
+      "07:49": {
+        "player1supply": "76/90",
+        "player2supply": "57/60"
+      },
+      "07:50": {
+        "player1supply": "76/90",
+        "player2supply": "57/60"
+      },
+      "07:51": {
+        "player1supply": "76/90",
+        "player2supply": "57/60"
+      },
+      "08:00": {
+        "player1supply": "82/90",
+        "player2supply": "59/60"
+      },
+      "08:01": {
+        "player1supply": "82/90",
+        "player2supply": "59/60"
+      },
+      "08:02": {
+        "player1supply": "82/90",
+        "player2supply": "59/60"
+      },
+      "08:03": {
+        "player1supply": "82/90",
+        "player2supply": "59/60"
+      },
+      "08:04": {
+        "player1supply": "82/90",
+        "player2supply": "59/60"
+      },
+      "08:22": {
+        "player1supply": "87/99",
+        "player2supply": "65/76"
+      },
+      "08:30": {
+        "player1supply": "87/107",
+        "player2supply": "67/76"
+      },
+      "08:31": {
+        "player1supply": "87/107",
+        "player2supply": "67/76"
+      },
+      "08:32": {
+        "player1supply": "87/107",
+        "player2supply": "67/76"
+      },
+      "08:39": {
+        "player1supply": "80/107",
+        "player2supply": "69/76"
+      },
+      "08:40": {
+        "player1supply": "80/107",
+        "player2supply": "69/76"
+      },
+      "08:41": {
+        "player1supply": "80/107",
+        "player2supply": "69/76"
+      },
+      "08:42": {
+        "player1supply": "80/107",
+        "player2supply": "69/76"
+      },
+      "08:43": {
+        "player1supply": "80/107",
+        "player2supply": "69/76"
+      },
+      "08:47": {
+        "player1supply": "82/107",
+        "player2supply": "69/84"
+      },
+      "08:52": {
+        "player1supply": "85/107",
+        "player2supply": "71/84"
+      },
+      "08:53": {
+        "player1supply": "85/107",
+        "player2supply": "71/84"
+      },
+      "08:54": {
+        "player1supply": "85/107",
+        "player2supply": "71/84"
+      },
+      "08:55": {
+        "player1supply": "85/107",
+        "player2supply": "71/84"
+      },
+      "08:56": {
+        "player1supply": "85/107",
+        "player2supply": "71/84"
+      },
+      "09:01": {
+        "player1supply": "103/107",
+        "player2supply": "75/84"
+      },
+      "09:02": {
+        "player1supply": "103/107",
+        "player2supply": "75/84"
+      },
+      "09:19": {
+        "player1supply": "106/107",
+        "player2supply": "75/84"
+      },
+      "09:23": {
+        "player1supply": "107/107",
+        "player2supply": "75/84"
+      },
+      "09:24": {
+        "player1supply": "107/107",
+        "player2supply": "75/84"
+      },
+      "09:25": {
+        "player1supply": "107/107",
+        "player2supply": "75/84"
+      },
+      "09:26": {
+        "player1supply": "107/107",
+        "player2supply": "75/84"
+      },
+      "09:27": {
+        "player1supply": "107/107",
+        "player2supply": "75/84"
+      },
+      "09:33": {
+        "player1supply": "107/107",
+        "player2supply": "77/84"
+      },
+      "09:34": {
+        "player1supply": "107/107",
+        "player2supply": "77/84"
+      },
+      "09:35": {
+        "player1supply": "107/107",
+        "player2supply": "77/84"
+      },
+      "09:36": {
+        "player1supply": "107/107",
+        "player2supply": "77/84"
+      },
+      "09:38": {
+        "player1supply": "107/107",
+        "player2supply": "77/84"
+      },
+      "09:42": {
+        "player1supply": "107/107",
+        "player2supply": "81/84"
+      },
+      "09:48": {
+        "player1supply": "117/123",
+        "player2supply": "83/84"
+      },
+      "09:49": {
+        "player1supply": "117/123",
+        "player2supply": "83/84"
+      },
+      "09:55": {
+        "player1supply": "118/123",
+        "player2supply": "83/92"
+      },
+      "10:12": {
+        "player1supply": "121/147",
+        "player2supply": "91/92"
+      },
+      "10:17": {
+        "player1supply": "121/147",
+        "player2supply": "91/92"
+      },
+      "10:18": {
+        "player1supply": "121/147",
+        "player2supply": "91/92"
+      },
+      "10:34": {
+        "player1supply": "134/155",
+        "player2supply": "91/92"
+      },
+      "10:35": {
+        "player1supply": "134/155",
+        "player2supply": "91/92"
+      },
+      "10:50": {
+        "player1supply": "139/155",
+        "player2supply": "101/108"
+      },
+      "10:51": {
+        "player1supply": "139/155",
+        "player2supply": "101/108"
+      },
+      "10:52": {
+        "player1supply": "139/155",
+        "player2supply": "101/108"
+      },
+      "11:10": {
+        "player1supply": "156/179",
+        "player2supply": "105/118"
+      },
+      "11:11": {
+        "player1supply": "156/179",
+        "player2supply": "105/118"
+      },
+      "11:12": {
+        "player1supply": "156/179",
+        "player2supply": "105/118"
+      },
+      "11:13": {
+        "player1supply": "156/179",
+        "player2supply": "105/118"
+      },
+      "11:30": {
+        "player1supply": "156/196",
+        "player2supply": "107/142"
+      },
+      "11:36": {
+        "player1supply": "167/196",
+        "player2supply": "108/142"
+      },
+      "12:24": {
+        "player1supply": "137/196",
+        "player2supply": "107/142"
+      },
+      "12:34": {
+        "player1supply": "138/196",
+        "player2supply": "108/142"
+      },
+      "12:39": {
+        "player1supply": "138/196",
+        "player2supply": "108/158"
+      },
+      "12:48": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:49": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:50": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:51": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:52": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:53": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:54": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:55": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:56": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "12:57": {
+        "player1supply": "155/196",
+        "player2supply": "115/158"
+      },
+      "13:18": {
+        "player1supply": "174/200",
+        "player2supply": "127/166"
+      },
+      "13:22": {
+        "player1supply": "174/200",
+        "player2supply": "125/166"
+      },
+      "13:23": {
+        "player1supply": "174/200",
+        "player2supply": "125/166"
+      },
+      "13:24": {
+        "player1supply": "174/200",
+        "player2supply": "125/166"
+      },
+      "13:25": {
+        "player1supply": "174/200",
+        "player2supply": "125/166"
+      },
+      "13:38": {
+        "player1supply": "174/200",
+        "player2supply": "138/166"
+      },
+      "13:39": {
+        "player1supply": "174/200",
+        "player2supply": "138/166"
+      },
+      "13:40": {
+        "player1supply": "174/200",
+        "player2supply": "138/166"
+      },
+      "13:44": {
+        "player1supply": "175/200",
+        "player2supply": "138/174"
+      },
+      "13:45": {
+        "player1supply": "175/200",
+        "player2supply": "138/174"
+      },
+      "13:46": {
+        "player1supply": "175/200",
+        "player2supply": "138/174"
+      },
+      "14:35": {
+        "player1supply": "177/200",
+        "player2supply": "151/180"
+      },
+      "14:49": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:50": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:51": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:52": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:53": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:54": {
+        "player1supply": "178/200",
+        "player2supply": "168/198"
+      },
+      "14:58": {
+        "player1supply": "177/200",
+        "player2supply": "168/198"
+      },
+      "14:59": {
+        "player1supply": "177/200",
+        "player2supply": "168/198"
+      },
+      "15:00": {
+        "player1supply": "177/200",
+        "player2supply": "168/198"
+      },
+      "15:21": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:22": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:23": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:24": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:25": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:26": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:27": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:28": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:29": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:30": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:31": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:32": {
+        "player1supply": "183/200",
+        "player2supply": "173/198"
+      },
+      "15:38": {
+        "player1supply": "182/200",
+        "player2supply": "175/200"
+      },
+      "15:44": {
+        "player1supply": "187/200",
+        "player2supply": "175/200"
+      },
+      "15:51": {
+        "player1supply": "200/200",
+        "player2supply": "191/200"
+      },
+      "15:52": {
+        "player1supply": "200/200",
+        "player2supply": "191/200"
+      },
+      "15:53": {
+        "player1supply": "200/200",
+        "player2supply": "191/200"
+      },
+      "15:57": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "15:58": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "15:59": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:00": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:01": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:02": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:03": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:04": {
+        "player1supply": "200/200",
+        "player2supply": "193/200"
+      },
+      "16:09": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:10": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:11": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:12": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:13": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:14": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:15": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:16": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:17": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:18": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:19": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:20": {
+        "player1supply": "200/200",
+        "player2supply": "198/200"
+      },
+      "16:43": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "16:44": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "16:45": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "16:46": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "16:47": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "16:48": {
+        "player1supply": "200/200",
+        "player2supply": "197/200"
+      },
+      "17:10": {
+        "player1supply": "188/200",
+        "player2supply": "198/200"
+      },
+      "17:49": {
+        "player1supply": "155/200",
+        "player2supply": "165/200"
+      },
+      "17:50": {
+        "player1supply": "155/200",
+        "player2supply": "165/200"
+      },
+      "17:51": {
+        "player1supply": "155/200",
+        "player2supply": "165/200"
+      },
+      "17:52": {
+        "player1supply": "155/200",
+        "player2supply": "165/200"
+      },
+      "17:58": {
+        "player1supply": "157/200",
+        "player2supply": "167/200"
+      },
+      "18:24": {
+        "player1supply": "182/200",
+        "player2supply": "183/200"
+      },
+      "18:28": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:29": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:30": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:31": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:32": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:33": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "18:34": {
+        "player1supply": "182/200",
+        "player2supply": "185/200"
+      },
+      "19:01": {
+        "player1supply": "172/200",
+        "player2supply": "187/200"
+      },
+      "19:20": {
+        "player1supply": "185/200",
+        "player2supply": "193/200"
+      },
+      "19:21": {
+        "player1supply": "185/200",
+        "player2supply": "193/200"
+      },
+      "19:22": {
+        "player1supply": "185/200",
+        "player2supply": "193/200"
+      },
+      "19:23": {
+        "player1supply": "185/200",
+        "player2supply": "193/200"
+      },
+      "19:24": {
+        "player1supply": "185/200",
+        "player2supply": "193/200"
+      },
+      "20:38": {
+        "player1supply": "116/171",
+        "player2supply": "193/200"
+      },
+      "20:58": {
+        "player1supply": "128/180",
+        "player2supply": "200/200"
+      },
+      "20:59": {
+        "player1supply": "128/180",
+        "player2supply": "200/200"
+      },
+      "21:00": {
+        "player1supply": "128/180",
+        "player2supply": "200/200"
+      },
+      "21:01": {
+        "player1supply": "128/180",
+        "player2supply": "200/200"
+      },
+      "21:02": {
+        "player1supply": "128/180",
+        "player2supply": "200/200"
+      },
+      "21:06": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:07": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:08": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:09": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:10": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:11": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      },
+      "21:12": {
+        "player1supply": "129/180",
+        "player2supply": "200/200"
+      }
+    },
+    "org": "ASL",
+    "orgSeason": 19,
+    "orgXtra": 0,
+    "player1": "Shuttle",
+    "player2": "Scan",
+    "race1": "Protoss",
+    "race2": "Terran",
+    "winner": "Scan"
+  },
+  "match5": {
+    "dateTime": "03/24/2025",
+    "gameData": {
+      "01:15": {
+        "player1supply": "10/18",
+        "player2supply": "9/9"
+      },
+      "01:19": {
+        "player1supply": "10/18",
+        "player2supply": "11/17"
+      },
+      "01:23": {
+        "player1supply": "11/18",
+        "player2supply": "11/17"
+      },
+      "01:27": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:28": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:29": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:30": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:31": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:32": {
+        "player1supply": "11/18",
+        "player2supply": "12/17"
+      },
+      "01:39": {
+        "player1supply": "12/18",
+        "player2supply": "11/17"
+      },
+      "01:40": {
+        "player1supply": "12/18",
+        "player2supply": "11/17"
+      },
+      "01:41": {
+        "player1supply": "12/18",
+        "player2supply": "11/17"
+      },
+      "01:50": {
+        "player1supply": "13/18",
+        "player2supply": "11/17"
+      },
+      "02:16": {
+        "player1supply": "16/18",
+        "player2supply": "12/17"
+      },
+      "02:17": {
+        "player1supply": "16/18",
+        "player2supply": "12/17"
+      },
+      "02:18": {
+        "player1supply": "16/18",
+        "player2supply": "12/17"
+      },
+      "02:19": {
+        "player1supply": "16/18",
+        "player2supply": "12/17"
+      },
+      "02:27": {
+        "player1supply": "18/18",
+        "player2supply": "13/17"
+      },
+      "02:28": {
+        "player1supply": "18/18",
+        "player2supply": "13/17"
+      },
+      "02:29": {
+        "player1supply": "18/18",
+        "player2supply": "13/17"
+      },
+      "02:30": {
+        "player1supply": "18/18",
+        "player2supply": "13/17"
+      },
+      "02:31": {
+        "player1supply": "18/18",
+        "player2supply": "13/17"
+      },
+      "02:35": {
+        "player1supply": "18/26",
+        "player2supply": "13/17"
+      },
+      "02:39": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:40": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:41": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:42": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:43": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:44": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:45": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:46": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:47": {
+        "player1supply": "18/26",
+        "player2supply": "14/17"
+      },
+      "02:51": {
+        "player1supply": "20/26",
+        "player2supply": "14/17"
+      },
+      "02:58": {
+        "player1supply": "21/26",
+        "player2supply": "16/18"
+      },
+      "02:59": {
+        "player1supply": "21/26",
+        "player2supply": "16/18"
+      },
+      "03:00": {
+        "player1supply": "21/26",
+        "player2supply": "16/18"
+      },
+      "03:01": {
+        "player1supply": "21/26",
+        "player2supply": "16/18"
+      },
+      "03:02": {
+        "player1supply": "21/26",
+        "player2supply": "16/18"
+      },
+      "03:06": {
+        "player1supply": "22/26",
+        "player2supply": "16/18"
+      },
+      "03:07": {
+        "player1supply": "22/26",
+        "player2supply": "16/18"
+      },
+      "03:14": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:15": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:16": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:17": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:18": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:19": {
+        "player1supply": "23/26",
+        "player2supply": "17/18"
+      },
+      "03:24": {
+        "player1supply": "24/26",
+        "player2supply": "18/18"
+      },
+      "03:25": {
+        "player1supply": "24/26",
+        "player2supply": "18/18"
+      },
+      "03:26": {
+        "player1supply": "24/26",
+        "player2supply": "18/18"
+      },
+      "03:27": {
+        "player1supply": "24/26",
+        "player2supply": "18/18"
+      },
+      "03:39": {
+        "player1supply": "26/26",
+        "player2supply": "20/26"
+      },
+      "03:45": {
+        "player1supply": "25/26",
+        "player2supply": "21/26"
+      },
+      "03:46": {
+        "player1supply": "25/26",
+        "player2supply": "21/26"
+      },
+      "03:47": {
+        "player1supply": "25/26",
+        "player2supply": "21/26"
+      },
+      "04:00": {
+        "player1supply": "28/36",
+        "player2supply": "22/26"
+      },
+      "04:01": {
+        "player1supply": "28/36",
+        "player2supply": "22/26"
+      },
+      "04:02": {
+        "player1supply": "28/36",
+        "player2supply": "22/26"
+      },
+      "04:10": {
+        "player1supply": "30/36",
+        "player2supply": "24/26"
+      },
+      "04:11": {
+        "player1supply": "30/36",
+        "player2supply": "24/26"
+      },
+      "04:12": {
+        "player1supply": "30/36",
+        "player2supply": "24/26"
+      },
+      "04:16": {
+        "player1supply": "31/36",
+        "player2supply": "24/26"
+      },
+      "04:17": {
+        "player1supply": "31/36",
+        "player2supply": "24/26"
+      },
+      "04:18": {
+        "player1supply": "31/36",
+        "player2supply": "24/26"
+      },
+      "04:23": {
+        "player1supply": "33/36",
+        "player2supply": "26/26"
+      },
+      "04:24": {
+        "player1supply": "33/36",
+        "player2supply": "26/26"
+      },
+      "04:25": {
+        "player1supply": "33/36",
+        "player2supply": "26/26"
+      },
+      "04:26": {
+        "player1supply": "33/36",
+        "player2supply": "26/26"
+      },
+      "04:27": {
+        "player1supply": "33/36",
+        "player2supply": "26/26"
+      },
+      "04:32": {
+        "player1supply": "34/36",
+        "player2supply": "25/26"
+      },
+      "04:33": {
+        "player1supply": "34/36",
+        "player2supply": "25/26"
+      },
+      "04:37": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:38": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:39": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:40": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:41": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:42": {
+        "player1supply": "36/36",
+        "player2supply": "25/26"
+      },
+      "04:46": {
+        "player1supply": "36/44",
+        "player2supply": "25/26"
+      },
+      "04:51": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:52": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:53": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:54": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:55": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:56": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:57": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:58": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "04:59": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "05:00": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "05:01": {
+        "player1supply": "38/44",
+        "player2supply": "25/26"
+      },
+      "05:12": {
+        "player1supply": "40/44",
+        "player2supply": "33/42"
+      },
+      "05:13": {
+        "player1supply": "40/44",
+        "player2supply": "33/42"
+      },
+      "05:14": {
+        "player1supply": "40/44",
+        "player2supply": "33/42"
+      },
+      "05:15": {
+        "player1supply": "40/44",
+        "player2supply": "33/42"
+      },
+      "05:21": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:22": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:23": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:24": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:25": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:26": {
+        "player1supply": "40/44",
+        "player2supply": "37/42"
+      },
+      "05:30": {
+        "player1supply": "41/44",
+        "player2supply": "37/42"
+      },
+      "05:35": {
+        "player1supply": "41/44",
+        "player2supply": "41/42"
+      },
+      "05:36": {
+        "player1supply": "41/44",
+        "player2supply": "41/42"
+      },
+      "05:42": {
+        "player1supply": "42/52",
+        "player2supply": "41/42"
+      },
+      "05:43": {
+        "player1supply": "42/52",
+        "player2supply": "41/42"
+      },
+      "05:44": {
+        "player1supply": "42/52",
+        "player2supply": "41/42"
+      },
+      "05:52": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:53": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:54": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:55": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:56": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:57": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:58": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "05:59": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "06:00": {
+        "player1supply": "43/52",
+        "player2supply": "42/43"
+      },
+      "06:04": {
+        "player1supply": "42/52",
+        "player2supply": "42/43"
+      },
+      "06:05": {
+        "player1supply": "42/52",
+        "player2supply": "42/43"
+      },
+      "06:06": {
+        "player1supply": "42/52",
+        "player2supply": "42/43"
+      },
+      "06:07": {
+        "player1supply": "42/52",
+        "player2supply": "42/43"
+      },
+      "06:11": {
+        "player1supply": "41/52",
+        "player2supply": "42/43"
+      },
+      "07:00": {
+        "player1supply": "52/60",
+        "player2supply": "52/59"
+      },
+      "07:01": {
+        "player1supply": "52/60",
+        "player2supply": "52/59"
+      },
+      "07:12": {
+        "player1supply": "54/60",
+        "player2supply": "50/59"
+      },
+      "07:25": {
+        "player1supply": "57/68",
+        "player2supply": "50/59"
+      },
+      "07:29": {
+        "player1supply": "57/68",
+        "player2supply": "50/51"
+      },
+      "07:30": {
+        "player1supply": "57/68",
+        "player2supply": "50/51"
+      },
+      "07:31": {
+        "player1supply": "57/68",
+        "player2supply": "50/51"
+      },
+      "08:02": {
+        "player1supply": "48/68",
+        "player2supply": "43/43"
+      },
+      "08:16": {
+        "player1supply": "53/68",
+        "player2supply": "48/59"
+      },
+      "08:17": {
+        "player1supply": "53/68",
+        "player2supply": "48/59"
+      },
+      "08:18": {
+        "player1supply": "53/68",
+        "player2supply": "48/59"
+      },
+      "08:19": {
+        "player1supply": "53/68",
+        "player2supply": "48/59"
+      },
+      "08:23": {
+        "player1supply": "53/68",
+        "player2supply": "48/75"
+      },
+      "08:32": {
+        "player1supply": "58/68",
+        "player2supply": "54/75"
+      },
+      "08:33": {
+        "player1supply": "58/68",
+        "player2supply": "54/75"
+      },
+      "08:34": {
+        "player1supply": "58/68",
+        "player2supply": "54/75"
+      },
+      "08:35": {
+        "player1supply": "58/68",
+        "player2supply": "54/75"
+      },
+      "08:36": {
+        "player1supply": "58/68",
+        "player2supply": "54/75"
+      },
+      "08:42": {
+        "player1supply": "59/68",
+        "player2supply": "54/75"
+      },
+      "08:48": {
+        "player1supply": "64/68",
+        "player2supply": "56/75"
+      },
+      "08:59": {
+        "player1supply": "64/68",
+        "player2supply": "60/75"
+      },
+      "09:05": {
+        "player1supply": "69/76",
+        "player2supply": "60/75"
+      },
+      "09:06": {
+        "player1supply": "69/76",
+        "player2supply": "60/75"
+      },
+      "09:07": {
+        "player1supply": "69/76",
+        "player2supply": "60/75"
+      },
+      "09:42": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:43": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:44": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:45": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:46": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:47": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:48": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:49": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:50": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:51": {
+        "player1supply": "75/84",
+        "player2supply": "71/83"
+      },
+      "09:56": {
+        "player1supply": "75/84",
+        "player2supply": "77/83"
+      },
+      "10:02": {
+        "player1supply": "80/92",
+        "player2supply": "77/83"
+      },
+      "10:03": {
+        "player1supply": "80/92",
+        "player2supply": "77/83"
+      },
+      "10:07": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:08": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:09": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:10": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:11": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:12": {
+        "player1supply": "79/92",
+        "player2supply": "75/83"
+      },
+      "10:39": {
+        "player1supply": "73/100",
+        "player2supply": "55/83"
+      },
+      "10:40": {
+        "player1supply": "73/100",
+        "player2supply": "55/83"
+      },
+      "10:41": {
+        "player1supply": "73/100",
+        "player2supply": "55/83"
+      },
+      "10:42": {
+        "player1supply": "73/100",
+        "player2supply": "55/83"
+      },
+      "10:52": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:53": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:54": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:55": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:56": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:57": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:58": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "10:59": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "11:00": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "11:01": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "11:02": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "11:03": {
+        "player1supply": "77/100",
+        "player2supply": "62/83"
+      },
+      "11:12": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:13": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:14": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:15": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:16": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:17": {
+        "player1supply": "81/100",
+        "player2supply": "66/83"
+      },
+      "11:34": {
+        "player1supply": "86/100",
+        "player2supply": "61/83"
+      },
+      "11:35": {
+        "player1supply": "86/100",
+        "player2supply": "61/83"
+      },
+      "11:40": {
+        "player1supply": "87/100",
+        "player2supply": "65/83"
+      },
+      "11:41": {
+        "player1supply": "87/100",
+        "player2supply": "65/83"
+      },
+      "12:00": {
+        "player1supply": "80/100",
+        "player2supply": "65/83"
+      },
+      "12:01": {
+        "player1supply": "80/100",
+        "player2supply": "65/83"
+      },
+      "12:05": {
+        "player1supply": "80/108",
+        "player2supply": "65/83"
+      }
+    },
+    "org": "ASL",
+    "orgSeason": 19,
+    "orgXtra": 0,
+    "player1": "Scan",
+    "player2": "Calm",
+    "race1": "Terran",
+    "race2": "Zerg",
+    "winner": "Scan"
+  }
+}

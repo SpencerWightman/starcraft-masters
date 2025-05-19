@@ -274,7 +274,9 @@ const Maps: React.FC = () => {
                 color: "white",
                 zIndex: 10,
                 backgroundColor: "rgba(0,0,0,0.5)",
-                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.7)",
+                },
               }}
             >
               <KeyboardArrowLeftIcon />
@@ -304,7 +306,10 @@ const Maps: React.FC = () => {
                 { label: "Name", value: selectedImage.title },
                 { label: "Size", value: selectedImage.size },
                 { label: "Mains", value: selectedImage.mains },
-                { label: "Bases", value: selectedImage.numberBases },
+                {
+                  label: "Bases",
+                  value: selectedImage.numberBases,
+                },
                 {
                   label: "Vertical rush distance",
                   value: selectedImage.vertical,
@@ -313,8 +318,14 @@ const Maps: React.FC = () => {
                   label: "Horizontal rush distance",
                   value: selectedImage.horizontal,
                 },
-                { label: "Cross rush distance", value: selectedImage.cross },
-                { label: "Creator", value: selectedImage.creator },
+                {
+                  label: "Cross rush distance",
+                  value: selectedImage.cross,
+                },
+                {
+                  label: "Creator",
+                  value: selectedImage.creator,
+                },
               ].map((stat, idx) => (
                 <DialogContentText
                   key={idx}
@@ -333,7 +344,12 @@ const Maps: React.FC = () => {
                       stat.label === "Horizontal rush distance"
                     ? "Bottom battlefield rush distance: "
                     : `${stat.label}: `}
-                  <span style={{ color: "#10b981", fontWeight: "bold" }}>
+                  <span
+                    style={{
+                      color: "#10b981",
+                      fontWeight: "bold",
+                    }}
+                  >
                     {stat.value}
                   </span>
                 </DialogContentText>
@@ -349,7 +365,9 @@ const Maps: React.FC = () => {
                 color: "white",
                 zIndex: 10,
                 backgroundColor: "rgba(0,0,0,0.5)",
-                "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.7)",
+                },
               }}
             >
               <KeyboardArrowRightIcon />

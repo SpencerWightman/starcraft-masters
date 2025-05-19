@@ -1,10 +1,25 @@
-"use client";
+import fs from "fs";
+import path from "path";
+import { RecapType } from "@/app/types/teamTypes";
+import RecapClient from "./RecapClient";
 
-import React from "react";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
+export default function RecapPage() {
+  const dir = path.join(process.cwd(), "data", "recap");
+  const files = fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .sort();
 
-const Recap: React.FC = () => {
-  return <PaperPlaceholder message="Coming soon." />;
-};
+  const initialFile = files[0];
+  const initialData = JSON.parse(
+    fs.readFileSync(path.join(dir, initialFile), "utf-8")
+  ) as RecapType;
 
-export default Recap;
+  return (
+    <RecapClient
+      files={files}
+      initialFile={initialFile}
+      initialData={initialData}
+    />
+  );
+}

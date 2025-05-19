@@ -179,13 +179,18 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     color: "#10b981",
                     textDecoration: "none",
                     borderBottom: "1px solid #374151",
-                    "&:hover": { backgroundColor: "#374151" },
+                    "&:hover": {
+                      backgroundColor: "#374151",
+                    },
                   }}
                 >
                   <ListItemText
                     primary={item.text}
                     primaryTypographyProps={{
-                      sx: { fontWeight: "bold", textAlign: "center" },
+                      sx: {
+                        fontWeight: "bold",
+                        textAlign: "center",
+                      },
                     }}
                   />
                 </ListItemButton>

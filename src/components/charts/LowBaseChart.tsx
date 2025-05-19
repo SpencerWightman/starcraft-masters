@@ -76,7 +76,11 @@ const LowBaseChart: React.FC<ChartProps> = ({
     <div>
       <Typography
         variant="h6"
-        sx={{ color: "#10b981", marginBottom: "1rem", textAlign: "center" }}
+        sx={{
+          color: "#10b981",
+          marginBottom: "1rem",
+          textAlign: "center",
+        }}
       >
         {title}
       </Typography>
