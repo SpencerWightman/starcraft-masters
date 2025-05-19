@@ -2973,10 +2973,10 @@
     "org": "ASL",
     "orgSeason": 19,
     "orgXtra": 0,
-    "player1": "Hyun",
-    "player2": "Royal",
-    "race1": "Zerg",
-    "race2": "Terran",
+    "player1": "Royal",
+    "player2": "Hyun",
+    "race1": "Terran",
+    "race2": "Zerg",
     "winner": "Hyun"
   },
   "match5": {
