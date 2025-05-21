@@ -161,8 +161,10 @@ const Welcome: React.FC = () => {
             Recap
           </Typography>
           <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-            • Upcoming feature: Charts showing player supplies per second for
-            each ASL 19 match.
+            • Charts showing player supplies per second for each ASL 19 match.
+            The data can be fuzzy: for example, sometimes an 80 should be a 90,
+            and the charts do not always track to the very end of the match. We
+            are working on improving this.
           </Typography>
         </Box>
         <Box

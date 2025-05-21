@@ -22,11 +22,23 @@
         "player1supply": "11/17",
         "player2supply": "11/17"
       },
+      "01:30": {
+        "player1supply": "11/17",
+        "player2supply": "11/17"
+      },
       "01:35": {
         "player1supply": "12/17",
         "player2supply": "10/17"
       },
+      "01:36": {
+        "player1supply": "12/17",
+        "player2supply": "10/17"
+      },
       "01:44": {
+        "player1supply": "12/17",
+        "player2supply": "11/17"
+      },
+      "01:45": {
         "player1supply": "12/17",
         "player2supply": "11/17"
       },
@@ -58,11 +70,27 @@
         "player1supply": "13/17",
         "player2supply": "11/17"
       },
+      "01:58": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:02": {
+        "player1supply": "14/17",
+        "player2supply": "11/17"
+      },
+      "02:06": {
+        "player1supply": "14/17",
+        "player2supply": "10/17"
+      },
       "02:13": {
         "player1supply": "15/25",
         "player2supply": "12/17"
       },
       "02:14": {
+        "player1supply": "15/25",
+        "player2supply": "12/17"
+      },
+      "02:15": {
         "player1supply": "15/25",
         "player2supply": "12/17"
       },
@@ -91,6 +119,10 @@
         "player2supply": "13/17"
       },
       "02:24": {
+        "player1supply": "15/25",
+        "player2supply": "13/17"
+      },
+      "02:25": {
         "player1supply": "15/25",
         "player2supply": "13/17"
       },
@@ -130,6 +162,10 @@
         "player1supply": "16/25",
         "player2supply": "13/17"
       },
+      "02:37": {
+        "player1supply": "16/25",
+        "player2supply": "13/17"
+      },
       "02:44": {
         "player1supply": "17/33",
         "player2supply": "14/17"
@@ -153,6 +189,18 @@
       "02:49": {
         "player1supply": "17/33",
         "player2supply": "14/17"
+      },
+      "02:50": {
+        "player1supply": "17/33",
+        "player2supply": "14/17"
+      },
+      "02:53": {
+        "player1supply": "18/33",
+        "player2supply": "14/17"
+      },
+      "02:57": {
+        "player1supply": "18/33",
+        "player2supply": "16/17"
       },
       "03:00": {
         "player1supply": "18/33",
@@ -187,6 +235,10 @@
         "player2supply": "15/17"
       },
       "03:08": {
+        "player1supply": "18/33",
+        "player2supply": "15/17"
+      },
+      "03:09": {
         "player1supply": "18/33",
         "player2supply": "15/17"
       },
@@ -234,6 +286,14 @@
         "player1supply": "18/33",
         "player2supply": "16/17"
       },
+      "03:23": {
+        "player1supply": "18/33",
+        "player2supply": "16/17"
+      },
+      "03:26": {
+        "player1supply": "18/33",
+        "player2supply": "17/17"
+      },
       "03:29": {
         "player1supply": "20/33",
         "player2supply": "17/17"
@@ -274,6 +334,10 @@
         "player1supply": "20/33",
         "player2supply": "17/17"
       },
+      "03:39": {
+        "player1supply": "20/33",
+        "player2supply": "17/17"
+      },
       "03:42": {
         "player1supply": "21/33",
         "player2supply": "17/17"
@@ -286,11 +350,19 @@
         "player1supply": "21/33",
         "player2supply": "17/17"
       },
+      "03:45": {
+        "player1supply": "21/33",
+        "player2supply": "17/17"
+      },
       "03:48": {
         "player1supply": "21/33",
         "player2supply": "16/17"
       },
       "03:49": {
+        "player1supply": "21/33",
+        "player2supply": "16/17"
+      },
+      "03:50": {
         "player1supply": "21/33",
         "player2supply": "16/17"
       },
@@ -310,6 +382,10 @@
         "player1supply": "21/33",
         "player2supply": "16/17"
       },
+      "04:03": {
+        "player1supply": "21/33",
+        "player2supply": "16/17"
+      },
       "04:13": {
         "player1supply": "24/25",
         "player2supply": "18/18"
@@ -322,6 +398,14 @@
         "player1supply": "24/25",
         "player2supply": "18/18"
       },
+      "04:16": {
+        "player1supply": "24/25",
+        "player2supply": "18/18"
+      },
+      "04:21": {
+        "player1supply": "24/17",
+        "player2supply": "18/18"
+      },
       "04:24": {
         "player1supply": "25/25",
         "player2supply": "18/18"
@@ -331,6 +415,10 @@
         "player2supply": "18/18"
       },
       "04:26": {
+        "player1supply": "25/25",
+        "player2supply": "18/18"
+      },
+      "04:27": {
         "player1supply": "25/25",
         "player2supply": "18/18"
       },
@@ -346,6 +434,14 @@
         "player1supply": "28/34",
         "player2supply": "17/18"
       },
+      "04:34": {
+        "player1supply": "28/34",
+        "player2supply": "17/18"
+      },
+      "04:40": {
+        "player1supply": "28/34",
+        "player2supply": "18/18"
+      },
       "04:43": {
         "player1supply": "29/34",
         "player2supply": "18/18"
@@ -358,6 +454,10 @@
         "player1supply": "29/34",
         "player2supply": "18/18"
       },
+      "04:46": {
+        "player1supply": "29/34",
+        "player2supply": "18/18"
+      },
       "04:50": {
         "player1supply": "30/34",
         "player2supply": "20/26"
@@ -366,11 +466,19 @@
         "player1supply": "30/34",
         "player2supply": "20/26"
       },
+      "04:52": {
+        "player1supply": "30/34",
+        "player2supply": "20/26"
+      },
       "04:57": {
         "player1supply": "33/34",
         "player2supply": "21/26"
       },
       "04:58": {
+        "player1supply": "33/34",
+        "player2supply": "21/26"
+      },
+      "04:59": {
         "player1supply": "33/34",
         "player2supply": "21/26"
       },
@@ -386,9 +494,25 @@
         "player1supply": "34/34",
         "player2supply": "24/27"
       },
+      "05:09": {
+        "player1supply": "34/34",
+        "player2supply": "24/27"
+      },
+      "05:12": {
+        "player1supply": "34/34",
+        "player2supply": "25/27"
+      },
       "05:15": {
         "player1supply": "35/42",
         "player2supply": "25/27"
+      },
+      "05:16": {
+        "player1supply": "35/42",
+        "player2supply": "25/27"
+      },
+      "05:19": {
+        "player1supply": "35/42",
+        "player2supply": "26/27"
       },
       "05:28": {
         "player1supply": "39/42",
@@ -422,6 +546,10 @@
         "player1supply": "39/42",
         "player2supply": "27/27"
       },
+      "05:36": {
+        "player1supply": "39/42",
+        "player2supply": "27/27"
+      },
       "05:42": {
         "player1supply": "41/42",
         "player2supply": "27/27"
@@ -442,6 +570,10 @@
         "player1supply": "41/42",
         "player2supply": "27/27"
       },
+      "05:47": {
+        "player1supply": "41/42",
+        "player2supply": "27/27"
+      },
       "05:53": {
         "player1supply": "42/42",
         "player2supply": "31/35"
@@ -450,11 +582,35 @@
         "player1supply": "42/42",
         "player2supply": "31/35"
       },
+      "05:55": {
+        "player1supply": "42/42",
+        "player2supply": "31/35"
+      },
+      "05:58": {
+        "player1supply": "47/50",
+        "player2supply": "31/35"
+      },
+      "06:03": {
+        "player1supply": "47/50",
+        "player2supply": "33/35"
+      },
       "06:06": {
         "player1supply": "48/50",
         "player2supply": "34/35"
       },
+      "06:07": {
+        "player1supply": "48/50",
+        "player2supply": "34/35"
+      },
+      "06:11": {
+        "player1supply": "43/50",
+        "player2supply": "35/35"
+      },
       "06:14": {
+        "player1supply": "43/50",
+        "player2supply": "34/35"
+      },
+      "06:15": {
         "player1supply": "43/50",
         "player2supply": "34/35"
       },
@@ -510,13 +666,33 @@
         "player1supply": "50/50",
         "player2supply": "35/35"
       },
+      "06:32": {
+        "player1supply": "50/50",
+        "player2supply": "35/35"
+      },
+      "06:38": {
+        "player1supply": "52/58",
+        "player2supply": "35/35"
+      },
       "06:41": {
+        "player1supply": "50/58",
+        "player2supply": "35/35"
+      },
+      "06:42": {
         "player1supply": "50/58",
         "player2supply": "35/35"
       },
       "06:50": {
         "player1supply": "54/58",
         "player2supply": "35/43"
+      },
+      "06:51": {
+        "player1supply": "54/58",
+        "player2supply": "35/43"
+      },
+      "06:57": {
+        "player1supply": "54/58",
+        "player2supply": "41/44"
       },
       "07:03": {
         "player1supply": "58/58",
@@ -530,11 +706,31 @@
         "player1supply": "58/58",
         "player2supply": "43/44"
       },
+      "07:06": {
+        "player1supply": "58/58",
+        "player2supply": "43/44"
+      },
       "07:09": {
         "player1supply": "58/66",
         "player2supply": "43/44"
       },
+      "07:10": {
+        "player1supply": "58/66",
+        "player2supply": "43/44"
+      },
+      "07:20": {
+        "player1supply": "62/66",
+        "player2supply": "45/52"
+      },
+      "07:27": {
+        "player1supply": "66/66",
+        "player2supply": "47/52"
+      },
       "07:36": {
+        "player1supply": "64/74",
+        "player2supply": "49/52"
+      },
+      "07:37": {
         "player1supply": "64/74",
         "player2supply": "49/52"
       },
@@ -553,6 +749,14 @@
       "07:44": {
         "player1supply": "68/74",
         "player2supply": "49/52"
+      },
+      "07:45": {
+        "player1supply": "68/74",
+        "player2supply": "49/52"
+      },
+      "07:52": {
+        "player1supply": "68/74",
+        "player2supply": "50/52"
       },
       "07:55": {
         "player1supply": "66/74",
@@ -578,13 +782,33 @@
         "player1supply": "66/74",
         "player2supply": "50/52"
       },
+      "08:01": {
+        "player1supply": "66/74",
+        "player2supply": "50/52"
+      },
       "08:09": {
+        "player1supply": "68/74",
+        "player2supply": "52/52"
+      },
+      "08:10": {
         "player1supply": "68/74",
         "player2supply": "52/52"
       },
       "08:20": {
         "player1supply": "68/74",
         "player2supply": "56/60"
+      },
+      "08:21": {
+        "player1supply": "68/74",
+        "player2supply": "56/60"
+      },
+      "08:24": {
+        "player1supply": "68/74",
+        "player2supply": "57/60"
+      },
+      "08:38": {
+        "player1supply": "72/74",
+        "player2supply": "61/77"
       },
       "08:43": {
         "player1supply": "74/74",
@@ -618,6 +842,18 @@
         "player1supply": "74/74",
         "player2supply": "61/77"
       },
+      "08:51": {
+        "player1supply": "74/74",
+        "player2supply": "61/77"
+      },
+      "09:13": {
+        "player1supply": "80/90",
+        "player2supply": "63/85"
+      },
+      "09:16": {
+        "player1supply": "82/90",
+        "player2supply": "63/85"
+      },
       "09:22": {
         "player1supply": "86/90",
         "player2supply": "64/85"
@@ -633,6 +869,14 @@
       "09:25": {
         "player1supply": "86/90",
         "player2supply": "64/85"
+      },
+      "09:26": {
+        "player1supply": "86/90",
+        "player2supply": "64/85"
+      },
+      "09:36": {
+        "player1supply": "88/98",
+        "player2supply": "71/85"
       },
       "09:42": {
         "player1supply": "88/106",
@@ -662,8 +906,20 @@
         "player1supply": "88/106",
         "player2supply": "70/85"
       },
+      "09:49": {
+        "player1supply": "88/106",
+        "player2supply": "70/85"
+      },
       "09:55": {
         "player1supply": "84/106",
+        "player2supply": "72/85"
+      },
+      "09:56": {
+        "player1supply": "84/106",
+        "player2supply": "72/85"
+      },
+      "09:59": {
+        "player1supply": "88/106",
         "player2supply": "72/85"
       },
       "10:03": {
@@ -679,6 +935,10 @@
         "player2supply": "74/85"
       },
       "10:06": {
+        "player1supply": "100/106",
+        "player2supply": "74/85"
+      },
+      "10:07": {
         "player1supply": "100/106",
         "player2supply": "74/85"
       },
@@ -714,6 +974,10 @@
         "player1supply": "100/106",
         "player2supply": "75/93"
       },
+      "10:22": {
+        "player1supply": "100/106",
+        "player2supply": "75/93"
+      },
       "10:25": {
         "player1supply": "100/106",
         "player2supply": "75/101"
@@ -723,6 +987,10 @@
         "player2supply": "75/101"
       },
       "10:27": {
+        "player1supply": "100/106",
+        "player2supply": "75/101"
+      },
+      "10:28": {
         "player1supply": "100/106",
         "player2supply": "75/101"
       },
@@ -738,6 +1006,14 @@
         "player1supply": "106/106",
         "player2supply": "75/101"
       },
+      "10:34": {
+        "player1supply": "106/106",
+        "player2supply": "75/101"
+      },
+      "10:57": {
+        "player1supply": "106/106",
+        "player2supply": "93/109"
+      },
       "11:27": {
         "player1supply": "122/154",
         "player2supply": "104/118"
@@ -746,11 +1022,35 @@
         "player1supply": "122/154",
         "player2supply": "104/118"
       },
+      "11:29": {
+        "player1supply": "122/154",
+        "player2supply": "104/118"
+      },
+      "11:38": {
+        "player1supply": "124/154",
+        "player2supply": "110/126"
+      },
+      "11:52": {
+        "player1supply": "139/162",
+        "player2supply": "110/126"
+      },
+      "12:16": {
+        "player1supply": "148/162",
+        "player2supply": "114/127"
+      },
       "12:27": {
         "player1supply": "156/162",
         "player2supply": "122/127"
       },
       "12:28": {
+        "player1supply": "156/162",
+        "player2supply": "122/127"
+      },
+      "12:29": {
+        "player1supply": "156/162",
+        "player2supply": "122/127"
+      },
+      "12:33": {
         "player1supply": "156/162",
         "player2supply": "122/127"
       },
@@ -762,13 +1062,53 @@
         "player1supply": "156/170",
         "player2supply": "127/127"
       },
+      "12:41": {
+        "player1supply": "156/170",
+        "player2supply": "127/127"
+      },
+      "12:47": {
+        "player1supply": "156/178",
+        "player2supply": "127/127"
+      },
+      "12:50": {
+        "player1supply": "152/178",
+        "player2supply": "127/127"
+      },
       "13:03": {
         "player1supply": "160/178",
         "player2supply": "121/135"
       },
+      "13:04": {
+        "player1supply": "160/178",
+        "player2supply": "121/135"
+      },
+      "13:12": {
+        "player1supply": "160/178",
+        "player2supply": "127/160"
+      },
+      "13:15": {
+        "player1supply": "160/178",
+        "player2supply": "128/160"
+      },
       "13:22": {
         "player1supply": "160/178",
         "player2supply": "134/160"
+      },
+      "13:23": {
+        "player1supply": "160/178",
+        "player2supply": "134/160"
+      },
+      "13:30": {
+        "player1supply": "172/178",
+        "player2supply": "136/152"
+      },
+      "13:36": {
+        "player1supply": "176/187",
+        "player2supply": "143/152"
+      },
+      "13:40": {
+        "player1supply": "178/187",
+        "player2supply": "143/152"
       },
       "13:43": {
         "player1supply": "178/187",
@@ -781,6 +1121,14 @@
       "13:45": {
         "player1supply": "178/187",
         "player2supply": "145/152"
+      },
+      "13:48": {
+        "player1supply": "178/187",
+        "player2supply": "145/152"
+      },
+      "13:53": {
+        "player1supply": "180/187",
+        "player2supply": "147/152"
       },
       "14:49": {
         "player1supply": "151/200",
@@ -798,6 +1146,14 @@
         "player1supply": "151/200",
         "player2supply": "132/152"
       },
+      "14:53": {
+        "player1supply": "151/200",
+        "player2supply": "132/152"
+      },
+      "15:01": {
+        "player1supply": "152/200",
+        "player2supply": "136/152"
+      },
       "15:04": {
         "player1supply": "152/200",
         "player2supply": "138/152"
@@ -807,6 +1163,10 @@
         "player2supply": "138/152"
       },
       "15:06": {
+        "player1supply": "152/200",
+        "player2supply": "138/152"
+      },
+      "15:07": {
         "player1supply": "152/200",
         "player2supply": "138/152"
       },
@@ -822,9 +1182,25 @@
         "player1supply": "152/200",
         "player2supply": "143/152"
       },
+      "15:14": {
+        "player1supply": "152/200",
+        "player2supply": "143/152"
+      },
+      "15:17": {
+        "player1supply": "152/200",
+        "player2supply": "144/152"
+      },
       "15:22": {
         "player1supply": "152/200",
         "player2supply": "148/152"
+      },
+      "15:23": {
+        "player1supply": "152/200",
+        "player2supply": "148/152"
+      },
+      "15:26": {
+        "player1supply": "152/200",
+        "player2supply": "150/152"
       },
       "15:29": {
         "player1supply": "152/200",
@@ -838,11 +1214,23 @@
         "player1supply": "152/200",
         "player2supply": "152/152"
       },
+      "15:32": {
+        "player1supply": "152/200",
+        "player2supply": "152/152"
+      },
       "16:09": {
         "player1supply": "103/200",
         "player2supply": "112/176"
       },
+      "16:10": {
+        "player1supply": "103/200",
+        "player2supply": "112/176"
+      },
       "16:35": {
+        "player1supply": "100/200",
+        "player2supply": "115/168"
+      },
+      "16:36": {
         "player1supply": "100/200",
         "player2supply": "115/168"
       },
@@ -854,7 +1242,23 @@
         "player1supply": "100/200",
         "player2supply": "118/168"
       },
+      "16:47": {
+        "player1supply": "100/200",
+        "player2supply": "118/168"
+      },
+      "16:53": {
+        "player1supply": "100/200",
+        "player2supply": "126/160"
+      },
+      "16:57": {
+        "player1supply": "100/200",
+        "player2supply": "128/144"
+      },
       "17:00": {
+        "player1supply": "100/200",
+        "player2supply": "128/136"
+      },
+      "17:01": {
         "player1supply": "100/200",
         "player2supply": "128/136"
       },
@@ -862,7 +1266,15 @@
         "player1supply": "100/200",
         "player2supply": "134/136"
       },
+      "17:08": {
+        "player1supply": "100/200",
+        "player2supply": "134/136"
+      },
       "17:15": {
+        "player1supply": "106/200",
+        "player2supply": "136/136"
+      },
+      "17:16": {
         "player1supply": "106/200",
         "player2supply": "136/136"
       },
@@ -878,9 +1290,25 @@
         "player1supply": "108/200",
         "player2supply": "136/136"
       },
+      "17:22": {
+        "player1supply": "108/200",
+        "player2supply": "136/136"
+      },
+      "18:11": {
+        "player1supply": "71/187",
+        "player2supply": "108/168"
+      },
       "18:19": {
         "player1supply": "73/187",
         "player2supply": "108/168"
+      },
+      "18:20": {
+        "player1supply": "73/187",
+        "player2supply": "108/168"
+      },
+      "18:23": {
+        "player1supply": "73/187",
+        "player2supply": "110/168"
       },
       "18:38": {
         "player1supply": "73/187",
@@ -894,7 +1322,19 @@
         "player1supply": "73/187",
         "player2supply": "120/168"
       },
+      "18:41": {
+        "player1supply": "73/187",
+        "player2supply": "120/168"
+      },
+      "18:47": {
+        "player1supply": "73/187",
+        "player2supply": "121/168"
+      },
       "18:53": {
+        "player1supply": "73/187",
+        "player2supply": "128/168"
+      },
+      "18:54": {
         "player1supply": "73/187",
         "player2supply": "128/168"
       },
@@ -902,13 +1342,29 @@
         "player1supply": "75/187",
         "player2supply": "128/168"
       },
+      "18:58": {
+        "player1supply": "75/187",
+        "player2supply": "128/168"
+      },
       "19:01": {
+        "player1supply": "75/187",
+        "player2supply": "130/168"
+      },
+      "19:02": {
         "player1supply": "75/187",
         "player2supply": "130/168"
       },
       "19:09": {
         "player1supply": "75/187",
         "player2supply": "128/168"
+      },
+      "19:10": {
+        "player1supply": "75/187",
+        "player2supply": "128/168"
+      },
+      "19:14": {
+        "player1supply": "75/187",
+        "player2supply": "126/168"
       },
       "19:59": {
         "player1supply": "53/170",
@@ -930,6 +1386,10 @@
         "player1supply": "53/170",
         "player2supply": "121/166"
       },
+      "20:05": {
+        "player1supply": "53/170",
+        "player2supply": "121/166"
+      },
       "20:08": {
         "player1supply": "55/170",
         "player2supply": "124/166"
@@ -939,6 +1399,10 @@
         "player2supply": "124/166"
       },
       "20:11": {
+        "player1supply": "55/170",
+        "player2supply": "124/166"
+      },
+      "20:12": {
         "player1supply": "55/170",
         "player2supply": "124/166"
       }
@@ -983,6 +1447,14 @@
         "player1supply": "11/18",
         "player2supply": "11/18"
       },
+      "01:28": {
+        "player1supply": "11/18",
+        "player2supply": "11/18"
+      },
+      "01:31": {
+        "player1supply": "11/18",
+        "player2supply": "12/18"
+      },
       "01:34": {
         "player1supply": "12/18",
         "player2supply": "12/18"
@@ -1010,6 +1482,14 @@
       "01:40": {
         "player1supply": "12/18",
         "player2supply": "12/18"
+      },
+      "01:41": {
+        "player1supply": "12/18",
+        "player2supply": "12/18"
+      },
+      "01:44": {
+        "player1supply": "12/18",
+        "player2supply": "13/18"
       },
       "01:47": {
         "player1supply": "13/18",
@@ -1039,6 +1519,14 @@
         "player1supply": "13/18",
         "player2supply": "13/18"
       },
+      "01:54": {
+        "player1supply": "13/18",
+        "player2supply": "13/18"
+      },
+      "01:57": {
+        "player1supply": "13/18",
+        "player2supply": "14/18"
+      },
       "02:00": {
         "player1supply": "14/18",
         "player2supply": "14/18"
@@ -1063,7 +1551,15 @@
         "player1supply": "14/18",
         "player2supply": "14/18"
       },
+      "02:06": {
+        "player1supply": "14/18",
+        "player2supply": "14/18"
+      },
       "02:09": {
+        "player1supply": "14/18",
+        "player2supply": "15/18"
+      },
+      "02:10": {
         "player1supply": "14/18",
         "player2supply": "15/18"
       },
@@ -1080,6 +1576,10 @@
         "player2supply": "15/18"
       },
       "02:16": {
+        "player1supply": "15/18",
+        "player2supply": "15/18"
+      },
+      "02:17": {
         "player1supply": "15/18",
         "player2supply": "15/18"
       },
@@ -1115,6 +1615,14 @@
         "player1supply": "16/18",
         "player2supply": "16/18"
       },
+      "02:28": {
+        "player1supply": "16/18",
+        "player2supply": "16/18"
+      },
+      "02:31": {
+        "player1supply": "16/18",
+        "player2supply": "17/18"
+      },
       "02:43": {
         "player1supply": "18/26",
         "player2supply": "19/26"
@@ -1135,11 +1643,19 @@
         "player1supply": "18/26",
         "player2supply": "19/26"
       },
+      "02:48": {
+        "player1supply": "18/26",
+        "player2supply": "19/26"
+      },
       "02:51": {
         "player1supply": "18/26",
         "player2supply": "20/26"
       },
       "02:52": {
+        "player1supply": "18/26",
+        "player2supply": "20/26"
+      },
+      "02:53": {
         "player1supply": "18/26",
         "player2supply": "20/26"
       },
@@ -1155,6 +1671,10 @@
         "player1supply": "18/26",
         "player2supply": "21/26"
       },
+      "02:59": {
+        "player1supply": "18/26",
+        "player2supply": "21/26"
+      },
       "03:03": {
         "player1supply": "18/26",
         "player2supply": "21/26"
@@ -1164,6 +1684,10 @@
         "player2supply": "21/26"
       },
       "03:05": {
+        "player1supply": "18/26",
+        "player2supply": "21/26"
+      },
+      "03:06": {
         "player1supply": "18/26",
         "player2supply": "21/26"
       },
@@ -1188,6 +1712,10 @@
         "player2supply": "22/26"
       },
       "03:14": {
+        "player1supply": "18/26",
+        "player2supply": "22/26"
+      },
+      "03:15": {
         "player1supply": "18/26",
         "player2supply": "22/26"
       },
@@ -1247,7 +1775,23 @@
         "player1supply": "21/26",
         "player2supply": "23/26"
       },
+      "03:35": {
+        "player1supply": "21/26",
+        "player2supply": "23/26"
+      },
+      "03:38": {
+        "player1supply": "22/26",
+        "player2supply": "23/26"
+      },
+      "03:41": {
+        "player1supply": "23/26",
+        "player2supply": "23/26"
+      },
       "03:44": {
+        "player1supply": "24/26",
+        "player2supply": "24/26"
+      },
+      "03:45": {
         "player1supply": "24/26",
         "player2supply": "24/26"
       },
@@ -1271,11 +1815,19 @@
         "player1supply": "24/26",
         "player2supply": "25/26"
       },
+      "03:53": {
+        "player1supply": "24/26",
+        "player2supply": "25/26"
+      },
       "03:56": {
         "player1supply": "25/26",
         "player2supply": "25/26"
       },
       "03:57": {
+        "player1supply": "25/26",
+        "player2supply": "25/26"
+      },
+      "03:58": {
         "player1supply": "25/26",
         "player2supply": "25/26"
       },
@@ -1291,12 +1843,24 @@
         "player1supply": "27/34",
         "player2supply": "26/26"
       },
+      "04:04": {
+        "player1supply": "27/34",
+        "player2supply": "26/26"
+      },
       "04:07": {
         "player1supply": "27/34",
         "player2supply": "28/34"
       },
       "04:08": {
         "player1supply": "27/34",
+        "player2supply": "28/34"
+      },
+      "04:09": {
+        "player1supply": "27/34",
+        "player2supply": "28/34"
+      },
+      "04:12": {
+        "player1supply": "28/34",
         "player2supply": "28/34"
       },
       "04:15": {
@@ -1327,11 +1891,19 @@
         "player1supply": "28/34",
         "player2supply": "29/34"
       },
+      "04:22": {
+        "player1supply": "28/34",
+        "player2supply": "29/34"
+      },
       "04:26": {
         "player1supply": "29/34",
         "player2supply": "31/34"
       },
       "04:27": {
+        "player1supply": "29/34",
+        "player2supply": "31/34"
+      },
+      "04:28": {
         "player1supply": "29/34",
         "player2supply": "31/34"
       },
@@ -1351,6 +1923,10 @@
         "player1supply": "29/34",
         "player2supply": "32/34"
       },
+      "04:35": {
+        "player1supply": "29/34",
+        "player2supply": "32/34"
+      },
       "04:38": {
         "player1supply": "30/34",
         "player2supply": "32/34"
@@ -1360,6 +1936,10 @@
         "player2supply": "32/34"
       },
       "04:40": {
+        "player1supply": "30/34",
+        "player2supply": "32/34"
+      },
+      "04:41": {
         "player1supply": "30/34",
         "player2supply": "32/34"
       },
@@ -1403,6 +1983,10 @@
         "player1supply": "34/44",
         "player2supply": "36/44"
       },
+      "05:01": {
+        "player1supply": "34/44",
+        "player2supply": "36/44"
+      },
       "05:06": {
         "player1supply": "38/44",
         "player2supply": "40/44"
@@ -1411,7 +1995,15 @@
         "player1supply": "38/44",
         "player2supply": "40/44"
       },
+      "05:08": {
+        "player1supply": "38/44",
+        "player2supply": "40/44"
+      },
       "05:11": {
+        "player1supply": "38/44",
+        "player2supply": "42/44"
+      },
+      "05:12": {
         "player1supply": "38/44",
         "player2supply": "42/44"
       },
@@ -1435,9 +2027,9 @@
         "player1supply": "40/44",
         "player2supply": "42/44"
       },
-      "05:25": {
-        "player1supply": "44/44",
-        "player2supply": "48/52"
+      "05:20": {
+        "player1supply": "40/44",
+        "player2supply": "42/44"
       },
       "05:29": {
         "player1supply": "44/44",
@@ -1453,6 +2045,14 @@
       },
       "05:32": {
         "player1supply": "44/44",
+        "player2supply": "48/52"
+      },
+      "05:33": {
+        "player1supply": "44/44",
+        "player2supply": "48/52"
+      },
+      "05:38": {
+        "player1supply": "48/52",
         "player2supply": "48/52"
       },
       "05:44": {
@@ -1483,7 +2083,31 @@
         "player1supply": "52/52",
         "player2supply": "52/52"
       },
+      "05:51": {
+        "player1supply": "52/52",
+        "player2supply": "52/52"
+      },
+      "05:58": {
+        "player1supply": "56/60",
+        "player2supply": "54/60"
+      },
+      "06:02": {
+        "player1supply": "56/60",
+        "player2supply": "56/60"
+      },
+      "06:05": {
+        "player1supply": "56/60",
+        "player2supply": "58/60"
+      },
+      "06:08": {
+        "player1supply": "60/60",
+        "player2supply": "58/60"
+      },
       "06:11": {
+        "player1supply": "60/60",
+        "player2supply": "60/60"
+      },
+      "06:12": {
         "player1supply": "60/60",
         "player2supply": "60/60"
       },
@@ -1499,9 +2123,29 @@
         "player1supply": "60/68",
         "player2supply": "60/60"
       },
+      "06:18": {
+        "player1supply": "60/68",
+        "player2supply": "60/60"
+      },
       "06:23": {
         "player1supply": "62/68",
         "player2supply": "60/60"
+      },
+      "06:24": {
+        "player1supply": "62/68",
+        "player2supply": "60/60"
+      },
+      "06:31": {
+        "player1supply": "66/76",
+        "player2supply": "62/68"
+      },
+      "06:38": {
+        "player1supply": "70/76",
+        "player2supply": "64/68"
+      },
+      "06:41": {
+        "player1supply": "70/76",
+        "player2supply": "66/68"
       },
       "06:47": {
         "player1supply": "70/76",
@@ -1519,6 +2163,10 @@
         "player1supply": "70/76",
         "player2supply": "68/76"
       },
+      "06:51": {
+        "player1supply": "70/76",
+        "player2supply": "68/76"
+      },
       "07:01": {
         "player1supply": "74/84",
         "player2supply": "70/76"
@@ -1531,11 +2179,19 @@
         "player1supply": "74/84",
         "player2supply": "70/76"
       },
+      "07:04": {
+        "player1supply": "74/84",
+        "player2supply": "70/76"
+      },
       "07:16": {
         "player1supply": "80/92",
         "player2supply": "76/76"
       },
       "07:17": {
+        "player1supply": "80/92",
+        "player2supply": "76/76"
+      },
+      "07:18": {
         "player1supply": "80/92",
         "player2supply": "76/76"
       },
@@ -1547,12 +2203,24 @@
         "player1supply": "80/92",
         "player2supply": "76/84"
       },
+      "07:23": {
+        "player1supply": "80/92",
+        "player2supply": "76/84"
+      },
       "07:29": {
         "player1supply": "84/92",
         "player2supply": "78/84"
       },
       "07:30": {
         "player1supply": "84/92",
+        "player2supply": "78/84"
+      },
+      "07:31": {
+        "player1supply": "84/92",
+        "player2supply": "78/84"
+      },
+      "07:34": {
+        "player1supply": "86/92",
         "player2supply": "78/84"
       },
       "07:37": {
@@ -1575,6 +2243,10 @@
         "player1supply": "86/92",
         "player2supply": "80/84"
       },
+      "07:42": {
+        "player1supply": "86/92",
+        "player2supply": "80/84"
+      },
       "07:45": {
         "player1supply": "86/92",
         "player2supply": "82/84"
@@ -1591,7 +2263,19 @@
         "player1supply": "86/92",
         "player2supply": "82/84"
       },
+      "07:49": {
+        "player1supply": "86/92",
+        "player2supply": "82/84"
+      },
+      "07:52": {
+        "player1supply": "86/92",
+        "player2supply": "81/84"
+      },
       "07:56": {
+        "player1supply": "86/92",
+        "player2supply": "82/84"
+      },
+      "07:57": {
         "player1supply": "86/92",
         "player2supply": "82/84"
       },
@@ -1600,6 +2284,10 @@
         "player2supply": "84/84"
       },
       "08:01": {
+        "player1supply": "86/92",
+        "player2supply": "84/84"
+      },
+      "08:02": {
         "player1supply": "86/92",
         "player2supply": "84/84"
       },
@@ -1612,6 +2300,10 @@
         "player2supply": "82/84"
       },
       "08:07": {
+        "player1supply": "86/92",
+        "player2supply": "82/84"
+      },
+      "08:08": {
         "player1supply": "86/92",
         "player2supply": "82/84"
       },
@@ -1643,6 +2335,10 @@
         "player1supply": "84/108",
         "player2supply": "84/84"
       },
+      "08:33": {
+        "player1supply": "84/108",
+        "player2supply": "84/84"
+      },
       "08:44": {
         "player1supply": "87/108",
         "player2supply": "92/108"
@@ -1651,17 +2347,49 @@
         "player1supply": "87/108",
         "player2supply": "92/108"
       },
+      "08:46": {
+        "player1supply": "87/108",
+        "player2supply": "92/108"
+      },
       "08:50": {
         "player1supply": "89/108",
+        "player2supply": "94/108"
+      },
+      "08:51": {
+        "player1supply": "89/108",
+        "player2supply": "94/108"
+      },
+      "09:05": {
+        "player1supply": "105/108",
         "player2supply": "94/108"
       },
       "09:21": {
         "player1supply": "111/116",
         "player2supply": "102/108"
       },
+      "09:23": {
+        "player1supply": "111/116",
+        "player2supply": "102/108"
+      },
       "09:27": {
         "player1supply": "111/126",
         "player2supply": "104/116"
+      },
+      "09:28": {
+        "player1supply": "111/126",
+        "player2supply": "104/116"
+      },
+      "09:31": {
+        "player1supply": "111/126",
+        "player2supply": "106/116"
+      },
+      "09:48": {
+        "player1supply": "114/126",
+        "player2supply": "100/126"
+      },
+      "09:51": {
+        "player1supply": "113/126",
+        "player2supply": "100/126"
       },
       "10:08": {
         "player1supply": "113/126",
@@ -1670,6 +2398,18 @@
       "10:09": {
         "player1supply": "113/126",
         "player2supply": "100/126"
+      },
+      "10:10": {
+        "player1supply": "113/126",
+        "player2supply": "100/126"
+      },
+      "10:13": {
+        "player1supply": "113/126",
+        "player2supply": "102/126"
+      },
+      "10:16": {
+        "player1supply": "113/126",
+        "player2supply": "106/126"
       },
       "10:19": {
         "player1supply": "115/126",
@@ -1683,6 +2423,18 @@
         "player1supply": "115/126",
         "player2supply": "106/126"
       },
+      "10:22": {
+        "player1supply": "115/126",
+        "player2supply": "106/126"
+      },
+      "10:27": {
+        "player1supply": "121/126",
+        "player2supply": "108/126"
+      },
+      "10:32": {
+        "player1supply": "123/126",
+        "player2supply": "111/126"
+      },
       "10:37": {
         "player1supply": "124/126",
         "player2supply": "116/126"
@@ -1695,11 +2447,23 @@
         "player1supply": "124/126",
         "player2supply": "116/126"
       },
+      "10:40": {
+        "player1supply": "124/126",
+        "player2supply": "116/126"
+      },
       "10:54": {
         "player1supply": "113/142",
         "player2supply": "111/134"
       },
+      "10:55": {
+        "player1supply": "113/142",
+        "player2supply": "111/134"
+      },
       "11:05": {
+        "player1supply": "122/142",
+        "player2supply": "118/134"
+      },
+      "11:06": {
         "player1supply": "122/142",
         "player2supply": "118/134"
       },
@@ -1723,7 +2487,19 @@
         "player1supply": "122/142",
         "player2supply": "120/134"
       },
+      "11:14": {
+        "player1supply": "122/142",
+        "player2supply": "120/134"
+      },
+      "11:20": {
+        "player1supply": "121/142",
+        "player2supply": "122/134"
+      },
       "11:27": {
+        "player1supply": "123/142",
+        "player2supply": "126/142"
+      },
+      "11:28": {
         "player1supply": "123/142",
         "player2supply": "126/142"
       },
@@ -1735,12 +2511,24 @@
         "player1supply": "126/142",
         "player2supply": "126/142"
       },
+      "11:35": {
+        "player1supply": "126/142",
+        "player2supply": "126/142"
+      },
       "11:51": {
         "player1supply": "127/142",
         "player2supply": "138/142"
       },
       "11:52": {
         "player1supply": "127/142",
+        "player2supply": "138/142"
+      },
+      "11:53": {
+        "player1supply": "127/142",
+        "player2supply": "138/142"
+      },
+      "11:58": {
+        "player1supply": "129/142",
         "player2supply": "138/142"
       },
       "12:05": {
@@ -1751,11 +2539,23 @@
         "player1supply": "133/142",
         "player2supply": "145/130"
       },
+      "12:07": {
+        "player1supply": "133/142",
+        "player2supply": "145/130"
+      },
       "12:12": {
         "player1supply": "135/142",
         "player2supply": "148/130"
       },
+      "12:13": {
+        "player1supply": "135/142",
+        "player2supply": "148/130"
+      },
       "12:35": {
+        "player1supply": "135/142",
+        "player2supply": "148/130"
+      },
+      "12:36": {
         "player1supply": "135/142",
         "player2supply": "148/130"
       },
@@ -1771,6 +2571,14 @@
         "player1supply": "135/142",
         "player2supply": "150/130"
       },
+      "12:42": {
+        "player1supply": "135/142",
+        "player2supply": "150/130"
+      },
+      "12:51": {
+        "player1supply": "141/142",
+        "player2supply": "156/166"
+      },
       "12:57": {
         "player1supply": "142/142",
         "player2supply": "160/174"
@@ -1779,9 +2587,49 @@
         "player1supply": "142/142",
         "player2supply": "160/174"
       },
+      "12:59": {
+        "player1supply": "142/142",
+        "player2supply": "160/174"
+      },
       "13:08": {
         "player1supply": "141/142",
         "player2supply": "162/198"
+      },
+      "13:09": {
+        "player1supply": "141/142",
+        "player2supply": "162/198"
+      },
+      "13:49": {
+        "player1supply": "125/174",
+        "player2supply": "128/200"
+      },
+      "13:52": {
+        "player1supply": "125/174",
+        "player2supply": "131/200"
+      },
+      "13:55": {
+        "player1supply": "125/174",
+        "player2supply": "135/200"
+      },
+      "13:58": {
+        "player1supply": "123/174",
+        "player2supply": "135/200"
+      },
+      "14:27": {
+        "player1supply": "115/174",
+        "player2supply": "136/200"
+      },
+      "14:30": {
+        "player1supply": "115/174",
+        "player2supply": "138/200"
+      },
+      "14:33": {
+        "player1supply": "115/174",
+        "player2supply": "143/200"
+      },
+      "14:36": {
+        "player1supply": "115/174",
+        "player2supply": "144/200"
       },
       "14:40": {
         "player1supply": "118/174",
@@ -1791,7 +2639,15 @@
         "player1supply": "118/174",
         "player2supply": "146/200"
       },
+      "14:42": {
+        "player1supply": "118/174",
+        "player2supply": "146/200"
+      },
       "14:51": {
+        "player1supply": "134/174",
+        "player2supply": "154/200"
+      },
+      "14:52": {
         "player1supply": "134/174",
         "player2supply": "154/200"
       },
@@ -1799,9 +2655,29 @@
         "player1supply": "134/174",
         "player2supply": "148/200"
       },
+      "14:56": {
+        "player1supply": "134/174",
+        "player2supply": "148/200"
+      },
+      "14:59": {
+        "player1supply": "134/174",
+        "player2supply": "146/200"
+      },
       "15:02": {
         "player1supply": "134/174",
         "player2supply": "140/200"
+      },
+      "15:03": {
+        "player1supply": "134/174",
+        "player2supply": "140/200"
+      },
+      "15:22": {
+        "player1supply": "126/174",
+        "player2supply": "152/200"
+      },
+      "15:26": {
+        "player1supply": "126/174",
+        "player2supply": "142/200"
       },
       "15:36": {
         "player1supply": "133/174",
@@ -1810,6 +2686,14 @@
       "15:37": {
         "player1supply": "133/174",
         "player2supply": "138/200"
+      },
+      "15:38": {
+        "player1supply": "133/174",
+        "player2supply": "138/200"
+      },
+      "15:49": {
+        "player1supply": "136/174",
+        "player2supply": "154/200"
       },
       "16:14": {
         "player1supply": "116/174",
@@ -1823,6 +2707,14 @@
         "player1supply": "116/174",
         "player2supply": "140/200"
       },
+      "16:17": {
+        "player1supply": "116/174",
+        "player2supply": "140/200"
+      },
+      "16:20": {
+        "player1supply": "114/174",
+        "player2supply": "140/200"
+      },
       "16:28": {
         "player1supply": "117/174",
         "player2supply": "147/200"
@@ -1831,11 +2723,39 @@
         "player1supply": "117/174",
         "player2supply": "147/200"
       },
+      "16:30": {
+        "player1supply": "117/174",
+        "player2supply": "147/200"
+      },
+      "16:37": {
+        "player1supply": "121/174",
+        "player2supply": "150/200"
+      },
+      "16:52": {
+        "player1supply": "119/174",
+        "player2supply": "143/200"
+      },
+      "16:55": {
+        "player1supply": "117/174",
+        "player2supply": "143/200"
+      },
+      "17:27": {
+        "player1supply": "116/166",
+        "player2supply": "150/200"
+      },
+      "17:34": {
+        "player1supply": "113/166",
+        "player2supply": "154/200"
+      },
       "17:43": {
         "player1supply": "116/166",
         "player2supply": "153/200"
       },
       "17:44": {
+        "player1supply": "116/166",
+        "player2supply": "153/200"
+      },
+      "17:45": {
         "player1supply": "116/166",
         "player2supply": "153/200"
       },
@@ -1847,6 +2767,14 @@
         "player1supply": "115/166",
         "player2supply": "157/200"
       },
+      "17:55": {
+        "player1supply": "115/166",
+        "player2supply": "157/200"
+      },
+      "18:00": {
+        "player1supply": "125/166",
+        "player2supply": "157/200"
+      },
       "18:03": {
         "player1supply": "126/166",
         "player2supply": "160/200"
@@ -1856,6 +2784,10 @@
         "player2supply": "160/200"
       },
       "18:05": {
+        "player1supply": "126/166",
+        "player2supply": "160/200"
+      },
+      "18:06": {
         "player1supply": "126/166",
         "player2supply": "160/200"
       },
@@ -1883,9 +2815,33 @@
         "player1supply": "126/166",
         "player2supply": "168/200"
       },
+      "18:15": {
+        "player1supply": "126/166",
+        "player2supply": "168/200"
+      },
+      "18:18": {
+        "player1supply": "128/166",
+        "player2supply": "168/200"
+      },
+      "18:25": {
+        "player1supply": "134/176",
+        "player2supply": "178/200"
+      },
+      "18:30": {
+        "player1supply": "134/176",
+        "player2supply": "182/200"
+      },
       "18:55": {
         "player1supply": "125/176",
         "player2supply": "171/200"
+      },
+      "18:56": {
+        "player1supply": "125/176",
+        "player2supply": "171/200"
+      },
+      "19:28": {
+        "player1supply": "121/176",
+        "player2supply": "155/200"
       },
       "19:31": {
         "player1supply": "123/176",
@@ -1894,6 +2850,14 @@
       "19:32": {
         "player1supply": "123/176",
         "player2supply": "155/200"
+      },
+      "19:33": {
+        "player1supply": "123/176",
+        "player2supply": "155/200"
+      },
+      "19:49": {
+        "player1supply": "123/176",
+        "player2supply": "171/200"
       },
       "19:58": {
         "player1supply": "124/176",
@@ -1907,7 +2871,15 @@
         "player1supply": "124/176",
         "player2supply": "171/200"
       },
+      "20:01": {
+        "player1supply": "124/176",
+        "player2supply": "171/200"
+      },
       "20:33": {
+        "player1supply": "110/176",
+        "player2supply": "153/200"
+      },
+      "20:34": {
         "player1supply": "110/176",
         "player2supply": "153/200"
       },
@@ -1916,6 +2888,10 @@
         "player2supply": "170/200"
       },
       "20:48": {
+        "player1supply": "106/176",
+        "player2supply": "170/200"
+      },
+      "20:49": {
         "player1supply": "106/176",
         "player2supply": "170/200"
       }
@@ -1936,7 +2912,15 @@
         "player1supply": "7/8",
         "player2supply": "10/10"
       },
+      "01:18": {
+        "player1supply": "7/8",
+        "player2supply": "10/10"
+      },
       "01:21": {
+        "player1supply": "8/89",
+        "player2supply": "11/18"
+      },
+      "01:22": {
         "player1supply": "8/89",
         "player2supply": "11/18"
       },
@@ -1956,6 +2940,10 @@
         "player1supply": "8/89",
         "player2supply": "11/18"
       },
+      "01:30": {
+        "player1supply": "8/89",
+        "player2supply": "11/18"
+      },
       "01:33": {
         "player1supply": "8/89",
         "player2supply": "12/18"
@@ -1972,6 +2960,10 @@
         "player1supply": "8/89",
         "player2supply": "12/18"
       },
+      "01:37": {
+        "player1supply": "8/89",
+        "player2supply": "12/18"
+      },
       "01:40": {
         "player1supply": "8/17",
         "player2supply": "12/18"
@@ -1983,6 +2975,14 @@
       "01:42": {
         "player1supply": "8/17",
         "player2supply": "12/18"
+      },
+      "01:43": {
+        "player1supply": "8/17",
+        "player2supply": "12/18"
+      },
+      "01:47": {
+        "player1supply": "11/17",
+        "player2supply": "13/18"
       },
       "01:50": {
         "player1supply": "11/17",
@@ -2005,6 +3005,10 @@
         "player2supply": "13/18"
       },
       "01:55": {
+        "player1supply": "11/17",
+        "player2supply": "13/18"
+      },
+      "01:56": {
         "player1supply": "11/17",
         "player2supply": "13/18"
       },
@@ -2032,7 +3036,15 @@
         "player1supply": "12/17",
         "player2supply": "14/18"
       },
+      "02:08": {
+        "player1supply": "12/17",
+        "player2supply": "14/18"
+      },
       "02:11": {
+        "player1supply": "12/17",
+        "player2supply": "15/18"
+      },
+      "02:12": {
         "player1supply": "12/17",
         "player2supply": "15/18"
       },
@@ -2056,6 +3068,10 @@
         "player1supply": "13/17",
         "player2supply": "16/18"
       },
+      "02:21": {
+        "player1supply": "13/17",
+        "player2supply": "16/18"
+      },
       "02:24": {
         "player1supply": "13/17",
         "player2supply": "17/18"
@@ -2071,6 +3087,14 @@
       "02:27": {
         "player1supply": "13/17",
         "player2supply": "17/18"
+      },
+      "02:28": {
+        "player1supply": "13/17",
+        "player2supply": "17/18"
+      },
+      "02:31": {
+        "player1supply": "13/17",
+        "player2supply": "18/18"
       },
       "02:34": {
         "player1supply": "14/17",
@@ -2100,7 +3124,15 @@
         "player1supply": "14/17",
         "player2supply": "18/18"
       },
+      "02:41": {
+        "player1supply": "14/17",
+        "player2supply": "18/18"
+      },
       "02:48": {
+        "player1supply": "13/17",
+        "player2supply": "18/26"
+      },
+      "02:49": {
         "player1supply": "13/17",
         "player2supply": "18/26"
       },
@@ -2120,11 +3152,35 @@
         "player1supply": "13/17",
         "player2supply": "19/26"
       },
+      "02:56": {
+        "player1supply": "13/17",
+        "player2supply": "19/26"
+      },
+      "02:59": {
+        "player1supply": "12/17",
+        "player2supply": "18/26"
+      },
+      "03:07": {
+        "player1supply": "12/17",
+        "player2supply": "20/26"
+      },
+      "03:14": {
+        "player1supply": "12/17",
+        "player2supply": "18/26"
+      },
       "03:21": {
         "player1supply": "12/17",
         "player2supply": "19/26"
       },
+      "03:22": {
+        "player1supply": "12/17",
+        "player2supply": "19/26"
+      },
       "03:26": {
+        "player1supply": "12/17",
+        "player2supply": "19/26"
+      },
+      "03:27": {
         "player1supply": "12/17",
         "player2supply": "19/26"
       },
@@ -2136,11 +3192,19 @@
         "player1supply": "12/17",
         "player2supply": "21/26"
       },
+      "03:39": {
+        "player1supply": "12/17",
+        "player2supply": "21/26"
+      },
       "03:44": {
         "player1supply": "13/17",
         "player2supply": "22/26"
       },
       "03:45": {
+        "player1supply": "13/17",
+        "player2supply": "22/26"
+      },
+      "03:46": {
         "player1supply": "13/17",
         "player2supply": "22/26"
       },
@@ -2156,6 +3220,10 @@
         "player1supply": "13/17",
         "player2supply": "23/26"
       },
+      "03:52": {
+        "player1supply": "13/17",
+        "player2supply": "23/26"
+      },
       "03:56": {
         "player1supply": "14/17",
         "player2supply": "24/26"
@@ -2168,11 +3236,19 @@
         "player1supply": "14/17",
         "player2supply": "24/26"
       },
+      "03:59": {
+        "player1supply": "14/17",
+        "player2supply": "24/26"
+      },
       "04:10": {
         "player1supply": "15/18",
         "player2supply": "26/26"
       },
       "04:11": {
+        "player1supply": "15/18",
+        "player2supply": "26/26"
+      },
+      "04:12": {
         "player1supply": "15/18",
         "player2supply": "26/26"
       },
@@ -2189,6 +3265,10 @@
         "player2supply": "26/26"
       },
       "04:18": {
+        "player1supply": "14/18",
+        "player2supply": "26/26"
+      },
+      "04:19": {
         "player1supply": "14/18",
         "player2supply": "26/26"
       },
@@ -2220,6 +3300,10 @@
         "player1supply": "16/18",
         "player2supply": "26/26"
       },
+      "04:30": {
+        "player1supply": "16/18",
+        "player2supply": "26/26"
+      },
       "04:33": {
         "player1supply": "16/18",
         "player2supply": "26/34"
@@ -2228,12 +3312,28 @@
         "player1supply": "16/18",
         "player2supply": "26/34"
       },
+      "04:35": {
+        "player1supply": "16/18",
+        "player2supply": "26/34"
+      },
+      "04:39": {
+        "player1supply": "17/18",
+        "player2supply": "27/34"
+      },
       "04:43": {
         "player1supply": "17/18",
         "player2supply": "27/34"
       },
       "04:44": {
         "player1supply": "17/18",
+        "player2supply": "27/34"
+      },
+      "04:45": {
+        "player1supply": "17/18",
+        "player2supply": "27/34"
+      },
+      "04:48": {
+        "player1supply": "18/18",
         "player2supply": "27/34"
       },
       "05:07": {
@@ -2256,6 +3356,10 @@
         "player1supply": "23/27",
         "player2supply": "30/34"
       },
+      "05:12": {
+        "player1supply": "23/27",
+        "player2supply": "30/34"
+      },
       "05:15": {
         "player1supply": "23/27",
         "player2supply": "31/34"
@@ -2265,6 +3369,10 @@
         "player2supply": "31/34"
       },
       "05:17": {
+        "player1supply": "23/27",
+        "player2supply": "31/34"
+      },
+      "05:18": {
         "player1supply": "23/27",
         "player2supply": "31/34"
       },
@@ -2284,6 +3392,14 @@
         "player1supply": "26/27",
         "player2supply": "32/34"
       },
+      "05:29": {
+        "player1supply": "26/27",
+        "player2supply": "32/34"
+      },
+      "05:33": {
+        "player1supply": "26/27",
+        "player2supply": "34/34"
+      },
       "05:36": {
         "player1supply": "25/27",
         "player2supply": "34/34"
@@ -2295,6 +3411,14 @@
       "05:38": {
         "player1supply": "25/27",
         "player2supply": "34/34"
+      },
+      "05:39": {
+        "player1supply": "25/27",
+        "player2supply": "34/34"
+      },
+      "05:43": {
+        "player1supply": "25/27",
+        "player2supply": "35/44"
       },
       "05:48": {
         "player1supply": "25/27",
@@ -2308,15 +3432,35 @@
         "player1supply": "25/27",
         "player2supply": "37/44"
       },
+      "05:51": {
+        "player1supply": "25/27",
+        "player2supply": "37/44"
+      },
+      "05:56": {
+        "player1supply": "27/27",
+        "player2supply": "38/44"
+      },
       "05:59": {
         "player1supply": "27/27",
         "player2supply": "39/44"
+      },
+      "06:00": {
+        "player1supply": "27/27",
+        "player2supply": "39/44"
+      },
+      "06:06": {
+        "player1supply": "27/27",
+        "player2supply": "40/44"
       },
       "06:11": {
         "player1supply": "31/35",
         "player2supply": "43/44"
       },
       "06:12": {
+        "player1supply": "31/35",
+        "player2supply": "43/44"
+      },
+      "06:13": {
         "player1supply": "31/35",
         "player2supply": "43/44"
       },
@@ -2332,11 +3476,31 @@
         "player1supply": "32/35",
         "player2supply": "42/44"
       },
+      "06:20": {
+        "player1supply": "32/35",
+        "player2supply": "42/44"
+      },
       "06:26": {
         "player1supply": "31/43",
         "player2supply": "44/44"
       },
+      "06:27": {
+        "player1supply": "31/43",
+        "player2supply": "44/44"
+      },
+      "06:33": {
+        "player1supply": "35/43",
+        "player2supply": "44/44"
+      },
+      "06:36": {
+        "player1supply": "36/43",
+        "player2supply": "44/44"
+      },
       "06:42": {
+        "player1supply": "36/43",
+        "player2supply": "47/52"
+      },
+      "06:43": {
         "player1supply": "36/43",
         "player2supply": "47/52"
       },
@@ -2349,6 +3513,10 @@
         "player2supply": "44/52"
       },
       "06:49": {
+        "player1supply": "33/43",
+        "player2supply": "44/52"
+      },
+      "06:50": {
         "player1supply": "33/43",
         "player2supply": "44/52"
       },
@@ -2384,6 +3552,10 @@
         "player1supply": "31/43",
         "player2supply": "44/52"
       },
+      "07:07": {
+        "player1supply": "31/43",
+        "player2supply": "44/52"
+      },
       "07:11": {
         "player1supply": "31/43",
         "player2supply": "46/52"
@@ -2393,6 +3565,10 @@
         "player2supply": "46/52"
       },
       "07:13": {
+        "player1supply": "31/43",
+        "player2supply": "46/52"
+      },
+      "07:14": {
         "player1supply": "31/43",
         "player2supply": "46/52"
       },
@@ -2416,9 +3592,29 @@
         "player1supply": "33/43",
         "player2supply": "46/52"
       },
+      "07:22": {
+        "player1supply": "33/43",
+        "player2supply": "46/52"
+      },
       "07:25": {
         "player1supply": "33/43",
         "player2supply": "47/52"
+      },
+      "07:26": {
+        "player1supply": "33/43",
+        "player2supply": "47/52"
+      },
+      "07:30": {
+        "player1supply": "33/58",
+        "player2supply": "48/52"
+      },
+      "07:35": {
+        "player1supply": "34/58",
+        "player2supply": "49/52"
+      },
+      "07:43": {
+        "player1supply": "48/59",
+        "player2supply": "51/52"
       },
       "07:46": {
         "player1supply": "50/58",
@@ -2428,6 +3624,26 @@
         "player1supply": "50/58",
         "player2supply": "51/52"
       },
+      "07:48": {
+        "player1supply": "50/58",
+        "player2supply": "51/52"
+      },
+      "07:52": {
+        "player1supply": "50/58",
+        "player2supply": "52/52"
+      },
+      "07:58": {
+        "player1supply": "52/58",
+        "player2supply": "53/60"
+      },
+      "08:07": {
+        "player1supply": "53/58",
+        "player2supply": "55/60"
+      },
+      "08:14": {
+        "player1supply": "47/59",
+        "player2supply": "53/60"
+      },
       "08:18": {
         "player1supply": "51/58",
         "player2supply": "55/68"
@@ -2435,6 +3651,30 @@
       "08:19": {
         "player1supply": "51/58",
         "player2supply": "55/68"
+      },
+      "08:20": {
+        "player1supply": "51/58",
+        "player2supply": "55/68"
+      },
+      "08:30": {
+        "player1supply": "54/58",
+        "player2supply": "58/68"
+      },
+      "08:35": {
+        "player1supply": "54/58",
+        "player2supply": "59/68"
+      },
+      "08:40": {
+        "player1supply": "54/58",
+        "player2supply": "60/68"
+      },
+      "08:53": {
+        "player1supply": "58/58",
+        "player2supply": "64/68"
+      },
+      "08:56": {
+        "player1supply": "58/58",
+        "player2supply": "65/68"
       },
       "09:14": {
         "player1supply": "59/67",
@@ -2448,7 +3688,15 @@
         "player1supply": "59/67",
         "player2supply": "66/76"
       },
+      "09:17": {
+        "player1supply": "59/67",
+        "player2supply": "66/76"
+      },
       "09:30": {
+        "player1supply": "64/68",
+        "player2supply": "68/76"
+      },
+      "09:31": {
         "player1supply": "64/68",
         "player2supply": "68/76"
       },
@@ -2460,7 +3708,31 @@
         "player1supply": "67/68",
         "player2supply": "71/76"
       },
+      "09:43": {
+        "player1supply": "67/68",
+        "player2supply": "71/76"
+      },
+      "09:46": {
+        "player1supply": "67/68",
+        "player2supply": "72/76"
+      },
+      "09:50": {
+        "player1supply": "67/68",
+        "player2supply": "70/76"
+      },
+      "09:53": {
+        "player1supply": "68/68",
+        "player2supply": "71/76"
+      },
+      "10:11": {
+        "player1supply": "66/68",
+        "player2supply": "63/84"
+      },
       "10:16": {
+        "player1supply": "65/68",
+        "player2supply": "64/84"
+      },
+      "10:17": {
         "player1supply": "65/68",
         "player2supply": "64/84"
       },
@@ -2468,7 +3740,15 @@
         "player1supply": "65/68",
         "player2supply": "65/84"
       },
+      "10:21": {
+        "player1supply": "65/68",
+        "player2supply": "65/84"
+      },
       "10:27": {
+        "player1supply": "65/68",
+        "player2supply": "65/84"
+      },
+      "10:28": {
         "player1supply": "65/68",
         "player2supply": "65/84"
       },
@@ -2477,6 +3757,10 @@
         "player2supply": "67/84"
       },
       "10:32": {
+        "player1supply": "65/68",
+        "player2supply": "67/84"
+      },
+      "10:33": {
         "player1supply": "65/68",
         "player2supply": "67/84"
       },
@@ -2504,9 +3788,21 @@
         "player1supply": "65/68",
         "player2supply": "68/84"
       },
+      "10:42": {
+        "player1supply": "65/68",
+        "player2supply": "68/84"
+      },
       "10:46": {
         "player1supply": "68/68",
         "player2supply": "71/84"
+      },
+      "10:47": {
+        "player1supply": "68/68",
+        "player2supply": "71/84"
+      },
+      "10:50": {
+        "player1supply": "68/68",
+        "player2supply": "72/84"
       },
       "10:53": {
         "player1supply": "68/68",
@@ -2536,6 +3832,10 @@
         "player1supply": "68/68",
         "player2supply": "71/92"
       },
+      "11:00": {
+        "player1supply": "68/68",
+        "player2supply": "71/92"
+      },
       "11:05": {
         "player1supply": "68/68",
         "player2supply": "76/92"
@@ -2548,6 +3848,14 @@
         "player1supply": "68/68",
         "player2supply": "76/92"
       },
+      "11:08": {
+        "player1supply": "68/68",
+        "player2supply": "76/92"
+      },
+      "11:16": {
+        "player1supply": "67/76",
+        "player2supply": "76/92"
+      },
       "11:27": {
         "player1supply": "76/76",
         "player2supply": "81/92"
@@ -2555,6 +3863,14 @@
       "11:28": {
         "player1supply": "76/76",
         "player2supply": "81/92"
+      },
+      "11:29": {
+        "player1supply": "76/76",
+        "player2supply": "81/92"
+      },
+      "11:33": {
+        "player1supply": "76/76",
+        "player2supply": "80/92"
       },
       "11:38": {
         "player1supply": "76/76",
@@ -2568,6 +3884,10 @@
         "player1supply": "76/76",
         "player2supply": "83/92"
       },
+      "11:41": {
+        "player1supply": "76/76",
+        "player2supply": "83/92"
+      },
       "11:44": {
         "player1supply": "76/84",
         "player2supply": "83/92"
@@ -2577,6 +3897,10 @@
         "player2supply": "83/92"
       },
       "11:46": {
+        "player1supply": "76/84",
+        "player2supply": "83/92"
+      },
+      "11:47": {
         "player1supply": "76/84",
         "player2supply": "83/92"
       },
@@ -2612,6 +3936,10 @@
         "player1supply": "76/84",
         "player2supply": "88/92"
       },
+      "11:59": {
+        "player1supply": "76/84",
+        "player2supply": "88/92"
+      },
       "12:14": {
         "player1supply": "63/100",
         "player2supply": "81/100"
@@ -2625,6 +3953,10 @@
         "player2supply": "81/100"
       },
       "12:17": {
+        "player1supply": "63/100",
+        "player2supply": "81/100"
+      },
+      "12:18": {
         "player1supply": "63/100",
         "player2supply": "81/100"
       },
@@ -2648,6 +3980,22 @@
         "player1supply": "63/100",
         "player2supply": "85/100"
       },
+      "12:26": {
+        "player1supply": "63/100",
+        "player2supply": "85/100"
+      },
+      "12:39": {
+        "player1supply": "70/100",
+        "player2supply": "88/100"
+      },
+      "12:54": {
+        "player1supply": "62/100",
+        "player2supply": "88/100"
+      },
+      "12:59": {
+        "player1supply": "62/100",
+        "player2supply": "88/100"
+      },
       "13:12": {
         "player1supply": "67/100",
         "player2supply": "84/108"
@@ -2656,9 +4004,25 @@
         "player1supply": "67/100",
         "player2supply": "84/108"
       },
+      "13:14": {
+        "player1supply": "67/100",
+        "player2supply": "84/108"
+      },
+      "13:22": {
+        "player1supply": "61/100",
+        "player2supply": "78/108"
+      },
       "13:29": {
         "player1supply": "60/100",
         "player2supply": "77/108"
+      },
+      "13:30": {
+        "player1supply": "60/100",
+        "player2supply": "77/108"
+      },
+      "13:33": {
+        "player1supply": "59/100",
+        "player2supply": "79/108"
       },
       "13:45": {
         "player1supply": "57/100",
@@ -2672,6 +4036,14 @@
         "player1supply": "57/100",
         "player2supply": "77/108"
       },
+      "13:49": {
+        "player1supply": "57/100",
+        "player2supply": "77/108"
+      },
+      "13:52": {
+        "player1supply": "57/100",
+        "player2supply": "79/108"
+      },
       "13:58": {
         "player1supply": "62/100",
         "player2supply": "82/108"
@@ -2680,9 +4052,33 @@
         "player1supply": "62/100",
         "player2supply": "82/108"
       },
+      "14:00": {
+        "player1supply": "62/100",
+        "player2supply": "82/108"
+      },
       "14:03": {
         "player1supply": "64/100",
         "player2supply": "82/108"
+      },
+      "14:04": {
+        "player1supply": "64/100",
+        "player2supply": "82/108"
+      },
+      "14:07": {
+        "player1supply": "64/100",
+        "player2supply": "84/108"
+      },
+      "14:11": {
+        "player1supply": "62/100",
+        "player2supply": "84/108"
+      },
+      "14:14": {
+        "player1supply": "61/100",
+        "player2supply": "84/108"
+      },
+      "14:26": {
+        "player1supply": "55/100",
+        "player2supply": "84/108"
       },
       "14:33": {
         "player1supply": "64/100",
@@ -2691,6 +4087,14 @@
       "14:34": {
         "player1supply": "64/100",
         "player2supply": "89/108"
+      },
+      "14:35": {
+        "player1supply": "64/100",
+        "player2supply": "89/108"
+      },
+      "14:38": {
+        "player1supply": "65/100",
+        "player2supply": "91/108"
       },
       "14:56": {
         "player1supply": "73/100",
@@ -2705,6 +4109,10 @@
         "player2supply": "97/108"
       },
       "14:59": {
+        "player1supply": "73/100",
+        "player2supply": "97/108"
+      },
+      "15:00": {
         "player1supply": "73/100",
         "player2supply": "97/108"
       },
@@ -2732,6 +4140,26 @@
         "player1supply": "72/100",
         "player2supply": "106/108"
       },
+      "15:31": {
+        "player1supply": "72/100",
+        "player2supply": "106/108"
+      },
+      "15:34": {
+        "player1supply": "77/100",
+        "player2supply": "107/108"
+      },
+      "15:42": {
+        "player1supply": "74/100",
+        "player2supply": "108/108"
+      },
+      "15:47": {
+        "player1supply": "73/100",
+        "player2supply": "108/108"
+      },
+      "15:59": {
+        "player1supply": "72/100",
+        "player2supply": "101/108"
+      },
       "16:15": {
         "player1supply": "78/92",
         "player2supply": "107/108"
@@ -2744,6 +4172,26 @@
         "player1supply": "78/92",
         "player2supply": "107/108"
       },
+      "16:18": {
+        "player1supply": "78/92",
+        "player2supply": "107/108"
+      },
+      "16:25": {
+        "player1supply": "76/92",
+        "player2supply": "106/108"
+      },
+      "16:30": {
+        "player1supply": "78/92",
+        "player2supply": "105/108"
+      },
+      "16:33": {
+        "player1supply": "80/92",
+        "player2supply": "105/108"
+      },
+      "16:38": {
+        "player1supply": "82/92",
+        "player2supply": "108/108"
+      },
       "16:50": {
         "player1supply": "78/92",
         "player2supply": "107/124"
@@ -2752,7 +4200,15 @@
         "player1supply": "78/92",
         "player2supply": "107/124"
       },
+      "16:52": {
+        "player1supply": "78/92",
+        "player2supply": "107/124"
+      },
       "17:02": {
+        "player1supply": "74/92",
+        "player2supply": "105/124"
+      },
+      "17:03": {
         "player1supply": "74/92",
         "player2supply": "105/124"
       },
@@ -2773,6 +4229,10 @@
         "player2supply": "105/124"
       },
       "17:10": {
+        "player1supply": "73/92",
+        "player2supply": "105/124"
+      },
+      "17:11": {
         "player1supply": "73/92",
         "player2supply": "105/124"
       },
@@ -2808,11 +4268,39 @@
         "player1supply": "75/92",
         "player2supply": "112/124"
       },
+      "17:34": {
+        "player1supply": "75/92",
+        "player2supply": "112/124"
+      },
+      "17:40": {
+        "player1supply": "71/92",
+        "player2supply": "110/124"
+      },
+      "17:51": {
+        "player1supply": "73/92",
+        "player2supply": "112/124"
+      },
+      "18:14": {
+        "player1supply": "65/92",
+        "player2supply": "114/124"
+      },
+      "18:18": {
+        "player1supply": "63/92",
+        "player2supply": "111/124"
+      },
       "18:23": {
         "player1supply": "63/92",
         "player2supply": "107/124"
       },
+      "18:24": {
+        "player1supply": "63/92",
+        "player2supply": "107/124"
+      },
       "18:27": {
+        "player1supply": "61/92",
+        "player2supply": "108/124"
+      },
+      "18:28": {
         "player1supply": "61/92",
         "player2supply": "108/124"
       },
@@ -2824,9 +4312,29 @@
         "player1supply": "62/92",
         "player2supply": "110/124"
       },
+      "18:36": {
+        "player1supply": "62/92",
+        "player2supply": "110/124"
+      },
+      "18:41": {
+        "player1supply": "65/92",
+        "player2supply": "110/124"
+      },
+      "18:45": {
+        "player1supply": "65/92",
+        "player2supply": "113/124"
+      },
       "18:48": {
         "player1supply": "67/92",
         "player2supply": "113/124"
+      },
+      "18:49": {
+        "player1supply": "67/92",
+        "player2supply": "113/124"
+      },
+      "18:53": {
+        "player1supply": "72/92",
+        "player2supply": "114/134"
       }
     },
     "org": "ASL",
@@ -2865,6 +4373,14 @@
         "player1supply": "10/10",
         "player2supply": "10/17"
       },
+      "01:19": {
+        "player1supply": "10/10",
+        "player2supply": "10/17"
+      },
+      "01:27": {
+        "player1supply": "11/18",
+        "player2supply": "11/17"
+      },
       "01:35": {
         "player1supply": "12/18",
         "player2supply": "12/17"
@@ -2894,6 +4410,10 @@
         "player2supply": "12/17"
       },
       "01:43": {
+        "player1supply": "12/18",
+        "player2supply": "12/17"
+      },
+      "01:44": {
         "player1supply": "12/18",
         "player2supply": "12/17"
       },
@@ -2929,6 +4449,10 @@
         "player1supply": "13/18",
         "player2supply": "13/17"
       },
+      "01:57": {
+        "player1supply": "13/18",
+        "player2supply": "13/17"
+      },
       "02:00": {
         "player1supply": "14/18",
         "player2supply": "14/17"
@@ -2953,6 +4477,10 @@
         "player1supply": "14/18",
         "player2supply": "14/17"
       },
+      "02:07": {
+        "player1supply": "14/18",
+        "player2supply": "14/17"
+      },
       "02:15": {
         "player1supply": "16/18",
         "player2supply": "15/17"
@@ -2966,6 +4494,10 @@
         "player2supply": "15/17"
       },
       "02:19": {
+        "player1supply": "16/18",
+        "player2supply": "15/17"
+      },
+      "02:20": {
         "player1supply": "16/18",
         "player2supply": "15/17"
       },
@@ -2992,6 +4524,14 @@
       "02:30": {
         "player1supply": "16/18",
         "player2supply": "16/17"
+      },
+      "02:31": {
+        "player1supply": "16/18",
+        "player2supply": "16/17"
+      },
+      "02:39": {
+        "player1supply": "18/18",
+        "player2supply": "17/25"
       },
       "02:43": {
         "player1supply": "18/26",
@@ -3025,7 +4565,19 @@
         "player1supply": "18/26",
         "player2supply": "17/25"
       },
+      "02:51": {
+        "player1supply": "18/26",
+        "player2supply": "17/25"
+      },
       "02:55": {
+        "player1supply": "20/26",
+        "player2supply": "17/25"
+      },
+      "02:56": {
+        "player1supply": "20/26",
+        "player2supply": "17/25"
+      },
+      "03:01": {
         "player1supply": "20/26",
         "player2supply": "17/25"
       },
@@ -3037,7 +4589,15 @@
         "player1supply": "20/26",
         "player2supply": "19/25"
       },
+      "03:06": {
+        "player1supply": "20/26",
+        "player2supply": "19/25"
+      },
       "03:09": {
+        "player1supply": "20/26",
+        "player2supply": "20/25"
+      },
+      "03:10": {
         "player1supply": "20/26",
         "player2supply": "20/25"
       },
@@ -3061,6 +4621,10 @@
         "player1supply": "21/26",
         "player2supply": "20/25"
       },
+      "03:20": {
+        "player1supply": "21/26",
+        "player2supply": "20/25"
+      },
       "03:25": {
         "player1supply": "23/26",
         "player2supply": "21/25"
@@ -3081,7 +4645,19 @@
         "player1supply": "23/26",
         "player2supply": "21/25"
       },
+      "03:31": {
+        "player1supply": "23/26",
+        "player2supply": "21/25"
+      },
+      "03:41": {
+        "player1supply": "23/26",
+        "player2supply": "24/25"
+      },
       "03:44": {
+        "player1supply": "24/26",
+        "player2supply": "24/25"
+      },
+      "03:46": {
         "player1supply": "24/26",
         "player2supply": "24/25"
       },
@@ -3097,13 +4673,37 @@
         "player1supply": "24/26",
         "player2supply": "25/25"
       },
+      "03:54": {
+        "player1supply": "24/26",
+        "player2supply": "25/25"
+      },
       "03:59": {
         "player1supply": "26/26",
+        "player2supply": "25/25"
+      },
+      "04:00": {
+        "player1supply": "26/26",
+        "player2supply": "25/25"
+      },
+      "04:04": {
+        "player1supply": "26/34",
         "player2supply": "25/25"
       },
       "04:09": {
         "player1supply": "28/34",
         "player2supply": "26/33"
+      },
+      "04:10": {
+        "player1supply": "28/34",
+        "player2supply": "26/33"
+      },
+      "04:18": {
+        "player1supply": "29/34",
+        "player2supply": "29/42"
+      },
+      "04:21": {
+        "player1supply": "29/34",
+        "player2supply": "30/42"
       },
       "04:26": {
         "player1supply": "30/34",
@@ -3117,11 +4717,19 @@
         "player1supply": "30/34",
         "player2supply": "31/42"
       },
+      "04:29": {
+        "player1supply": "30/34",
+        "player2supply": "31/42"
+      },
       "04:41": {
         "player1supply": "34/34",
         "player2supply": "33/42"
       },
       "04:43": {
+        "player1supply": "34/34",
+        "player2supply": "33/42"
+      },
+      "04:44": {
         "player1supply": "34/34",
         "player2supply": "33/42"
       },
@@ -3137,7 +4745,15 @@
         "player1supply": "36/44",
         "player2supply": "37/42"
       },
+      "04:56": {
+        "player1supply": "36/44",
+        "player2supply": "37/42"
+      },
       "05:00": {
+        "player1supply": "38/44",
+        "player2supply": "37/42"
+      },
+      "05:01": {
         "player1supply": "38/44",
         "player2supply": "37/42"
       },
@@ -3165,7 +4781,15 @@
         "player1supply": "40/44",
         "player2supply": "39/50"
       },
+      "05:14": {
+        "player1supply": "40/44",
+        "player2supply": "39/50"
+      },
       "05:24": {
+        "player1supply": "44/44",
+        "player2supply": "46/58"
+      },
+      "05:26": {
         "player1supply": "44/44",
         "player2supply": "46/58"
       },
@@ -3177,6 +4801,10 @@
         "player1supply": "44/44",
         "player2supply": "48/58"
       },
+      "05:33": {
+        "player1supply": "44/44",
+        "player2supply": "48/58"
+      },
       "05:36": {
         "player1supply": "45/52",
         "player2supply": "48/58"
@@ -3185,9 +4813,21 @@
         "player1supply": "45/52",
         "player2supply": "48/58"
       },
+      "05:38": {
+        "player1supply": "45/52",
+        "player2supply": "48/58"
+      },
       "05:49": {
         "player1supply": "51/52",
         "player2supply": "51/58"
+      },
+      "05:50": {
+        "player1supply": "51/52",
+        "player2supply": "51/58"
+      },
+      "05:57": {
+        "player1supply": "51/52",
+        "player2supply": "57/66"
       },
       "06:00": {
         "player1supply": "52/52",
@@ -3205,7 +4845,15 @@
         "player1supply": "52/52",
         "player2supply": "57/66"
       },
+      "06:05": {
+        "player1supply": "52/52",
+        "player2supply": "57/66"
+      },
       "06:11": {
+        "player1supply": "53/60",
+        "player2supply": "60/66"
+      },
+      "06:12": {
         "player1supply": "53/60",
         "player2supply": "60/66"
       },
@@ -3217,11 +4865,23 @@
         "player1supply": "55/60",
         "player2supply": "60/66"
       },
+      "06:18": {
+        "player1supply": "55/60",
+        "player2supply": "60/66"
+      },
       "06:25": {
         "player1supply": "57/60",
         "player2supply": "66/66"
       },
+      "06:26": {
+        "player1supply": "57/60",
+        "player2supply": "66/66"
+      },
       "06:30": {
+        "player1supply": "57/60",
+        "player2supply": "66/66"
+      },
+      "06:31": {
         "player1supply": "57/60",
         "player2supply": "66/66"
       },
@@ -3236,6 +4896,18 @@
       "06:39": {
         "player1supply": "59/60",
         "player2supply": "68/74"
+      },
+      "06:40": {
+        "player1supply": "59/60",
+        "player2supply": "68/74"
+      },
+      "06:43": {
+        "player1supply": "59/60",
+        "player2supply": "67/74"
+      },
+      "06:54": {
+        "player1supply": "57/68",
+        "player2supply": "62/82"
       },
       "07:15": {
         "player1supply": "57/76",
@@ -3257,9 +4929,33 @@
         "player1supply": "57/76",
         "player2supply": "61/98"
       },
+      "07:21": {
+        "player1supply": "57/76",
+        "player2supply": "61/98"
+      },
+      "07:25": {
+        "player1supply": "59/76",
+        "player2supply": "62/98"
+      },
+      "07:32": {
+        "player1supply": "61/76",
+        "player2supply": "63/98"
+      },
       "07:39": {
         "player1supply": "65/76",
         "player2supply": "63/98"
+      },
+      "07:40": {
+        "player1supply": "65/76",
+        "player2supply": "63/98"
+      },
+      "07:44": {
+        "player1supply": "65/76",
+        "player2supply": "65/98"
+      },
+      "07:48": {
+        "player1supply": "65/76",
+        "player2supply": "67/98"
       },
       "07:56": {
         "player1supply": "69/76",
@@ -3285,7 +4981,15 @@
         "player1supply": "69/76",
         "player2supply": "71/98"
       },
+      "08:04": {
+        "player1supply": "69/76",
+        "player2supply": "71/98"
+      },
       "08:09": {
+        "player1supply": "69/84",
+        "player2supply": "73/98"
+      },
+      "08:10": {
         "player1supply": "69/84",
         "player2supply": "73/98"
       },
@@ -3305,6 +5009,10 @@
         "player1supply": "73/84",
         "player2supply": "73/98"
       },
+      "08:21": {
+        "player1supply": "73/84",
+        "player2supply": "73/98"
+      },
       "08:26": {
         "player1supply": "75/84",
         "player2supply": "77/98"
@@ -3317,7 +5025,15 @@
         "player1supply": "75/84",
         "player2supply": "77/98"
       },
+      "08:30": {
+        "player1supply": "75/84",
+        "player2supply": "77/98"
+      },
       "08:34": {
+        "player1supply": "75/84",
+        "player2supply": "77/98"
+      },
+      "08:35": {
         "player1supply": "75/84",
         "player2supply": "77/98"
       },
@@ -3325,11 +5041,23 @@
         "player1supply": "79/84",
         "player2supply": "76/107"
       },
+      "08:43": {
+        "player1supply": "79/84",
+        "player2supply": "76/107"
+      },
       "08:51": {
         "player1supply": "81/84",
         "player2supply": "79/107"
       },
+      "08:52": {
+        "player1supply": "81/84",
+        "player2supply": "79/107"
+      },
       "08:56": {
+        "player1supply": "83/84",
+        "player2supply": "83/107"
+      },
+      "08:57": {
         "player1supply": "83/84",
         "player2supply": "83/107"
       },
@@ -3345,6 +5073,14 @@
         "player1supply": "83/100",
         "player2supply": "88/107"
       },
+      "09:34": {
+        "player1supply": "83/100",
+        "player2supply": "88/107"
+      },
+      "10:11": {
+        "player1supply": "101/118",
+        "player2supply": "108/115"
+      },
       "10:16": {
         "player1supply": "103/118",
         "player2supply": "113/115"
@@ -3352,6 +5088,14 @@
       "10:17": {
         "player1supply": "103/118",
         "player2supply": "113/115"
+      },
+      "10:18": {
+        "player1supply": "103/118",
+        "player2supply": "113/115"
+      },
+      "10:23": {
+        "player1supply": "111/118",
+        "player2supply": "113/131"
       },
       "10:27": {
         "player1supply": "111/118",
@@ -3361,9 +5105,21 @@
         "player1supply": "111/118",
         "player2supply": "116/131"
       },
+      "10:30": {
+        "player1supply": "111/118",
+        "player2supply": "116/131"
+      },
       "10:36": {
         "player1supply": "113/118",
         "player2supply": "116/138"
+      },
+      "10:37": {
+        "player1supply": "113/118",
+        "player2supply": "116/138"
+      },
+      "11:00": {
+        "player1supply": "113/118",
+        "player2supply": "135/147"
       },
       "11:04": {
         "player1supply": "117/118",
@@ -3377,6 +5133,10 @@
         "player1supply": "117/118",
         "player2supply": "135/147"
       },
+      "11:07": {
+        "player1supply": "117/118",
+        "player2supply": "135/147"
+      },
       "11:18": {
         "player1supply": "117/118",
         "player2supply": "138/155"
@@ -3385,7 +5145,35 @@
         "player1supply": "117/118",
         "player2supply": "138/155"
       },
+      "11:20": {
+        "player1supply": "117/118",
+        "player2supply": "138/155"
+      },
+      "11:24": {
+        "player1supply": "118/118",
+        "player2supply": "138/155"
+      },
+      "11:27": {
+        "player1supply": "118/118",
+        "player2supply": "140/163"
+      },
+      "11:30": {
+        "player1supply": "118/118",
+        "player2supply": "140/163"
+      },
+      "11:40": {
+        "player1supply": "124/134",
+        "player2supply": "140/163"
+      },
+      "11:47": {
+        "player1supply": "132/142",
+        "player2supply": "140/163"
+      },
       "11:51": {
+        "player1supply": "133/142",
+        "player2supply": "140/163"
+      },
+      "11:52": {
         "player1supply": "133/142",
         "player2supply": "140/163"
       },
@@ -3396,6 +5184,22 @@
       "11:57": {
         "player1supply": "133/142",
         "player2supply": "144/163"
+      },
+      "11:58": {
+        "player1supply": "133/142",
+        "player2supply": "144/163"
+      },
+      "12:02": {
+        "player1supply": "135/142",
+        "player2supply": "144/172"
+      },
+      "12:17": {
+        "player1supply": "142/158",
+        "player2supply": "160/196"
+      },
+      "12:22": {
+        "player1supply": "145/158",
+        "player2supply": "160/196"
       },
       "12:26": {
         "player1supply": "151/166",
@@ -3409,13 +5213,29 @@
         "player1supply": "151/166",
         "player2supply": "160/196"
       },
+      "12:29": {
+        "player1supply": "151/166",
+        "player2supply": "160/196"
+      },
       "12:36": {
+        "player1supply": "156/174",
+        "player2supply": "160/196"
+      },
+      "12:37": {
         "player1supply": "156/174",
         "player2supply": "160/196"
       },
       "12:42": {
         "player1supply": "156/174",
         "player2supply": "161/200"
+      },
+      "12:43": {
+        "player1supply": "156/174",
+        "player2supply": "161/200"
+      },
+      "12:50": {
+        "player1supply": "159/174",
+        "player2supply": "173/200"
       },
       "12:57": {
         "player1supply": "165/174",
@@ -3441,6 +5261,10 @@
         "player1supply": "165/174",
         "player2supply": "177/200"
       },
+      "13:03": {
+        "player1supply": "165/174",
+        "player2supply": "177/200"
+      },
       "13:06": {
         "player1supply": "167/174",
         "player2supply": "177/200"
@@ -3460,6 +5284,14 @@
       "13:10": {
         "player1supply": "167/174",
         "player2supply": "177/200"
+      },
+      "13:11": {
+        "player1supply": "167/174",
+        "player2supply": "177/200"
+      },
+      "13:15": {
+        "player1supply": "173/174",
+        "player2supply": "187/200"
       },
       "13:20": {
         "player1supply": "173/174",
@@ -3521,6 +5353,10 @@
         "player1supply": "173/174",
         "player2supply": "190/200"
       },
+      "13:36": {
+        "player1supply": "173/174",
+        "player2supply": "190/200"
+      },
       "13:39": {
         "player1supply": "173/174",
         "player2supply": "194/200"
@@ -3533,6 +5369,14 @@
         "player1supply": "173/174",
         "player2supply": "194/200"
       },
+      "13:42": {
+        "player1supply": "173/174",
+        "player2supply": "194/200"
+      },
+      "14:37": {
+        "player1supply": "131/200",
+        "player2supply": "170/200"
+      },
       "14:43": {
         "player1supply": "135/200",
         "player2supply": "172/200"
@@ -3540,6 +5384,26 @@
       "14:44": {
         "player1supply": "135/200",
         "player2supply": "172/200"
+      },
+      "14:45": {
+        "player1supply": "135/200",
+        "player2supply": "172/200"
+      },
+      "14:49": {
+        "player1supply": "137/200",
+        "player2supply": "176/200"
+      },
+      "15:07": {
+        "player1supply": "148/200",
+        "player2supply": "195/200"
+      },
+      "15:15": {
+        "player1supply": "143/200",
+        "player2supply": "188/200"
+      },
+      "15:35": {
+        "player1supply": "122/200",
+        "player2supply": "173/200"
       },
       "15:47": {
         "player1supply": "125/200",
@@ -3553,6 +5417,18 @@
         "player1supply": "125/200",
         "player2supply": "181/200"
       },
+      "15:50": {
+        "player1supply": "125/200",
+        "player2supply": "181/200"
+      },
+      "16:14": {
+        "player1supply": "113/200",
+        "player2supply": "174/200"
+      },
+      "16:19": {
+        "player1supply": "121/200",
+        "player2supply": "174/200"
+      },
       "16:23": {
         "player1supply": "127/200",
         "player2supply": "178/200"
@@ -3565,9 +5441,21 @@
         "player1supply": "127/200",
         "player2supply": "178/200"
       },
+      "16:26": {
+        "player1supply": "127/200",
+        "player2supply": "178/200"
+      },
       "16:44": {
         "player1supply": "135/200",
         "player2supply": "197/200"
+      },
+      "16:45": {
+        "player1supply": "135/200",
+        "player2supply": "197/200"
+      },
+      "17:03": {
+        "player1supply": "127/190",
+        "player2supply": "194/200"
       },
       "17:13": {
         "player1supply": "137/200",
@@ -3582,6 +5470,10 @@
         "player2supply": "198/200"
       },
       "17:16": {
+        "player1supply": "137/200",
+        "player2supply": "198/200"
+      },
+      "17:17": {
         "player1supply": "137/200",
         "player2supply": "198/200"
       },
@@ -3601,8 +5493,36 @@
         "player1supply": "147/200",
         "player2supply": "200/200"
       },
+      "17:30": {
+        "player1supply": "147/200",
+        "player2supply": "200/200"
+      },
+      "17:33": {
+        "player1supply": "148/200",
+        "player2supply": "200/200"
+      },
+      "17:44": {
+        "player1supply": "153/200",
+        "player2supply": "198/200"
+      },
+      "17:47": {
+        "player1supply": "155/200",
+        "player2supply": "197/200"
+      },
+      "17:54": {
+        "player1supply": "159/200",
+        "player2supply": "200/200"
+      },
       "18:06": {
         "player1supply": "167/200",
+        "player2supply": "200/200"
+      },
+      "18:07": {
+        "player1supply": "167/200",
+        "player2supply": "200/200"
+      },
+      "18:22": {
+        "player1supply": "173/200",
         "player2supply": "200/200"
       },
       "18:25": {
@@ -3629,6 +5549,14 @@
         "player1supply": "175/200",
         "player2supply": "200/200"
       },
+      "18:31": {
+        "player1supply": "175/200",
+        "player2supply": "200/200"
+      },
+      "18:42": {
+        "player1supply": "175/200",
+        "player2supply": "193/200"
+      },
       "18:46": {
         "player1supply": "173/200",
         "player2supply": "193/200"
@@ -3640,6 +5568,14 @@
       "18:48": {
         "player1supply": "173/200",
         "player2supply": "193/200"
+      },
+      "18:49": {
+        "player1supply": "173/200",
+        "player2supply": "193/200"
+      },
+      "19:03": {
+        "player1supply": "167/200",
+        "player2supply": "184/200"
       },
       "19:31": {
         "player1supply": "116/200",
@@ -3653,9 +5589,21 @@
         "player1supply": "116/200",
         "player2supply": "162/200"
       },
+      "19:34": {
+        "player1supply": "116/200",
+        "player2supply": "162/200"
+      },
       "19:39": {
         "player1supply": "118/200",
         "player2supply": "158/200"
+      },
+      "19:40": {
+        "player1supply": "118/200",
+        "player2supply": "158/200"
+      },
+      "19:49": {
+        "player1supply": "104/200",
+        "player2supply": "170/200"
       },
       "19:56": {
         "player1supply": "106/200",
@@ -3665,11 +5613,19 @@
         "player1supply": "106/200",
         "player2supply": "191/200"
       },
+      "19:58": {
+        "player1supply": "106/200",
+        "player2supply": "191/200"
+      },
       "20:02": {
         "player1supply": "110/200",
         "player2supply": "191/200"
       },
       "20:03": {
+        "player1supply": "110/200",
+        "player2supply": "191/200"
+      },
+      "20:04": {
         "player1supply": "110/200",
         "player2supply": "191/200"
       },
@@ -3688,6 +5644,10 @@
       "20:12": {
         "player1supply": "110/200",
         "player2supply": "195/200"
+      },
+      "20:13": {
+        "player1supply": "110/200",
+        "player2supply": "195/200"
       }
     },
     "org": "ASL",
@@ -3702,8 +5662,20 @@
   "match5": {
     "dateTime": "03/26/2025",
     "gameData": {
+      "01:15": {
+        "player1supply": "10/17",
+        "player2supply": "8/9"
+      },
       "01:21": {
         "player1supply": "10/17",
+        "player2supply": "10/17"
+      },
+      "01:22": {
+        "player1supply": "10/17",
+        "player2supply": "10/17"
+      },
+      "01:25": {
+        "player1supply": "11/17",
         "player2supply": "10/17"
       },
       "01:29": {
@@ -3728,6 +5700,14 @@
       },
       "01:34": {
         "player1supply": "11/17",
+        "player2supply": "11/17"
+      },
+      "01:35": {
+        "player1supply": "11/17",
+        "player2supply": "11/17"
+      },
+      "01:38": {
+        "player1supply": "12/17",
         "player2supply": "11/17"
       },
       "01:41": {
@@ -3758,11 +5738,27 @@
         "player1supply": "12/17",
         "player2supply": "11/17"
       },
+      "01:48": {
+        "player1supply": "12/17",
+        "player2supply": "11/17"
+      },
       "01:52": {
         "player1supply": "13/17",
         "player2supply": "11/17"
       },
+      "01:53": {
+        "player1supply": "13/17",
+        "player2supply": "11/17"
+      },
+      "02:03": {
+        "player1supply": "14/17",
+        "player2supply": "10/17"
+      },
       "02:06": {
+        "player1supply": "14/17",
+        "player2supply": "11/17"
+      },
+      "02:07": {
         "player1supply": "14/17",
         "player2supply": "11/17"
       },
@@ -3783,6 +5779,10 @@
         "player2supply": "12/17"
       },
       "02:14": {
+        "player1supply": "14/17",
+        "player2supply": "12/17"
+      },
+      "02:15": {
         "player1supply": "14/17",
         "player2supply": "12/17"
       },
@@ -3830,11 +5830,19 @@
         "player1supply": "14/17",
         "player2supply": "13/17"
       },
+      "02:29": {
+        "player1supply": "14/17",
+        "player2supply": "13/17"
+      },
       "02:32": {
         "player1supply": "15/17",
         "player2supply": "13/17"
       },
       "02:33": {
+        "player1supply": "15/17",
+        "player2supply": "13/17"
+      },
+      "02:34": {
         "player1supply": "15/17",
         "player2supply": "13/17"
       },
@@ -3858,6 +5866,10 @@
         "player1supply": "15/17",
         "player2supply": "14/17"
       },
+      "02:42": {
+        "player1supply": "15/17",
+        "player2supply": "14/17"
+      },
       "02:45": {
         "player1supply": "16/17",
         "player2supply": "14/17"
@@ -3874,7 +5886,15 @@
         "player1supply": "16/17",
         "player2supply": "14/17"
       },
+      "02:49": {
+        "player1supply": "16/17",
+        "player2supply": "14/17"
+      },
       "02:52": {
+        "player1supply": "16/17",
+        "player2supply": "13/17"
+      },
+      "02:53": {
         "player1supply": "16/17",
         "player2supply": "13/17"
       },
@@ -3882,9 +5902,21 @@
         "player1supply": "16/17",
         "player2supply": "12/17"
       },
+      "02:57": {
+        "player1supply": "16/17",
+        "player2supply": "12/17"
+      },
       "03:01": {
         "player1supply": "17/17",
         "player2supply": "13/17"
+      },
+      "03:02": {
+        "player1supply": "17/17",
+        "player2supply": "13/17"
+      },
+      "03:05": {
+        "player1supply": "17/17",
+        "player2supply": "14/17"
       },
       "03:08": {
         "player1supply": "17/17",
@@ -3907,6 +5939,10 @@
         "player2supply": "15/17"
       },
       "03:13": {
+        "player1supply": "17/17",
+        "player2supply": "15/17"
+      },
+      "03:14": {
         "player1supply": "17/17",
         "player2supply": "15/17"
       },
@@ -3938,6 +5974,10 @@
         "player1supply": "18/25",
         "player2supply": "17/18"
       },
+      "03:28": {
+        "player1supply": "18/25",
+        "player2supply": "17/18"
+      },
       "03:35": {
         "player1supply": "21/34",
         "player2supply": "18/18"
@@ -3966,6 +6006,10 @@
         "player1supply": "21/34",
         "player2supply": "18/18"
       },
+      "03:42": {
+        "player1supply": "21/34",
+        "player2supply": "18/18"
+      },
       "03:49": {
         "player1supply": "23/34",
         "player2supply": "18/18"
@@ -3990,7 +6034,15 @@
         "player1supply": "23/34",
         "player2supply": "18/18"
       },
+      "03:55": {
+        "player1supply": "23/34",
+        "player2supply": "18/18"
+      },
       "03:58": {
+        "player1supply": "24/34",
+        "player2supply": "18/18"
+      },
+      "03:59": {
         "player1supply": "24/34",
         "player2supply": "18/18"
       },
@@ -3998,9 +6050,21 @@
         "player1supply": "28/34",
         "player2supply": "22/27"
       },
+      "04:12": {
+        "player1supply": "28/34",
+        "player2supply": "22/27"
+      },
       "04:17": {
         "player1supply": "29/34",
         "player2supply": "23/27"
+      },
+      "04:18": {
+        "player1supply": "29/34",
+        "player2supply": "23/27"
+      },
+      "04:21": {
+        "player1supply": "29/34",
+        "player2supply": "24/27"
       },
       "04:27": {
         "player1supply": "31/34",
@@ -4018,6 +6082,10 @@
         "player1supply": "31/34",
         "player2supply": "25/27"
       },
+      "04:31": {
+        "player1supply": "31/34",
+        "player2supply": "25/27"
+      },
       "04:34": {
         "player1supply": "33/34",
         "player2supply": "25/27"
@@ -4029,6 +6097,14 @@
       "04:36": {
         "player1supply": "33/34",
         "player2supply": "25/27"
+      },
+      "04:37": {
+        "player1supply": "33/34",
+        "player2supply": "25/27"
+      },
+      "04:42": {
+        "player1supply": "34/42",
+        "player2supply": "27/27"
       },
       "04:45": {
         "player1supply": "35/42",
@@ -4054,6 +6130,22 @@
         "player1supply": "35/42",
         "player2supply": "27/27"
       },
+      "04:51": {
+        "player1supply": "35/42",
+        "player2supply": "27/27"
+      },
+      "04:54": {
+        "player1supply": "36/42",
+        "player2supply": "27/27"
+      },
+      "05:00": {
+        "player1supply": "39/42",
+        "player2supply": "29/35"
+      },
+      "05:03": {
+        "player1supply": "39/42",
+        "player2supply": "30/35"
+      },
       "05:10": {
         "player1supply": "41/50",
         "player2supply": "32/35"
@@ -4078,9 +6170,33 @@
         "player1supply": "41/50",
         "player2supply": "32/35"
       },
+      "05:16": {
+        "player1supply": "41/50",
+        "player2supply": "32/35"
+      },
+      "05:19": {
+        "player1supply": "43/50",
+        "player2supply": "32/35"
+      },
+      "05:22": {
+        "player1supply": "43/50",
+        "player2supply": "33/35"
+      },
       "05:25": {
         "player1supply": "45/50",
         "player2supply": "34/35"
+      },
+      "05:26": {
+        "player1supply": "45/50",
+        "player2supply": "34/35"
+      },
+      "05:29": {
+        "player1supply": "45/50",
+        "player2supply": "35/35"
+      },
+      "05:32": {
+        "player1supply": "47/50",
+        "player2supply": "35/35"
       },
       "05:35": {
         "player1supply": "45/50",
@@ -4091,6 +6207,10 @@
         "player2supply": "34/35"
       },
       "05:37": {
+        "player1supply": "45/50",
+        "player2supply": "34/35"
+      },
+      "05:38": {
         "player1supply": "45/50",
         "player2supply": "34/35"
       },
@@ -4142,7 +6262,19 @@
         "player1supply": "45/50",
         "player2supply": "35/35"
       },
+      "05:53": {
+        "player1supply": "45/50",
+        "player2supply": "35/35"
+      },
+      "05:59": {
+        "player1supply": "48/50",
+        "player2supply": "35/35"
+      },
       "06:09": {
+        "player1supply": "50/50",
+        "player2supply": "42/44"
+      },
+      "06:10": {
         "player1supply": "50/50",
         "player2supply": "42/44"
       },
@@ -4186,8 +6318,24 @@
         "player1supply": "50/50",
         "player2supply": "44/44"
       },
+      "06:23": {
+        "player1supply": "50/50",
+        "player2supply": "44/44"
+      },
+      "06:26": {
+        "player1supply": "52/58",
+        "player2supply": "44/44"
+      },
       "06:29": {
         "player1supply": "56/58",
+        "player2supply": "44/44"
+      },
+      "06:30": {
+        "player1supply": "56/58",
+        "player2supply": "44/44"
+      },
+      "06:33": {
+        "player1supply": "54/58",
         "player2supply": "44/44"
       },
       "06:38": {
@@ -4206,13 +6354,53 @@
         "player1supply": "54/58",
         "player2supply": "44/44"
       },
+      "06:42": {
+        "player1supply": "54/58",
+        "player2supply": "44/44"
+      },
+      "06:48": {
+        "player1supply": "54/58",
+        "player2supply": "47/52"
+      },
       "06:54": {
         "player1supply": "58/58",
         "player2supply": "48/60"
       },
+      "06:55": {
+        "player1supply": "58/58",
+        "player2supply": "48/60"
+      },
+      "06:58": {
+        "player1supply": "58/58",
+        "player2supply": "49/60"
+      },
+      "07:03": {
+        "player1supply": "58/58",
+        "player2supply": "50/68"
+      },
+      "07:12": {
+        "player1supply": "58/58",
+        "player2supply": "45/68"
+      },
+      "07:15": {
+        "player1supply": "58/58",
+        "player2supply": "46/68"
+      },
       "07:22": {
         "player1supply": "60/66",
         "player2supply": "48/60"
+      },
+      "07:23": {
+        "player1supply": "60/66",
+        "player2supply": "48/60"
+      },
+      "07:28": {
+        "player1supply": "60/66",
+        "player2supply": "50/60"
+      },
+      "07:31": {
+        "player1supply": "62/66",
+        "player2supply": "50/60"
       },
       "07:36": {
         "player1supply": "62/66",
@@ -4221,6 +6409,14 @@
       "07:37": {
         "player1supply": "62/66",
         "player2supply": "52/60"
+      },
+      "07:38": {
+        "player1supply": "62/66",
+        "player2supply": "52/60"
+      },
+      "07:41": {
+        "player1supply": "62/58",
+        "player2supply": "53/60"
       },
       "07:51": {
         "player1supply": "64/66",
@@ -4250,6 +6446,10 @@
         "player1supply": "64/66",
         "player2supply": "51/60"
       },
+      "07:58": {
+        "player1supply": "64/66",
+        "player2supply": "51/60"
+      },
       "08:07": {
         "player1supply": "66/74",
         "player2supply": "59/61"
@@ -4258,15 +6458,39 @@
         "player1supply": "66/74",
         "player2supply": "59/61"
       },
+      "08:09": {
+        "player1supply": "66/74",
+        "player2supply": "59/61"
+      },
       "08:12": {
         "player1supply": "68/74",
         "player2supply": "59/61"
+      },
+      "08:13": {
+        "player1supply": "68/74",
+        "player2supply": "59/61"
+      },
+      "08:18": {
+        "player1supply": "70/74",
+        "player2supply": "61/61"
+      },
+      "08:22": {
+        "player1supply": "70/74",
+        "player2supply": "61/61"
       },
       "08:27": {
         "player1supply": "72/82",
         "player2supply": "61/61"
       },
+      "08:28": {
+        "player1supply": "72/82",
+        "player2supply": "61/61"
+      },
       "08:33": {
+        "player1supply": "72/82",
+        "player2supply": "60/61"
+      },
+      "08:34": {
         "player1supply": "72/82",
         "player2supply": "60/61"
       },
@@ -4287,6 +6511,10 @@
         "player2supply": "60/61"
       },
       "08:44": {
+        "player1supply": "76/82",
+        "player2supply": "60/61"
+      },
+      "08:45": {
         "player1supply": "76/82",
         "player2supply": "60/61"
       },
@@ -4318,12 +6546,32 @@
         "player1supply": "78/82",
         "player2supply": "59/69"
       },
+      "08:57": {
+        "player1supply": "78/82",
+        "player2supply": "59/69"
+      },
+      "09:05": {
+        "player1supply": "78/82",
+        "player2supply": "60/85"
+      },
       "09:08": {
+        "player1supply": "76/82",
+        "player2supply": "60/85"
+      },
+      "09:09": {
         "player1supply": "76/82",
         "player2supply": "60/85"
       },
       "09:14": {
         "player1supply": "76/82",
+        "player2supply": "69/93"
+      },
+      "09:15": {
+        "player1supply": "76/82",
+        "player2supply": "69/93"
+      },
+      "09:19": {
+        "player1supply": "80/82",
         "player2supply": "69/93"
       },
       "09:23": {
@@ -4362,6 +6610,10 @@
         "player1supply": "82/82",
         "player2supply": "68/93"
       },
+      "09:33": {
+        "player1supply": "82/82",
+        "player2supply": "68/93"
+      },
       "09:36": {
         "player1supply": "82/82",
         "player2supply": "67/93"
@@ -4378,11 +6630,35 @@
         "player1supply": "82/82",
         "player2supply": "67/93"
       },
+      "09:40": {
+        "player1supply": "82/82",
+        "player2supply": "67/93"
+      },
       "09:43": {
         "player1supply": "82/82",
         "player2supply": "66/93"
       },
+      "09:44": {
+        "player1supply": "82/82",
+        "player2supply": "66/93"
+      },
+      "09:53": {
+        "player1supply": "88/106",
+        "player2supply": "72/93"
+      },
+      "10:00": {
+        "player1supply": "82/106",
+        "player2supply": "74/101"
+      },
+      "10:03": {
+        "player1supply": "84/106",
+        "player2supply": "74/101"
+      },
       "10:06": {
+        "player1supply": "84/114",
+        "player2supply": "74/101"
+      },
+      "10:07": {
         "player1supply": "84/114",
         "player2supply": "74/101"
       },
@@ -4394,11 +6670,23 @@
         "player1supply": "84/114",
         "player2supply": "76/101"
       },
+      "10:12": {
+        "player1supply": "84/114",
+        "player2supply": "76/101"
+      },
+      "10:19": {
+        "player1supply": "84/122",
+        "player2supply": "80/101"
+      },
       "10:32": {
         "player1supply": "104/122",
         "player2supply": "78/109"
       },
       "10:33": {
+        "player1supply": "104/122",
+        "player2supply": "78/109"
+      },
+      "10:34": {
         "player1supply": "104/122",
         "player2supply": "78/109"
       },
@@ -4410,12 +6698,40 @@
         "player1supply": "108/122",
         "player2supply": "86/109"
       },
+      "10:43": {
+        "player1supply": "108/122",
+        "player2supply": "86/109"
+      },
+      "10:49": {
+        "player1supply": "108/122",
+        "player2supply": "92/109"
+      },
+      "10:54": {
+        "player1supply": "108/122",
+        "player2supply": "94/110"
+      },
+      "11:00": {
+        "player1supply": "104/122",
+        "player2supply": "94/111"
+      },
+      "11:11": {
+        "player1supply": "106/122",
+        "player2supply": "83/111"
+      },
       "11:15": {
         "player1supply": "108/122",
         "player2supply": "93/110"
       },
       "11:16": {
         "player1supply": "108/122",
+        "player2supply": "93/110"
+      },
+      "11:17": {
+        "player1supply": "108/122",
+        "player2supply": "93/110"
+      },
+      "11:22": {
+        "player1supply": "112/122",
         "player2supply": "93/110"
       },
       "11:26": {
@@ -4427,6 +6743,10 @@
         "player2supply": "97/110"
       },
       "11:28": {
+        "player1supply": "112/122",
+        "player2supply": "97/110"
+      },
+      "11:29": {
         "player1supply": "112/122",
         "player2supply": "97/110"
       },
@@ -4446,7 +6766,19 @@
         "player1supply": "113/130",
         "player2supply": "96/118"
       },
+      "11:40": {
+        "player1supply": "113/130",
+        "player2supply": "96/118"
+      },
+      "11:44": {
+        "player1supply": "121/130",
+        "player2supply": "96/126"
+      },
       "11:52": {
+        "player1supply": "123/130",
+        "player2supply": "104/134"
+      },
+      "11:53": {
         "player1supply": "123/130",
         "player2supply": "104/134"
       },
@@ -4506,6 +6838,18 @@
         "player1supply": "123/130",
         "player2supply": "107/134"
       },
+      "12:12": {
+        "player1supply": "123/130",
+        "player2supply": "107/134"
+      },
+      "12:26": {
+        "player1supply": "128/146",
+        "player2supply": "102/134"
+      },
+      "12:29": {
+        "player1supply": "134/146",
+        "player2supply": "102/134"
+      },
       "12:35": {
         "player1supply": "132/146",
         "player2supply": "108/134"
@@ -4513,6 +6857,26 @@
       "12:36": {
         "player1supply": "132/146",
         "player2supply": "108/134"
+      },
+      "12:37": {
+        "player1supply": "132/146",
+        "player2supply": "108/134"
+      },
+      "12:40": {
+        "player1supply": "132/154",
+        "player2supply": "108/134"
+      },
+      "12:46": {
+        "player1supply": "132/154",
+        "player2supply": "110/134"
+      },
+      "13:30": {
+        "player1supply": "134/154",
+        "player2supply": "98/119"
+      },
+      "13:33": {
+        "player1supply": "134/154",
+        "player2supply": "88/119"
       },
       "13:54": {
         "player1supply": "138/163",
@@ -4522,9 +6886,21 @@
         "player1supply": "138/163",
         "player2supply": "103/118"
       },
+      "13:56": {
+        "player1supply": "138/163",
+        "player2supply": "103/118"
+      },
       "13:59": {
         "player1supply": "144/163",
         "player2supply": "103/118"
+      },
+      "14:00": {
+        "player1supply": "144/163",
+        "player2supply": "103/118"
+      },
+      "14:20": {
+        "player1supply": "132/163",
+        "player2supply": "83/119"
       }
     },
     "org": "ASL",

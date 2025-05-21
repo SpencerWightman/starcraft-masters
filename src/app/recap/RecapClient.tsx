@@ -102,7 +102,6 @@ export default function RecapClient({
       <Box
         component="nav"
         sx={{
-          width: 240,
           bgcolor: "#1f2937",
           overflowY: "auto",
           color: "#10b981",
