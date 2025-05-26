@@ -1,6 +1,6 @@
-import { season19QualifiedPlayers } from "@/constants/constants";
 import { fetchLeaderboard } from "@/utils/leaderboard";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
+import { EmojiEvents } from "@mui/icons-material";
 import {
   Box,
   Typography,
@@ -12,12 +12,23 @@ import {
   Paper,
 } from "@mui/material";
 
-export const revalidate = 60; // Revalidation interval
-
 type LeaderboardEntry = {
   username: string;
   points: number;
   team: string[];
+};
+
+const getMedalIcon = (index: number) => {
+  if (index === 0) {
+    return <EmojiEvents sx={{ color: "#FFD700" }} />;
+  }
+  if (index === 1) {
+    return <EmojiEvents sx={{ color: "#b0bec5" }} />;
+  }
+  if (index > 1 && index < 5) {
+    return <EmojiEvents sx={{ color: "#CD7F32" }} />;
+  }
+  return null;
 };
 
 const LeaderboardPage = async () => {
@@ -66,6 +77,15 @@ const LeaderboardPage = async () => {
                   }}
                 >
                   <TableCell
+                    sx={{
+                      width: 40,
+                      padding: "8px",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {getMedalIcon(index)}
+                  </TableCell>
+                  <TableCell
                     align="left"
                     sx={{
                       color: "#10b981",
@@ -90,9 +110,7 @@ const LeaderboardPage = async () => {
                       key={memberIndex}
                       align="left"
                       sx={{
-                        color: season19QualifiedPlayers.includes(member)
-                          ? "#b39910"
-                          : "rgba(243, 244, 246, 0.6)",
+                        color: "rgba(243, 244, 246, 0.6)",
                         padding: "8px",
                         borderBottom: "none",
                       }}
