@@ -57,6 +57,10 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
+    setSnackbarMessage("Drafting has not opened yet for ASL 20");
+    setOpen(true);
+    return;
+
     if (deadlineDate <= new Date()) {
       setSnackbarMessage("The drafting deadline has passed for this season");
       setOpen(true);
@@ -80,8 +84,7 @@ const PlayerDraft: React.FC<{
           fantasyTeam,
           username: session?.username as string,
         });
-        localStorage.setItem("FantasyTeam", JSON.stringify(fantasyTeam));
-        setSnackbarMessage("Draft saved. View it on the Team page.");
+        setSnackbarMessage("Draft saved. View it on your profile");
         setOpen(true);
         setHasSaved(true);
       } catch {
