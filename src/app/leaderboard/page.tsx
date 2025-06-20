@@ -29,15 +29,12 @@ const history: LeaderboardsBySeason = leaderboardJson;
 export default async function LeaderboardPage({
   searchParams,
 }: {
-  searchParams: { season?: string };
+  searchParams: Promise<{ season?: string }>;
 }) {
-  const params = await searchParams;
+  const { season } = await searchParams;
   const historical = Object.keys(history);
   const seasons = ['ASL Summer 2025', ...historical];
-
-  const selected = params.season && seasons.includes(params.season)
-    ? params.season
-    : 'ASL Summer 2025';
+  const selected = seasons.includes(season ?? '') ? season! : 'ASL Summer 2025';
 
   const idx = seasons.indexOf(selected);
   const prev = idx < seasons.length - 1 ? seasons[idx + 1] : null;
