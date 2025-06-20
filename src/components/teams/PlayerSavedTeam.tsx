@@ -44,7 +44,7 @@ const PlayerSavedTeam: React.FC<{
                 lineHeight: 1,
               }}
             >
-              ASL Spring 2025
+              ASL Summer 2025
             </Typography>
           </Box>
         </Box>

@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import { Paper, Typography, Box, TextField, Button, Fade } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { mapsNotificationSeason } from "@/constants/constants";
+import leaderboard19Json from "data/leaderboards.json";
+import { LeaderboardsBySeason } from "@/app/types/teamTypes";
+
+const history: LeaderboardsBySeason = leaderboard19Json;
 
 declare module "next-auth" {
   interface Session {
@@ -93,10 +97,10 @@ const Profile: React.FC = () => {
       <Paper
         elevation={3}
         sx={{
-          padding: 4,
+          padding: 2,
           maxWidth: 600,
           margin: "auto",
-          marginTop: 4,
+          marginTop: 1,
           backgroundColor: "#374151",
           borderRadius: 2,
         }}
@@ -206,12 +210,11 @@ const Profile: React.FC = () => {
               component="h1"
               sx={{
                 color: "rgba(243, 244, 246, 0.6)",
-                marginBottom: 2,
                 textAlign: "center",
                 fontWeight: "bold",
               }}
             >
-              Username: {session?.username || "||||||||"}
+              {session?.username || "||||||||"}
             </Typography>
             <Typography
               variant="body1"
@@ -222,7 +225,7 @@ const Profile: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              Email: {session?.email || "No email available"}
+              {session?.email || "No email available"}
             </Typography>
             <Box sx={{ textAlign: "center", marginTop: 2 }}>
               <Button
@@ -233,7 +236,64 @@ const Profile: React.FC = () => {
               >
                 Logout
               </Button>
+              </Box>
+<Box sx={{ mt: 3 }}>
+  {Object.entries(history).map(([season, entries]) => {
+    const total = entries.length;
+    // find the signed-in user’s row
+    const me = entries.find((e) => e.username === session?.username);
+
+    return (
+      <Paper
+        key={season}
+        sx={{
+          backgroundColor: "#2f3e51",
+          p: 2,
+          mt: 2,
+          borderRadius: 1,
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          sx={{ color: "rgba(243,244,246,0.8)" }}
+        >
+          {season}
+        </Typography>
+
+        {me ? (
+          <>
+            <Typography sx={{ color: "#10b981", fontWeight: "bold" }}>
+              {me.points} points — rank {me.rank} of {total}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 1,
+                mt: 1,
+              }}
+            >
+              {me.team.map((p) => (
+                <Typography
+                  key={p}
+                  sx={{ color: "rgba(243,244,246,0.6)" }}
+                >
+                  {p}
+                </Typography>
+              ))}
             </Box>
+          </>
+        ) : (
+          <Typography sx={{ color: "rgba(243,244,246,0.6)" }}>
+            No data for this season
+          </Typography>
+        )}
+      </Paper>
+    );
+  })}
+</Box>
+
+
           </>
         )}
       </Paper>

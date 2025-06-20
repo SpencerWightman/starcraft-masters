@@ -79,7 +79,7 @@ export default function RecapClient({
   const shouldShow = (idx: number, len: number) => {
     if (idx === 0 || idx === len - 1) return true;
     if (len - 1 - idx < 10) return false;
-    return idx % 15 === 0;
+    return idx % 30 === 0;
   };
 
   const getColorForMatchup = (m: string) =>
@@ -168,12 +168,17 @@ export default function RecapClient({
           if (!match) return null;
 
           const times = Object.keys(match.gameData);
-          const player1Data = times.map((t) =>
-            Number(match.gameData[t].player1supply.split("/")[0])
-          );
-          const player2Data = times.map((t) =>
-            Number(match.gameData[t].player2supply.split("/")[0])
-          );
+
+          const player1Data = times.map((t) => {
+            const s = match.gameData[t].player1supply;
+            return s ? Number(s.split("/")[0]) : null;
+          });
+
+          const player2Data = times.map((t) => {
+            const s = match.gameData[t].player2supply;
+            return s ? Number(s.split("/")[0]) : null;
+          });
+
           const color1 = getColorForMatchup(match.race1);
           const color2 = getColorForMatchup(match.race2);
 
@@ -185,14 +190,18 @@ export default function RecapClient({
                 data: player1Data,
                 borderColor: color1,
                 backgroundColor: `${color1}33`,
-                borderWidth: 1,
+                borderWidth: 3,
+                spanGaps: true,
+                pointRadius: 0,
               },
               {
                 label: match.player2,
                 data: player2Data,
                 borderColor: color2,
                 backgroundColor: `${color2}33`,
-                borderWidth: 1,
+                borderWidth: 3,
+                spanGaps: true,
+                pointRadius: 0,
               },
             ] as ChartDataset<"line">[],
           };
@@ -224,6 +233,12 @@ export default function RecapClient({
                   drawTicks: false,
                   lineWidth: (ctx: any) =>
                     shouldShow(ctx.index, times.length) ? 1 : 0,
+                },
+              },
+              y: {
+                beginAtZero: true,
+                  ticks: {
+                  stepSize: 5,
                 },
               },
             },

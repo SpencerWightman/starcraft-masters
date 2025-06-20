@@ -64,3 +64,16 @@ export type PlayerSummary = {
 };
 
 export type PlayerSummaries = PlayerSummary[];
+
+export interface LeaderboardEntryWithRank {
+  username: string;
+  points: number;
+  team: string[];
+  rank: number;
+  total: number;
+}
+
+export type LeaderboardsBySeason = Record<
+  string,
+  LeaderboardEntryWithRank[]
+>;

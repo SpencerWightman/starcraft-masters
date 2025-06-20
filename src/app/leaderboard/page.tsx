@@ -1,8 +1,10 @@
-import { fetchLeaderboard } from "@/utils/leaderboard";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
-import { EmojiEvents } from "@mui/icons-material";
+import Link from 'next/link';
+import { fetchLeaderboard } from '@/utils/leaderboard';
+import { PaperPlaceholder } from '@/utils/PaperPlaceholder';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import {
   Box,
+  IconButton,
   Typography,
   Table,
   TableBody,
@@ -10,7 +12,11 @@ import {
   TableContainer,
   TableRow,
   Paper,
-} from "@mui/material";
+} from '@mui/material';
+import leaderboardJson from 'data/leaderboards.json';
+import { LeaderboardsBySeason } from '@/app/types/teamTypes';
+
+// export const revalidate = 60; // Revalidation interval
 
 type LeaderboardEntry = {
   username: string;
@@ -18,118 +24,153 @@ type LeaderboardEntry = {
   team: string[];
 };
 
-const getMedalIcon = (index: number) => {
-  if (index === 0) {
-    return <EmojiEvents sx={{ color: "#FFD700" }} />;
-  }
-  if (index === 1) {
-    return <EmojiEvents sx={{ color: "#b0bec5" }} />;
-  }
-  if (index > 1 && index < 5) {
-    return <EmojiEvents sx={{ color: "#CD7F32" }} />;
-  }
-  return null;
-};
+const history: LeaderboardsBySeason = leaderboardJson;
 
-const LeaderboardPage = async () => {
-  try {
-    const leaderboard: LeaderboardEntry[] = await fetchLeaderboard();
+export default async function LeaderboardPage({
+  searchParams,
+}: {
+  searchParams: { season?: string };
+}) {
+  const params = await searchParams;
+  const historical = Object.keys(history);
+  const seasons = ['ASL Summer 2025', ...historical];
 
-    return (
+  const selected = params.season && seasons.includes(params.season)
+    ? params.season
+    : 'ASL Summer 2025';
+
+  const idx = seasons.indexOf(selected);
+  const prev = idx < seasons.length - 1 ? seasons[idx + 1] : null;
+  const next = idx > 0 ? seasons[idx - 1] : null;
+
+  let leaderboard: LeaderboardEntry[];
+  if (selected === 'ASL Summer 2025') {
+    try {
+      leaderboard = await fetchLeaderboard();
+    } catch {
+      return <PaperPlaceholder message="Failed to load ASL Summer 2025 leaderboard." />;
+    }
+  } else {
+    leaderboard = history[selected] ?? [];
+  }
+
+  return (
+    <Box
+      sx={{
+        backgroundColor: '#1f2937',
+        userSelect: 'text',
+        paddingBottom: '2rem',
+        minHeight: '100vh',
+      }}
+    >
+      {/* nav */}
       <Box
         sx={{
-          backgroundColor: "#1f2937",
-          maxWidth: "100vw",
-          overflowX: "hidden",
-          paddingBottom: "2rem",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mb: 3,
         }}
       >
+        {prev ? (
+          <IconButton
+            component={Link}
+            href={`/leaderboard?season=${encodeURIComponent(prev)}`}
+            size="small"
+            sx={{ color: 'rgba(243,244,246,0.6)' }}
+          >
+            <ChevronLeft />
+          </IconButton>
+        ) : (
+          <Box sx={{ width: 40 }} />
+        )}
+
         <Typography
           variant="h5"
           component="h1"
-          sx={{
-            color: "rgba(243, 244, 246, 0.6)",
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
+          sx={{ mx: 4, color: 'rgba(243,244,246,0.6)', fontWeight: 'bold' }}
         >
-          ASL Spring 2025 Leaderboard
+          {selected === 'ASL Summer 2025'
+            ? 'ASL Summer 2025'
+            : selected}
         </Typography>
-        <TableContainer
-          component={Paper}
-          sx={{
-            margin: "1rem auto",
-            backgroundColor: "#1f2937",
-            maxWidth: "95%",
-            overflowX: "auto",
-            borderRadius: "8px",
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <Table sx={{ tableLayout: "auto", width: "100%", minWidth: 650 }}>
-            <TableBody>
-              {leaderboard.map((entry, index) => (
-                <TableRow
-                  key={index}
+
+        {next ? (
+          <IconButton
+            component={Link}
+            href={`/leaderboard?season=${encodeURIComponent(next)}`}
+            size="small"
+            sx={{ color: 'rgba(243,244,246,0.6)' }}
+          >
+            <ChevronRight />
+          </IconButton>
+        ) : (
+          <Box sx={{ width: 40 }} />
+        )}
+      </Box>
+
+      {/* table */}
+      <TableContainer
+        component={Paper}
+        sx={{
+          margin: '1rem auto',
+          backgroundColor: '#1f2937',
+          maxWidth: '95%',
+          overflowX: 'auto',
+          borderRadius: '8px',
+          boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+        }}
+      >
+        <Table sx={{ tableLayout: 'auto', width: '100%', minWidth: 650 }}>
+          <TableBody>
+            {leaderboard.map((entry, i) => (
+              <TableRow
+                key={entry.username}
+                sx={{
+                  backgroundColor: i % 2 === 0 ? '#2f3e51' : '#374151',
+                  cursor: 'default',
+                }}
+              >
+                <TableCell
+                  align="left"
                   sx={{
-                    backgroundColor: index % 2 === 0 ? "#2f3e51" : "#374151",
-                    cursor: "default",
+                    color: '#10b981',
+                    padding: '8px',
+                    borderBottom: 'none',
                   }}
                 >
-                  <TableCell
-                    sx={{
-                      width: 40,
-                      padding: "8px",
-                      borderBottom: "none",
-                    }}
-                  >
-                    {getMedalIcon(index)}
-                  </TableCell>
-                  <TableCell
-                    align="left"
-                    sx={{
-                      color: "#10b981",
-                      padding: "8px",
-                      borderBottom: "none",
-                    }}
-                  >
-                    {entry.points}
-                  </TableCell>
-                  <TableCell
-                    align="left"
-                    sx={{
-                      color: "#e5e7eb",
-                      padding: "8px",
-                      borderBottom: "none",
-                    }}
-                  >
-                    {entry.username}
-                  </TableCell>
-                  {entry.team.map((member, memberIndex) => (
-                    <TableCell
-                      key={memberIndex}
-                      align="left"
-                      sx={{
-                        color: "rgba(243, 244, 246, 0.6)",
-                        padding: "8px",
-                        borderBottom: "none",
-                      }}
-                    >
-                      {member}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
-    );
-  } catch {
-    return (
-      <PaperPlaceholder message="Something went wrong. Reload the page in a minute." />
-    );
-  }
-};
+                  {entry.points}
+                </TableCell>
 
-export default LeaderboardPage;
+                <TableCell
+                  align="left"
+                  sx={{
+                    color: '#e5e7eb',
+                    padding: '8px',
+                    borderBottom: 'none',
+                  }}
+                >
+                  {entry.username}
+                </TableCell>
+
+                {entry.team.map((member, mi) => (
+                  <TableCell
+                    key={mi}
+                    align="left"
+                    sx={{
+                      color: 'rgba(243,244,246,0.6)',
+                      padding: '8px',
+                      borderBottom: 'none',
+                    }}
+                  >
+                    {member}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
+  );
+}
