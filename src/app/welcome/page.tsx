@@ -309,8 +309,7 @@ const Welcome: React.FC = () => {
                 divided evenly among the Ro24 groups, so that each group has 1
                 player from each tier. Players do not often change tiers from
                 season to season. Brood War League broadly follows the
-                official tiers as of the start of the last season. Seeded
-                players are listed in Tier 0.
+                official tiers as of the start of the last season.
               </Typography>
             </Box>
           </Box>
