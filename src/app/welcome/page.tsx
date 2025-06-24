@@ -249,7 +249,7 @@ const Welcome: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
               • Experimental feature. Submit the URL of a short YouTube gameplay
-              video (Artosis Casts etc.) and receive back AI-generated gameplay
+              video and receive back AI-generated gameplay
               commentary. Currently unavailable.
             </Typography>
           </Box>
@@ -308,13 +308,9 @@ const Welcome: React.FC = () => {
                 other qualified players. The players in each tier are then
                 divided evenly among the Ro24 groups, so that each group has 1
                 player from each tier. Players do not often change tiers from
-                season to season. Brood War League generally follows the
+                season to season. Brood War League broadly follows the
                 official tiers as of the start of the last season. Seeded
                 players are listed in Tier 0.
-              </Typography>
-              <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-                • Player statistics (except trophies) start at ASL 15, February
-                2023.
               </Typography>
             </Box>
           </Box>
