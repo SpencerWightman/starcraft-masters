@@ -85,7 +85,7 @@ export default async function LeaderboardPage({
         <Typography
           variant="h5"
           component="h1"
-          sx={{ mx: 4, color: 'rgba(243,244,246,0.6)', fontWeight: 'bold' }}
+          sx={{ mx: 4, color: 'rgba(243,244,246,0.6)', fontWeight: 'bold', whiteSpace: "nowrap" }}
         >
           {selected === 'ASL Summer 2025'
             ? 'ASL Summer 2025'
