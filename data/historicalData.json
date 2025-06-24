@@ -1633,7 +1633,7 @@
       "runnerUp": 1,
       "ro4": 1
     },
-    "tier": 3,
+    "tier": 2,
     "stats":[
     {
       "Matchup": "ZvP",
@@ -2581,7 +2581,7 @@
       "runnerUp": 0,
       "ro4": 0
     },
-    "tier": 3,
+    "tier": 2,
     "stats":[
     {
       "Matchup": "TvT",
@@ -4398,7 +4398,7 @@
       "id": 999,
       "name": "김영진",
       "race": "Terran",
-      "handle": "Terran"
+      "handle": "Skey"
     },
     "achievements": {
       "champion": 0,
