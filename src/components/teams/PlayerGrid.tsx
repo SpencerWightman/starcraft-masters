@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, Box, IconButton, Tooltip, Grid2 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import { PlayerSummary } from "@/app/types/teamTypes";
 import PlayerDetails from "./PlayerDetails";
 import PlayerChart from "./PlayerChart";
@@ -16,6 +15,11 @@ const PlayerGrid: React.FC<{
     (selectedPlayer) => `tier${selectedPlayer.tier}` === "tier4"
   ).length;
 
+const cumulativeFree = (tier: number) =>
+  Object.entries(maxSlots)
+        .filter(([k]) => Number(k) <= tier)
+        .reduce((sum, [, free]) => sum + free as number, 0);
+
   return (
     <Box>
       <Grid2 container spacing={2}>
@@ -25,6 +29,7 @@ const PlayerGrid: React.FC<{
             (selectedPlayer) => `${selectedPlayer.tier}` === tier
           ).length;
 
+    const total = cumulativeFree(index);
           return (
             <Grid2
               key={index}
@@ -84,7 +89,7 @@ const PlayerGrid: React.FC<{
                       userSelect: "none",
                     }}
                   >
-                    {`${selectedCount} / ${maxSlots[index]}`}
+    {`${selectedCount} / ${total}`}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
@@ -132,6 +137,7 @@ const PlayerGrid: React.FC<{
                               }}
                             >
                               <PlayerDetails player={player} />
+                              <PlayerChart player={player} />
                             </Box>
                           }
                           placement="bottom"
@@ -160,40 +166,6 @@ const PlayerGrid: React.FC<{
                                     : "#f3f4f6",
                               }}
                             />
-                          </IconButton>
-                        </Tooltip>
-                        <Tooltip
-                          title={
-                            <Box
-                              sx={{
-                                width: "520px",
-                                height: "420px",
-                                display: { xs: "none", md: "block" },
-                              }}
-                            >
-                              <PlayerChart player={player} />
-                            </Box>
-                          }
-                          placement="bottom"
-                          leaveDelay={200}
-                          slotProps={{
-                            tooltip: {
-                              sx: {
-                                backgroundColor: "transparent",
-                                maxWidth: "none",
-                                boxShadow: "none",
-                                padding: 0,
-                              },
-                            },
-                          }}
-                        >
-                          <IconButton
-                            size="small"
-                            sx={{
-                              padding: 0,
-                            }}
-                          >
-                            <BarChartIcon sx={{ color: "#ce8946" }} />
                           </IconButton>
                         </Tooltip>
                       </Box>
@@ -255,7 +227,7 @@ const PlayerGrid: React.FC<{
                   userSelect: "none",
                 }}
               >
-                {`${selectedCountTier4} / ${maxSlots[4]}`}
+{`${selectedCountTier4} / ${cumulativeFree(4)}`}
               </Typography>
             </Box>
             <Box
@@ -317,6 +289,7 @@ const PlayerGrid: React.FC<{
                             }}
                           >
                             <PlayerDetails player={player} />{" "}
+                            <PlayerChart player={player} />
                           </Box>
                         }
                         placement="bottom"
@@ -345,40 +318,6 @@ const PlayerGrid: React.FC<{
                                   : "#f3f4f6",
                             }}
                           />
-                        </IconButton>
-                      </Tooltip>
-                      <Tooltip
-                        title={
-                          <Box
-                            sx={{
-                              width: "520px",
-                              height: "420px",
-                              display: { xs: "none", md: "block" },
-                            }}
-                          >
-                            <PlayerChart player={player} />
-                          </Box>
-                        }
-                        placement="bottom"
-                        leaveDelay={200}
-                        slotProps={{
-                          tooltip: {
-                            sx: {
-                              backgroundColor: "transparent",
-                              maxWidth: "none",
-                              boxShadow: "none",
-                              padding: 0,
-                            },
-                          },
-                        }}
-                      >
-                        <IconButton
-                          size="small"
-                          sx={{
-                            padding: 0,
-                          }}
-                        >
-                          <BarChartIcon sx={{ color: "#ce8946" }} />
                         </IconButton>
                       </Tooltip>
                     </Box>

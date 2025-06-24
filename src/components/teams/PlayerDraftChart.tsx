@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import React, { useEffect, useState, useMemo } from "react";
+import { Box, Button, useMediaQuery } from "@mui/material";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -11,8 +12,14 @@ import {
   Tooltip,
   Legend,
   TooltipItem,
+  ChartOptions,
 } from "chart.js";
-import { PlayerSummary } from "@/app/types/teamTypes";
+import { PlayerSummary, MatchupStats } from "@/app/types/teamTypes";
+import {
+  intervals,
+  makeData,
+  getColorForMatchup,
+} from "./PlayerChart";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -20,175 +27,166 @@ const PlayerDraftChart: React.FC<{
   selectedPlayers: PlayerSummary[];
   widthProp: string;
 }> = ({ selectedPlayers, widthProp }) => {
-  const [selectedMatchup, setSelectedMatchup] = useState(
-    selectedPlayers.length > 0 && selectedPlayers[0].duration.length > 0
-      ? selectedPlayers[0].duration[0].Matchup
-      : ""
+  const isXS = useMediaQuery("(max-width:600px)");
+
+  const allMatchups = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          selectedPlayers.flatMap((p) =>
+            p.stats.map((s) => s.Matchup)
+          )
+        )
+      ).filter((m) => m !== "N/A"),
+    [selectedPlayers]
   );
 
+  const [selectedMatchup, setSelectedMatchup] = useState(
+    allMatchups[0] || ""
+  );
   useEffect(() => {
-    if (selectedPlayers.length > 0 && selectedPlayers[0].duration.length > 0) {
-      setSelectedMatchup(selectedPlayers[0].duration[0].Matchup);
-    }
-  }, [selectedPlayers]);
+    setSelectedMatchup(allMatchups[0] || "");
+  }, [allMatchups]);
 
-  const aggregateData = (matchup: string) => {
-    const aggregatedWinRates: {
-      [interval: string]: { totalWinRate: number; count: number };
-    } = {};
+  // aggregated MatchupStats
+  const aggregatedStats = useMemo<MatchupStats>(() => {
     let totalGames = 0;
+    const bucket: Record<
+      string,
+      { sumRate: number; count: number; games: number }
+    > = {};
 
     selectedPlayers.forEach((player) => {
-      const playerMatchup = player.duration.find((d) => d.Matchup === matchup);
-      if (playerMatchup) {
-        totalGames += playerMatchup.TotalGames;
-        playerMatchup.WinRates.forEach((rate) => {
-          if (!aggregatedWinRates[rate.Interval]) {
-            aggregatedWinRates[rate.Interval] = { totalWinRate: 0, count: 0 };
-          }
-          aggregatedWinRates[rate.Interval].totalWinRate += parseFloat(
-            rate.WinRate
-          );
-          aggregatedWinRates[rate.Interval].count += 1;
-        });
-      }
+      const stat = player.stats.find(
+        (s) => s.Matchup === selectedMatchup
+      );
+      if (!stat) return;
+      totalGames += stat.TotalGames;
+      stat.WinRates.forEach((r) => {
+        if (!bucket[r.Interval]) {
+          bucket[r.Interval] = { sumRate: 0, count: 0, games: 0 };
+        }
+        bucket[r.Interval].sumRate += parseFloat(r.WinRate);
+        bucket[r.Interval].count += 1;
+        bucket[r.Interval].games += r.TotalGames;
+      });
     });
 
-    const sortedLabels = Object.keys(aggregatedWinRates).sort((a, b) => {
-      const [aStart] = a.split("-").map(Number);
-      const [bStart] = b.split("-").map(Number);
-      return aStart - bStart;
-    });
+    return {
+      Matchup: selectedMatchup,
+      TotalGames: totalGames,
+      WinRates: intervals.map((iv: string | number) => {
+        const entry = bucket[iv];
+        const avgRate =
+          entry && entry.count
+            ? (entry.sumRate / entry.count).toFixed(2)
+            : "0";
+        return {
+          Interval: iv,
+          WinRate: avgRate,
+          TotalGames: entry?.games ?? 0,
+        };
+      }),
+    } as MatchupStats;;
+  }, [selectedPlayers, selectedMatchup]);
 
-    const datasets = [
-      {
-        label: `Team Win Rate by Duration  - ${totalGames} Games`,
-        data: sortedLabels.map(
-          (interval) =>
-            aggregatedWinRates[interval].totalWinRate /
-            aggregatedWinRates[interval].count
-        ),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
-      },
-    ];
+  const color = getColorForMatchup(selectedMatchup);
+  const data = makeData(aggregatedStats, "Team", color);
 
-    return { labels: sortedLabels, datasets };
-  };
-
-  const chartProps = aggregateData(selectedMatchup);
-
-  const options = {
+  const options: ChartOptions<"bar"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top" as const,
-        labels: {
-          font: {
-            size: 16,
-          },
-        },
+        position: "top",
+        labels: { font: { size: 16 }, color: "rgba(243,244,246,0.6)" },
       },
       tooltip: {
         callbacks: {
-          label: (context: TooltipItem<"bar">) => `${context.raw}%`,
+          label: (ctx: TooltipItem<"bar">) => {
+            const iv = ctx.label as string;
+            const entry = aggregatedStats.WinRates.find(
+              (r) => r.Interval === iv
+            );
+            const rate = entry
+              ? parseFloat(entry.WinRate)
+              : 0;
+            const games = entry?.TotalGames ?? 0;
+            return rate === 0
+              ? `Games: ${games}`
+              : `Win Rate: ${rate}% | Games: ${games}`;
+          },
         },
       },
     },
     scales: {
-      x: {
-        grid: {
-          color: "rgba(255, 255, 255, 0.1)",
-        },
-        ticks: {
-          color: "#e5e7eb",
-        },
-      },
+      x: { ticks: { color: "#e5e7eb" }, grid: { color: "rgba(255,255,255,0.1)" } },
       y: {
         beginAtZero: true,
         max: 100,
+        ticks: { color: "#e5e7eb" },
         grid: {
-          color: "rgba(255, 255, 255, 0.1)",
-        },
-        ticks: {
-          color: "#e5e7eb",
+          color: (ctx: any) =>
+            ctx.tick.value === 50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
+          lineWidth: (ctx: any) =>
+            ctx.tick.value === 50 ? 2 : 1,
         },
       },
     },
   };
 
-  const allMatchups = Array.from(
-    new Set(
-      selectedPlayers.flatMap((player) => player.duration.map((d) => d.Matchup))
-    )
-  ).filter((matchup) => matchup !== "N/A");
+  if (isXS) return <Box>Increase your screen size to view the chart</Box>;
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         width: widthProp,
-        height: "400px",
-        padding: "5px",
-        backgroundColor: "#1f2937",
-        borderRadius: "8px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        height: 400,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        position: "relative",
+        backgroundColor: "#1f2937",
+        borderRadius: "8px",
         overflow: "hidden",
-        marginTop: "16px",
+        p: 1,
       }}
     >
-      <div
-        style={{
-          marginBottom: "20px",
+      <Box
+        sx={{
           display: "flex",
-          justifyContent: "center",
           flexWrap: "wrap",
-          gap: "10px",
+          justifyContent: "center",
+          gap: 1,
+          mb: 1,
         }}
       >
-        {allMatchups.map((matchup) => (
+        {allMatchups.map((m) => (
           <Button
-            key={matchup}
+            key={m}
             variant="outlined"
-            onMouseEnter={() => setSelectedMatchup(matchup)}
+            onMouseEnter={() => setSelectedMatchup(m)}
             sx={{
-              color: "#10b981",
               textTransform: "none",
+              color: getColorForMatchup(m),
               borderColor:
-                selectedMatchup === matchup ? "#10b981" : "transparent",
-              backgroundColor: "#374151",
-              "&:hover": { borderColor: "#10b981" },
+                selectedMatchup === m
+                  ? getColorForMatchup(m)
+                  : "transparent",
             }}
           >
-            {matchup}
+            {m}
           </Button>
         ))}
-      </div>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "relative",
-        }}
-      >
+      </Box>
+      <Box sx={{ flex: 1, position: "relative" }}>
         <Bar
-          data={chartProps}
+          data={data}
           options={options}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
+          style={{ position: "absolute", inset: 0 }}
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

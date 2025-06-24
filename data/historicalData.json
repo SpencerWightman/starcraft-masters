@@ -1,5 +1,18 @@
 {
-  "815": [
+  "815": {
+    "player": {
+      "id": 1018,
+      "name": "배병우",
+      "race": "Zerg",
+      "handle": "815"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "ZvP",
       "TotalGames": 5,
@@ -58,65 +71,54 @@
         }
       ]
     }
-  ],
-  "1127": [
-    {
-      "Matchup": "TvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "Action": {
+    "player": {
+      "id": 47,
+      "name": "김성대",
+      "race": "Zerg",
+      "handle": "Action"
     },
-    {
-      "Matchup": "TvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Action": [
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 1
+    },
+    "tier": 2,
+    "stats":[
     {
       "Matchup": "ZvP",
-      "TotalGames": 50,
+      "TotalGames": 57,
       "WinRates": [
         {
-          "Interval": "1-5",
-          "WinRate": "100.00",
-          "TotalGames": 2
+            "Interval": "1-5",
+            "WinRate": "100.00",
+            "TotalGames": 2
         },
         {
-          "Interval": "6-10",
-          "WinRate": "70.00",
-          "TotalGames": 10
+            "Interval": "6-10",
+            "WinRate": "70.00",
+            "TotalGames": 10
         },
         {
-          "Interval": "11-15",
-          "WinRate": "31.25",
-          "TotalGames": 16
+            "Interval": "11-15",
+            "WinRate": "31.58",
+            "TotalGames": 19
         },
         {
-          "Interval": "16-20",
-          "WinRate": "27.27",
-          "TotalGames": 11
+            "Interval": "16-20",
+            "WinRate": "38.46",
+            "TotalGames": 13
         },
         {
-          "Interval": "21-25",
-          "WinRate": "50.00",
-          "TotalGames": 8
+            "Interval": "21-25",
+            "WinRate": "50.00",
+            "TotalGames": 8
         },
         {
-          "Interval": "26-60",
-          "WinRate": "33.33",
-          "TotalGames": 3
+            "Interval": "26-60",
+            "WinRate": "40.00",
+            "TotalGames": 5
         }
       ]
     },
@@ -153,7 +155,7 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 44,
+      "TotalGames": 46,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -167,8 +169,8 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "50.00",
-          "TotalGames": 12
+          "WinRate": "46.15",
+          "TotalGames": 13
         },
         {
           "Interval": "16-20",
@@ -182,13 +184,26 @@
         },
         {
           "Interval": "26-60",
-          "WinRate": "66.67",
-          "TotalGames": 3
+          "WinRate": "75.00",
+          "TotalGames": 4
         }
       ]
     }
-  ],
-  "Ample": [
+  ]},
+  "Ample":{
+    "player": {
+      "id": 24,
+      "name": "김태영",
+      "race": "Terran",
+      "handle": "Ample"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvP",
       "TotalGames": 14,
@@ -267,12 +282,30 @@
         }
       ]
     }
-  ],
-  "BarrackS": [
+  ]},
+  "BarrackS": {
+    "player": {
+      "id": 65,
+      "name": "황병영",
+      "race": "Terran",
+      "handle": "BarrackS"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 2,
+    "stats":[
     {
       "Matchup": "TvT",
-      "TotalGames": 14,
+      "TotalGames": 20,
       "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
         {
           "Interval": "6-10",
           "WinRate": "50.00",
@@ -286,12 +319,12 @@
         {
           "Interval": "16-20",
           "WinRate": "50.00",
-          "TotalGames": 2
+          "TotalGames": 6
         },
         {
           "Interval": "21-25",
-          "WinRate": "33.33",
-          "TotalGames": 3
+          "WinRate": "50.00",
+          "TotalGames": 4
         },
         {
           "Interval": "26-60",
@@ -328,7 +361,7 @@
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 18,
+      "TotalGames": 19,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -348,7 +381,7 @@
         {
           "Interval": "16-20",
           "WinRate": "100.00",
-          "TotalGames": 1
+          "TotalGames": 2
         },
         {
           "Interval": "21-25",
@@ -357,79 +390,93 @@
         }
       ]
     }
-  ],
-  "Best": [
+  ]},
+  "Best": {
+    "player": {
+      "id": 15,
+      "name": "도재욱",
+      "race": "Protoss",
+      "handle": "Best"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 2
+    },
+    "tier": 0,
+    "stats":[
     {
       "Matchup": "PvZ",
-      "TotalGames": 64,
+      "TotalGames": 81,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "50.00",
-          "TotalGames": 4
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "33.33",
-          "TotalGames": 9
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "74.07",
-          "TotalGames": 27
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "46.67",
-          "TotalGames": 15
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "42.86",
-          "TotalGames": 7
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "100.00",
-          "TotalGames": 2
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "50.00",
+    "TotalGames": 4
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "36.36",
+    "TotalGames": 11
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "75.76",
+    "TotalGames": 33
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "40.00",
+    "TotalGames": 20
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "44.44",
+    "TotalGames": 9
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "75.00",
+    "TotalGames": 4
+  }
+]
+
     },
     {
       "Matchup": "PvT",
-      "TotalGames": 67,
+      "TotalGames": 79,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "0.00",
-          "TotalGames": 2
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "63.64",
-          "TotalGames": 11
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "71.43",
-          "TotalGames": 14
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "68.42",
-          "TotalGames": 19
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "45.45",
-          "TotalGames": 11
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "30.00",
-          "TotalGames": 10
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "0.00",
+    "TotalGames": 2
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "57.14",
+    "TotalGames": 14
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "77.78",
+    "TotalGames": 18
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "69.57",
+    "TotalGames": 23
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "50.00",
+    "TotalGames": 12
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "30.00",
+    "TotalGames": 10
+  }
+]
     },
     {
       "Matchup": "PvP",
@@ -462,8 +509,22 @@
         }
       ]
     }
-  ],
-  "BishOp": [
+  ]},
+  "BishOp": 
+  {
+    "player": {
+      "id": 74,
+      "name": "정민기",
+      "race": "Terran",
+      "handle": "BishOp"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvP",
       "TotalGames": 4,
@@ -491,11 +552,24 @@
         }
       ]
     }
-  ],
-  "Bisu": [
+  ]},
+  "Bisu": {
+    "player": {
+      "id": 18,
+      "name": "김택용",
+      "race": "Protoss",
+      "handle": "Bisu"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 3
+    },
+    "tier": 2,
+    "stats": [
     {
       "Matchup": "PvZ",
-      "TotalGames": 58,
+      "TotalGames": 63,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -509,13 +583,13 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "62.50",
-          "TotalGames": 24
+          "WinRate": "60.00",
+          "TotalGames": 25
         },
         {
           "Interval": "16-20",
-          "WinRate": "28.57",
-          "TotalGames": 7
+          "WinRate": "27.27",
+          "TotalGames": 11
         },
         {
           "Interval": "21-25",
@@ -567,7 +641,7 @@
     },
     {
       "Matchup": "PvP",
-      "TotalGames": 18,
+      "TotalGames": 19,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -586,8 +660,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 2
+          "WinRate": "33.33",
+          "TotalGames": 3
         },
         {
           "Interval": "21-25",
@@ -596,42 +670,64 @@
         }
       ]
     }
-  ],
-  "Brain": [
+  ]},
+    "BTS": {
+    "player": {
+      "id": 999,
+      "name": "방태수",
+      "race": "Zerg",
+      "handle": "BTS"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
-      "Matchup": "PvT",
-      "TotalGames": 2,
+      "Matchup": "ZvT",
+      "TotalGames": 1,
       "WinRates": [
         {
           "Interval": "16-20",
-          "WinRate": "100.00",
-          "TotalGames": 2
+          "WinRate": "0.00",
+          "TotalGames": 1
         }
       ]
     },
     {
-      "Matchup": "PvZ",
-      "TotalGames": 6,
+      "Matchup": "ZvP",
+      "TotalGames": 2,
       "WinRates": [
         {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 2
-        },
-        {
           "Interval": "11-15",
-          "WinRate": "50.00",
-          "TotalGames": 2
+          "WinRate": "0.00",
+          "TotalGames": 1
         },
         {
-          "Interval": "26-60",
-          "WinRate": "50.00",
-          "TotalGames": 2
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
         }
       ]
     }
-  ],
-  "ByuL": [
+  ]},
+  "ByuL": 
+  {
+    "player": {
+      "id": 56,
+      "name": "강태완",
+      "race": "Terran",
+      "handle": "ByuL"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvP",
       "TotalGames": 3,
@@ -659,11 +755,24 @@
         }
       ]
     }
-  ],
-  "Calm": [
+  ]},
+  "Calm": {
+    "player": {
+      "id": 46,
+      "name": "김윤환",
+      "race": "Zerg",
+      "handle": "Calm"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats": [
     {
       "Matchup": "ZvP",
-      "TotalGames": 10,
+      "TotalGames": 12,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -672,8 +781,8 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "100.00",
-          "TotalGames": 1
+          "WinRate": "50.00",
+          "TotalGames": 2
         },
         {
           "Interval": "11-15",
@@ -687,8 +796,8 @@
         },
         {
           "Interval": "26-60",
-          "WinRate": "0.00",
-          "TotalGames": 1
+          "WinRate": "50.00",
+          "TotalGames": 2
         }
       ]
     },
@@ -730,7 +839,7 @@
         {
           "Interval": "11-15",
           "WinRate": "0.00",
-          "TotalGames": 2
+          "TotalGames": 3
         },
         {
           "Interval": "21-25",
@@ -744,8 +853,21 @@
         }
       ]
     }
-  ],
-  "EffOrt": [
+  ]},
+  "EffOrt": {
+    "player": {
+      "id": 4,
+      "name": "김정우",
+      "race": "Zerg",
+      "handle": "EffOrt"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 0,
+      "ro4": 2
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 36,
@@ -844,8 +966,21 @@
         }
       ]
     }
-  ],
-  "FlaSh": [
+  ]},
+  "FlaSh": {
+    "player": {
+      "id": 56,
+      "name": "이영호",
+      "race": "Terran",
+      "handle": "Flash"
+    },
+    "achievements": {
+      "champion": 4,
+      "runnerUp": 1,
+      "ro4": 2
+    },
+    "tier": 0,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 27,
@@ -982,8 +1117,21 @@
         }
       ]
     }
-  ],
-  "ForGG": [
+  ]},
+  "ForGG": {
+    "player": {
+      "id": 999,
+      "name": "박지수",
+      "race": "Terran",
+      "handle": "ForGG"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 7,
@@ -1062,32 +1210,21 @@
         }
       ]
     }
-  ],
-  "Force(Name)": [
-    {
-      "Matchup": "ZvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "GuemChi": {
+    "player": {
+      "id": 999,
+      "name": "김승현",
+      "race": "Protoss",
+      "handle": "GuemChi"
     },
-    {
-      "Matchup": "ZvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "GuemChi": [
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvT",
       "TotalGames": 14,
@@ -1176,32 +1313,21 @@
         }
       ]
     }
-  ],
-  "Hint": [
-    {
-      "Matchup": "PvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "HiyA": {
+    "player": {
+      "id": 42,
+      "name": "구성훈",
+      "race": "Terran",
+      "handle": "HiyA"
     },
-    {
-      "Matchup": "PvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "26-60",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "HiyA": [
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 1,
@@ -1245,8 +1371,21 @@
         }
       ]
     }
-  ],
-  "Horang2": [
+  ]},
+  "Horang2": {
+    "player": {
+      "id": 999,
+      "name": "이경민",
+      "race": "Protoss",
+      "handle": "Horang2"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
       "TotalGames": 11,
@@ -1330,8 +1469,21 @@
         }
       ]
     }
-  ],
-  "HyuN": [
+  ]},
+  "HyuN": {
+    "player": {
+      "id": 38,
+      "name": "고석현",
+      "race": "Zerg",
+      "handle": "HyuN"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 2,
@@ -1366,8 +1518,13 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 6,
+      "TotalGames": 9,
       "WinRates": [
+        {
+          "Interval": "1-5",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
         {
           "Interval": "6-10",
           "WinRate": "50.00",
@@ -1375,8 +1532,13 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "33.33",
-          "TotalGames": 3
+          "WinRate": "25.00",
+          "TotalGames": 4
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 1
         },
         {
           "Interval": "21-25",
@@ -1385,8 +1547,21 @@
         }
       ]
     }
-  ],
-  "Hyuk": [
+  ]},
+  "Hyuk": {
+    "player": {
+      "id": 1000,
+      "name": "박재혁",
+      "race": "Zerg",
+      "handle": "Hyuk"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvT",
       "TotalGames": 5,
@@ -1445,70 +1620,24 @@
         }
       ]
     }
-  ],
-  "Iris": [
-    {
-      "Matchup": "TvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "100.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "Jaedong": {
+    "player": {
+      "id": 30,
+      "name": "이제동",
+      "race": "Zerg",
+      "handle": "JD"
     },
-    {
-      "Matchup": "TvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 1
     },
-    {
-      "Matchup": "TvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "21-25",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "JJabNewDa": [
-    {
-      "Matchup": "ZvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    },
-    {
-      "Matchup": "ZvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Jaedong": [
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "ZvP",
-      "TotalGames": 30,
+      "TotalGames": 33,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -1517,18 +1646,18 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "75.00",
-          "TotalGames": 8
+          "WinRate": "77.78",
+          "TotalGames": 9
         },
         {
           "Interval": "11-15",
-          "WinRate": "37.50",
-          "TotalGames": 8
+          "WinRate": "33.33",
+          "TotalGames": 9
         },
         {
           "Interval": "16-20",
-          "WinRate": "100.00",
-          "TotalGames": 6
+          "WinRate": "85.71",
+          "TotalGames": 7
         },
         {
           "Interval": "21-25",
@@ -1575,7 +1704,7 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 41,
+      "TotalGames": 49,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -1584,18 +1713,18 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "50.00",
-          "TotalGames": 14
+          "WinRate": "47.06",
+          "TotalGames": 17
         },
         {
           "Interval": "11-15",
-          "WinRate": "9.09",
-          "TotalGames": 11
+          "WinRate": "15.38",
+          "TotalGames": 13
         },
         {
           "Interval": "16-20",
-          "WinRate": "60.00",
-          "TotalGames": 5
+          "WinRate": "71.43",
+          "TotalGames": 7
         },
         {
           "Interval": "21-25",
@@ -1604,13 +1733,26 @@
         },
         {
           "Interval": "26-60",
-          "WinRate": "66.67",
-          "TotalGames": 3
+          "WinRate": "50.00",
+          "TotalGames": 4
         }
       ]
     }
-  ],
-  "Jaehoon": [
+  ]},
+  "Jaehoon": {
+    "player": {
+      "id": 999,
+      "name": "김재훈",
+      "race": "Protoss",
+      "handle": "Jaehoon"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
       "TotalGames": 7,
@@ -1684,8 +1826,21 @@
         }
       ]
     }
-  ],
-  "JyJ": [
+  ]},
+  "JyJ":  {
+    "player": {
+      "id": 53,
+      "name": "정영재",
+      "race": "Terran",
+      "handle": "JyJ"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 36,
@@ -1789,11 +1944,24 @@
         }
       ]
     }
-  ],
-  "Killer": [
+  ]},
+  "Killer": {
+    "player": {
+      "id": 44,
+      "name": "박준오",
+      "race": "Zerg",
+      "handle": "Killer"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "ZvP",
-      "TotalGames": 15,
+      "TotalGames": 17,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -1812,8 +1980,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "100.00",
-          "TotalGames": 1
+          "WinRate": "66.67",
+          "TotalGames": 3
         }
       ]
     },
@@ -1835,7 +2003,7 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 11,
+      "TotalGames": 12,
       "WinRates": [
         {
           "Interval": "6-10",
@@ -1844,8 +2012,8 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "20.00",
-          "TotalGames": 5
+          "WinRate": "16.67",
+          "TotalGames": 6
         },
         {
           "Interval": "16-20",
@@ -1859,8 +2027,21 @@
         }
       ]
     }
-  ],
-  "Larva": [
+  ]},
+  "Larva": {
+    "player": {
+      "id": 999,
+      "name": "임홍규",
+      "race": "Zerg",
+      "handle": "Larva"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 0,
+      "ro4": 2
+    },
+    "tier": 2,
+    "stats":[
     {
       "Matchup": "ZvT",
       "TotalGames": 24,
@@ -1959,8 +2140,21 @@
         }
       ]
     }
-  ],
-  "Last": [
+  ]},
+  "Last": {
+    "player": {
+      "id": 999,
+      "name": "김성현",
+      "race": "Terran",
+      "handle": "Last"
+    },
+    "achievements": {
+      "champion": 2,
+      "runnerUp": 0,
+      "ro4": 3
+    },
+    "tier": 2,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 25,
@@ -2064,48 +2258,21 @@
         }
       ]
     }
-  ],
-  "Lazy": [
-    {
-      "Matchup": "PvZ",
-      "TotalGames": 2,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "Leta": {
+    "player": {
+      "id": 67,
+      "name": "신상문",
+      "race": "Terran",
+      "handle": "Leta"
     },
-    {
-      "Matchup": "PvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
     },
-    {
-      "Matchup": "PvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Leta": [
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 7,
@@ -2160,8 +2327,7 @@
           "Interval": "26-60",
           "WinRate": "0.00",
           "TotalGames": 1
-        }
-      ]
+        }]
     },
     {
       "Matchup": "TvZ",
@@ -2194,16 +2360,29 @@
         }
       ]
     }
-  ],
-  "Light": [
+  ]},
+  "Light": {
+    "player": {
+      "id": 26,
+      "name": "이재호",
+      "race": "Terran",
+      "handle": "Light"
+    },
+    "achievements": {
+      "champion": 2,
+      "runnerUp": 1,
+      "ro4": 1
+    },
+    "tier": 0,
+    "stats":[
     {
       "Matchup": "TvT",
-      "TotalGames": 38,
+      "TotalGames": 41,
       "WinRates": [
         {
           "Interval": "1-5",
-          "WinRate": "66.67",
-          "TotalGames": 3
+          "WinRate": "75.00",
+          "TotalGames": 4
         },
         {
           "Interval": "6-10",
@@ -2217,8 +2396,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "66.67",
-          "TotalGames": 9
+          "WinRate": "72.73",
+          "TotalGames": 11
         },
         {
           "Interval": "21-25",
@@ -2234,78 +2413,93 @@
     },
     {
       "Matchup": "TvP",
-      "TotalGames": 69,
+      "TotalGames": 77,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "50.00",
-          "TotalGames": 4
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "40.00",
-          "TotalGames": 10
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "68.42",
-          "TotalGames": 19
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "52.63",
-          "TotalGames": 19
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "57.14",
-          "TotalGames": 7
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "70.00",
-          "TotalGames": 10
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "50.00",
+    "TotalGames": 4
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "46.15",
+    "TotalGames": 13
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "66.67",
+    "TotalGames": 21
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "52.38",
+    "TotalGames": 21
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "50.00",
+    "TotalGames": 8
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "70.00",
+    "TotalGames": 10
+  }
+]
+
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 84,
+      "TotalGames": 93,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "25.00",
-          "TotalGames": 4
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "52.00",
-          "TotalGames": 25
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "48.28",
-          "TotalGames": 29
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "70.59",
-          "TotalGames": 17
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "66.67",
-          "TotalGames": 3
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "33.33",
-          "TotalGames": 6
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "33.33",
+    "TotalGames": 6
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "53.57",
+    "TotalGames": 28
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "51.61",
+    "TotalGames": 31
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "70.59",
+    "TotalGames": 17
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "50.00",
+    "TotalGames": 4
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "42.86",
+    "TotalGames": 7
+  }
+]
+
     }
-  ],
-  "MIsO": [
+  ]},
+  "MIsO": {
+    "player": {
+      "id": 1001,
+      "name": "한두열",
+      "race": "Zerg",
+      "handle": "MIsO"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvT",
       "TotalGames": 22,
@@ -2374,24 +2568,24 @@
         }
       ]
     }
-  ],
-  "Maru": [
-    {
-      "Matchup": "TvP",
-      "TotalGames": 2,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 2
-        }
-      ]
-    }
-  ],
-  "Mind": [
+  ]},
+  "Mind": {
+    "player": {
+      "id": 11,
+      "name": "박성균",
+      "race": "Terran",
+      "handle": "Mind"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "TvT",
-      "TotalGames": 35,
+      "TotalGames": 36,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -2415,8 +2609,8 @@
         },
         {
           "Interval": "21-25",
-          "WinRate": "33.33",
-          "TotalGames": 9
+          "WinRate": "30.00",
+          "TotalGames": 10
         },
         {
           "Interval": "26-60",
@@ -2463,7 +2657,7 @@
     },
     {
       "Matchup": "TvP",
-      "TotalGames": 37,
+      "TotalGames": 38,
       "WinRates": [
         {
           "Interval": "6-10",
@@ -2477,7 +2671,7 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "50.00",
+          "WinRate": "44.44",
           "TotalGames": 8
         },
         {
@@ -2492,11 +2686,24 @@
         }
       ]
     }
-  ],
-  "Mini": [
+  ]},
+  "Mini":   {
+    "player": {
+      "id": 35,
+      "name": "변현제",
+      "race": "Protoss",
+      "handle": "Mini"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 4,
+      "ro4": 1
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "PvP",
-      "TotalGames": 34,
+      "TotalGames": 36,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -2505,8 +2712,8 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "46.67",
-          "TotalGames": 15
+          "WinRate": "43.75",
+          "TotalGames": 16
         },
         {
           "Interval": "11-15",
@@ -2516,7 +2723,7 @@
         {
           "Interval": "16-20",
           "WinRate": "0.00",
-          "TotalGames": 2
+          "TotalGames": 3
         },
         {
           "Interval": "21-25",
@@ -2532,7 +2739,7 @@
     },
     {
       "Matchup": "PvZ",
-      "TotalGames": 111,
+      "TotalGames": 113,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -2541,13 +2748,13 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "57.89",
-          "TotalGames": 38
+          "WinRate": "59.97",
+          "TotalGames": 39
         },
         {
           "Interval": "11-15",
-          "WinRate": "66.67",
-          "TotalGames": 33
+          "WinRate": "67.65",
+          "TotalGames": 34
         },
         {
           "Interval": "16-20",
@@ -2568,7 +2775,7 @@
     },
     {
       "Matchup": "PvT",
-      "TotalGames": 71,
+      "TotalGames": 72,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -2582,13 +2789,13 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "54.17",
-          "TotalGames": 24
+          "WinRate": "53.85",
+          "TotalGames": 26
         },
         {
           "Interval": "16-20",
-          "WinRate": "53.33",
-          "TotalGames": 15
+          "WinRate": "50.00",
+          "TotalGames": 16
         },
         {
           "Interval": "21-25",
@@ -2602,8 +2809,21 @@
         }
       ]
     }
-  ],
-  "Modesty": [
+  ]},
+  "Modesty": {
+    "player": {
+      "id": 1002,
+      "name": "김현우",
+      "race": "Zerg",
+      "handle": "Modesty"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvZ",
       "TotalGames": 1,
@@ -2677,8 +2897,21 @@
         }
       ]
     }
-  ],
-  "Mong": [
+  ]},
+  "Mong": {
+    "player": {
+      "id": 16,
+      "name": "윤찬희",
+      "race": "Terran",
+      "handle": "Mong"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "TvT",
       "TotalGames": 19,
@@ -2772,8 +3005,21 @@
         }
       ]
     }
-  ],
-  "Motive": [
+  ]},
+  "Motive": {
+    "player": {
+      "id": 80,
+      "name": "원선재",
+      "race": "Protoss",
+      "handle": "Motive"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "TvP",
       "TotalGames": 2,
@@ -2790,8 +3036,21 @@
         }
       ]
     }
-  ],
-  "Movie": [
+  ]},
+  "Movie": {
+    "player": {
+      "id": 1003,
+      "name": "진영화",
+      "race": "Protoss",
+      "handle": "Movie"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "PvT",
       "TotalGames": 16,
@@ -2870,8 +3129,21 @@
         }
       ]
     }
-  ],
-  "NaDa": [
+  ]},
+  "NaDa": {
+    "player": {
+      "id": 999,
+      "name": "이윤열",
+      "race": "Terran",
+      "handle": "NaDa"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "TvZ",
       "TotalGames": 1,
@@ -2905,32 +3177,21 @@
         }
       ]
     }
-  ],
-  "PURPOSE": [
-    {
-      "Matchup": "ZvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "Piano": {
+    "player": {
+      "id": 1008,
+      "name": "임진묵",
+      "race": "Terran",
+      "handle": "PianO"
     },
-    {
-      "Matchup": "ZvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Piano": [
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "TvT",
       "TotalGames": 5,
@@ -3004,46 +3265,24 @@
         }
       ]
     }
-  ],
-  "Pusan": [
-    {
-      "Matchup": "PvP",
-      "TotalGames": 3,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "33.33",
-          "TotalGames": 3
-        }
-      ]
+  ]},
+  "Queen": {
+    "player": {
+      "id": 12,
+      "name": "김명운",
+      "race": "Zerg",
+      "handle": "Queen"
     },
-    {
-      "Matchup": "PvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+    "achievements": {
+      "champion": 2,
+      "runnerUp": 0,
+      "ro4": 1
     },
-    {
-      "Matchup": "PvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Queen": [
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "ZvT",
-      "TotalGames": 47,
+      "TotalGames": 48,
       "WinRates": [
         {
           "Interval": "6-10",
@@ -3057,8 +3296,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "60.00",
-          "TotalGames": 10
+          "WinRate": "63.64",
+          "TotalGames": 11
         },
         {
           "Interval": "21-25",
@@ -3100,50 +3339,63 @@
     },
     {
       "Matchup": "ZvP",
-      "TotalGames": 52,
+      "TotalGames": 63,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "75.00",
-          "TotalGames": 4
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "50.00",
-          "TotalGames": 10
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "48.00",
-          "TotalGames": 25
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "44.44",
-          "TotalGames": 9
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "33.33",
-          "TotalGames": 3
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "80.00",
+    "TotalGames": 5
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "45.45",
+    "TotalGames": 11
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "46.43",
+    "TotalGames": 28
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "58.33",
+    "TotalGames": 12
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "50.00",
+    "TotalGames": 6
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "0.00",
+    "TotalGames": 1
+  }
+]
+
     }
-  ],
-  "Rain": [
+  ]},
+  "Rain": {"player": {
+      "id": 23,
+      "name": "정윤종",
+      "race": "Protoss",
+      "handle": "Rain"
+    },
+    "achievements": {
+      "champion": 2,
+      "runnerUp": 2,
+      "ro4": 5
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "PvZ",
-      "TotalGames": 62,
+      "TotalGames": 68,
       "WinRates": [
         {
           "Interval": "1-5",
           "WinRate": "0.00",
-          "TotalGames": 2
+          "TotalGames": 3
         },
         {
           "Interval": "6-10",
@@ -3152,49 +3404,49 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "85.00",
-          "TotalGames": 20
+          "WinRate": "86.36",
+          "TotalGames": 22
         },
         {
           "Interval": "16-20",
-          "WinRate": "62.50",
-          "TotalGames": 16
+          "WinRate": "58.82",
+          "TotalGames": 17
         },
         {
           "Interval": "21-25",
-          "WinRate": "16.67",
-          "TotalGames": 6
+          "WinRate": "14.29",
+          "TotalGames": 7
         },
         {
           "Interval": "26-60",
-          "WinRate": "50.00",
-          "TotalGames": 6
+          "WinRate": "57.14",
+          "TotalGames": 7
         }
       ]
     },
     {
       "Matchup": "PvP",
-      "TotalGames": 51,
+      "TotalGames": 57,
       "WinRates": [
         {
           "Interval": "1-5",
-          "WinRate": "100.00",
-          "TotalGames": 2
+          "WinRate": "66.67",
+          "TotalGames": 3
         },
         {
           "Interval": "6-10",
-          "WinRate": "80.00",
-          "TotalGames": 20
+          "WinRate": "80.95",
+          "TotalGames": 21
         },
         {
           "Interval": "11-15",
-          "WinRate": "77.78",
-          "TotalGames": 18
+          "WinRate": "70.00",
+          "TotalGames": 20
         },
         {
           "Interval": "16-20",
-          "WinRate": "100.00",
-          "TotalGames": 10
+          "WinRate": "91.67",
+          "TotalGames": 12
         },
         {
           "Interval": "21-25",
@@ -3239,11 +3491,24 @@
         }
       ]
     }
-  ],
-  "RoyaL": [
+  ]},
+  "RoyaL": {
+    "player": {
+      "id": 64,
+      "name": "김지성",
+      "race": "Terran",
+      "handle": "RoyaL"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 2,
+    "stats":[
     {
       "Matchup": "TvT",
-      "TotalGames": 22,
+      "TotalGames": 23,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3267,8 +3532,8 @@
         },
         {
           "Interval": "21-25",
-          "WinRate": "100.00",
-          "TotalGames": 1
+          "WinRate": "50.00",
+          "TotalGames": 2
         },
         {
           "Interval": "26-60",
@@ -3315,7 +3580,7 @@
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 37,
+      "TotalGames": 38,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3334,8 +3599,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "28.57",
-          "TotalGames": 7
+          "WinRate": "25.00",
+          "TotalGames": 8
         },
         {
           "Interval": "21-25",
@@ -3349,8 +3614,21 @@
         }
       ]
     }
-  ],
-  "Ruin": [
+  ]},
+  "Ruin": {
+    "player": {
+      "id": 73,
+      "name": "홍덕",
+      "race": "Protoss",
+      "handle": "Ruin"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
       "TotalGames": 3,
@@ -3388,11 +3666,24 @@
         }
       ]
     }
-  ],
-  "Rush": [
+  ]},
+  "Rush": {
+    "player": {
+      "id": 27,
+      "name": "유영진",
+      "race": "Terran",
+      "handle": "Rush"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 2,
+      "ro4": 1
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "TvP",
-      "TotalGames": 39,
+      "TotalGames": 42,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3406,13 +3697,13 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "76.92",
-          "TotalGames": 13
+          "WinRate": "73.33",
+          "TotalGames": 15
         },
         {
           "Interval": "16-20",
-          "WinRate": "25.00",
-          "TotalGames": 12
+          "WinRate": "30.77",
+          "TotalGames": 13
         },
         {
           "Interval": "21-25",
@@ -3428,48 +3719,48 @@
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 69,
+      "TotalGames": 79,
       "WinRates": [
         {
-          "Interval": "1-5",
-          "WinRate": "28.57",
-          "TotalGames": 7
+            "Interval": "1-5",
+            "WinRate": "37.50",
+            "TotalGames": 8
         },
         {
-          "Interval": "6-10",
-          "WinRate": "27.78",
-          "TotalGames": 18
+            "Interval": "6-10",
+            "WinRate": "25.00",
+            "TotalGames": 20
         },
         {
-          "Interval": "11-15",
-          "WinRate": "62.50",
-          "TotalGames": 16
+            "Interval": "11-15",
+            "WinRate": "68.42",
+            "TotalGames": 19
         },
         {
-          "Interval": "16-20",
-          "WinRate": "55.00",
-          "TotalGames": 20
+            "Interval": "16-20",
+            "WinRate": "50.00",
+            "TotalGames": 24
         },
         {
-          "Interval": "21-25",
-          "WinRate": "33.33",
-          "TotalGames": 6
+            "Interval": "21-25",
+            "WinRate": "33.33",
+            "TotalGames": 6
         },
         {
-          "Interval": "26-60",
-          "WinRate": "100.00",
-          "TotalGames": 2
+            "Interval": "26-60",
+            "WinRate": "100.00",
+            "TotalGames": 2
         }
       ]
     },
     {
       "Matchup": "TvT",
-      "TotalGames": 49,
+      "TotalGames": 50,
       "WinRates": [
         {
           "Interval": "6-10",
-          "WinRate": "66.67",
-          "TotalGames": 9
+          "WinRate": "60.00",
+          "TotalGames": 10
         },
         {
           "Interval": "11-15",
@@ -3493,8 +3784,21 @@
         }
       ]
     }
-  ],
-  "Sacsri": [
+  ]},
+  "Sacsri": {
+    "player": {
+      "id": 49,
+      "name": "이예훈",
+      "race": "Zerg",
+      "handle": "Sacsri"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 23,
@@ -3558,32 +3862,50 @@
         }
       ]
     }
-  ],
-  "Scan": [
+  ]},
+  "Scan": {
+    "player": {
+      "id": 70,
+      "name": "유승곤",
+      "race": "Terran",
+      "handle": "Scan"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "TvP",
-      "TotalGames": 2,
+      "TotalGames": 4,
       "WinRates": [
         {
           "Interval": "11-15",
           "WinRate": "0.00",
-          "TotalGames": 1
+          "TotalGames": 2
         },
         {
           "Interval": "16-20",
           "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "21-25",
+          "WinRate": "100.00",
           "TotalGames": 1
         }
       ]
     },
     {
       "Matchup": "TvT",
-      "TotalGames": 2,
+      "TotalGames": 4,
       "WinRates": [
         {
           "Interval": "16-20",
           "WinRate": "0.00",
-          "TotalGames": 1
+          "TotalGames": 3
         },
         {
           "Interval": "26-60",
@@ -3591,9 +3913,33 @@
           "TotalGames": 1
         }
       ]
+    },
+    {
+      "Matchup": "TvZ",
+      "TotalGames": 2,
+      "WinRates": [
+        {
+          "Interval": "11-15",
+          "WinRate": "50.00",
+          "TotalGames": 2
+        }
+      ]
     }
-  ],
-  "Sea": [
+  ]},
+  "Sea": {
+    "player": {
+      "id": 9,
+      "name": "염보성",
+      "race": "Terran",
+      "handle": "Sea"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 2
+    },
+    "tier": 3,
+    "stats": [
     {
       "Matchup": "TvT",
       "TotalGames": 25,
@@ -3697,11 +4043,24 @@
         }
       ]
     }
-  ],
-  "Sharp": [
+  ]},
+  "Sharp": {
+    "player": {
+      "id": 5,
+      "name": "조기석",
+      "race": "Terran",
+      "handle": "Sharp"
+    },
+     "achievements": {
+      "champion": 0,
+      "runnerUp": 3,
+      "ro4": 2
+    },
+    "tier": 2,
+    "stats": [
     {
       "Matchup": "TvT",
-      "TotalGames": 57,
+      "TotalGames": 58,
       "WinRates": [
         {
           "Interval": "6-10",
@@ -3715,8 +4074,8 @@
         },
         {
           "Interval": "16-20",
-          "WinRate": "66.67",
-          "TotalGames": 12
+          "WinRate": "61.54",
+          "TotalGames": 13
         },
         {
           "Interval": "21-25",
@@ -3768,7 +4127,7 @@
     },
     {
       "Matchup": "TvP",
-      "TotalGames": 69,
+      "TotalGames": 71,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3782,13 +4141,13 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "53.33",
-          "TotalGames": 15
+          "WinRate": "50.00",
+          "TotalGames": 16
         },
         {
           "Interval": "16-20",
-          "WinRate": "45.00",
-          "TotalGames": 20
+          "WinRate": "42.86",
+          "TotalGames": 21
         },
         {
           "Interval": "21-25",
@@ -3802,8 +4161,21 @@
         }
       ]
     }
-  ],
-  "Shine": [
+  ]},
+  "Shine": {
+    "player": {
+      "id": 39,
+      "name": "이영한",
+      "race": "Zerg",
+      "handle": "Shine"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 24,
@@ -3897,11 +4269,24 @@
         }
       ]
     }
-  ],
-  "Shuttle": [
+  ]},
+  "Shuttle": {
+    "player": {
+      "id": 2,
+      "name": "김윤중",
+      "race": "Protoss",
+      "handle": "Shuttle"
+    },
+    "achievements": {
+      "champion": 1,
+      "runnerUp": 0,
+      "ro4": 1
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "PvZ",
-      "TotalGames": 37,
+      "TotalGames": 38,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3930,14 +4315,14 @@
         },
         {
           "Interval": "26-60",
-          "WinRate": "100.00",
-          "TotalGames": 3
+          "WinRate": "75.00",
+          "TotalGames": 4
         }
       ]
     },
     {
       "Matchup": "PvT",
-      "TotalGames": 44,
+      "TotalGames": 45,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -3966,8 +4351,8 @@
         },
         {
           "Interval": "26-60",
-          "WinRate": "75.00",
-          "TotalGames": 4
+          "WinRate": "60.00",
+          "TotalGames": 5
         }
       ]
     },
@@ -4007,51 +4392,55 @@
         }
       ]
     }
-  ],
-  "Sky": [
+  ]},
+    "Skey": {
+    "player": {
+      "id": 999,
+      "name": "김영진",
+      "race": "Terran",
+      "handle": "Terran"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
-      "Matchup": "PvZ",
+      "Matchup": "TvZ",
       "TotalGames": 2,
       "WinRates": [
         {
-          "Interval": "6-10",
+          "Interval": "11-15",
           "WinRate": "0.00",
-          "TotalGames": 2
-        }
-      ]
-    },
-    {
-      "Matchup": "PvT",
-      "TotalGames": 1,
-      "WinRates": [
+          "TotalGames": 1
+        },
         {
           "Interval": "16-20",
           "WinRate": "0.00",
           "TotalGames": 1
         }
       ]
-    },
-    {
-      "Matchup": "PvP",
-      "TotalGames": 2,
-      "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "100.00",
-          "TotalGames": 1
-        }
-      ]
     }
-  ],
-  "Snow": [
+  ]},
+  "Snow": {
+    "player": {
+      "id": 33,
+      "name": "장윤철",
+      "race": "Protoss",
+      "handle": "Snow"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 2,
+      "ro4": 4
+    },
+    "tier": 0,
+    "stats": [
     {
       "Matchup": "PvT",
-      "TotalGames": 48,
+      "TotalGames": 49,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -4065,8 +4454,8 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "53.85",
-          "TotalGames": 13
+          "WinRate": "57.14",
+          "TotalGames": 14
         },
         {
           "Interval": "16-20",
@@ -4087,27 +4476,27 @@
     },
     {
       "Matchup": "PvP",
-      "TotalGames": 48,
+      "TotalGames": 56,
       "WinRates": [
         {
           "Interval": "1-5",
           "WinRate": "100.00",
-          "TotalGames": 1
+          "TotalGames": 2
         },
         {
           "Interval": "6-10",
-          "WinRate": "56.25",
-          "TotalGames": 16
+          "WinRate": "55.56",
+          "TotalGames": 18
         },
         {
           "Interval": "11-15",
-          "WinRate": "52.94",
-          "TotalGames": 17
+          "WinRate": "57.89",
+          "TotalGames": 19
         },
         {
           "Interval": "16-20",
           "WinRate": "66.67",
-          "TotalGames": 12
+          "TotalGames": 15
         },
         {
           "Interval": "26-60",
@@ -4118,7 +4507,7 @@
     },
     {
       "Matchup": "PvZ",
-      "TotalGames": 91,
+      "TotalGames": 98,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -4127,13 +4516,13 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "16.00",
-          "TotalGames": 25
+          "WinRate": "15.38",
+          "TotalGames": 26
         },
         {
           "Interval": "11-15",
-          "WinRate": "45.83",
-          "TotalGames": 24
+          "WinRate": "44.44",
+          "TotalGames": 27
         },
         {
           "Interval": "16-20",
@@ -4142,18 +4531,31 @@
         },
         {
           "Interval": "21-25",
-          "WinRate": "90.00",
-          "TotalGames": 10
+          "WinRate": "90.91",
+          "TotalGames": 11
         },
         {
           "Interval": "26-60",
-          "WinRate": "42.86",
-          "TotalGames": 7
+          "WinRate": "44.44",
+          "TotalGames": 9
         }
       ]
     }
-  ],
-  "Soma": [
+  ]},
+  "Soma": {
+    "player": {
+      "id": 59,
+      "name": "박상현",
+      "race": "Zerg",
+      "handle": "Soma"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 1,
+      "ro4": 3
+    },
+    "tier": 2,
+    "stats": [
     {
       "Matchup": "ZvP",
       "TotalGames": 39,
@@ -4242,43 +4644,57 @@
         }
       ]
     }
-  ],
-  "SoulKey": [
+  ]},
+  "SoulKey": {
+    "player": {
+      "id": 28,
+      "name": "김민철",
+      "race": "Zerg",
+      "handle": "SoulKey"
+    },
+    "achievements": {
+      "champion": 5,
+      "runnerUp": 0,
+      "ro4": 3
+    },
+    "tier": 0,
+    "stats":[
     {
       "Matchup": "ZvP",
-      "TotalGames": 89,
+      "TotalGames": 103,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "75.00",
-          "TotalGames": 4
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "77.42",
-          "TotalGames": 31
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "47.83",
-          "TotalGames": 23
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "66.67",
-          "TotalGames": 18
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "42.86",
-          "TotalGames": 7
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "83.33",
-          "TotalGames": 6
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "75.00",
+    "TotalGames": 4
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "78.79",
+    "TotalGames": 33
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "50.00",
+    "TotalGames": 28
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "65.00",
+    "TotalGames": 20
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "37.50",
+    "TotalGames": 8
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "70.00",
+    "TotalGames": 10
+  }
+]
+
     },
     {
       "Matchup": "ZvZ",
@@ -4308,66 +4724,84 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 94,
+      "TotalGames": 103,
       "WinRates": [
-        {
-          "Interval": "1-5",
-          "WinRate": "77.78",
-          "TotalGames": 9
-        },
-        {
-          "Interval": "6-10",
-          "WinRate": "73.68",
-          "TotalGames": 19
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "55.88",
-          "TotalGames": 34
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "73.33",
-          "TotalGames": 15
-        },
-        {
-          "Interval": "21-25",
-          "WinRate": "54.55",
-          "TotalGames": 11
-        },
-        {
-          "Interval": "26-60",
-          "WinRate": "33.33",
-          "TotalGames": 6
-        }
-      ]
+  {
+    "Interval": "1-5",
+    "WinRate": "72.73",
+    "TotalGames": 11
+  },
+  {
+    "Interval": "6-10",
+    "WinRate": "75.00",
+    "TotalGames": 20
+  },
+  {
+    "Interval": "11-15",
+    "WinRate": "55.56",
+    "TotalGames": 36
+  },
+  {
+    "Interval": "16-20",
+    "WinRate": "77.78",
+    "TotalGames": 18
+  },
+  {
+    "Interval": "21-25",
+    "WinRate": "58.33",
+    "TotalGames": 12
+  },
+  {
+    "Interval": "26-60",
+    "WinRate": "33.33",
+    "TotalGames": 6
+  }
+]
     }
-  ],
-  "Speed": [
+  ]},
+  "Speed": { 
+    "player": {
+      "id": 71,
+      "name": "이영웅",
+      "race": "Terran",
+      "handle": "Speed"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats": [
     {
       "Matchup": "TvT",
-      "TotalGames": 2,
+      "TotalGames": 5,
       "WinRates": [
         {
-          "Interval": "16-20",
+          "Interval": "6-10",
           "WinRate": "100.00",
           "TotalGames": 1
         },
         {
+          "Interval": "16-20",
+          "WinRate": "100.00",
+          "TotalGames": 2
+        },
+        {
           "Interval": "21-25",
-          "WinRate": "0.00",
-          "TotalGames": 1
+          "WinRate": "50.00",
+          "TotalGames": 2
         }
       ]
     },
     {
       "Matchup": "TvP",
-      "TotalGames": 9,
+      "TotalGames": 11,
       "WinRates": [
         {
           "Interval": "11-15",
-          "WinRate": "33.33",
-          "TotalGames": 3
+          "WinRate": "20.00",
+          "TotalGames": 5
         },
         {
           "Interval": "16-20",
@@ -4388,17 +4822,35 @@
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 1,
+      "TotalGames": 3,
       "WinRates": [
         {
           "Interval": "11-15",
           "WinRate": "0.00",
           "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 2
         }
       ]
     }
-  ],
-  "Ss1nz": [
+  ]},
+  "Ss1nz": {
+    "player": {
+      "id": 999,
+      "name": "원지훈",
+      "race": "Protoss",
+      "handle": "Ss1nz"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
       "TotalGames": 4,
@@ -4431,8 +4883,21 @@
         }
       ]
     }
-  ],
-  "Stork": [
+  ]},
+  "Stork": {
+    "player": {
+      "id": 17,
+      "name": "송병구",
+      "race": "Protoss",
+      "handle": "Stork"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 1
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "PvP",
       "TotalGames": 48,
@@ -4466,7 +4931,7 @@
     },
     {
       "Matchup": "PvZ",
-      "TotalGames": 19,
+      "TotalGames": 22,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -4475,18 +4940,18 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "50.00",
-          "TotalGames": 2
+          "WinRate": "33.33",
+          "TotalGames": 3
         },
         {
           "Interval": "11-15",
-          "WinRate": "62.50",
-          "TotalGames": 8
+          "WinRate": "55.56",
+          "TotalGames": 9
         },
         {
           "Interval": "16-20",
-          "WinRate": "40.00",
-          "TotalGames": 5
+          "WinRate": "50.00",
+          "TotalGames": 6
         },
         {
           "Interval": "21-25",
@@ -4531,8 +4996,21 @@
         }
       ]
     }
-  ],
-  "TY": [
+  ]},
+  "TY": {
+    "player": {
+      "id": 77,
+      "name": "전태양",
+      "race": "Terran",
+      "handle": "TY"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "TvT",
       "TotalGames": 1,
@@ -4566,8 +5044,21 @@
         }
       ]
     }
-  ],
-  "TaeNgGu": [
+  ]},
+  "TaeNgGu":{
+    "player": {
+      "id": 78,
+      "name": "윤종현",
+      "race": "Terran",
+      "handle": "TaeNgGu"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "TvP",
       "TotalGames": 1,
@@ -4590,73 +5081,43 @@
         }
       ]
     }
-  ],
-  "Terror": [
-    {
-      "Matchup": "ZvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "Tyson": {
+    "player": {
+      "id": 1012,
+      "name": "박지훈",
+      "race": "Protoss",
+      "handle": "Tyson"
     },
-    {
-      "Matchup": "ZvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Tinkle": [
-    {
-      "Matchup": "TvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
     },
-    {
-      "Matchup": "TvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ],
-  "Tyson": [
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvT",
-      "TotalGames": 2,
+      "TotalGames": 3,
       "WinRates": [
         {
           "Interval": "11-15",
-          "WinRate": "50.00",
-          "TotalGames": 2
+          "WinRate": "33.33",
+          "TotalGames": 3
         }
       ]
     },
     {
       "Matchup": "PvP",
-      "TotalGames": 1,
+      "TotalGames": 2,
       "WinRates": [
         {
           "Interval": "6-10",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "16-20",
           "WinRate": "0.00",
           "TotalGames": 1
         }
@@ -4678,11 +5139,24 @@
         }
       ]
     }
-  ],
-  "YSC": [
+  ]},
+  "YSC": {
+    "player": {
+      "id": 62,
+      "name": "윤수철",
+      "race": "Protoss",
+      "handle": "YSC"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
-      "TotalGames": 4,
+      "TotalGames": 6,
       "WinRates": [
         {
           "Interval": "6-10",
@@ -4692,10 +5166,15 @@
         {
           "Interval": "11-15",
           "WinRate": "0.00",
-          "TotalGames": 1
+          "TotalGames": 2
         },
         {
           "Interval": "16-20",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
           "WinRate": "0.00",
           "TotalGames": 1
         }
@@ -4717,8 +5196,21 @@
         }
       ]
     }
-  ],
-  "Yoon": [
+  ]},
+  "Yoon": {
+    "player": {
+      "id": 1013,
+      "name": "윤진규",
+      "race": "Zerg",
+      "handle": "Yoon"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 2,
@@ -4746,8 +5238,21 @@
         }
       ]
     }
-  ],
-  "ZeLoT": [
+  ]},
+  "ZeLoT": {
+    "player": {
+      "id": 56,
+      "name": "서문지훈",
+      "race": "Zerg",
+      "handle": "ZeLoT"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 2,
@@ -4791,8 +5296,21 @@
         }
       ]
     }
-  ],
-  "beast": [
+  ]},
+  "beast": {
+    "player": {
+      "id": 66,
+      "name": "유진우",
+      "race": "Zerg",
+      "handle": "beast"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvP",
       "TotalGames": 5,
@@ -4856,37 +5374,21 @@
         }
       ]
     }
-  ],
-  "firebathero": [
-    {
-      "Matchup": "TvT",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "21-25",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
+  ]},
+  "free": {
+    "player": {
+      "id": 3,
+      "name": "윤용태",
+      "race": "Protoss",
+      "handle": "free"
     },
-    {
-      "Matchup": "TvP",
-      "TotalGames": 3,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        },
-        {
-          "Interval": "16-20",
-          "WinRate": "0.00",
-          "TotalGames": 2
-        }
-      ]
-    }
-  ],
-  "free": [
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":[
     {
       "Matchup": "PvT",
       "TotalGames": 11,
@@ -4980,8 +5482,21 @@
         }
       ]
     }
-  ],
-  "ggaemo": [
+  ]},
+  "ggaemo": {
+    "player": {
+      "id": 1004,
+      "name": "김경모",
+      "race": "Zerg",
+      "handle": "ggaemo"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": [
     {
       "Matchup": "ZvP",
       "TotalGames": 7,
@@ -5045,11 +5560,24 @@
         }
       ]
     }
-  ],
-  "hero": [
+  ]},
+  "hero": {
+    "player": {
+      "id": 14,
+      "name": "조일장",
+      "race": "Zerg",
+      "handle": "hero"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 2,
+      "ro4": 5
+    },
+    "tier": 1,
+    "stats":[
     {
       "Matchup": "ZvP",
-      "TotalGames": 47,
+      "TotalGames": 49,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -5063,8 +5591,8 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "53.33",
-          "TotalGames": 15
+          "WinRate": "52.94",
+          "TotalGames": 17
         },
         {
           "Interval": "16-20",
@@ -5111,7 +5639,7 @@
     },
     {
       "Matchup": "ZvT",
-      "TotalGames": 85,
+      "TotalGames": 89,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -5120,18 +5648,18 @@
         },
         {
           "Interval": "6-10",
-          "WinRate": "65.00",
-          "TotalGames": 20
-        },
-        {
-          "Interval": "11-15",
-          "WinRate": "33.33",
+          "WinRate": "66.67",
           "TotalGames": 21
         },
         {
+          "Interval": "11-15",
+          "WinRate": "31.82",
+          "TotalGames": 22
+        },
+        {
           "Interval": "16-20",
-          "WinRate": "55.00",
-          "TotalGames": 20
+          "WinRate": "54.55",
+          "TotalGames": 22
         },
         {
           "Interval": "21-25",
@@ -5145,8 +5673,201 @@
         }
       ]
     }
-  ],
-  "ivOry": [
+  ]},
+  "Ridesky": {
+"player": {
+      "id": 1016,
+      "name": "김호성",
+      "race": "Terran",
+      "handle": "Ridesky"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+  "Paralyze": {
+"player": {
+      "id": 1006,
+      "name": "정경두",
+      "race": "Protoss",
+      "handle": "Paralyze"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+  "MC": {
+"player": {
+      "id": 1004,
+      "name": "장민철",
+      "race": "Protoss",
+      "handle": "MC"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+    "KOp": {
+"player": {
+      "id": 1009,
+      "name": "지동원",
+      "race": "Terran",
+      "handle": "KOp"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+      "XuanXuan": {
+"player": {
+      "id": 1001,
+      "name": "赵昊轩",
+      "race": "Terran",
+      "handle": "XuanXuan"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+      "Dewalt": {
+"player": {
+      "id": 1000,
+      "name": "Андрей Беляев",
+      "race": "Protoss",
+      "handle": "Dewalt"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+      "Mihu": {
+"player": {
+      "id": 999,
+      "name": "胡春旭",
+      "race": "Terran",
+      "handle": "Mihu"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+      "Hani": {
+"player": {
+      "id": 1017,
+      "name": "배호연",
+      "race": "Terran",
+      "handle": "Hani"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+      "Kwanro": {
+"player": {
+      "id": 1015,
+      "name": "한상봉",
+      "race": "Zerg",
+      "handle": "Kwanro"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+      "Yabsab": {
+        "player": {
+      "id": 1014,
+      "name": "김준혁",
+      "race": "Zerg",
+      "handle": "Yabsab"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+    "Hm": {
+"player": {
+      "id": 1011,
+      "name": "배성흠",
+      "race": "Zerg",
+      "handle": "Hm"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+  "XiaoShuai": {
+    "player": {
+      "id": 1010,
+      "name": "黄学敏",
+      "race": "Zerg",
+      "handle": "XiaoShuai"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+    "ivOry": {
+    "player": {
+      "id": 76,
+      "name": "인치호",
+      "race": "Zerg",
+      "handle": "ivOry"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "ZvT",
       "TotalGames": 1,
@@ -5169,8 +5890,21 @@
         }
       ]
     }
-  ],
-  "nOOb": [
+  ]},
+  "nOOb": {
+    "player": {
+      "id": 1005,
+      "name": "김범수",
+      "race": "Protoss",
+      "handle": "nOOB"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[
     {
       "Matchup": "PvZ",
       "TotalGames": 5,
@@ -5224,8 +5958,52 @@
         }
       ]
     }
-  ],
-  "sSak": [
+  ]},
+  "DDasik": {
+"player": {
+      "id": 1003,
+      "name": "오진식",
+      "race": "Zerg",
+      "handle": "DDasik"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats":[]
+  },
+  "Absolute": {
+"player": {
+      "id": 1002,
+      "name": "김수식",
+      "race": "Zerg",
+      "handle": "Absolute"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+  "sSak": {
+    "player": {
+      "id": 1,
+      "name": "최호선",
+      "race": "Terran",
+      "handle": "sSak"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
+    "stats":
+    [
     {
       "Matchup": "TvP",
       "TotalGames": 20,
@@ -5264,7 +6042,7 @@
     },
     {
       "Matchup": "TvZ",
-      "TotalGames": 12,
+      "TotalGames": 15,
       "WinRates": [
         {
           "Interval": "1-5",
@@ -5273,16 +6051,21 @@
         },
         {
           "Interval": "11-15",
-          "WinRate": "16.67",
-          "TotalGames": 6
+          "WinRate": "28.57",
+          "TotalGames": 7
         },
         {
           "Interval": "16-20",
-          "WinRate": "66.67",
-          "TotalGames": 3
+          "WinRate": "50.00",
+          "TotalGames": 4
         },
         {
           "Interval": "21-25",
+          "WinRate": "0.00",
+          "TotalGames": 1
+        },
+        {
+          "Interval": "26-60",
           "WinRate": "0.00",
           "TotalGames": 1
         }
@@ -5319,29 +6102,5 @@
         }
       ]
     }
-  ],
-  "soso": [
-    {
-      "Matchup": "TvP",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "11-15",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    },
-    {
-      "Matchup": "TvZ",
-      "TotalGames": 1,
-      "WinRates": [
-        {
-          "Interval": "6-10",
-          "WinRate": "0.00",
-          "TotalGames": 1
-        }
-      ]
-    }
-  ]
+  ]}
 }

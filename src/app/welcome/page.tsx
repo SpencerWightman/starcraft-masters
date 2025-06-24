@@ -207,6 +207,29 @@ const Welcome: React.FC = () => {
           </Box>
           <Box
             sx={{
+              borderTop: "2px solid #5F8575",
+              borderRight: "2px solid #5F8575",
+              padding: "1rem",
+              borderRadius: "8px",
+              marginBottom: "1rem",
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                textTransform: "uppercase",
+                color: "#5F8575",
+              }}
+            >
+              Charts
+            </Typography>
+            <Typography variant="body1" sx={{ marginTop: "1rem" }}>
+              • ASL analytics. The plan is to create more using historical data.
+            </Typography>
+          </Box>
+                    <Box
+            sx={{
               borderTop: "2px solid #a06b3c",
               borderRight: "2px solid #a06b3c",
               padding: "1rem",
@@ -227,30 +250,7 @@ const Welcome: React.FC = () => {
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
               • Experimental feature. Submit the URL of a short YouTube gameplay
               video (Artosis Casts etc.) and receive back AI-generated gameplay
-              commentary.
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              borderTop: "2px solid #5F8575",
-              borderRight: "2px solid #5F8575",
-              padding: "1rem",
-              borderRadius: "8px",
-              marginBottom: "1rem",
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                color: "#5F8575",
-              }}
-            >
-              Charts
-            </Typography>
-            <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-              • ASL analytics. The plan is to create more using historical data.
+              commentary. Currently unavailable.
             </Typography>
           </Box>
         </Grid2>
@@ -382,7 +382,7 @@ const Welcome: React.FC = () => {
               Contact
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-              • Lurkerbomb on Discord.
+              • Lurkerbomb on the Artosis Discord.
             </Typography>
           </Box>
         </Grid2>

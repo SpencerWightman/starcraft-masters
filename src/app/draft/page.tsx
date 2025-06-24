@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Box, useTheme, useMediaQuery } from "@mui/material";
 import PlayerGrid from "@/components/teams/PlayerGrid";
-import { selectPlayerDraft } from "@/utils/selectPlayerDraft";
-import { deselectPlayerDraft } from "@/utils/deselectPlayerDraft";
 import PlayerDraft from "@/components/teams/PlayerDraft";
 import PlayerDraftChart from "@/components/teams/PlayerDraftChart";
-import PlayerDraftDetails from "@/components/teams/PlayerDraftDetails";
-import playerSummariesJson from "data/draftData15-18.json";
+import playerSummariesJson from "data/historicalData.json";
 import { PlayerSummaries, PlayerSummary } from "@/app/types/teamTypes";
+import { allocateSlots } from "@/utils/allocateSlots";
 
 const playerSummaries: PlayerSummaries = playerSummariesJson;
 
@@ -18,14 +16,12 @@ const PlayerList: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
-  const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
-  const [tierMaxSlots, setTierMaxSlots] = useState<Record<number, number>>({
-    0: 2,
-    1: 3,
-    2: 3,
-    3: 3,
-    4: 4,
-  });
+    const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
+
+    const { remaining: tierMaxSlots } = useMemo(
+    () => allocateSlots(selectedPlayers),
+    [selectedPlayers]
+    );
 
   const groupedPlayers = playerList.reduce(
     (acc, player) => {
@@ -37,22 +33,17 @@ const PlayerList: React.FC = () => {
     { 0: [], 1: [], 2: [], 3: [], 4: [] } as Record<string, PlayerSummary[]>
   );
 
-  const addPlayerToDraft = (player: PlayerSummary) => {
-    const isAlreadySelected = selectedPlayers.some(
-      (selectedPlayer) => selectedPlayer.player.handle === player.player.handle
-    );
+const togglePlayer = (player: PlayerSummary) => {
+  setSelectedPlayers(prev => {
+    const already = prev.some(p => p.player.handle === player.player.handle);
+    const next = already
+      ? prev.filter(p => p.player.handle !== player.player.handle)
+      : [...prev, player];
 
-    if (isAlreadySelected) {
-      return deselectPlayerDraft(player, setSelectedPlayers, setTierMaxSlots);
-    }
-
-    return selectPlayerDraft(
-      player,
-      setSelectedPlayers,
-      setTierMaxSlots,
-      tierMaxSlots
-    );
-  };
+    const { ok } = allocateSlots(next);
+    return ok ? next : prev;
+  });
+};
 
   return (
     <Box
@@ -93,9 +84,7 @@ const PlayerList: React.FC = () => {
           <PlayerDraft
             selectedPlayers={selectedPlayers}
             setSelectedPlayers={setSelectedPlayers}
-            setTierMaxSlots={setTierMaxSlots}
           />
-          <PlayerDraftDetails selectedPlayers={selectedPlayers} />
           {!isMobile && (
             <>
               <PlayerDraftChart
@@ -109,7 +98,7 @@ const PlayerList: React.FC = () => {
 
       <PlayerGrid
         groupedPlayers={groupedPlayers}
-        onPlayerClick={addPlayerToDraft}
+        onPlayerClick={togglePlayer}
         selectedPlayers={selectedPlayers}
         maxSlots={tierMaxSlots}
       />

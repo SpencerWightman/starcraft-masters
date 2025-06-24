@@ -15,6 +15,7 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
 import { deadlineDate } from "@/constants/constants";
+import { allocateSlots } from "@/utils/allocateSlots"; 
 
 const saveTeamToDB = async (params: {
   email: string;
@@ -41,8 +42,7 @@ const saveTeamToDB = async (params: {
 const PlayerDraft: React.FC<{
   selectedPlayers: PlayerSummary[];
   setSelectedPlayers: React.Dispatch<React.SetStateAction<PlayerSummary[]>>;
-  setTierMaxSlots: React.Dispatch<React.SetStateAction<Record<number, number>>>;
-}> = ({ selectedPlayers, setSelectedPlayers, setTierMaxSlots }) => {
+}> = ({ selectedPlayers, setSelectedPlayers }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
   const { data: session, status } = useSession();
@@ -97,19 +97,13 @@ const PlayerDraft: React.FC<{
     }
   };
 
-  const handleResetClick = () => {
-    setSelectedPlayers([]);
-    setTierMaxSlots({
-      0: 2,
-      1: 3,
-      2: 3,
-      3: 3,
-      4: 4,
-    });
-    setHasSaved(false);
-  };
+    const handleResetClick = () => {
+      setSelectedPlayers([]);
+      setHasSaved(false);
+    };
 
-  const isSaveEnabled = selectedPlayers.length === 15;
+    const { ok: draftIsLegal } = allocateSlots(selectedPlayers);
+    const isSaveEnabled = draftIsLegal && selectedPlayers.length === 15;
 
   return (
     <Box sx={{ paddingBottom: 2 }}>

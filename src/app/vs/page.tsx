@@ -20,29 +20,17 @@ import {
     Legend,
     TooltipItem,
 } from "chart.js";
-
-type DurationWinRate = {
-    Interval: string;
-    WinRate: string;
-    TotalGames: number;
-};
-type MatchupDurationStats = {
-    Matchup: string;
-    TotalGames: number;
-    WinRates: DurationWinRate[];
-};
-type HistoricalData = { [key: string]: MatchupDurationStats[] };
-
+import { PlayerSummaries, MatchupStats } from "@/app/types/teamTypes";
 import rawHistoricalData from "data/historicalData.json";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
-const historicalData: HistoricalData = rawHistoricalData;
+const historicalData: PlayerSummaries = rawHistoricalData;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const intervals = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-60"];
 
 const makeData = (
-    stats: MatchupDurationStats,
+    stats: MatchupStats,
     player: string,
     color: string,
     invert = false
@@ -106,11 +94,11 @@ const VSChart: React.FC = () => {
     );
 
     const allMatchups1 = useMemo(
-        () => dataPlayer1.map((d) => d.Matchup),
+        () => dataPlayer1.stats.map((d) => d.Matchup),
         [dataPlayer1]
     );
     const allMatchups2 = useMemo(
-        () => dataPlayer2.map((d) => d.Matchup),
+        () => dataPlayer2.stats.map((d) => d.Matchup),
         [dataPlayer2]
     );
 
@@ -128,8 +116,8 @@ const VSChart: React.FC = () => {
         setSelectedMatchup2(allMatchups2[0] ?? "");
     }, [allMatchups2]);
 
-    const stats1 = dataPlayer1.find((d) => d.Matchup === selectedMatchup1);
-    const stats2 = dataPlayer2.find((d) => d.Matchup === selectedMatchup2);
+    const stats1 = dataPlayer1.stats.find((d) => d.Matchup === selectedMatchup1);
+    const stats2 = dataPlayer2.stats.find((d) => d.Matchup === selectedMatchup2);
 
     const color1 = getColorForMatchup(selectedMatchup1);
     const color2 = getColorForMatchup(selectedMatchup2);
