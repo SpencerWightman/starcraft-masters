@@ -175,7 +175,7 @@ const PlayerDraft: React.FC<{
               open={open}
               message={snackbarMessage}
               anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-              autoHideDuration={4000}
+              autoHideDuration={8000}
               onClose={() => setOpen(false)}
             />
             <Tooltip
