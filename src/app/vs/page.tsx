@@ -7,7 +7,6 @@ import {
     SelectChangeEvent,
     Button,
     Box,
-    useMediaQuery,
     alpha,
 } from "@mui/material";
 import { Bar } from "react-chartjs-2";
@@ -22,8 +21,27 @@ import {
 } from "chart.js";
 import { PlayerSummaries, MatchupStats } from "@/app/types/teamTypes";
 import rawHistoricalData from "data/historicalData.json";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 const historicalData: PlayerSummaries = rawHistoricalData;
+
+const players = Object.keys(historicalData);
+
+const selectSx = {
+  color: "rgba(243, 244, 246, 0.6)",
+  "& .MuiSvgIcon-root": { color: "rgba(243, 244, 246, 0.6)" },
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "rgba(243, 244, 246, 0.6)",
+  },
+  "&:hover .MuiOutlinedInput-notchedOutline": {
+    borderColor: "rgba(243, 244, 246, 0.6)",
+  },
+  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: "rgba(243, 244, 246, 0.6)",
+  },
+  "& .MuiSelect-select:focus": {
+    outline: "none",
+    boxShadow: "none",
+  },
+};
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -60,7 +78,7 @@ const makeData = (
         labels: intervals,
         datasets: [
             {
-                label: `${player} ${stats.Matchup} (${stats.TotalGames} games)`,
+                label: `${stats.TotalGames} games`,
                 data,
                 backgroundColor,
                 borderColor,
@@ -78,9 +96,6 @@ const getColorForMatchup = (matchup: string): string => {
 };
 
 const VSChart: React.FC = () => {
-    const players = Object.keys(historicalData);
-    const isXS = useMediaQuery("(max-width:600px)");
-
     const [selectedPlayer1, setSelectedPlayer1] = useState("SoulKey");
     const [selectedPlayer2, setSelectedPlayer2] = useState("Light");
 
@@ -224,175 +239,127 @@ const VSChart: React.FC = () => {
         },
     };
 
-    return (
-        <>
-            {isXS ? (
-                <PaperPlaceholder message="Increase your screen size to view the chart" />
-            ) : (
-                <Box
-                    sx={{
-                        display: "flex",
-                        gap: 2,
-                        p: 2,
-                        backgroundColor: "#1f2937",
-                        borderRadius: 2,
-                        height: 600,
-                    }}
-                >
-                    <Box
-                        sx={{
-                            flex: 1,
-                            display: "flex",
-                            flexDirection: "column",
-                            height: "100%",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                mb: 2,
-                                gap: 1,
-                                flex: "0 0 auto",
-                            }}
-                        >
-                            <Select
-                                value={selectedPlayer1}
-                                onChange={(e: SelectChangeEvent) =>
-                                    setSelectedPlayer1(e.target.value)
-                                }
-                                sx={{
-                                    color: "rgba(243, 244, 246, 0.6)",
-                                    "& .MuiSvgIcon-root": {
-                                        color: "rgba(243, 244, 246, 0.6)",
-                                    },
-                                    "& .MuiOutlinedInput-notchedOutline": {
-                                        borderColor: "rgba(243, 244, 246, 0.6)",
-                                    },
-                                    "&:hover .MuiOutlinedInput-notchedOutline":
-                                        {
-                                            borderColor:
-                                                "rgba(243, 244, 246, 0.6)",
-                                        },
-                                    "&.Mui-focused .MuiOutlinedInput-notchedOutline":
-                                        {
-                                            borderColor:
-                                                "rgba(243, 244, 246, 0.6)",
-                                        },
-                                    "& .MuiSelect-select:focus": {
-                                        outline: "none",
-                                        boxShadow: "none",
-                                    },
-                                }}
-                            >
-                                {players.map((p) => (
-                                    <MenuItem key={p} value={p}>
-                                        {p}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                            {allMatchups1.map((m) => (
-                                <Button
-                                    key={m}
-                                    variant="outlined"
-                                    onClick={() => setSelectedMatchup1(m)}
-                                    sx={{
-                                        textTransform: "none",
-                                        color: color1,
-                                        borderColor:
-                                            selectedMatchup1 === m
-                                                ? color1
-                                                : "transparent",
-                                    }}
-                                >
-                                    {m}
-                                </Button>
-                            ))}
-                        </Box>
-                        <Box sx={{ flex: 1, position: "relative" }}>
-                            <Bar data={leftData} options={leftOpts} />
-                        </Box>
-                    </Box>
-                    <Box
-                        sx={{
-                            flex: 1,
-                            display: "flex",
-                            flexDirection: "column",
-                            height: "100%",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                mb: 2,
-                                gap: 1,
-                                flex: "0 0 auto",
-                            }}
-                        >
-                            <Select
-                                value={selectedPlayer2}
-                                onChange={(e: SelectChangeEvent) =>
-                                    setSelectedPlayer2(e.target.value)
-                                }
-                                sx={{
-                                    color: "rgba(243, 244, 246, 0.6)",
-                                    "& .MuiSvgIcon-root": {
-                                        color: "rgba(243, 244, 246, 0.6)",
-                                    },
-                                    "& .MuiOutlinedInput-notchedOutline": {
-                                        borderColor: "rgba(243, 244, 246, 0.6)",
-                                    },
-                                    "&:hover .MuiOutlinedInput-notchedOutline":
-                                        {
-                                            borderColor:
-                                                "rgba(243, 244, 246, 0.6)",
-                                        },
-                                    "&.Mui-focused .MuiOutlinedInput-notchedOutline":
-                                        {
-                                            borderColor:
-                                                "rgba(243, 244, 246, 0.6)",
-                                        },
-                                    "& .MuiSelect-select:focus": {
-                                        outline: "none",
-                                        boxShadow: "none",
-                                    },
-                                }}
-                            >
-                                {players.map((p) => (
-                                    <MenuItem key={p} value={p}>
-                                        {p}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                            {allMatchups2.map((m) => (
-                                <Button
-                                    key={m}
-                                    variant="outlined"
-                                    onClick={() => setSelectedMatchup2(m)}
-                                    sx={{
-                                        textTransform: "none",
-                                        color: color2,
-                                        borderColor:
-                                            selectedMatchup2 === m
-                                                ? color2
-                                                : "transparent",
-                                    }}
-                                >
-                                    {m}
-                                </Button>
-                            ))}
-                        </Box>
-                        <Box sx={{ flex: 1, position: "relative" }}>
-                            <Bar data={rightData} options={rightOpts} />
-                        </Box>
-                    </Box>
-                </Box>
-            )}
-        </>
-    );
+return (
+  <Box
+    sx={{
+      display: "flex",
+      flexDirection: { xs: "column", sm: "row" },
+      gap: 2,
+      p: 2,
+      backgroundColor: "#1f2937",
+      borderRadius: 2,
+      height: { xs: "auto", sm: 600 },
+    }}
+  >
+    {/* ───────────────────────── Player 1 panel ───────────────────────── */}
+    <Box
+      sx={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        height: { xs: 300, sm: "100%" },
+      }}
+    >
+      {/* header */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          mb: 2,
+          gap: 1,
+          flex: "0 0 auto",
+        }}
+      >
+        <Select
+          value={selectedPlayer1}
+          onChange={(e: SelectChangeEvent) => setSelectedPlayer1(e.target.value)}
+          sx={selectSx}
+        >
+          {players.map((p) => (
+            <MenuItem key={p} value={p}>
+              {p}
+            </MenuItem>
+          ))}
+        </Select>
+
+        {allMatchups1.map((m) => (
+          <Button
+            key={m}
+            variant="outlined"
+            onClick={() => setSelectedMatchup1(m)}
+            sx={{
+              textTransform: "none",
+              color: color1,
+              borderColor: selectedMatchup1 === m ? color1 : "transparent",
+            }}
+          >
+            {m}
+          </Button>
+        ))}
+      </Box>
+
+      {/* chart */}
+      <Box sx={{ flex: 1, position: "relative" }}>
+        <Bar data={leftData} options={leftOpts} />
+      </Box>
+    </Box>
+
+    {/* ───────────────────────── Player 2 panel ───────────────────────── */}
+    <Box
+      sx={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        height: { xs: 300, sm: "100%" },
+      }}
+    >
+      {/* header */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          mb: 2,
+          gap: 1,
+          flex: "0 0 auto",
+        }}
+      >
+        <Select
+          value={selectedPlayer2}
+          onChange={(e: SelectChangeEvent) => setSelectedPlayer2(e.target.value)}
+          sx={selectSx}
+        >
+          {players.map((p) => (
+            <MenuItem key={p} value={p}>
+              {p}
+            </MenuItem>
+          ))}
+        </Select>
+
+        {allMatchups2.map((m) => (
+          <Button
+            key={m}
+            variant="outlined"
+            onClick={() => setSelectedMatchup2(m)}
+            sx={{
+              textTransform: "none",
+              color: color2,
+              borderColor: selectedMatchup2 === m ? color2 : "transparent",
+            }}
+          >
+            {m}
+          </Button>
+        ))}
+      </Box>
+
+      {/* chart */}
+      <Box sx={{ flex: 1, position: "relative" }}>
+        <Bar data={rightData} options={rightOpts} />
+      </Box>
+    </Box>
+  </Box>
+);
 };
 
 export default VSChart;
