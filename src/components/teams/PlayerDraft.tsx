@@ -57,8 +57,8 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (session?.username !== "GoliathRush") {
-        setSnackbarMessage("Drafting has not opened yet for ASL 20");
+    if (session?.username !== "Lurkerbomb") {
+        setSnackbarMessage("Drafting has not yet opened for ASL 20");
         setOpen(true);
         return;
     }
@@ -86,11 +86,11 @@ const PlayerDraft: React.FC<{
           fantasyTeam,
           username: session?.username as string,
         });
-        setSnackbarMessage("Draft saved. View it on your profile");
+        setSnackbarMessage("Team saved. View it on the leaderboard.");
         setOpen(true);
         setHasSaved(true);
       } catch {
-        setSnackbarMessage("Failed to save draft. Try again in a moment.");
+        setSnackbarMessage("Failed to save team. Try again in a moment.");
         setOpen(true);
       }
     } else {
