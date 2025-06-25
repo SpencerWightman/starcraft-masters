@@ -57,9 +57,11 @@ const PlayerDraft: React.FC<{
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    setSnackbarMessage("Drafting has not opened yet for ASL 20");
-    setOpen(true);
-    return;
+    if (session?.username !== "GoliathRush") {
+        setSnackbarMessage("Drafting has not opened yet for ASL 20");
+        setOpen(true);
+        return;
+    }
 
     if (deadlineDate <= new Date()) {
       setSnackbarMessage("The drafting deadline has passed for this season");
