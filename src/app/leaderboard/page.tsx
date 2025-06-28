@@ -41,9 +41,7 @@ export default async function LeaderboardPage({
 
   let leaderboard: LeaderboardEntry[];
   if (selected === "ASL Summer 2025") {
-    const res = await fetch(
-      `https://${process.env.VERCEL_URL}/api/leaderboard`
-    );
+    const res = await fetch("https://www.broodwarleague.com/api/leaderboard");
 
     if (!res.ok) {
       return (

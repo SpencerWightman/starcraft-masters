@@ -13,29 +13,29 @@ import { PlayerSummary } from "@/app/types/teamTypes";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useSession } from "next-auth/react";
-import { useMutation } from "@tanstack/react-query";
 import { deadlineDate } from "@/constants/constants";
 import { allocateSlots } from "@/utils/allocateSlots";
 
-const saveTeamToDB = async (params: {
-  email: string;
-  fantasyTeam: string[];
-  username: string;
-}) => {
-  const { email, fantasyTeam, username } = params;
+class ApiError extends Error {
+  constructor(readonly status: number, message: string) {
+    super(message);
+    this.name = "ApiError";
+  }
+}
 
-  const response = await fetch("/api/save-team", {
+const saveTeam = async (fantasyTeam: string[]) => {
+  const res = await fetch("/api/save-team", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email,
-      fantasyTeam,
-      username,
-    }),
+    body: JSON.stringify({ fantasyTeam }),
   });
 
-  if (!response.ok) {
-    throw new Error();
+  if (res.status === 429) {
+    throw new ApiError(429, "Too frequent");
+  }
+
+  if (!res.ok) {
+    throw new ApiError(res.status, "Server error");
   }
 };
 
@@ -46,13 +46,7 @@ const PlayerDraft: React.FC<{
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
   const { data: session, status } = useSession();
-  const mutation = useMutation<
-    void,
-    Error,
-    { email: string; fantasyTeam: string[]; username: string }
-  >({
-    mutationFn: saveTeamToDB,
-  });
+  const [isSaving, setIsSaving] = useState(false);
 
   const [hasSaved, setHasSaved] = useState(false);
 
@@ -74,23 +68,24 @@ const PlayerDraft: React.FC<{
       setOpen(true);
       return;
     }
-
+    const fantasyTeam = selectedPlayers.map((player) => player.player.handle);
     if (selectedPlayers.length === 15) {
       try {
-        const fantasyTeam = selectedPlayers.map(
-          (player) => player.player.handle
-        );
-
-        await mutation.mutateAsync({
-          email: session?.email as string,
-          fantasyTeam,
-          username: session?.username as string,
-        });
+        setIsSaving(true);
+        await saveTeam(fantasyTeam);
         setSnackbarMessage("Team saved. View it on the leaderboard.");
-        setOpen(true);
         setHasSaved(true);
-      } catch {
-        setSnackbarMessage("Failed to save team. Try again in a moment.");
+      } catch (e) {
+        const err = e as ApiError;
+        if (err.status === 429) {
+          setSnackbarMessage(
+            "You can update your roster again in a few seconds."
+          );
+        } else {
+          setSnackbarMessage("Failed to save team. Try again in a moment.");
+        }
+      } finally {
+        setIsSaving(false);
         setOpen(true);
       }
     } else {
@@ -157,6 +152,7 @@ const PlayerDraft: React.FC<{
               <IconButton
                 size="small"
                 onClick={handleClick}
+                disabled={isSaving || !isSaveEnabled}
                 sx={{
                   color:
                     hasSaved && isSaveEnabled

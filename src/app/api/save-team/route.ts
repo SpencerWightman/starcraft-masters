@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/utils/nextAuthOptions";
 import { DynamoDBClient, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 import { leaderboardSeason } from "@/constants/constants";
 
@@ -10,82 +12,61 @@ const client = new DynamoDBClient({
   },
 });
 
-const validateUsername = (username: string): boolean => {
-  const usernameRegex = /^[a-zA-Z0-9]{3,12}$/;
-  return usernameRegex.test(username);
-};
-
-const validateEmail = (email: string): boolean => {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-};
-
-const validateFantasyTeam = (fantasyTeam: string[]): boolean => {
-  const playerRegex = /^[a-zA-Z0-9]{2,20}$/;
-  return fantasyTeam.every((player) => playerRegex.test(player));
-};
+const validateFantasyTeam = (team: unknown): team is string[] =>
+  Array.isArray(team) &&
+  team.length > 0 &&
+  team.every((p) => /^[a-zA-Z0-9]{2,20}$/.test(p));
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { email, fantasyTeam, username } = body;
+    const session = await getServerSession({ req, ...authOptions });
+    if (!session)
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
 
-    if (!email || !Array.isArray(fantasyTeam)) {
-      return NextResponse.json({ error: "Invalid input" }, { status: 400 });
-    }
+    const { fantasyTeam } = await req.json();
+    if (!validateFantasyTeam(fantasyTeam))
+      return NextResponse.json({ error: "Invalid roster" }, { status: 400 });
 
-    if (!validateEmail(email)) {
-      return NextResponse.json(
-        { error: "Invalid characters in the email." },
-        { status: 400 }
-      );
-    }
-
-    if (!validateUsername(username)) {
-      return NextResponse.json(
-        {
-          error:
-            "Username must be between 3 and 12 characters. No special characters.",
-        },
-        { status: 400 }
-      );
-    }
-
-    if (!validateFantasyTeam(fantasyTeam)) {
-      return NextResponse.json(
-        {
-          error: "Invalid player in your team.",
-        },
-        { status: 400 }
-      );
-    }
-
-    const teamItems = fantasyTeam.map((player) => ({ S: player }));
+    const now = Date.now();
+    const ttlSeconds = 3;
+    const nextWindow = now + ttlSeconds * 1000;
 
     const params = {
       TableName: process.env.AWS_TABLE!,
       Key: {
-        email: { S: email },
+        email: { S: session.email },
         season: { N: leaderboardSeason },
       },
       UpdateExpression:
-        "SET #team = :team, #username = :username, #points = :points",
+        "SET #team = :team, #username = :username, #points = :points, #next = :next",
+      ConditionExpression: "attribute_not_exists(#next) OR #next < :now",
       ExpressionAttributeNames: {
         "#team": "team",
         "#username": "username",
         "#points": "points",
+        "#next": "nextSubmission",
       },
       ExpressionAttributeValues: {
-        ":team": { L: teamItems },
-        ":username": { S: username },
+        ":team": { L: fantasyTeam.map((p: string) => ({ S: p })) },
+        ":username": { S: session.username },
         ":points": { N: "0" },
+        ":next": { N: String(nextWindow) },
+        ":now": { N: String(now) },
       },
     };
 
-    const response = await client.send(new UpdateItemCommand(params));
-
-    return NextResponse.json({ message: "Team saved successfully", response });
-  } catch {
-    return NextResponse.json({ error: "Failed to save team" }, { status: 500 });
+    try {
+      await client.send(new UpdateItemCommand(params));
+      return NextResponse.json({ ok: true });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      if (err.name === "ConditionalCheckFailedException") {
+        return NextResponse.json({ error: "Too frequent" }, { status: 429 });
+      }
+      throw err;
+    }
+  } catch (err) {
+    console.error("Save team failed:", err);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
