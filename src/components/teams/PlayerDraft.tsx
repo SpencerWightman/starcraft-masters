@@ -45,18 +45,12 @@ const PlayerDraft: React.FC<{
 }> = ({ selectedPlayers, setSelectedPlayers }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const [isSaving, setIsSaving] = useState(false);
 
   const [hasSaved, setHasSaved] = useState(false);
 
   const handleClick = async () => {
-    if (session?.username !== "Lurkerbomb") {
-      setSnackbarMessage("Drafting has not yet opened for ASL 20");
-      setOpen(true);
-      return;
-    }
-
     if (deadlineDate <= new Date()) {
       setSnackbarMessage("The drafting deadline has passed for this season");
       setOpen(true);
@@ -68,6 +62,7 @@ const PlayerDraft: React.FC<{
       setOpen(true);
       return;
     }
+
     const fantasyTeam = selectedPlayers.map((player) => player.player.handle);
     if (selectedPlayers.length === 15) {
       try {

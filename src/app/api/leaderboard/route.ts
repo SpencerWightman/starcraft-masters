@@ -1,4 +1,4 @@
-export const revalidate = 10;
+export const revalidate = 60;
 
 import { NextResponse } from "next/server";
 import { DynamoDBClient, QueryCommand } from "@aws-sdk/client-dynamodb";

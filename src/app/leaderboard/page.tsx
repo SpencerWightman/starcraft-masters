@@ -1,4 +1,4 @@
-export const revalidate = 10;
+export const revalidate = 60;
 
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
