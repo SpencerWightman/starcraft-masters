@@ -16,7 +16,7 @@ import leaderboardJson from "data/leaderboards.json";
 import { LeaderboardsBySeason } from "@/app/types/teamTypes";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 
-export const revalidate = process.env.LB_REFETCH;
+export const revalidate = 60;
 
 type LeaderboardEntry = {
   username: string;
