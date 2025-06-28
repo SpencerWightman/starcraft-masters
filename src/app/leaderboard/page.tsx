@@ -1,5 +1,6 @@
+"use server";
 import Link from "next/link";
-import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
+import { fetchLeaderboard } from "@/utils/fetchLeaderboard";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import {
   Box,
@@ -14,6 +15,9 @@ import {
 } from "@mui/material";
 import leaderboardJson from "data/leaderboards.json";
 import { LeaderboardsBySeason } from "@/app/types/teamTypes";
+import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
+
+export const revalidate = 10;
 
 type LeaderboardEntry = {
   username: string;
@@ -39,14 +43,14 @@ export default async function LeaderboardPage({
 
   let leaderboard: LeaderboardEntry[];
   if (selected === "ASL Summer 2025") {
-    const res = await fetch("/api/leaderboard");
-    if (!res.ok) {
+    try {
+      leaderboard = await fetchLeaderboard();
+    } catch (err) {
+      console.error("Leaderboard fetch failed:", err);
       return (
-        <PaperPlaceholder message="Failed to load ASL Summer 2025 leaderboard. Try again in a minute." />
+        <PaperPlaceholder message="Leaderboard failed to fetch. Try again soon" />
       );
     }
-
-    leaderboard = (await res.json()) as LeaderboardEntry[];
   } else {
     leaderboard = history[selected] ?? [];
   }
