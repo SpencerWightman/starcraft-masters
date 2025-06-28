@@ -1839,7 +1839,7 @@
       "runnerUp": 0,
       "ro4": 0
     },
-    "tier": 1,
+    "tier": 2,
     "stats":[
     {
       "Matchup": "TvT",
@@ -4554,7 +4554,7 @@
       "runnerUp": 1,
       "ro4": 3
     },
-    "tier": 2,
+    "tier": 1,
     "stats": [
     {
       "Matchup": "ZvP",
