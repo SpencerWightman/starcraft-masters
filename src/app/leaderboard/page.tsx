@@ -1,4 +1,3 @@
-"use server";
 import Link from "next/link";
 import { fetchLeaderboard } from "@/utils/fetchLeaderboard";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";

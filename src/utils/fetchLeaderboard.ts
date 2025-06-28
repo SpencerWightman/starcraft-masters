@@ -1,3 +1,4 @@
+"use server";
 import { DynamoDBClient, QueryCommand } from "@aws-sdk/client-dynamodb";
 import { leaderboardSeason } from "@/constants/constants";
 
