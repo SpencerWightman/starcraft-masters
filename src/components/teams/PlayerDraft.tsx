@@ -68,7 +68,9 @@ const PlayerDraft: React.FC<{
       try {
         setIsSaving(true);
         await saveTeam(fantasyTeam);
-        setSnackbarMessage("Team saved. View it on the leaderboard.");
+        setSnackbarMessage(
+          "Team saved. It will appear on the leaderboard in a few seconds."
+        );
         setHasSaved(true);
       } catch (e) {
         const err = e as ApiError;
