@@ -1,5 +1,6 @@
+export const revalidate = 10;
+
 import Link from "next/link";
-import { fetchLeaderboard } from "@/utils/fetchLeaderboard";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import {
   Box,
@@ -15,8 +16,6 @@ import {
 import leaderboardJson from "data/leaderboards.json";
 import { LeaderboardsBySeason } from "@/app/types/teamTypes";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
-
-export const revalidate = 60;
 
 type LeaderboardEntry = {
   username: string;
@@ -42,14 +41,17 @@ export default async function LeaderboardPage({
 
   let leaderboard: LeaderboardEntry[];
   if (selected === "ASL Summer 2025") {
-    try {
-      leaderboard = await fetchLeaderboard();
-    } catch (err) {
-      console.error("Leaderboard fetch failed:", err);
+    const res = await fetch(
+      `https://${process.env.VERCEL_URL}/api/leaderboard`
+    );
+
+    if (!res.ok) {
       return (
-        <PaperPlaceholder message="Leaderboard failed to fetch. Try again soon" />
+        <PaperPlaceholder message="Leaderboard failed to fetch. Try again soon." />
       );
     }
+
+    leaderboard = (await res.json()) as LeaderboardEntry[];
   } else {
     leaderboard = history[selected] ?? [];
   }
