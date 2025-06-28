@@ -15,10 +15,10 @@ const PlayerGrid: React.FC<{
     (selectedPlayer) => `tier${selectedPlayer.tier}` === "tier4"
   ).length;
 
-const cumulativeFree = (tier: number) =>
-  Object.entries(maxSlots)
-        .filter(([k]) => Number(k) <= tier)
-        .reduce((sum, [, free]) => sum + free as number, 0);
+  const cumulativeFree = (tier: number) =>
+    Object.entries(maxSlots)
+      .filter(([k]) => Number(k) <= tier)
+      .reduce((sum, [, free]) => (sum + free) as number, 0);
 
   return (
     <Box>
@@ -29,7 +29,7 @@ const cumulativeFree = (tier: number) =>
             (selectedPlayer) => `${selectedPlayer.tier}` === tier
           ).length;
 
-    const total = cumulativeFree(index);
+          const total = cumulativeFree(index);
           return (
             <Grid2
               key={index}
@@ -89,7 +89,7 @@ const cumulativeFree = (tier: number) =>
                       userSelect: "none",
                     }}
                   >
-    {`${selectedCount} / ${total}`}
+                    {`${selectedCount} / ${total}`}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
@@ -227,7 +227,7 @@ const cumulativeFree = (tier: number) =>
                   userSelect: "none",
                 }}
               >
-{`${selectedCountTier4} / ${cumulativeFree(4)}`}
+                {`${selectedCountTier4} / ${cumulativeFree(4)}`}
               </Typography>
             </Box>
             <Box

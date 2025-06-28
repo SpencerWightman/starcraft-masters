@@ -15,7 +15,7 @@ import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
 import { deadlineDate } from "@/constants/constants";
-import { allocateSlots } from "@/utils/allocateSlots"; 
+import { allocateSlots } from "@/utils/allocateSlots";
 
 const saveTeamToDB = async (params: {
   email: string;
@@ -58,9 +58,9 @@ const PlayerDraft: React.FC<{
 
   const handleClick = async () => {
     if (session?.username !== "Lurkerbomb") {
-        setSnackbarMessage("Drafting has not yet opened for ASL 20");
-        setOpen(true);
-        return;
+      setSnackbarMessage("Drafting has not yet opened for ASL 20");
+      setOpen(true);
+      return;
     }
 
     if (deadlineDate <= new Date()) {
@@ -99,13 +99,13 @@ const PlayerDraft: React.FC<{
     }
   };
 
-    const handleResetClick = () => {
-      setSelectedPlayers([]);
-      setHasSaved(false);
-    };
+  const handleResetClick = () => {
+    setSelectedPlayers([]);
+    setHasSaved(false);
+  };
 
-    const { ok: draftIsLegal } = allocateSlots(selectedPlayers);
-    const isSaveEnabled = draftIsLegal && selectedPlayers.length === 15;
+  const { ok: draftIsLegal } = allocateSlots(selectedPlayers);
+  const isSaveEnabled = draftIsLegal && selectedPlayers.length === 15;
 
   return (
     <Box sx={{ paddingBottom: 2 }}>

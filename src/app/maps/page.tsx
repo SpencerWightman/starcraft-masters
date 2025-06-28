@@ -159,64 +159,65 @@ const Maps: React.FC = () => {
   };
 
   if (imageGallery.length === 7) {
-      return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        marginRight: {
-          xs: 0,
-          md: "0.8rem",
-        },
-      }}
-    >
-      <Typography
-        variant="h5"
-        component="h1"
+    return (
+      <Box
         sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          textAlign: "center",
-          fontWeight: "bold",
-          paddingBottom: "1rem",
-          marginRight: "-0.8rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: {
+            xs: 0,
+            md: "0.8rem",
+          },
         }}
       >
-        ASL Summer 2025 Maps
-      </Typography>
-            <Typography
+        <Typography
+          variant="h5"
+          component="h1"
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            paddingBottom: "1rem",
+            marginRight: "-0.8rem",
+          }}
+        >
+          ASL Summer 2025 Maps
+        </Typography>
+        <Typography
           variant="body1"
-        sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          textAlign: "center",
-          fontWeight: "bold",
-          paddingBottom: "1rem",
-          marginRight: "-0.8rem",
-        }}
-      >
-            To be determined by 7/14
-      </Typography>
-                  <Typography
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            paddingBottom: "1rem",
+            marginRight: "-0.8rem",
+          }}
+        >
+          To be determined by 7/14
+        </Typography>
+        <Typography
           variant="body1"
-        sx={{
-          color: "rgba(243, 244, 246, 0.6)",
-          textAlign: "center",
-          fontWeight: "bold",
-          paddingBottom: "1rem",
-          marginRight: "-0.8rem",
-        }}
-      >
-                  <a
-                href="https://910map.tistory.com/225"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#10b981", textDecoration: "none" }}
-              >
-                910map
-              </a>
-      </Typography>
-      </Box>)
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+            textAlign: "center",
+            fontWeight: "bold",
+            paddingBottom: "1rem",
+            marginRight: "-0.8rem",
+          }}
+        >
+          <a
+            href="https://910map.tistory.com/225"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#10b981", textDecoration: "none" }}
+          >
+            910map
+          </a>
+        </Typography>
+      </Box>
+    );
   }
 
   return (

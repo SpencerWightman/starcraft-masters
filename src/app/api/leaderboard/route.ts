@@ -1,7 +1,10 @@
+import { NextResponse } from "next/server";
 import { DynamoDBClient, QueryCommand } from "@aws-sdk/client-dynamodb";
 import { leaderboardSeason } from "@/constants/constants";
 
-export async function fetchLeaderboard() {
+export const revalidate = 60;
+
+export async function GET() {
   const client = new DynamoDBClient({
     region: process.env.AWS_REGION,
     credentials: {
@@ -22,16 +25,20 @@ export async function fetchLeaderboard() {
   };
 
   try {
-    const command = new QueryCommand(params);
-    const data = await client.send(command);
+    const data = await client.send(new QueryCommand(params));
 
-    return (data.Items || []).map((item) => ({
+    const items = (data.Items ?? []).map((item) => ({
       username: item.username?.S ?? "||||||",
-      team: (item.team?.L ?? []).map((member) => member.S || "||||||"),
-      points: parseInt(item.points?.N ?? "0", 10),
+      team: (item.team?.L ?? []).map((m) => m.S || "||||||"),
+      points: Number(item.points?.N ?? "0"),
     }));
-  } catch (error) {
-    console.error("Error fetching leaderboard:", error);
-    throw new Error("Failed to fetch leaderboard data");
+
+    return NextResponse.json(items, { status: 200 });
+  } catch (err) {
+    console.error("Leaderboard query failed:", err);
+    return NextResponse.json(
+      { message: "Failed to fetch leaderboard data" },
+      { status: 500 }
+    );
   }
 }

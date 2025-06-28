@@ -71,13 +71,18 @@ const PlayerVSChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
     [player.stats, selectedMatchup]
   );
   const color = getColorForMatchup(selectedMatchup);
-  const data = stats ? makeData(stats, player.player.name, color) : { labels: [], datasets: [] };
+  const data = stats
+    ? makeData(stats, player.player.name, color)
+    : { labels: [], datasets: [] };
 
   const options = {
     responsive: true,
     maintainAspectRatio: false as const,
     plugins: {
-      legend: { position: "top" as const, labels: { font: { size: 16 }, color: "rgba(243,244,246,0.6)" } },
+      legend: {
+        position: "top" as const,
+        labels: { font: { size: 16 }, color: "rgba(243,244,246,0.6)" },
+      },
       tooltip: {
         callbacks: {
           label: (ctx: TooltipItem<"bar">) => {
@@ -85,20 +90,28 @@ const PlayerVSChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
             const entry = stats?.WinRates.find((r) => r.Interval === iv);
             const rate = entry ? parseFloat(entry.WinRate) : 0;
             const games = entry?.TotalGames ?? 0;
-            return rate === 0 ? `Games: ${games}` : `Win Rate: ${rate}% | Games: ${games}`;
+            return rate === 0
+              ? `Games: ${games}`
+              : `Win Rate: ${rate}% | Games: ${games}`;
           },
         },
       },
     },
     scales: {
-      x: { ticks: { color: "#e5e7eb" }, grid: { color: "rgba(255,255,255,0.1)" } },
+      x: {
+        ticks: { color: "#e5e7eb" },
+        grid: { color: "rgba(255,255,255,0.1)" },
+      },
       y: {
         beginAtZero: true,
         max: 100,
         ticks: { color: "#e5e7eb" },
         grid: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          color: (ctx: any) => (ctx.tick.value === 50 ? "rgba(197, 218, 37, 0.49)" : "rgba(255,255,255,0.1)"),
+          color: (ctx: any) =>
+            ctx.tick.value === 50
+              ? "rgba(197, 218, 37, 0.49)"
+              : "rgba(255,255,255,0.1)",
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           lineWidth: (ctx: any) => (ctx.tick.value === 50 ? 2 : 1),
         },
@@ -146,7 +159,11 @@ const PlayerVSChart: React.FC<{ player: PlayerSummary }> = ({ player }) => {
         ))}
       </Box>
       <Box sx={{ flex: 1, position: "relative" }}>
-        <Bar data={data} options={options} style={{ position: "absolute", inset: 0 }} />
+        <Bar
+          data={data}
+          options={options}
+          style={{ position: "absolute", inset: 0 }}
+        />
       </Box>
     </Box>
   );

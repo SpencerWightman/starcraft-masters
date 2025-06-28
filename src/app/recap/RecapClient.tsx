@@ -237,7 +237,7 @@ export default function RecapClient({
               },
               y: {
                 beginAtZero: true,
-                  ticks: {
+                ticks: {
                   stepSize: 5,
                 },
               },

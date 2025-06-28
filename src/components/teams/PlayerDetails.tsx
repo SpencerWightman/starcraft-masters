@@ -1,23 +1,18 @@
 import React from "react";
 import { EmojiEvents } from "@mui/icons-material";
-import {
-  Paper,
-  Box,
-  Typography,
-  Tooltip,
-} from "@mui/material";
+import { Paper, Box, Typography, Tooltip } from "@mui/material";
 import { PlayerSummary } from "@/app/types/teamTypes";
 
 const PlayerDetails: React.FC<{
   player: PlayerSummary;
 }> = ({ player }) => (
-<Paper
-  sx={{
-    p: 2,
-    bgcolor: "#1f2937",
-    borderRadius: "8px 8px 0 0",
-  }}
->
+  <Paper
+    sx={{
+      p: 2,
+      bgcolor: "#1f2937",
+      borderRadius: "8px 8px 0 0",
+    }}
+  >
     {/* Name, Achievements */}
     <Box
       sx={{

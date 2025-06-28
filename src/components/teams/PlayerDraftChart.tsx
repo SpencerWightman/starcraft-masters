@@ -15,11 +15,7 @@ import {
   ChartOptions,
 } from "chart.js";
 import { PlayerSummary, MatchupStats } from "@/app/types/teamTypes";
-import {
-  intervals,
-  makeData,
-  getColorForMatchup,
-} from "./PlayerChart";
+import { intervals, makeData, getColorForMatchup } from "./PlayerChart";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -32,18 +28,12 @@ const PlayerDraftChart: React.FC<{
   const allMatchups = useMemo(
     () =>
       Array.from(
-        new Set(
-          selectedPlayers.flatMap((p) =>
-            p.stats.map((s) => s.Matchup)
-          )
-        )
+        new Set(selectedPlayers.flatMap((p) => p.stats.map((s) => s.Matchup)))
       ).filter((m) => m !== "N/A"),
     [selectedPlayers]
   );
 
-  const [selectedMatchup, setSelectedMatchup] = useState(
-    allMatchups[0] || ""
-  );
+  const [selectedMatchup, setSelectedMatchup] = useState(allMatchups[0] || "");
   useEffect(() => {
     setSelectedMatchup(allMatchups[0] || "");
   }, [allMatchups]);
@@ -57,9 +47,7 @@ const PlayerDraftChart: React.FC<{
     > = {};
 
     selectedPlayers.forEach((player) => {
-      const stat = player.stats.find(
-        (s) => s.Matchup === selectedMatchup
-      );
+      const stat = player.stats.find((s) => s.Matchup === selectedMatchup);
       if (!stat) return;
       totalGames += stat.TotalGames;
       stat.WinRates.forEach((r) => {
@@ -78,16 +66,14 @@ const PlayerDraftChart: React.FC<{
       WinRates: intervals.map((iv: string | number) => {
         const entry = bucket[iv];
         const avgRate =
-          entry && entry.count
-            ? (entry.sumRate / entry.count).toFixed(2)
-            : "0";
+          entry && entry.count ? (entry.sumRate / entry.count).toFixed(2) : "0";
         return {
           Interval: iv,
           WinRate: avgRate,
           TotalGames: entry?.games ?? 0,
         };
       }),
-    } as MatchupStats;;
+    } as MatchupStats;
   }, [selectedPlayers, selectedMatchup]);
 
   const color = getColorForMatchup(selectedMatchup);
@@ -108,9 +94,7 @@ const PlayerDraftChart: React.FC<{
             const entry = aggregatedStats.WinRates.find(
               (r) => r.Interval === iv
             );
-            const rate = entry
-              ? parseFloat(entry.WinRate)
-              : 0;
+            const rate = entry ? parseFloat(entry.WinRate) : 0;
             const games = entry?.TotalGames ?? 0;
             return rate === 0
               ? `Games: ${games}`
@@ -120,7 +104,10 @@ const PlayerDraftChart: React.FC<{
       },
     },
     scales: {
-      x: { ticks: { color: "#e5e7eb" }, grid: { color: "rgba(255,255,255,0.1)" } },
+      x: {
+        ticks: { color: "#e5e7eb" },
+        grid: { color: "rgba(255,255,255,0.1)" },
+      },
       y: {
         beginAtZero: true,
         max: 100,
@@ -130,8 +117,7 @@ const PlayerDraftChart: React.FC<{
             ctx.tick.value === 50
               ? "rgba(197, 218, 37, 0.49)"
               : "rgba(255,255,255,0.1)",
-          lineWidth: (ctx: any) =>
-            ctx.tick.value === 50 ? 2 : 1,
+          lineWidth: (ctx: any) => (ctx.tick.value === 50 ? 2 : 1),
         },
       },
     },
@@ -170,9 +156,7 @@ const PlayerDraftChart: React.FC<{
               textTransform: "none",
               color: getColorForMatchup(m),
               borderColor:
-                selectedMatchup === m
-                  ? getColorForMatchup(m)
-                  : "transparent",
+                selectedMatchup === m ? getColorForMatchup(m) : "transparent",
             }}
           >
             {m}

@@ -236,64 +236,66 @@ const Profile: React.FC = () => {
               >
                 Logout
               </Button>
-              </Box>
-<Box sx={{ mt: 3 }}>
-  {Object.entries(history).map(([season, entries]) => {
-    const total = entries.length;
-    // find the signed-in user’s row
-    const me = entries.find((e) => e.username === session?.username);
-
-    return (
-      <Paper
-        key={season}
-        sx={{
-          backgroundColor: "#2f3e51",
-          p: 2,
-          mt: 2,
-          borderRadius: 1,
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{ color: "rgba(243,244,246,0.8)" }}
-        >
-          {season}
-        </Typography>
-
-        {me ? (
-          <>
-            <Typography sx={{ color: "#10b981", fontWeight: "bold" }}>
-              {me.points} points — rank {me.rank} of {total}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 1,
-                mt: 1,
-              }}
-            >
-              {me.team.map((p) => (
-                <Typography
-                  key={p}
-                  sx={{ color: "rgba(243,244,246,0.6)" }}
-                >
-                  {p}
-                </Typography>
-              ))}
             </Box>
-          </>
-        ) : (
-          <Typography sx={{ color: "rgba(243,244,246,0.6)" }}>
-            No data for this season
-          </Typography>
-        )}
-      </Paper>
-    );
-  })}
-</Box>
+            <Box sx={{ mt: 3 }}>
+              {Object.entries(history).map(([season, entries]) => {
+                const total = entries.length;
+                // find the signed-in user’s row
+                const me = entries.find(
+                  (e) => e.username === session?.username
+                );
 
+                return (
+                  <Paper
+                    key={season}
+                    sx={{
+                      backgroundColor: "#2f3e51",
+                      p: 2,
+                      mt: 2,
+                      borderRadius: 1,
+                    }}
+                  >
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ color: "rgba(243,244,246,0.8)" }}
+                    >
+                      {season}
+                    </Typography>
 
+                    {me ? (
+                      <>
+                        <Typography
+                          sx={{ color: "#10b981", fontWeight: "bold" }}
+                        >
+                          {me.points} points — rank {me.rank} of {total}
+                        </Typography>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: 1,
+                            mt: 1,
+                          }}
+                        >
+                          {me.team.map((p) => (
+                            <Typography
+                              key={p}
+                              sx={{ color: "rgba(243,244,246,0.6)" }}
+                            >
+                              {p}
+                            </Typography>
+                          ))}
+                        </Box>
+                      </>
+                    ) : (
+                      <Typography sx={{ color: "rgba(243,244,246,0.6)" }}>
+                        No data for this season
+                      </Typography>
+                    )}
+                  </Paper>
+                );
+              })}
+            </Box>
           </>
         )}
       </Paper>

@@ -16,12 +16,12 @@ const PlayerList: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const playerList: PlayerSummary[] = Object.values(playerSummaries);
 
-    const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
+  const [selectedPlayers, setSelectedPlayers] = useState<PlayerSummary[]>([]);
 
-    const { remaining: tierMaxSlots } = useMemo(
+  const { remaining: tierMaxSlots } = useMemo(
     () => allocateSlots(selectedPlayers),
     [selectedPlayers]
-    );
+  );
 
   const groupedPlayers = playerList.reduce(
     (acc, player) => {
@@ -33,17 +33,19 @@ const PlayerList: React.FC = () => {
     { 0: [], 1: [], 2: [], 3: [], 4: [] } as Record<string, PlayerSummary[]>
   );
 
-const togglePlayer = (player: PlayerSummary) => {
-  setSelectedPlayers(prev => {
-    const already = prev.some(p => p.player.handle === player.player.handle);
-    const next = already
-      ? prev.filter(p => p.player.handle !== player.player.handle)
-      : [...prev, player];
+  const togglePlayer = (player: PlayerSummary) => {
+    setSelectedPlayers((prev) => {
+      const already = prev.some(
+        (p) => p.player.handle === player.player.handle
+      );
+      const next = already
+        ? prev.filter((p) => p.player.handle !== player.player.handle)
+        : [...prev, player];
 
-    const { ok } = allocateSlots(next);
-    return ok ? next : prev;
-  });
-};
+      const { ok } = allocateSlots(next);
+      return ok ? next : prev;
+    });
+  };
 
   return (
     <Box

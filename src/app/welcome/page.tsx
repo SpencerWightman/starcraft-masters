@@ -228,7 +228,7 @@ const Welcome: React.FC = () => {
               • ASL analytics. The plan is to create more using historical data.
             </Typography>
           </Box>
-                    <Box
+          <Box
             sx={{
               borderTop: "2px solid #a06b3c",
               borderRight: "2px solid #a06b3c",
@@ -249,8 +249,8 @@ const Welcome: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
               • Experimental feature. Submit the URL of a short YouTube gameplay
-              video and receive back AI-generated gameplay
-              commentary. Currently unavailable.
+              video and receive back AI-generated gameplay commentary. Currently
+              unavailable.
             </Typography>
           </Box>
         </Grid2>
@@ -308,8 +308,8 @@ const Welcome: React.FC = () => {
                 other qualified players. The players in each tier are then
                 divided evenly among the Ro24 groups, so that each group has 1
                 player from each tier. Players do not often change tiers from
-                season to season. Brood War League broadly follows the
-                official tiers as of the start of the last season.
+                season to season. Brood War League broadly follows the official
+                tiers as of the start of the last season.
               </Typography>
             </Box>
           </Box>

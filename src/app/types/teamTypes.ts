@@ -28,10 +28,7 @@ export interface LeaderboardEntryWithRank {
   total: number;
 }
 
-export type LeaderboardsBySeason = Record<
-  string,
-  LeaderboardEntryWithRank[]
->;
+export type LeaderboardsBySeason = Record<string, LeaderboardEntryWithRank[]>;
 
 export type WinRateInterval = {
   Interval: string;
