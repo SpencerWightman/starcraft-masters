@@ -297,10 +297,13 @@ const Welcome: React.FC = () => {
               }}
             >
               <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
-                • Each player tier has a selection requirement, enforcing
-                selections from all player tiers. You can update your saved team
-                by saving a new draft. There is no guarantee that all of the
-                players listed will choose to compete in the next ASL.
+                • Player tiers have internal limits: 2 (T0), 3 (T1), 3 (T2), 3
+                (T3) and 4 (T4). When that limit is reached, additional picks
+                from that tier use any free slots in lower tiers, starting with
+                the next-lowest (e.g., a fourth or fifth Tier 1 selection
+                consumes Tier 0 slots). You can update your saved team by saving
+                a new draft. There is no guarantee that all of the players
+                listed will choose to compete in the next ASL.
               </Typography>
               <Typography variant="body1" sx={{ marginTop: "0.5rem" }}>
                 • ASL places qualified players into 1 of 4 tiers based on how
