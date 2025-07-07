@@ -9,6 +9,32 @@ const Welcome: React.FC = () => {
         sx={{
           padding: "1rem",
           borderRadius: "8px",
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            color: "rgba(243, 244, 246, 0.6)",
+          }}
+        >
+          <Link
+            href="/draft"
+            passHref
+            style={{
+              textDecoration: "none",
+              color: "#E49B0F",
+              fontWeight: "bold",
+            }}
+          >
+            ASL 20 drafting is now open
+          </Link>{" "}
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          padding: "1rem",
+          borderRadius: "8px",
           marginBottom: "1rem",
         }}
       >
