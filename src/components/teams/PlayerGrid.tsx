@@ -11,10 +11,6 @@ const PlayerGrid: React.FC<{
   selectedPlayers: PlayerSummary[];
   maxSlots: Record<number, number>;
 }> = ({ groupedPlayers, onPlayerClick, selectedPlayers, maxSlots }) => {
-  const selectedCountTier4 = selectedPlayers.filter(
-    (selectedPlayer) => `tier${selectedPlayer.tier}` === "tier4"
-  ).length;
-
   const cumulativeFree = (tier: number) =>
     Object.entries(maxSlots)
       .filter(([k]) => Number(k) <= tier)
@@ -25,10 +21,6 @@ const PlayerGrid: React.FC<{
       <Grid2 container spacing={2}>
         {/* Tiers 0-3 */}
         {["0", "1", "2", "3"].map((tier, index) => {
-          const selectedCount = selectedPlayers.filter(
-            (selectedPlayer) => `${selectedPlayer.tier}` === tier
-          ).length;
-
           const total = cumulativeFree(index);
           return (
             <Grid2
@@ -89,7 +81,7 @@ const PlayerGrid: React.FC<{
                       userSelect: "none",
                     }}
                   >
-                    {`${selectedCount} / ${total}`}
+                    {`${total}`}
                   </Typography>
                 </Box>
                 {groupedPlayers[tier].map((player, idx) => {
@@ -227,7 +219,7 @@ const PlayerGrid: React.FC<{
                   userSelect: "none",
                 }}
               >
-                {`${selectedCountTier4} / ${cumulativeFree(4)}`}
+                {`${cumulativeFree(4)}`}
               </Typography>
             </Box>
             <Box

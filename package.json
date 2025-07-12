@@ -19,7 +19,7 @@
     "@fontsource/nanum-myeongjo": "^5.1.0",
     "@fontsource/nanum-pen-script": "^5.1.0",
     "@fontsource/noto-sans-kr": "^5.1.0",
-    "@mui/icons-material": "^6.1.6",
+    "@mui/icons-material": "^6.5.0",
     "@mui/material": "^6.1.8",
     "@next-auth/dynamodb-adapter": "^3.0.2",
     "@nextui-org/react": "^2.4.8",
