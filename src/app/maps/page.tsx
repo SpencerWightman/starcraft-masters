@@ -19,30 +19,8 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const imageGallery = [
   {
-    img: "/maps/DeathValley0.85.jpg",
-    title: "Death Valley 0.85",
-    size: "128 x 128",
-    horizontal: 40,
-    vertical: 32,
-    cross: 0,
-    mains: 2,
-    numberBases: 13,
-    creator: "김응서",
-  },
-  {
-    img: "/maps/DejaVuSE1.95b.jpg",
-    title: "Deja Vu SE 1.95b",
-    size: "128 x 128",
-    horizontal: 21,
-    vertical: 21,
-    cross: 37,
-    mains: 4,
-    numberBases: 12,
-    creator: "유현상",
-  },
-  {
-    img: "/maps/DominatorSE1.9.jpg",
-    title: "Dominator SE 1.9",
+    img: "/maps/dominator-se-2.0.jpg",
+    title: "Dominator SE 2.0",
     size: "128 x 128",
     horizontal: 35,
     vertical: 35,
@@ -52,47 +30,69 @@ const imageGallery = [
     creator: "주현서",
   },
   {
-    img: "/maps/Eclipse1.3.jpg",
-    title: "Eclipse 1.3",
-    size: "128 x 112",
-    horizontal: 0,
-    vertical: 0,
-    cross: 34,
-    mains: 2,
-    numberBases: 11,
-    creator: "주현서",
+    img: "/maps/knockout-1.0.jpg",
+    title: "Knockout 1.0",
+    size: "128 x 128",
+    horizontal: 35,
+    vertical: 28,
+    cross: 39,
+    mains: 4,
+    numberBases: 16,
+    creator: "김응서",
   },
   {
-    img: "/maps/Metropolis0.80.jpg",
-    title: "Metropolis 0.80",
+    img: "/maps/litmus-1.0.jpg",
+    title: "Litmus 1.0",
+    size: "112 x 128",
+    horizontal: 30,
+    vertical: 30,
+    cross: 30,
+    mains: 2,
+    numberBases: 13,
+    creator: "양창목",
+  },
+  {
+    img: "/maps/metropolis-1.1.jpg",
+    title: "Metropolis 1.1",
     size: "128 x 128",
     horizontal: 30,
     vertical: 30,
     cross: 37,
     mains: 4,
-    numberBases: 12,
+    numberBases: 11,
     creator: "김응서",
   },
   {
-    img: "/maps/PoleStar0.94.jpg",
-    title: "Pole Star 0.94",
+    img: "/maps/polestar-1.1.jpg",
+    title: "Pole Star 1.1",
     size: "128 x 128",
     horizontal: 29,
     vertical: 29,
     cross: 39,
     mains: 4,
     numberBases: 16,
-    creator: "?",
+    creator: "김재민",
   },
   {
-    img: "/maps/Radeon1.0.jpg",
-    title: "Radeon 1.0",
+    img: "/maps/radeon-1.2.jpg",
+    title: "Radeon 1.2",
     size: "128 x 128",
     horizontal: 31,
     vertical: 32,
     cross: 39,
     mains: 4,
     numberBases: 14,
+    creator: "양창목",
+  },
+  {
+    img: "/maps/uldolmok-1.0.jpg",
+    title: "Uldolmok 1.0",
+    size: "128 x 112",
+    horizontal: 46,
+    vertical: 46,
+    cross: 46,
+    mains: 2,
+    numberBases: 12,
     creator: "양창목",
   },
 ];
@@ -157,68 +157,6 @@ const Maps: React.FC = () => {
       setSelectedImage(imageGallery[prevIndex]);
     }
   };
-
-  if (imageGallery.length === 7) {
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          marginRight: {
-            xs: 0,
-            md: "0.8rem",
-          },
-        }}
-      >
-        <Typography
-          variant="h5"
-          component="h1"
-          sx={{
-            color: "rgba(243, 244, 246, 0.6)",
-            textAlign: "center",
-            fontWeight: "bold",
-            paddingBottom: "1rem",
-            marginRight: "-0.8rem",
-          }}
-        >
-          ASL Summer 2025 Maps
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            color: "rgba(243, 244, 246, 0.6)",
-            textAlign: "center",
-            fontWeight: "bold",
-            paddingBottom: "1rem",
-            marginRight: "-0.8rem",
-          }}
-        >
-          To be determined by 7/14
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            color: "rgba(243, 244, 246, 0.6)",
-            textAlign: "center",
-            fontWeight: "bold",
-            paddingBottom: "1rem",
-            marginRight: "-0.8rem",
-          }}
-        >
-          <a
-            href="https://910map.tistory.com/225"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#10b981", textDecoration: "none" }}
-          >
-            910map
-          </a>
-        </Typography>
-      </Box>
-    );
-  }
 
   return (
     <Box
@@ -399,13 +337,7 @@ const Maps: React.FC = () => {
                     wordBreak: "break-word",
                   }}
                 >
-                  {selectedImage.title === "Death Valley 0.85" &&
-                  stat.label === "Vertical rush distance"
-                    ? "Top battlefield rush distance: "
-                    : selectedImage.title === "Death Valley 0.85" &&
-                      stat.label === "Horizontal rush distance"
-                    ? "Bottom battlefield rush distance: "
-                    : `${stat.label}: `}
+                  {`${stat.label}: `}
                   <span
                     style={{
                       color: "#10b981",
