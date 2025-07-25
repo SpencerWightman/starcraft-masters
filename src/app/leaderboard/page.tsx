@@ -16,6 +16,7 @@ import {
 import leaderboardJson from "data/leaderboards.json";
 import { LeaderboardsBySeason } from "@/app/types/teamTypes";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
+import { season20QualifiedPlayers } from "@/constants/constants";
 
 type LeaderboardEntry = {
   username: string;
@@ -161,7 +162,9 @@ export default async function LeaderboardPage({
                     key={mi}
                     align="left"
                     sx={{
-                      color: "rgba(243,244,246,0.6)",
+                      color: season20QualifiedPlayers.includes(member)
+                        ? "#E49B0F"
+                        : "rgba(243,244,246,0.6)",
                       padding: "8px",
                       borderBottom: "none",
                     }}
