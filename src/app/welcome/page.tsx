@@ -5,7 +5,7 @@ import Link from "next/link";
 const Welcome: React.FC = () => {
   return (
     <>
-      <Box
+      {/* <Box
         sx={{
           padding: "1rem",
           borderRadius: "8px",
@@ -29,7 +29,7 @@ const Welcome: React.FC = () => {
             ASL 20 drafting is now open
           </Link>{" "}
         </Typography>
-      </Box>
+      </Box> */}
 
       <Box
         sx={{

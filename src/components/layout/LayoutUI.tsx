@@ -88,7 +88,7 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           >
             <CountdownWrapper
               deadline={deadlineDate}
-              msg={"ASL Autumn 2025 is underway"}
+              msg={"ASL Summer 2025 is underway"}
               showDays={true}
             />
           </Box>
