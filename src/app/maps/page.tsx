@@ -16,6 +16,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { currentSeasonName } from "@/constants/constants";
 
 const imageGallery = [
   {
@@ -182,7 +183,7 @@ const Maps: React.FC = () => {
           marginRight: "-0.8rem",
         }}
       >
-        ASL Summer 2025 Maps
+        {`${currentSeasonName} Maps`}
       </Typography>
 
       {/* Gallery */}

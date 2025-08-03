@@ -17,7 +17,10 @@ import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CountdownWrapper from "@/components/timer/Countdown";
-import { mapsNotificationSeason } from "@/constants/constants";
+import {
+  currentSeasonName,
+  mapsNotificationSeason,
+} from "@/constants/constants";
 import Welcome from "@/app/welcome/page";
 import Link from "next/link";
 import { deadlineDate } from "@/constants/constants";
@@ -88,7 +91,7 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           >
             <CountdownWrapper
               deadline={deadlineDate}
-              msg={"ASL Summer 2025 is underway"}
+              msg={`${currentSeasonName} is underway`}
               showDays={true}
             />
           </Box>

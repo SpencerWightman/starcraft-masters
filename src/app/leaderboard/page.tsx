@@ -16,7 +16,10 @@ import {
 import leaderboardJson from "data/leaderboards.json";
 import { LeaderboardsBySeason } from "@/app/types/teamTypes";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
-import { season20QualifiedPlayers } from "@/constants/constants";
+import {
+  currentSeasonName,
+  season20QualifiedPlayers,
+} from "@/constants/constants";
 
 type LeaderboardEntry = {
   username: string;
@@ -33,15 +36,15 @@ export default async function LeaderboardPage({
 }) {
   const { season } = await searchParams;
   const historical = Object.keys(history);
-  const seasons = ["ASL Summer 2025", ...historical];
-  const selected = seasons.includes(season ?? "") ? season! : "ASL Summer 2025";
+  const seasons = [currentSeasonName, ...historical];
+  const selected = seasons.includes(season ?? "") ? season! : currentSeasonName;
 
   const idx = seasons.indexOf(selected);
   const prev = idx < seasons.length - 1 ? seasons[idx + 1] : null;
   const next = idx > 0 ? seasons[idx - 1] : null;
 
   let leaderboard: LeaderboardEntry[];
-  if (selected === "ASL Summer 2025") {
+  if (selected === currentSeasonName) {
     const res = await fetch("https://www.broodwarleague.com/api/leaderboard");
 
     if (!res.ok) {
@@ -96,7 +99,7 @@ export default async function LeaderboardPage({
             whiteSpace: "nowrap",
           }}
         >
-          {selected === "ASL Summer 2025" ? "ASL Summer 2025" : selected}
+          {selected}
         </Typography>
 
         {next ? (
@@ -162,9 +165,11 @@ export default async function LeaderboardPage({
                     key={mi}
                     align="left"
                     sx={{
-                      color: season20QualifiedPlayers.includes(member)
-                        ? "#E49B0F"
-                        : "rgba(243,244,246,0.6)",
+                      color:
+                        selected === currentSeasonName &&
+                        season20QualifiedPlayers.includes(member)
+                          ? "#E49B0F"
+                          : "rgba(243,244,246,0.6)",
                       padding: "8px",
                       borderBottom: "none",
                     }}
