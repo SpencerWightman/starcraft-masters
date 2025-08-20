@@ -10,8 +10,6 @@ export const season20QualifiedPlayers = [
   "JD",
   "EffOrt",
   "Larva",
-  "TY",
-  "JyJ",
   "Paralyze",
   "sSak",
   "Bisu",
