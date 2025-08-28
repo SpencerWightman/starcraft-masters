@@ -11,7 +11,6 @@ export const season20QualifiedPlayers = [
   "EffOrt",
   "Larva",
   "Bisu",
-  "hero",
   "Queen",
   "BarrackS",
   "Mini",
@@ -19,6 +18,5 @@ export const season20QualifiedPlayers = [
   "Speed",
   "Rush",
   "Soma",
-  "RoyaL",
   "BTS",
 ];
