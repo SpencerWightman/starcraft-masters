@@ -9,6 +9,5 @@ export const season20QualifiedPlayers = [
   "Larva",
   "Bisu",
   "BarrackS",
-  "Mini",
   "Soma",
 ];
