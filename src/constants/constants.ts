@@ -5,7 +5,6 @@ export const currentSeasonName = "ASL Summer 2025";
 export const season20QualifiedPlayers = [
   "Best",
   "Snow",
-  "EffOrt",
   "Larva",
   "Bisu",
   "BarrackS",
