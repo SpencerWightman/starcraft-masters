@@ -20,7 +20,6 @@ import {
   TooltipItem,
 } from "chart.js";
 
-// Matches your JSON shape
 type Race = "Protoss" | "Zerg" | "Terran";
 
 type PlayerInfo = {
@@ -57,7 +56,6 @@ type PlayerRecord = {
 
 type HistoricalData = Record<string, PlayerRecord>;
 
-// Use the JSON you imported as rawData
 import rawData from "data/20ro8.json";
 import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 const historicalData = rawData as HistoricalData;
@@ -65,10 +63,8 @@ const historicalData = rawData as HistoricalData;
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const slides: Array<[string, string]> = [
-  ["BarrackS", "Mini"],
-  ["Snow", "EffOrt"],
-  ["Soma", "Best"],
-  ["Bisu", "Larva"],
+  ["BarrackS", "Snow"],
+  ["Soma", "Bisu"],
 ];
 
 const Ro8: React.FC = () => {
@@ -89,7 +85,6 @@ const Ro8: React.FC = () => {
 
   const [left, right] = slides[current];
 
-  // ⬇️ NEW: pull full player records
   const leftProfile = historicalData[left];
   const rightProfile = historicalData[right];
 
@@ -156,7 +151,6 @@ const Ro8: React.FC = () => {
     };
   };
 
-  // ⬇️ UPDATED: include all slide players so colors resolve
   const colorMap: Record<string, string> = {
     // Zerg
     Queen: "#e63946",
