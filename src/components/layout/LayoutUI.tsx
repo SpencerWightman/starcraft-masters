@@ -16,14 +16,12 @@ import NewReleasesIcon from "@mui/icons-material/NewReleases";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
-import CountdownWrapper from "@/components/timer/Countdown";
-import {
-  currentSeasonName,
-  mapsNotificationSeason,
-} from "@/constants/constants";
+// import CountdownWrapper from "@/components/timer/Countdown";
+import { mapsNotificationSeason } from "@/constants/constants";
+// import { currentSeasonName } from "@/constants/constants";
 import Welcome from "@/app/welcome/page";
 import Link from "next/link";
-import { deadlineDate } from "@/constants/constants";
+// import { deadlineDate } from "@/constants/constants";
 
 const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { data: session } = useSession();
