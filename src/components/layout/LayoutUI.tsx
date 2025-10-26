@@ -90,11 +90,22 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               alignItems: "center",
             }}
           >
-            <CountdownWrapper
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(243, 244, 246, 0.6)",
+                textAlign: "left",
+                userSelect: "none",
+                display: { xs: "none", md: "block" },
+              }}
+            >
+              zelevin is the ASL Summer 2025 champion!
+            </Typography>
+            {/* <CountdownWrapper
               deadline={deadlineDate}
               msg={`${currentSeasonName} is underway`}
               showDays={true}
-            />
+            /> */}
           </Box>
           <IconButton
             edge="start"

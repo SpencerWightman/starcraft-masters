@@ -46,25 +46,17 @@ const Welcome: React.FC = () => {
         >
           Congratulations to{" "}
           <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
-            Lurkerbomb
-          </Box>
-          ,{" "}
-          <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
-            Mob
-          </Box>
-          ,{" "}
-          <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
             zelevin
           </Box>
           ,{" "}
           <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
-            Fiik
+            huhuh
           </Box>
           , and{" "}
           <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
-            nozh
+            BeaverCiv
           </Box>{" "}
-          for a top 3 finish in the first season of Brood War League!
+          for a top 3 finish in the 2nd season of Brood War League!
         </Typography>
       </Box>
 
