@@ -2059,7 +2059,7 @@
       "runnerUp": 0,
       "ro4": 2
     },
-    "tier": 2,
+    "tier": 1,
     "stats": [
       {
         "Matchup": "ZvT",
@@ -2156,125 +2156,6 @@
             "Interval": "26-60",
             "WinRate": "42.86",
             "TotalGames": 7
-          }
-        ]
-      }
-    ]
-  },
-  "Last": {
-    "player": {
-      "id": 999,
-      "name": "김성현",
-      "race": "Terran",
-      "handle": "Last"
-    },
-    "achievements": {
-      "champion": 2,
-      "runnerUp": 0,
-      "ro4": 3
-    },
-    "tier": 2,
-    "stats": [
-      {
-        "Matchup": "TvT",
-        "TotalGames": 25,
-        "WinRates": [
-          {
-            "Interval": "6-10",
-            "WinRate": "50.00",
-            "TotalGames": 4
-          },
-          {
-            "Interval": "11-15",
-            "WinRate": "66.67",
-            "TotalGames": 12
-          },
-          {
-            "Interval": "16-20",
-            "WinRate": "100.00",
-            "TotalGames": 2
-          },
-          {
-            "Interval": "21-25",
-            "WinRate": "100.00",
-            "TotalGames": 2
-          },
-          {
-            "Interval": "26-60",
-            "WinRate": "80.00",
-            "TotalGames": 5
-          }
-        ]
-      },
-      {
-        "Matchup": "TvP",
-        "TotalGames": 51,
-        "WinRates": [
-          {
-            "Interval": "1-5",
-            "WinRate": "0.00",
-            "TotalGames": 1
-          },
-          {
-            "Interval": "6-10",
-            "WinRate": "50.00",
-            "TotalGames": 10
-          },
-          {
-            "Interval": "11-15",
-            "WinRate": "46.15",
-            "TotalGames": 13
-          },
-          {
-            "Interval": "16-20",
-            "WinRate": "50.00",
-            "TotalGames": 16
-          },
-          {
-            "Interval": "21-25",
-            "WinRate": "40.00",
-            "TotalGames": 5
-          },
-          {
-            "Interval": "26-60",
-            "WinRate": "50.00",
-            "TotalGames": 6
-          }
-        ]
-      },
-      {
-        "Matchup": "TvZ",
-        "TotalGames": 41,
-        "WinRates": [
-          {
-            "Interval": "1-5",
-            "WinRate": "100.00",
-            "TotalGames": 3
-          },
-          {
-            "Interval": "6-10",
-            "WinRate": "57.14",
-            "TotalGames": 7
-          },
-          {
-            "Interval": "11-15",
-            "WinRate": "78.95",
-            "TotalGames": 19
-          },
-          {
-            "Interval": "16-20",
-            "WinRate": "50.00",
-            "TotalGames": 6
-          },
-          {
-            "Interval": "21-25",
-            "WinRate": "40.00",
-            "TotalGames": 5
-          },
-          {
-            "Interval": "26-60",
-            "WinRate": "100.00",
-            "TotalGames": 1
           }
         ]
       }
@@ -5442,7 +5323,7 @@
       "runnerUp": 0,
       "ro4": 0
     },
-    "tier": 3,
+    "tier": 4,
     "stats": [
       {
         "Matchup": "PvT",
@@ -5630,7 +5511,7 @@
       "runnerUp": 2,
       "ro4": 5
     },
-    "tier": 1,
+    "tier": 2,
     "stats": [
       {
         "Matchup": "ZvP",
@@ -5820,6 +5701,51 @@
       "ro4": 0
     },
     "tier": 4,
+    "stats": []
+  },
+  "Fengzi": {
+    "player": {
+      "id": 1000,
+      "name": "章春雷",
+      "race": "Zerg",
+      "handle": "Fengzi"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+  "Fantasy": {
+    "player": {
+      "id": 1000,
+      "name": "정명훈",
+      "race": "Terran",
+      "handle": "Fantasy"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 4,
+    "stats": []
+  },
+  "SoO": {
+    "player": {
+      "id": 1000,
+      "name": "박종수",
+      "race": "Zerg",
+      "handle": "SoO"
+    },
+    "achievements": {
+      "champion": 0,
+      "runnerUp": 0,
+      "ro4": 0
+    },
+    "tier": 3,
     "stats": []
   },
   "gypsy": {
