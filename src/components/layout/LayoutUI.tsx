@@ -16,12 +16,12 @@ import NewReleasesIcon from "@mui/icons-material/NewReleases";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MenuIcon from "@mui/icons-material/Menu";
-// import CountdownWrapper from "@/components/timer/Countdown";
+import CountdownWrapper from "@/components/timer/Countdown";
 import { mapsNotificationSeason } from "@/constants/constants";
-// import { currentSeasonName } from "@/constants/constants";
+import { currentSeasonName } from "@/constants/constants";
 import Welcome from "@/app/welcome/page";
 import Link from "next/link";
-// import { deadlineDate } from "@/constants/constants";
+import { deadlineDate } from "@/constants/constants";
 
 const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { data: session } = useSession();
@@ -46,7 +46,6 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navItems = [
     { text: "Welcome", href: "/welcome" },
-    { text: "Ro4", href: "/ro4" },
     { text: "Leaderboard", href: "/leaderboard" },
     { text: "Draft", href: "/draft" },
     { text: "VS", href: "/vs" },
@@ -88,7 +87,7 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               alignItems: "center",
             }}
           >
-            <Typography
+            {/* <Typography
               variant="body1"
               sx={{
                 color: "rgba(243, 244, 246, 0.6)",
@@ -98,12 +97,14 @@ const LayoutUI: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               }}
             >
               zelevin is the ASL Summer 2025 champion!
-            </Typography>
-            {/* <CountdownWrapper
-              deadline={deadlineDate}
-              msg={`${currentSeasonName} is underway`}
-              showDays={true}
-            /> */}
+            </Typography> */}
+            {
+              <CountdownWrapper
+                deadline={deadlineDate}
+                msg={`${currentSeasonName} is underway`}
+                showDays={true}
+              />
+            }
           </Box>
           <IconButton
             edge="start"

@@ -22,7 +22,7 @@ export async function GET() {
         ExpressionAttributeValues: { ":season": { N: leaderboardSeason } },
         ScanIndexForward: false,
         Limit: 100,
-      })
+      }),
     );
 
     const items = (res.Items ?? []).map((i) => ({
@@ -35,7 +35,7 @@ export async function GET() {
   } catch {
     return NextResponse.json(
       { message: "Leaderboard temporarily unavailable." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

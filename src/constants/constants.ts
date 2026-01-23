@@ -1,5 +1,5 @@
-export const deadlineDate = new Date("2025-08-02T00:00:00Z");
-export const mapsNotificationSeason = "20";
-export const leaderboardSeason = "20";
-export const currentSeasonName = "ASL Summer 2025";
-export const season20QualifiedPlayers = ["Soma"];
+export const deadlineDate = new Date("2026-03-22T00:00:00Z");
+export const mapsNotificationSeason = "21";
+export const leaderboardSeason = "21";
+export const currentSeasonName = "ASL Season 21";
+export const season21QualifiedPlayers: string[] = [];

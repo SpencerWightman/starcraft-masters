@@ -19,7 +19,7 @@ import { PaperPlaceholder } from "@/utils/PaperPlaceholder";
 import {
   currentSeasonName,
   leaderboardSeason,
-  season20QualifiedPlayers,
+  season21QualifiedPlayers,
 } from "@/constants/constants";
 
 type LeaderboardEntry = {
@@ -40,25 +40,28 @@ const trophyPalette: Record<TrophyColorKey, string> = {
 
 const defaultTrophyOrder: TrophyColorKey[] = ["gold", "silver", "bronze"];
 
-const seasonalTrophies: Record<string, Partial<Record<string, TrophyColorKey>>> =
-  {
-    "20": {
-      zelevin: "gold",
-      huhuh: "silver",
-      beaverciv: "bronze",
-    },
-    "19": {
-      lurkerbomb: "gold",
-      mob: "silver",
-      zelevin: "bronze",
-      fiik: "bronze",
-      nozh: "bronze",
-    },
-  };
+const seasonalTrophies: Record<
+  string,
+  Partial<Record<string, TrophyColorKey>>
+> = {
+  "20": {
+    zelevin: "gold",
+    huhuh: "silver",
+    beaverciv: "bronze",
+  },
+  "19": {
+    lurkerbomb: "gold",
+    mob: "silver",
+    zelevin: "bronze",
+    fiik: "bronze",
+    nozh: "bronze",
+  },
+};
 
 const seasonNumberByName: Record<string, string> = {
   [currentSeasonName]: leaderboardSeason,
-  "ASL Spring 2025": "19",
+  "ASL Season 20": "20",
+  "ASL Season 19": "19",
 };
 
 export default async function LeaderboardPage({
@@ -67,7 +70,11 @@ export default async function LeaderboardPage({
   searchParams: Promise<{ season?: string }>;
 }) {
   const { season } = await searchParams;
-  const historical = Object.keys(history);
+  const historical = Object.keys(history).sort((a, b) => {
+    const aNum = Number(seasonNumberByName[a] ?? 0);
+    const bNum = Number(seasonNumberByName[b] ?? 0);
+    return bNum - aNum;
+  });
   const seasons = [currentSeasonName, ...historical];
   const selected = seasons.includes(season ?? "") ? season! : currentSeasonName;
   const selectedSeasonNumber = seasonNumberByName[selected];
@@ -185,7 +192,8 @@ export default async function LeaderboardPage({
                       ? seasonalTrophies[selectedSeasonNumber]?.[usernameKey]
                       : undefined;
                     const defaultColorKey =
-                      manualColorKey === undefined && i < defaultTrophyOrder.length
+                      manualColorKey === undefined &&
+                      i < defaultTrophyOrder.length
                         ? defaultTrophyOrder[i]
                         : undefined;
                     const colorKey = manualColorKey ?? defaultColorKey;
@@ -234,7 +242,7 @@ export default async function LeaderboardPage({
                     sx={{
                       color:
                         selected === currentSeasonName &&
-                        season20QualifiedPlayers.includes(member)
+                        season21QualifiedPlayers.includes(member)
                           ? "#E49B0F"
                           : "rgba(243,244,246,0.6)",
                       padding: "8px",

@@ -20,81 +20,59 @@ import { currentSeasonName } from "@/constants/constants";
 
 const imageGallery = [
   {
-    img: "/maps/dominator-se-2.0.jpg",
-    title: "Dominator SE 2.0",
-    size: "128 x 128",
-    horizontal: 35,
-    vertical: 35,
-    cross: 35,
-    mains: 3,
-    numberBases: 15,
-    creator: "주현서",
-  },
-  {
-    img: "/maps/knockout-1.0.jpg",
-    title: "Knockout 1.0",
-    size: "128 x 128",
-    horizontal: 35,
-    vertical: 28,
-    cross: 39,
-    mains: 4,
-    numberBases: 16,
-    creator: "김응서",
-  },
-  {
-    img: "/maps/litmus-1.0.jpg",
-    title: "Litmus 1.0",
-    size: "112 x 128",
-    horizontal: 30,
-    vertical: 30,
-    cross: 30,
-    mains: 2,
-    numberBases: 13,
-    creator: "양창목",
-  },
-  {
-    img: "/maps/metropolis-1.1.jpg",
-    title: "Metropolis 1.1",
-    size: "128 x 128",
-    horizontal: 30,
-    vertical: 30,
-    cross: 37,
-    mains: 4,
-    numberBases: 11,
-    creator: "김응서",
-  },
-  {
-    img: "/maps/polestar-1.1.jpg",
-    title: "Pole Star 1.1",
-    size: "128 x 128",
-    horizontal: 29,
-    vertical: 29,
-    cross: 39,
-    mains: 4,
-    numberBases: 16,
-    creator: "김재민",
-  },
-  {
-    img: "/maps/radeon-1.2.jpg",
-    title: "Radeon 1.2",
-    size: "128 x 128",
-    horizontal: 31,
-    vertical: 32,
-    cross: 39,
-    mains: 4,
-    numberBases: 14,
-    creator: "양창목",
-  },
-  {
-    img: "/maps/uldolmok-1.0.jpg",
-    title: "Uldolmok 1.0",
-    size: "128 x 112",
-    horizontal: 46,
-    vertical: 46,
-    cross: 46,
+    img: "/maps/jane-doe.jpg",
+    title: "Jane Doe",
+    size: "128 x 96",
+    horizontal: 33,
+    vertical: 33,
+    cross: 33,
     mains: 2,
     numberBases: 12,
     creator: "양창목",
+  },
+  {
+    img: "/maps/hellbound.jpg",
+    title: "Hellbound",
+    size: "128 x 128",
+    horizontal: 32,
+    vertical: 32,
+    cross: 32,
+    mains: 3,
+    numberBases: 12,
+    creator: "양창목",
+  },
+  {
+    img: "/maps/attitude.jpg",
+    title: "Attitude",
+    size: "128 x 128",
+    horizontal: 29,
+    vertical: 29,
+    cross: 38,
+    mains: 4,
+    numberBases: 16,
+    creator: "양창목",
+  },
+  {
+    img: "/maps/octagon.jpg",
+    title: "Octagon",
+    size: "128 x 128",
+    horizontal: 32,
+    vertical: 32,
+    cross: 38,
+    mains: 4,
+    numberBases: 16,
+    creator: "김응서",
+  },
+  {
+    img: "/maps/neo-sylphid.jpg",
+    title: "Neo Sylphid",
+    size: "128 x 128",
+    horizontal: 33,
+    vertical: 33,
+    cross: 33,
+    mains: 3,
+    numberBases: 15,
+    creator: "주현서",
   },
 ];
 
@@ -141,7 +119,7 @@ const Maps: React.FC = () => {
   const handleNext = () => {
     if (selectedImage) {
       const currentIndex = imageGallery.findIndex(
-        (img) => img.img === selectedImage.img
+        (img) => img.img === selectedImage.img,
       );
       const nextIndex = (currentIndex + 1) % imageGallery.length;
       setSelectedImage(imageGallery[nextIndex]);
@@ -151,7 +129,7 @@ const Maps: React.FC = () => {
   const handlePrevious = () => {
     if (selectedImage) {
       const currentIndex = imageGallery.findIndex(
-        (img) => img.img === selectedImage.img
+        (img) => img.img === selectedImage.img,
       );
       const prevIndex =
         (currentIndex - 1 + imageGallery.length) % imageGallery.length;
