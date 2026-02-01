@@ -98,6 +98,8 @@ export default async function LeaderboardPage({
     leaderboard = history[selected] ?? [];
   }
 
+  const hasNoData = leaderboard.length === 0;
+
   return (
     <Box
       sx={{
@@ -156,107 +158,112 @@ export default async function LeaderboardPage({
         )}
       </Box>
 
-      {/* table */}
-      <TableContainer
-        component={Paper}
-        sx={{
-          margin: "1rem auto",
-          backgroundColor: "#1f2937",
-          maxWidth: "95%",
-          overflowX: "auto",
-          borderRadius: "8px",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-        }}
-      >
-        <Table sx={{ tableLayout: "auto", width: "100%", minWidth: 650 }}>
-          <TableBody>
-            {leaderboard.map((entry, i) => (
-              <TableRow
-                key={entry.username}
-                sx={{
-                  backgroundColor: i % 2 === 0 ? "#2f3e51" : "#374151",
-                  cursor: "default",
-                }}
-              >
-                <TableCell
-                  align="center"
+      {hasNoData ? (
+        <PaperPlaceholder
+          message={`${currentSeasonName} has not yet started.`}
+        />
+      ) : (
+        <TableContainer
+          component={Paper}
+          sx={{
+            margin: "1rem auto",
+            backgroundColor: "#1f2937",
+            maxWidth: "95%",
+            overflowX: "auto",
+            borderRadius: "8px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+          }}
+        >
+          <Table sx={{ tableLayout: "auto", width: "100%", minWidth: 650 }}>
+            <TableBody>
+              {leaderboard.map((entry, i) => (
+                <TableRow
+                  key={entry.username}
                   sx={{
-                    width: 40,
-                    padding: "8px",
-                    borderBottom: "none",
+                    backgroundColor: i % 2 === 0 ? "#2f3e51" : "#374151",
+                    cursor: "default",
                   }}
                 >
-                  {(() => {
-                    const usernameKey = entry.username.toLowerCase();
-                    const manualColorKey = selectedSeasonNumber
-                      ? seasonalTrophies[selectedSeasonNumber]?.[usernameKey]
-                      : undefined;
-                    const defaultColorKey =
-                      manualColorKey === undefined &&
-                      i < defaultTrophyOrder.length
-                        ? defaultTrophyOrder[i]
-                        : undefined;
-                    const colorKey = manualColorKey ?? defaultColorKey;
-
-                    if (!colorKey) return null;
-
-                    return (
-                      <EmojiEvents
-                        aria-label={`${colorKey} trophy`}
-                        sx={{
-                          color: trophyPalette[colorKey],
-                          fontSize: "1.25rem",
-                          filter: "drop-shadow(0 0 6px rgba(0,0,0,0.4))",
-                        }}
-                      />
-                    );
-                  })()}
-                </TableCell>
-
-                <TableCell
-                  align="left"
-                  sx={{
-                    color: "#10b981",
-                    padding: "8px",
-                    borderBottom: "none",
-                  }}
-                >
-                  {entry.points}
-                </TableCell>
-
-                <TableCell
-                  align="left"
-                  sx={{
-                    color: "#e5e7eb",
-                    padding: "8px",
-                    borderBottom: "none",
-                  }}
-                >
-                  {entry.username}
-                </TableCell>
-
-                {entry.team.map((member, mi) => (
                   <TableCell
-                    key={mi}
-                    align="left"
+                    align="center"
                     sx={{
-                      color:
-                        selected === currentSeasonName &&
-                        season21QualifiedPlayers.includes(member)
-                          ? "#E49B0F"
-                          : "rgba(243,244,246,0.6)",
+                      width: 40,
                       padding: "8px",
                       borderBottom: "none",
                     }}
                   >
-                    {member}
+                    {(() => {
+                      const usernameKey = entry.username.toLowerCase();
+                      const manualColorKey = selectedSeasonNumber
+                        ? seasonalTrophies[selectedSeasonNumber]?.[usernameKey]
+                        : undefined;
+                      const defaultColorKey =
+                        manualColorKey === undefined &&
+                        i < defaultTrophyOrder.length
+                          ? defaultTrophyOrder[i]
+                          : undefined;
+                      const colorKey = manualColorKey ?? defaultColorKey;
+
+                      if (!colorKey) return null;
+
+                      return (
+                        <EmojiEvents
+                          aria-label={`${colorKey} trophy`}
+                          sx={{
+                            color: trophyPalette[colorKey],
+                            fontSize: "1.25rem",
+                            filter: "drop-shadow(0 0 6px rgba(0,0,0,0.4))",
+                          }}
+                        />
+                      );
+                    })()}
                   </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+
+                  <TableCell
+                    align="left"
+                    sx={{
+                      color: "#10b981",
+                      padding: "8px",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {entry.points}
+                  </TableCell>
+
+                  <TableCell
+                    align="left"
+                    sx={{
+                      color: "#e5e7eb",
+                      padding: "8px",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {entry.username}
+                  </TableCell>
+
+                  {entry.team.map((member, mi) => (
+                    <TableCell
+                      key={mi}
+                      align="left"
+                      sx={{
+                        color:
+                          selected === currentSeasonName &&
+                          season21QualifiedPlayers.includes(member)
+                            ? "#E49B0F"
+                            : "rgba(243,244,246,0.6)",
+                        padding: "8px",
+                        borderBottom: "none",
+                      }}
+                    >
+                      {member}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
     </Box>
   );
 }
