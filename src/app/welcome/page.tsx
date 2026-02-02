@@ -5,7 +5,7 @@ import Link from "next/link";
 const Welcome: React.FC = () => {
   return (
     <>
-      {/* <Box
+      <Box
         sx={{
           padding: "1rem",
           borderRadius: "8px",
@@ -26,10 +26,10 @@ const Welcome: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            ASL 20 drafting is now open
+            ASL 21 drafting is now open
           </Link>{" "}
         </Typography>
-      </Box> */}
+      </Box>
 
       <Box
         sx={{
@@ -56,7 +56,7 @@ const Welcome: React.FC = () => {
           <Box component="span" sx={{ color: "#10b981", fontWeight: "bold" }}>
             BeaverCiv
           </Box>{" "}
-          for a top 3 finish in the 2nd season of Brood War League!
+          for a top 3 finish in Brood War League ASL 20!
         </Typography>
       </Box>
 

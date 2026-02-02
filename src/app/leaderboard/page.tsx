@@ -193,6 +193,13 @@ export default async function LeaderboardPage({
                     }}
                   >
                     {(() => {
+                      if (
+                        !selectedSeasonNumber ||
+                        !seasonalTrophies[selectedSeasonNumber]
+                      ) {
+                        return null;
+                      }
+
                       const usernameKey = entry.username.toLowerCase();
                       const manualColorKey = selectedSeasonNumber
                         ? seasonalTrophies[selectedSeasonNumber]?.[usernameKey]
