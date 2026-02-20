@@ -218,10 +218,8 @@ const Welcome: React.FC = () => {
               Recap
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-              • Charts showing player supplies per second for each ASL 19 match.
-              The data can be fuzzy: for example, sometimes an 80 should be a
-              90, and the charts do not always track to the very end of the
-              match. We are working on improving this.
+              • Charts showing player supplies per second for each ASL 19 Ro24
+              match. Work in progress.
             </Typography>
           </Box>
           <Box
@@ -245,31 +243,6 @@ const Welcome: React.FC = () => {
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
               • ASL analytics. The plan is to create more using historical data.
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              borderTop: "2px solid #a06b3c",
-              borderRight: "2px solid #a06b3c",
-              padding: "1rem",
-              borderRadius: "8px",
-              marginBottom: "1rem",
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                color: "#a06b3c",
-              }}
-            >
-              Vod
-            </Typography>
-            <Typography variant="body1" sx={{ marginTop: "1rem" }}>
-              • Experimental feature. Submit the URL of a short YouTube gameplay
-              video and receive back AI-generated gameplay commentary. Currently
-              unavailable.
             </Typography>
           </Box>
         </Grid2>
@@ -363,8 +336,8 @@ const Welcome: React.FC = () => {
                 style={{ color: "#10b981", textDecoration: "none" }}
               >
                 ASL/KSL Database
-              </a>{" "}
-              used by Brood War League.
+              </a>
+              .
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "1rem" }}>
               •{" "}
