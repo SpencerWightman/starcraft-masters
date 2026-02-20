@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Box, Grid2 } from "@mui/material";
 import Link from "next/link";
+import DraftStatusText from "@/components/welcome/DraftStatusText";
 
 const Welcome: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const Welcome: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            ASL 21 drafting is now open
+            <DraftStatusText />
           </Link>{" "}
         </Typography>
       </Box>
