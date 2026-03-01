@@ -8,4 +8,5 @@ export const season21QualifiedPlayers: string[] = [
   "Snow",
   "Bisu",
   "Soma",
+  "Sharp",
 ];
