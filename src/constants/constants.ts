@@ -19,6 +19,6 @@ export const season21QualifiedPlayers: string[] = [
   "RoyaL",
   "Rush",
   "Queen",
-  "Soulkey",
+  "SoulKey",
   "JD",
 ];
