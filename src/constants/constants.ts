@@ -30,4 +30,5 @@ export const season21QualifiedPlayers: string[] = [
   "hero",
   "Scan",
   "Leta",
+  "Ample",
 ];
