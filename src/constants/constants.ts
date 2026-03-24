@@ -14,7 +14,6 @@ export const season21QualifiedPlayers: string[] = [
   "Flash",
   "JyJ",
   "Light",
-  "Mong",
   "PianO",
   "RoyaL",
   "Rush",
@@ -28,7 +27,6 @@ export const season21QualifiedPlayers: string[] = [
   "Mind",
   "Larva",
   "hero",
-  "Scan",
   "Leta",
   "Ample",
 ];
