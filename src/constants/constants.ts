@@ -3,7 +3,6 @@ export const mapsNotificationSeason = "21";
 export const leaderboardSeason = "21";
 export const currentSeasonName = "ASL Season 21";
 export const season21QualifiedPlayers: string[] = [
-  "Best",
   "BarrackS",
   "Snow",
   "Bisu",
@@ -15,7 +14,6 @@ export const season21QualifiedPlayers: string[] = [
   "Light",
   "PianO",
   "RoyaL",
-  "Queen",
   "JD",
   "sSak",
   "hero",
